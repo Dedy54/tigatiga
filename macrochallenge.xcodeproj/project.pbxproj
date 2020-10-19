@@ -25,6 +25,7 @@
 		5CDE2422252C3CDB00DF5601 /* macrochallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE2421252C3CDB00DF5601 /* macrochallengeTests.swift */; };
 		5CDE242D252C3CDB00DF5601 /* macrochallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE242C252C3CDB00DF5601 /* macrochallengeUITests.swift */; };
 		7B6E9A554E9A47C774D63ED6 /* Pods_macrochallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350624BE8F5C37B81E4C9EBC /* Pods_macrochallengeTests.framework */; };
+		A12C333A253DA898007EE971 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12C3339253DA898007EE971 /* Game.swift */; };
 		EEC062E658292A48D89B3B62 /* Pods_macrochallenge_macrochallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A813D20B84577A87FACCFAFD /* Pods_macrochallenge_macrochallengeUITests.framework */; };
 		FA36FCEE74A2FDECF0E3D233 /* Pods_macrochallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2B3323AFEDE3F5A7B3F344A /* Pods_macrochallenge.framework */; };
 /* End PBXBuildFile section */
@@ -76,6 +77,7 @@
 		6EE50F37C5CB3AF47180FBE2 /* Pods-macrochallenge-macrochallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macrochallenge-macrochallengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-macrochallenge-macrochallengeUITests/Pods-macrochallenge-macrochallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7A44DC05C142BBCC9F3B4C82 /* Pods-macrochallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macrochallengeTests.release.xcconfig"; path = "Target Support Files/Pods-macrochallengeTests/Pods-macrochallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		9E0C43FECE2CA2B919EBFBBC /* Pods-macrochallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macrochallenge.release.xcconfig"; path = "Target Support Files/Pods-macrochallenge/Pods-macrochallenge.release.xcconfig"; sourceTree = "<group>"; };
+		A12C3339253DA898007EE971 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		A813D20B84577A87FACCFAFD /* Pods_macrochallenge_macrochallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_macrochallenge_macrochallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B3323AFEDE3F5A7B3F344A /* Pods_macrochallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_macrochallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD6FF780BD691388AA81D41 /* Pods-macrochallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macrochallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-macrochallengeTests/Pods-macrochallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 		5CDE2409252C3CD900DF5601 /* macrochallenge */ = {
 			isa = PBXGroup;
 			children = (
+				A12C3338253DA873007EE971 /* Model */,
 				5C6FAE16252CEAAD00F74AE6 /* GoogleService-Info.plist */,
 				5CDE240A252C3CD900DF5601 /* AppDelegate.swift */,
 				5CDE240C252C3CD900DF5601 /* SceneDelegate.swift */,
@@ -239,6 +242,14 @@
 				5CDE242E252C3CDB00DF5601 /* Info.plist */,
 			);
 			path = macrochallengeUITests;
+			sourceTree = "<group>";
+		};
+		A12C3338253DA873007EE971 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A12C3339253DA898007EE971 /* Game.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F42E0A9D2869915E3A13702C /* Frameworks */ = {
@@ -513,6 +524,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C6FAE09252CE6F800F74AE6 /* UIViewController+Extension.swift in Sources */,
+				A12C333A253DA898007EE971 /* Game.swift in Sources */,
 				5C6FAE0C252CE71B00F74AE6 /* PreferenceManager.swift in Sources */,
 				5CDE240F252C3CD900DF5601 /* ViewController.swift in Sources */,
 				5C6FAE14252CE92500F74AE6 /* SecondExampleViewController.swift in Sources */,
