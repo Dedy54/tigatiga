@@ -168,10 +168,30 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
   struct nib {
+    /// Nib `GameDetailViewController`.
+    static let gameDetailViewController = _R.nib._GameDetailViewController()
+    /// Nib `GameTableViewCell`.
+    static let gameTableViewCell = _R.nib._GameTableViewCell()
     /// Nib `SecondExampleViewController`.
     static let secondExampleViewController = _R.nib._SecondExampleViewController()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GameDetailViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gameDetailViewController) instead")
+    static func gameDetailViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gameDetailViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GameTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gameTableViewCell) instead")
+    static func gameTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gameTableViewCell)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "SecondExampleViewController", in: bundle)`
@@ -180,6 +200,14 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.secondExampleViewController)
     }
     #endif
+
+    static func gameDetailViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.gameDetailViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func gameTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GameTableViewCell? {
+      return R.nib.gameTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GameTableViewCell
+    }
 
     static func secondExampleViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.secondExampleViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
@@ -210,6 +238,28 @@ struct _R: Rswift.Validatable {
 
   #if os(iOS) || os(tvOS)
   struct nib {
+    struct _GameDetailViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "GameDetailViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GameTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "GameTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GameTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GameTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
     struct _SecondExampleViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "SecondExampleViewController"

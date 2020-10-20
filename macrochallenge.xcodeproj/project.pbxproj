@@ -26,6 +26,12 @@
 		5CDE242D252C3CDB00DF5601 /* macrochallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE242C252C3CDB00DF5601 /* macrochallengeUITests.swift */; };
 		7B6E9A554E9A47C774D63ED6 /* Pods_macrochallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350624BE8F5C37B81E4C9EBC /* Pods_macrochallengeTests.framework */; };
 		A12C333A253DA898007EE971 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12C3339253DA898007EE971 /* Game.swift */; };
+		A1A409DE253EA13400645930 /* GamesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A409DD253EA13400645930 /* GamesAPI.swift */; };
+		A1A409E1253EA23C00645930 /* GameDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1A409E0253EA23C00645930 /* GameDetailViewController.xib */; };
+		A1A409E3253EA24900645930 /* GameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1A409E2253EA24900645930 /* GameTableViewCell.xib */; };
+		A1A409E5253EA3A700645930 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A409E4253EA3A700645930 /* GameTableViewCell.swift */; };
+		A1A409E7253EA3E100645930 /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A409E6253EA3E100645930 /* GameDetailViewController.swift */; };
+		A1A409E9253EB0DA00645930 /* UITableViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A409E8253EB0DA00645930 /* UITableViewController+Extension.swift */; };
 		EEC062E658292A48D89B3B62 /* Pods_macrochallenge_macrochallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A813D20B84577A87FACCFAFD /* Pods_macrochallenge_macrochallengeUITests.framework */; };
 		FA36FCEE74A2FDECF0E3D233 /* Pods_macrochallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2B3323AFEDE3F5A7B3F344A /* Pods_macrochallenge.framework */; };
 /* End PBXBuildFile section */
@@ -78,6 +84,12 @@
 		7A44DC05C142BBCC9F3B4C82 /* Pods-macrochallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macrochallengeTests.release.xcconfig"; path = "Target Support Files/Pods-macrochallengeTests/Pods-macrochallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		9E0C43FECE2CA2B919EBFBBC /* Pods-macrochallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macrochallenge.release.xcconfig"; path = "Target Support Files/Pods-macrochallenge/Pods-macrochallenge.release.xcconfig"; sourceTree = "<group>"; };
 		A12C3339253DA898007EE971 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		A1A409DD253EA13400645930 /* GamesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesAPI.swift; sourceTree = "<group>"; };
+		A1A409E0253EA23C00645930 /* GameDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameDetailViewController.xib; sourceTree = "<group>"; };
+		A1A409E2253EA24900645930 /* GameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameTableViewCell.xib; sourceTree = "<group>"; };
+		A1A409E4253EA3A700645930 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
+		A1A409E6253EA3E100645930 /* GameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
+		A1A409E8253EB0DA00645930 /* UITableViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewController+Extension.swift"; sourceTree = "<group>"; };
 		A813D20B84577A87FACCFAFD /* Pods_macrochallenge_macrochallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_macrochallenge_macrochallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B3323AFEDE3F5A7B3F344A /* Pods_macrochallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_macrochallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD6FF780BD691388AA81D41 /* Pods-macrochallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macrochallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-macrochallengeTests/Pods-macrochallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +139,7 @@
 		5C6FADFE252CE5C900F74AE6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A1A409DF253EA1AA00645930 /* GameViewController */,
 				5C6FAE11252CE90200F74AE6 /* SecondExampleController */,
 				5C6FAE02252CE62600F74AE6 /* ExampleController */,
 				5C6FADFF252CE5D300F74AE6 /* Main */,
@@ -152,12 +165,13 @@
 			path = ExampleController;
 			sourceTree = "<group>";
 		};
-		5C6FAE07252CE6E700F74AE6 /* Extenstion */ = {
+		5C6FAE07252CE6E700F74AE6 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				5C6FAE08252CE6F800F74AE6 /* UIViewController+Extension.swift */,
+				A1A409E8253EB0DA00645930 /* UITableViewController+Extension.swift */,
 			);
-			path = Extenstion;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		5C6FAE0A252CE71100F74AE6 /* Helper */ = {
@@ -210,6 +224,7 @@
 		5CDE2409252C3CD900DF5601 /* macrochallenge */ = {
 			isa = PBXGroup;
 			children = (
+				A1A409DB253EA10800645930 /* Utilities */,
 				A12C3338253DA873007EE971 /* Model */,
 				5C6FAE16252CEAAD00F74AE6 /* GoogleService-Info.plist */,
 				5CDE240A252C3CD900DF5601 /* AppDelegate.swift */,
@@ -220,7 +235,7 @@
 				5CDE2418252C3CDB00DF5601 /* Info.plist */,
 				5C6FADFE252CE5C900F74AE6 /* Controllers */,
 				5C6FAE0A252CE71100F74AE6 /* Helper */,
-				5C6FAE07252CE6E700F74AE6 /* Extenstion */,
+				5C6FAE07252CE6E700F74AE6 /* Extension */,
 				5C6FAE0D252CE77B00F74AE6 /* Resources */,
 			);
 			path = macrochallenge;
@@ -250,6 +265,33 @@
 				A12C3339253DA898007EE971 /* Game.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A1A409DB253EA10800645930 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A1A409DC253EA11100645930 /* Networking */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A1A409DC253EA11100645930 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				A1A409DD253EA13400645930 /* GamesAPI.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		A1A409DF253EA1AA00645930 /* GameViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A1A409E2253EA24900645930 /* GameTableViewCell.xib */,
+				A1A409E0253EA23C00645930 /* GameDetailViewController.xib */,
+				A1A409E4253EA3A700645930 /* GameTableViewCell.swift */,
+				A1A409E6253EA3E100645930 /* GameDetailViewController.swift */,
+			);
+			path = GameViewController;
 			sourceTree = "<group>";
 		};
 		F42E0A9D2869915E3A13702C /* Frameworks */ = {
@@ -375,6 +417,8 @@
 				5CDE2417252C3CDB00DF5601 /* LaunchScreen.storyboard in Resources */,
 				5C6FAE06252CE66000F74AE6 /* Example.storyboard in Resources */,
 				5CDE2414252C3CDB00DF5601 /* Assets.xcassets in Resources */,
+				A1A409E3253EA24900645930 /* GameTableViewCell.xib in Resources */,
+				A1A409E1253EA23C00645930 /* GameDetailViewController.xib in Resources */,
 				5C6FAE15252CE92500F74AE6 /* SecondExampleViewController.xib in Resources */,
 				5CDE2412252C3CD900DF5601 /* Main.storyboard in Resources */,
 				5C6FAE17252CEAAD00F74AE6 /* GoogleService-Info.plist in Resources */,
@@ -532,7 +576,11 @@
 				5CDE240B252C3CD900DF5601 /* AppDelegate.swift in Sources */,
 				5CDE240D252C3CD900DF5601 /* SceneDelegate.swift in Sources */,
 				5C6FAE01252CE5FA00F74AE6 /* MainViewController.swift in Sources */,
+				A1A409DE253EA13400645930 /* GamesAPI.swift in Sources */,
 				5C6FAE04252CE64C00F74AE6 /* ExampleViewController.swift in Sources */,
+				A1A409E9253EB0DA00645930 /* UITableViewController+Extension.swift in Sources */,
+				A1A409E5253EA3A700645930 /* GameTableViewCell.swift in Sources */,
+				A1A409E7253EA3E100645930 /* GameDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

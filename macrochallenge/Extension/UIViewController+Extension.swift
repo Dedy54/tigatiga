@@ -36,3 +36,7 @@ extension UIViewController {
         return UIScreen.main.bounds.width
     }
 }
+
+//extension UIViewController: UITableViewDataSource, UIScrollViewDelegate, UITableViewDelegate, UISearchBarDelegate {
+//    
+//}

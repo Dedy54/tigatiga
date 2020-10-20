@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,12 +11,28 @@
         <scene sceneID="8W9-8A-Ssd">
             <objects>
                 <viewController storyboardIdentifier="ExampleViewController" id="Wlc-sW-nyX" customClass="ExampleViewController" customModule="macrochallenge" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4NQ-ap-wxc">
+                    <view key="view" contentMode="scaleToFill" id="ymo-Yq-Izs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="tdR-Zd-Lqz"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="32P-kk-Is6">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="32P-kk-Is6" firstAttribute="top" secondItem="rWD-Jl-S0I" secondAttribute="top" id="Hc7-Fb-Cex"/>
+                            <constraint firstItem="32P-kk-Is6" firstAttribute="trailing" secondItem="rWD-Jl-S0I" secondAttribute="trailing" id="eJP-pc-W4j"/>
+                            <constraint firstItem="32P-kk-Is6" firstAttribute="bottom" secondItem="rWD-Jl-S0I" secondAttribute="bottom" id="fAY-3J-bMZ"/>
+                            <constraint firstItem="32P-kk-Is6" firstAttribute="leading" secondItem="rWD-Jl-S0I" secondAttribute="leading" id="wTJ-aH-oYB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rWD-Jl-S0I"/>
                     </view>
+                    <connections>
+                        <outlet property="gameTableView" destination="32P-kk-Is6" id="I6n-U0-vc3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fi7-Z6-CxT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
