@@ -24,6 +24,8 @@
 		5CDE2417252C3CDB00DF5601 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CDE2415252C3CDB00DF5601 /* LaunchScreen.storyboard */; };
 		5CDE2422252C3CDB00DF5601 /* macrochallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE2421252C3CDB00DF5601 /* macrochallengeTests.swift */; };
 		5CDE242D252C3CDB00DF5601 /* macrochallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE242C252C3CDB00DF5601 /* macrochallengeUITests.swift */; };
+		652BA1F1253E955F000F554D /* forgotPass.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652BA1F0253E955F000F554D /* forgotPass.storyboard */; };
+		652BA1F9253E95C3000F554D /* forgotPassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BA1F8253E95C3000F554D /* forgotPassVC.swift */; };
 		7B6E9A554E9A47C774D63ED6 /* Pods_macrochallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350624BE8F5C37B81E4C9EBC /* Pods_macrochallengeTests.framework */; };
 		EEC062E658292A48D89B3B62 /* Pods_macrochallenge_macrochallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A813D20B84577A87FACCFAFD /* Pods_macrochallenge_macrochallengeUITests.framework */; };
 		FA36FCEE74A2FDECF0E3D233 /* Pods_macrochallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2B3323AFEDE3F5A7B3F344A /* Pods_macrochallenge.framework */; };
@@ -73,6 +75,8 @@
 		5CDE2428252C3CDB00DF5601 /* macrochallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = macrochallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CDE242C252C3CDB00DF5601 /* macrochallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = macrochallengeUITests.swift; sourceTree = "<group>"; };
 		5CDE242E252C3CDB00DF5601 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		652BA1F0253E955F000F554D /* forgotPass.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = forgotPass.storyboard; sourceTree = "<group>"; };
+		652BA1F8253E95C3000F554D /* forgotPassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forgotPassVC.swift; sourceTree = "<group>"; };
 		6EE50F37C5CB3AF47180FBE2 /* Pods-macrochallenge-macrochallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macrochallenge-macrochallengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-macrochallenge-macrochallengeUITests/Pods-macrochallenge-macrochallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7A44DC05C142BBCC9F3B4C82 /* Pods-macrochallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macrochallengeTests.release.xcconfig"; path = "Target Support Files/Pods-macrochallengeTests/Pods-macrochallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		9E0C43FECE2CA2B919EBFBBC /* Pods-macrochallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macrochallenge.release.xcconfig"; path = "Target Support Files/Pods-macrochallenge/Pods-macrochallenge.release.xcconfig"; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 		5C6FADFE252CE5C900F74AE6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				652BA1EF253E950B000F554D /* ForgotPassword */,
 				5C6FAE11252CE90200F74AE6 /* SecondExampleController */,
 				5C6FAE02252CE62600F74AE6 /* ExampleController */,
 				5C6FADFF252CE5D300F74AE6 /* Main */,
@@ -239,6 +244,15 @@
 				5CDE242E252C3CDB00DF5601 /* Info.plist */,
 			);
 			path = macrochallengeUITests;
+			sourceTree = "<group>";
+		};
+		652BA1EF253E950B000F554D /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				652BA1F0253E955F000F554D /* forgotPass.storyboard */,
+				652BA1F8253E95C3000F554D /* forgotPassVC.swift */,
+			);
+			path = ForgotPassword;
 			sourceTree = "<group>";
 		};
 		F42E0A9D2869915E3A13702C /* Frameworks */ = {
@@ -366,6 +380,7 @@
 				5CDE2414252C3CDB00DF5601 /* Assets.xcassets in Resources */,
 				5C6FAE15252CE92500F74AE6 /* SecondExampleViewController.xib in Resources */,
 				5CDE2412252C3CD900DF5601 /* Main.storyboard in Resources */,
+				652BA1F1253E955F000F554D /* forgotPass.storyboard in Resources */,
 				5C6FAE17252CEAAD00F74AE6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -516,6 +531,7 @@
 				5C6FAE0C252CE71B00F74AE6 /* PreferenceManager.swift in Sources */,
 				5CDE240F252C3CD900DF5601 /* ViewController.swift in Sources */,
 				5C6FAE14252CE92500F74AE6 /* SecondExampleViewController.swift in Sources */,
+				652BA1F9253E95C3000F554D /* forgotPassVC.swift in Sources */,
 				5C6FAE10252CE8C500F74AE6 /* R.generated.swift in Sources */,
 				5CDE240B252C3CD900DF5601 /* AppDelegate.swift in Sources */,
 				5CDE240D252C3CD900DF5601 /* SceneDelegate.swift in Sources */,
