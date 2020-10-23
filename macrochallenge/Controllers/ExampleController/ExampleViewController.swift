@@ -35,6 +35,24 @@ class ExampleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var a: UserInteractor?
+        a = UserInteractor()
+        a?.fetchUsers(success: { (users) -> (Void) in
+            print("users : \(users)")
+        }) { (error) -> (Void) in
+            print("\(error)")
+        }
+        
+        let b: AuthInteractor?
+        b = AuthInteractor()
+        b?.registerWithEmail(email: "dedyy54@gmail.com", password: "12341234R", success: { (authDataResult) -> (Void) in
+            print("authDataResult : \(authDataResult)")
+        }, failure: { (error) -> (Void) in
+            print("error \(error)")
+        })
+    }
+
+    func loadView() {
         // Do any additional setup after loading the view.
         self.navigationItem.searchController = searchController
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "goodplays"))
