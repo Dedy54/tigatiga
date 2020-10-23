@@ -6,133 +6,318 @@
 	<dict>
 		<key>ActionSheetPicker-3.0.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
 		<key>BoringSSL-GRPC.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
 		<key>Firebase.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
 		<key>FirebaseAnalytics.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
 		<key>FirebaseAuth.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
 		<key>FirebaseCore.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>7</integer>
 		</dict>
 		<key>FirebaseCoreDiagnostics.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>
 		<key>FirebaseFirestore.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
 		<key>FirebaseFirestoreSwift.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>10</integer>
 		</dict>
 		<key>FirebaseInstallations.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>11</integer>
 		</dict>
 		<key>GTMSessionFetcher.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>18</integer>
 		</dict>
 		<key>GoogleAppMeasurement.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>12</integer>
 		</dict>
 		<key>GoogleDataTransport.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>13</integer>
 		</dict>
 		<key>GoogleUtilities.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>14</integer>
 		</dict>
 		<key>Pods-macrochallenge-macrochallengeUITests.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>22</integer>
 		</dict>
 		<key>Pods-macrochallenge.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>21</integer>
 		</dict>
 		<key>Pods-macrochallengeTests.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>23</integer>
 		</dict>
 		<key>PromisesObjC.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>24</integer>
 		</dict>
 		<key>R.swift.Library.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>26</integer>
 		</dict>
 		<key>R.swift.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>25</integer>
 		</dict>
 		<key>abseil.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 		<key>gRPC-C++-gRPCCertificates-Cpp.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>16</integer>
 		</dict>
 		<key>gRPC-C++.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>15</integer>
 		</dict>
 		<key>gRPC-Core.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>17</integer>
 		</dict>
 		<key>leveldb-library.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>19</integer>
 		</dict>
 		<key>nanopb.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>20</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>072CEA044D2EF26F03496D5996BBF59F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0840C21F7B81E6B9D898DC4DC4070F09</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>15A8B4E82D6D3F55AD928CA4DF57C425</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1C5E43B0A9555E7C2E43A6D7C8A23CF6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>230984053C6652DFF510F450F21C5CF7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>25BDAA1EDCACD994051DADC83A8F798F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2BBF7206D7FAC92C82A042A99C4A98F8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3B8CAC3956E59F928387D0C6310E3B37</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4402AFF83DBDC4DD07E198685FDC2DF2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>445FD4CB16BB7BEE2D1C404951CDE14A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>50F380A87A4FC4EC7EE3AC9BDADB6D2D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5C0371EE948D0357B8EE0E34ABB44BF0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>620E05868772C10B4920DC7E324F2C87</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6AE4A3D573DED275B034E20506596C62</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>73CDC3D182DB953135F62609681B443D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>87803597EB3F20FC46472B85392EC4FD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8D7F5D5DD528D21A72DC87ADA5B12E2D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9307B7A119490930CF70393AB529AAC1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A43B25DDF20FCB9228471F8F5135C866</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B12748D8506CB48696BD90F2CA4F4E38</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B2DF83CC38B24E86B428AFF8447133A5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B53D977A951AFC38B21751B706C1DF83</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C49E7A4D59E5C8BE8DE9FB1EFB150185</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D2B5E7DCCBBFB32341D857D01211A1A3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D676E21115185671D7258A56944ABE98</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DBA2B63E3A5FE83FE89E731664C9269F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

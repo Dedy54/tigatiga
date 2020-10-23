@@ -105,10 +105,10 @@
             </objects>
             <point key="canvasLocation" x="957.97101449275374" y="625.44642857142856"/>
         </scene>
-        <!--ExampleViewController-->
+        <!--FeedViewController-->
         <scene sceneID="c7U-0z-yNX">
             <objects>
-                <viewControllerPlaceholder storyboardName="Example" referencedIdentifier="ExampleViewController" id="GPX-jR-Hxk" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Feed" referencedIdentifier="FeedViewController" id="GPX-jR-Hxk" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="hiK-Aq-oX6"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uBU-uq-Yrx" userLabel="First Responder" sceneMemberID="firstResponder"/>
