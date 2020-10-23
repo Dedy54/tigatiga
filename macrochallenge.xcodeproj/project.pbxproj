@@ -228,6 +228,7 @@
 		5C70E52425413FB400C45F76 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				A13974AF25427709003E6D29 /* API */,
 				5C70E52625413FCD00C45F76 /* Service */,
 				5C70E52525413FC400C45F76 /* Interactor */,
 			);
@@ -250,14 +251,6 @@
 				5C70E53225414AA300C45F76 /* UserService.swift */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		5C70E52D2541410E00C45F76 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				5C70E530254144C900C45F76 /* Users.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		5CDE23FE252C3CD800DF5601 = {
@@ -285,7 +278,6 @@
 		5CDE2409252C3CD900DF5601 /* macrochallenge */ = {
 			isa = PBXGroup;
 			children = (
-				A1A409DB253EA10800645930 /* Utilities */,
 				A12C3338253DA873007EE971 /* Model */,
 				5C6FAE16252CEAAD00F74AE6 /* GoogleService-Info.plist */,
 				5CDE240A252C3CD900DF5601 /* AppDelegate.swift */,
@@ -294,7 +286,6 @@
 				5CDE2413252C3CDB00DF5601 /* Assets.xcassets */,
 				5CDE2415252C3CDB00DF5601 /* LaunchScreen.storyboard */,
 				5CDE2418252C3CDB00DF5601 /* Info.plist */,
-				5C70E52D2541410E00C45F76 /* Model */,
 				5C70E52425413FB400C45F76 /* Networking */,
 				5C70E52025413E6800C45F76 /* Core */,
 				5C6FADFE252CE5C900F74AE6 /* Controllers */,
@@ -327,24 +318,17 @@
 			isa = PBXGroup;
 			children = (
 				A12C3339253DA898007EE971 /* Game.swift */,
+				5C70E530254144C900C45F76 /* Users.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		A1A409DB253EA10800645930 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				A1A409DC253EA11100645930 /* Networking */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
-		A1A409DC253EA11100645930 /* Networking */ = {
+		A13974AF25427709003E6D29 /* API */ = {
 			isa = PBXGroup;
 			children = (
 				A1A409DD253EA13400645930 /* GamesAPI.swift */,
 			);
-			path = Networking;
+			path = API;
 			sourceTree = "<group>";
 		};
 		A1A409DF253EA1AA00645930 /* GameViewController */ = {

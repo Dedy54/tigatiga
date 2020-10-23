@@ -50,9 +50,11 @@ class ExampleViewController: UIViewController {
         }, failure: { (error) -> (Void) in
             print("error \(error)")
         })
+        
+        additionalSetup()
     }
 
-    func loadView() {
+    func additionalSetup() {
         // Do any additional setup after loading the view.
         self.navigationItem.searchController = searchController
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "goodplays"))
