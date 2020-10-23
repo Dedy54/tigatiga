@@ -41,10 +41,25 @@ extension CoreService {
         }
     }
     
-    func signInWithCredential(currentNonce: String?, controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization, success: @escaping (AuthDataResult) -> (Void), failure: @escaping (Error) -> (Void)) {
-        if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
+    func signInCredential(credential: OAuthCredential, success: @escaping (AuthDataResult) -> (Void), failure: @escaping (Error) -> (Void)) {
+        Auth.auth().signIn(with: credential) { (authResult, error) in
+            if let error = error {
+                failure(error)
+                return
+            }
+            
+            if let authResult = authResult {
+                success(authResult)
+                return
+            }
+        }
+    }
+    
+    func signInWithApple(currentNonce: String?, credential: ASAuthorizationAppleIDCredential?, success: @escaping (AuthDataResult) -> (Void), failure: @escaping (Error) -> (Void)) {
+        if let appleIDCredential = credential {
             guard let nonce = currentNonce else {
-                fatalError("Invalid state: A login callback was received, but no login request was sent.")
+                print("Invalid state: A login callback was received, but no login request was sent.")
+                return
             }
             guard let appleIDToken = appleIDCredential.identityToken else {
                 print("Unable to fetch identity token")
@@ -54,20 +69,15 @@ extension CoreService {
                 print("Unable to serialize token string from data: \(appleIDToken.debugDescription)")
                 return
             }
-            // Initialize a Firebase credential.
             let credential = OAuthProvider.credential(withProviderID: "apple.com", idToken: idTokenString, rawNonce: nonce)
-            // Sign in with Firebase.
-            Auth.auth().signIn(with: credential) { (authResult, error) in
-                if let error = error {
-                    failure(error)
-                    return
-                }
-                
-                if let authResult = authResult {
-                    success(authResult)
-                    return
-                }
+            self.signInCredential(credential: credential, success: { (authResult) -> (Void) in
+                success(authResult)
+            }) { (error) -> (Void) in
+                failure(error)
             }
         }
     }
+    
+    
+    
 }

@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import AuthenticationServices
 
 class AuthInteractor: BaseInteractor {
     
@@ -24,6 +25,24 @@ class AuthInteractor: BaseInteractor {
     
     func registerWithEmail(email: String, password: String, success: @escaping (AuthDataResult) -> (Void), failure: @escaping (Error) -> (Void)) {
         service.registerWithEmail(email: email, password: password, success: { (authDataResult) -> (Void) in
+            self.authDataResult = authDataResult
+            success(authDataResult)
+        }) { (error) -> (Void) in
+            failure(error)
+        }
+    }
+    
+    func signInCredential(credential: OAuthCredential, success: @escaping (AuthDataResult) -> (Void), failure: @escaping (Error) -> (Void)) {
+        service.signInCredential(credential: credential, success: { (authDataResult) -> (Void) in
+            self.authDataResult = authDataResult
+            success(authDataResult)
+        }) { (error) -> (Void) in
+            failure(error)
+        }
+    }
+    
+    func signInWithApple(currentNonce: String?, credential: ASAuthorizationAppleIDCredential?, success: @escaping (AuthDataResult) -> (Void), failure: @escaping (Error) -> (Void)) {
+        service.signInWithApple(currentNonce: currentNonce, credential: credential, success: { (authDataResult) -> (Void) in
             self.authDataResult = authDataResult
             success(authDataResult)
         }) { (error) -> (Void) in
