@@ -24,6 +24,8 @@
 		5C70E53325414AA300C45F76 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C70E53225414AA300C45F76 /* UserService.swift */; };
 		5C70E53525414AB100C45F76 /* UserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C70E53425414AB100C45F76 /* UserInteractor.swift */; };
 		5C70E539254152C800C45F76 /* Auth+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C70E538254152C800C45F76 /* Auth+Helper.swift */; };
+		5C70E54025427E7500C45F76 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C70E53E25427E7500C45F76 /* SignInViewController.swift */; };
+		5C70E54125427E7500C45F76 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C70E53F25427E7500C45F76 /* SignInViewController.xib */; };
 		5CDE240B252C3CD900DF5601 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE240A252C3CD900DF5601 /* AppDelegate.swift */; };
 		5CDE240D252C3CD900DF5601 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE240C252C3CD900DF5601 /* SceneDelegate.swift */; };
 		5CDE240F252C3CD900DF5601 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE240E252C3CD900DF5601 /* ViewController.swift */; };
@@ -82,6 +84,9 @@
 		5C70E53225414AA300C45F76 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		5C70E53425414AB100C45F76 /* UserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInteractor.swift; sourceTree = "<group>"; };
 		5C70E538254152C800C45F76 /* Auth+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Auth+Helper.swift"; sourceTree = "<group>"; };
+		5C70E53E25427E7500C45F76 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		5C70E53F25427E7500C45F76 /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
+		5C70E5422542832100C45F76 /* macrochallenge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macrochallenge.entitlements; sourceTree = "<group>"; };
 		5CDE2407252C3CD800DF5601 /* macrochallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = macrochallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CDE240A252C3CD900DF5601 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CDE240C252C3CD900DF5601 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				A1A409DF253EA1AA00645930 /* GameViewController */,
+				5C70E53D25427E5A00C45F76 /* SignIn */,
 				5C6FAE11252CE90200F74AE6 /* SecondExampleController */,
 				5C6FAE02252CE62600F74AE6 /* ExampleController */,
 				5C6FADFF252CE5D300F74AE6 /* Main */,
@@ -253,6 +259,23 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		5C70E52D2541410E00C45F76 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5C70E530254144C900C45F76 /* Users.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5C70E53D25427E5A00C45F76 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				5C70E53E25427E7500C45F76 /* SignInViewController.swift */,
+				5C70E53F25427E7500C45F76 /* SignInViewController.xib */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
 		5CDE23FE252C3CD800DF5601 = {
 			isa = PBXGroup;
 			children = (
@@ -279,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				A12C3338253DA873007EE971 /* Model */,
+				5C70E5422542832100C45F76 /* macrochallenge.entitlements */,
 				5C6FAE16252CEAAD00F74AE6 /* GoogleService-Info.plist */,
 				5CDE240A252C3CD900DF5601 /* AppDelegate.swift */,
 				5CDE240C252C3CD900DF5601 /* SceneDelegate.swift */,
@@ -468,6 +492,7 @@
 				A1A409E3253EA24900645930 /* GameTableViewCell.xib in Resources */,
 				A1A409E1253EA23C00645930 /* GameDetailViewController.xib in Resources */,
 				5C6FAE15252CE92500F74AE6 /* SecondExampleViewController.xib in Resources */,
+				5C70E54125427E7500C45F76 /* SignInViewController.xib in Resources */,
 				5CDE2412252C3CD900DF5601 /* Main.storyboard in Resources */,
 				5C6FAE17252CEAAD00F74AE6 /* GoogleService-Info.plist in Resources */,
 			);
@@ -631,6 +656,7 @@
 				A1A409DE253EA13400645930 /* GamesAPI.swift in Sources */,
 				5C70E53325414AA300C45F76 /* UserService.swift in Sources */,
 				5C70E539254152C800C45F76 /* Auth+Helper.swift in Sources */,
+				5C70E54025427E7500C45F76 /* SignInViewController.swift in Sources */,
 				5C70E52F254142A200C45F76 /* AuthService.swift in Sources */,
 				5C70E52325413EAE00C45F76 /* CoreService.swift in Sources */,
 				5C6FAE04252CE64C00F74AE6 /* ExampleViewController.swift in Sources */,
@@ -810,6 +836,7 @@
 			baseConfigurationReference = 07883CB8F9FD0E615F05EB62 /* Pods-macrochallenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = macrochallenge/macrochallenge.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 52CL477F5B;
 				INFOPLIST_FILE = macrochallenge/Info.plist;
@@ -830,6 +857,7 @@
 			baseConfigurationReference = 9E0C43FECE2CA2B919EBFBBC /* Pods-macrochallenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = macrochallenge/macrochallenge.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 52CL477F5B;
 				INFOPLIST_FILE = macrochallenge/Info.plist;

@@ -50,7 +50,8 @@ class ExampleViewController: UIViewController {
         }, failure: { (error) -> (Void) in
             print("error \(error)")
         })
-        
+        let c = SignInViewController.instantiateViewController()
+        self.navigationController?.pushViewController(c, animated: true)
         additionalSetup()
     }
 

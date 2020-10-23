@@ -123,6 +123,17 @@ struct R: Rswift.Validatable {
   }
   #endif
 
+  /// This `R.entitlements` struct is generated, and contains static references to 1 properties.
+  struct entitlements {
+    struct comAppleDeveloperApplesignin {
+      static let `default` = infoPlistString(path: ["com.apple.developer.applesignin"], key: "Default") ?? "Default"
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+
   /// This `R.file` struct is generated, and contains static references to 1 files.
   struct file {
     /// Resource file `GoogleService-Info.plist`.
@@ -176,6 +187,8 @@ struct R: Rswift.Validatable {
     static let gameTableViewCell = _R.nib._GameTableViewCell()
     /// Nib `SecondExampleViewController`.
     static let secondExampleViewController = _R.nib._SecondExampleViewController()
+    /// Nib `SignInViewController`.
+    static let signInViewController = _R.nib._SignInViewController()
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "GameDetailViewController", in: bundle)`
@@ -208,9 +221,20 @@ struct R: Rswift.Validatable {
     static func gameTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GameTableViewCell? {
       return R.nib.gameTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GameTableViewCell
     }
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "SignInViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.signInViewController) instead")
+    static func signInViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.signInViewController)
+    }
+    #endif
 
     static func secondExampleViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.secondExampleViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func signInViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.signInViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     fileprivate init() {}
@@ -263,6 +287,17 @@ struct _R: Rswift.Validatable {
     struct _SecondExampleViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "SecondExampleViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _SignInViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "SignInViewController"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
