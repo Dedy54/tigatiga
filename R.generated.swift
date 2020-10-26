@@ -99,6 +99,8 @@ struct R: Rswift.Validatable {
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Main`.
     static let main = _R.storyboard.main()
+    /// Storyboard `forgotPass`.
+    static let forgotPass = _R.storyboard.forgotPass()
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "Example", bundle: ...)`
@@ -125,6 +127,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Main", bundle: ...)`
     static func main(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.main)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "forgotPass", bundle: ...)`
+    static func forgotPass(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.forgotPass)
     }
     #endif
 
@@ -335,6 +344,9 @@ struct _R: Rswift.Validatable {
       #if os(iOS) || os(tvOS)
       try main.validate()
       #endif
+      #if os(iOS) || os(tvOS)
+      try forgotPass.validate()
+      #endif
     }
 
     #if os(iOS) || os(tvOS)
@@ -371,6 +383,21 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.feed().feedViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'feedViewController' could not be loaded from storyboard 'Feed' as 'FeedViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    struct forgotPass: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = forgotPassVC
+
+      let bundle = R.hostingBundle
+      let name = "forgotPass"
+
+       static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}

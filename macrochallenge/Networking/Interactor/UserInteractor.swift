@@ -25,15 +25,6 @@ class UserInteractor: BaseInteractor {
         }
     }
     
-    func fetchUsers(email: String, success: @escaping ([Users]) -> (Void), failure: @escaping (Error) -> (Void)) {
-        service.fetchUsers(success: { (users) -> (Void) in
-            print("users : \(users)")
-            self.users = users
-        }) { (error) -> (Void) in
-            print("users : \(error)")
-        }
-    }
-    
     func fetchCurrentUser(success: @escaping (Users) -> (Void), failure: @escaping (Error) -> (Void)) {
         service.fetchCurrentUser(success: { (user) -> (Void) in
             self.user = user
