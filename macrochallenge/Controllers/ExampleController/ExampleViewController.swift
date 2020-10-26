@@ -17,6 +17,8 @@ class ExampleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let c = SignInViewController.instantiateViewController()
+        self.navigationController?.pushViewController(c, animated: true)
     }
     
     func callSecondExampleViewController() {
