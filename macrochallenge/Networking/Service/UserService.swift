@@ -59,28 +59,26 @@ extension CoreService {
     }
     
     func fetchUser(email: String, success: @escaping (Users) -> (Void), failure: @escaping (Error) -> (Void)) {
-        db.collection("users").addSnapshotListener { (querySnapshot, error) in
-            if let error = error {
-                failure(error)
-                return
-            }
-            
-            var users = [Users]()
-            guard let documents = querySnapshot?.documents else {
-                print("No documents")
-                return
-            }
-            
-            users = documents.compactMap { queryDocumentSnapshot -> Users? in
-                return try? queryDocumentSnapshot.data(as: Users.self)
-            }
-            
-            if users.count != 0 {
-                success(users[0])
-                return
-            }
-            
-            success(Users())
+        var users = [Users]()
+        db.collection("users")
+            .whereField("email", isEqualTo: email ?? "")
+            .addSnapshotListener { (querySnapshot, error) in
+                if let querySnapshot = querySnapshot {
+                    users = querySnapshot.documents.compactMap { document in
+                        try? document.data(as: Users.self)
+                    }
+                    if users.count != 0 {
+                        success(users[0])
+                        return
+                    }
+                    
+                    success(Users())
+                }
+                
+                if let error = error {
+                    failure(error)
+                    return
+                }
         }
     }
     
