@@ -13,6 +13,7 @@ import AuthenticationServices
 class AuthInteractor: BaseInteractor {
     
     var authDataResult: AuthDataResult?
+    var user: Users = Users()
     
     func loginWithEmail(email: String, password: String, success: @escaping (AuthDataResult) -> (Void), failure: @escaping (Error) -> (Void)) {
         service.loginWithEmail(email: email, password: password, success: { (authDataResult) -> (Void) in
@@ -50,6 +51,32 @@ class AuthInteractor: BaseInteractor {
         }
     }
     
-    
+    func signInWithApple(currentNonce: String?, credential: ASAuthorizationAppleIDCredential?, success: @escaping (AuthDataResult, Users) -> (Void), failure: @escaping (Error) -> (Void)) {
+        service.signInWithApple(currentNonce: currentNonce, credential: credential, success: { (authDataResult) -> (Void) in
+            self.authDataResult = authDataResult
+            let email = authDataResult.user.email ?? ""
+            let uid = Auth.auth().currentUser?.uid
+            self.service.fetchUser(email: email, success: { (fetchUser) -> (Void) in
+                if fetchUser.uid == nil {
+                    var tempUser = Users()
+                    tempUser.email = email
+                    tempUser.uid = uid
+                    self.service.createUser(users: tempUser, success: { (createUser) -> (Void) in
+                        self.user = createUser
+                        success(authDataResult, createUser)
+                    }) { (error) -> (Void) in
+                        failure(error)
+                    }
+                } else {
+                    success(authDataResult, fetchUser)
+                }
+            }) { (error) -> (Void) in
+                failure(error)
+            }
+            
+        }) { (error) -> (Void) in
+            failure(error)
+        }
+    }
 }
 

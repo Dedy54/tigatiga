@@ -18,6 +18,7 @@ class SignInViewController: UIViewController {
     
     @IBOutlet weak var appleIDStackView: UIStackView!
     var authInteractor: AuthInteractor? = AuthInteractor()
+    var userInteractor: UserInteractor? = UserInteractor()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,8 +55,9 @@ extension SignInViewController : ASAuthorizationControllerDelegate, ASAuthorizat
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         switch authorization.credential {
         case let appleIDCredential as ASAuthorizationAppleIDCredential:
-            self.authInteractor?.signInWithApple(currentNonce: AuthHelper.randomNonceString(), credential: appleIDCredential, success: { (authResult) -> (Void) in
+            self.authInteractor?.signInWithApple(currentNonce: AuthHelper.randomNonceString(), credential: appleIDCredential, success: { (authResult, users) -> (Void) in
                 print(authResult)
+                print(users)
             }, failure: { (error) -> (Void) in
                 print(error)
             })

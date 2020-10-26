@@ -26,6 +26,8 @@
 		5C70E539254152C800C45F76 /* Auth+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C70E538254152C800C45F76 /* Auth+Helper.swift */; };
 		5C70E54025427E7500C45F76 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C70E53E25427E7500C45F76 /* SignInViewController.swift */; };
 		5C70E54125427E7500C45F76 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C70E53F25427E7500C45F76 /* SignInViewController.xib */; };
+		5C70E5482546856B00C45F76 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C70E5472546856B00C45F76 /* Player.swift */; };
+		5C70E54A2546857A00C45F76 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C70E5492546857A00C45F76 /* Team.swift */; };
 		5CDE240B252C3CD900DF5601 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE240A252C3CD900DF5601 /* AppDelegate.swift */; };
 		5CDE240D252C3CD900DF5601 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE240C252C3CD900DF5601 /* SceneDelegate.swift */; };
 		5CDE240F252C3CD900DF5601 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE240E252C3CD900DF5601 /* ViewController.swift */; };
@@ -89,6 +91,8 @@
 		5C70E53E25427E7500C45F76 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		5C70E53F25427E7500C45F76 /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
 		5C70E5422542832100C45F76 /* macrochallenge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macrochallenge.entitlements; sourceTree = "<group>"; };
+		5C70E5472546856B00C45F76 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		5C70E5492546857A00C45F76 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		5CDE2407252C3CD800DF5601 /* macrochallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = macrochallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CDE240A252C3CD900DF5601 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CDE240C252C3CD900DF5601 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -262,6 +266,16 @@
 				5C70E53225414AA300C45F76 /* UserService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		5C70E52D2541410E00C45F76 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5C70E530254144C900C45F76 /* Users.swift */,
+				5C70E5472546856B00C45F76 /* Player.swift */,
+				5C70E5492546857A00C45F76 /* Team.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		5C70E53D25427E5A00C45F76 /* SignIn */ = {
@@ -656,6 +670,7 @@
 				5C6FAE14252CE92500F74AE6 /* SecondExampleViewController.swift in Sources */,
 				5C6FAE10252CE8C500F74AE6 /* R.generated.swift in Sources */,
 				5C70E531254144CA00C45F76 /* Users.swift in Sources */,
+				5C70E54A2546857A00C45F76 /* Team.swift in Sources */,
 				5CDE240B252C3CD900DF5601 /* AppDelegate.swift in Sources */,
 				5C70E53525414AB100C45F76 /* UserInteractor.swift in Sources */,
 				5CDE240D252C3CD900DF5601 /* SceneDelegate.swift in Sources */,
@@ -665,6 +680,7 @@
 				5C70E539254152C800C45F76 /* Auth+Helper.swift in Sources */,
 				5C70E54025427E7500C45F76 /* SignInViewController.swift in Sources */,
 				5C70E52F254142A200C45F76 /* AuthService.swift in Sources */,
+				5C70E5482546856B00C45F76 /* Player.swift in Sources */,
 				5C70E52325413EAE00C45F76 /* CoreService.swift in Sources */,
 				5C6FAE04252CE64C00F74AE6 /* ExampleViewController.swift in Sources */,
 				A1A409E9253EB0DA00645930 /* UITableViewController+Extension.swift in Sources */,

@@ -1,20 +1,18 @@
 //
-//  Users.swift
+//  Player.swift
 //  macrochallenge
 //
-//  Created by Dedy Yuristiawan on 22/10/20.
+//  Created by Dedy Yuristiawan on 26/10/20.
 //  Copyright © 2020 tigatiga. All rights reserved.
 //
 
 import Foundation
 import FirebaseFirestoreSwift
 
-struct Users: Codable {
-    var email: String?
-    var uid: String?
+struct Player: Codable {
+    var id: String?
     
     enum CodingKeys: String, CodingKey {
-        case email
-        case uid
+        case id
     }
 }
