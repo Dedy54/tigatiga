@@ -89,7 +89,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 4 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 5 storyboards.
   struct storyboard {
     /// Storyboard `Example`.
     static let example = _R.storyboard.example()
@@ -97,6 +97,8 @@ struct R: Rswift.Validatable {
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Main`.
     static let main = _R.storyboard.main()
+    /// Storyboard `SearchPeople`.
+    static let searchPeople = _R.storyboard.searchPeople()
     /// Storyboard `forgotPass`.
     static let forgotPass = _R.storyboard.forgotPass()
 
@@ -118,6 +120,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Main", bundle: ...)`
     static func main(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.main)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "SearchPeople", bundle: ...)`
+    static func searchPeople(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.searchPeople)
     }
     #endif
 
@@ -157,6 +166,21 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.image` struct is generated, and contains static references to 1 images.
+  struct image {
+    /// Image `Background`.
+    static let background = Rswift.ImageResource(bundle: R.hostingBundle, name: "Background")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Background", bundle: ..., traitCollection: ...)`
+    static func background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.background, compatibleWith: traitCollection)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+
   /// This `R.info` struct is generated, and contains static references to 1 properties.
   struct info {
     struct uiApplicationSceneManifest {
@@ -188,12 +212,16 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
   struct nib {
     /// Nib `SecondExampleViewController`.
     static let secondExampleViewController = _R.nib._SecondExampleViewController()
     /// Nib `SignInViewController`.
     static let signInViewController = _R.nib._SignInViewController()
+    /// Nib `searchForPlayerVC`.
+    static let searchForPlayerVC = _R.nib._searchForPlayerVC()
+    /// Nib `searchForTeamVC`.
+    static let searchForTeamVC = _R.nib._searchForTeamVC()
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "SecondExampleViewController", in: bundle)`
@@ -210,6 +238,30 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.signInViewController)
     }
     #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "searchForPlayerVC", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.searchForPlayerVC) instead")
+    static func searchForPlayerVC(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.searchForPlayerVC)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "searchForTeamVC", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.searchForTeamVC) instead")
+    static func searchForTeamVC(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.searchForTeamVC)
+    }
+    #endif
+
+    static func searchForPlayerVC(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.searchForPlayerVC.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func searchForTeamVC(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.searchForTeamVC.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
 
     static func secondExampleViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.secondExampleViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
@@ -238,12 +290,19 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     #if os(iOS) || os(tvOS)
+    try nib.validate()
+    #endif
+    #if os(iOS) || os(tvOS)
     try storyboard.validate()
     #endif
   }
 
   #if os(iOS) || os(tvOS)
-  struct nib {
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _searchForTeamVC.validate()
+    }
+
     struct _SecondExampleViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "SecondExampleViewController"
@@ -266,6 +325,34 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _searchForPlayerVC: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "searchForPlayerVC"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _searchForTeamVC: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "searchForTeamVC"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "chevron.down", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'chevron.down' is used in nib 'searchForTeamVC', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
     fileprivate init() {}
   }
   #endif
@@ -281,6 +368,9 @@ struct _R: Rswift.Validatable {
       #endif
       #if os(iOS) || os(tvOS)
       try main.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try searchPeople.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try forgotPass.validate()
@@ -357,6 +447,22 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.main().mainViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainViewController' could not be loaded from storyboard 'Main' as 'MainViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct searchPeople: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = macrochallenge.searchPeopleVC
+
+      let bundle = R.hostingBundle
+      let name = "SearchPeople"
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}
