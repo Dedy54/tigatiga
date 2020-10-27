@@ -48,6 +48,7 @@
 		A1A2E0202547BF31008DD0D2 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2E01F2547BF31008DD0D2 /* Player.swift */; };
 		A1A2E0222547BF37008DD0D2 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2E0212547BF37008DD0D2 /* Team.swift */; };
 		A1A2E0242547BF3D008DD0D2 /* Commendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2E0232547BF3D008DD0D2 /* Commendation.swift */; };
+		A1A2E0282547D548008DD0D2 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2E0272547D548008DD0D2 /* R.generated.swift */; };
 		A1A409DE253EA13400645930 /* GamesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A409DD253EA13400645930 /* GamesAPI.swift */; };
 		A1A409E1253EA23C00645930 /* GameDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1A409E0253EA23C00645930 /* GameDetailViewController.xib */; };
 		A1A409E3253EA24900645930 /* GameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1A409E2253EA24900645930 /* GameTableViewCell.xib */; };
@@ -134,6 +135,7 @@
 		A1A2E01F2547BF31008DD0D2 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		A1A2E0212547BF37008DD0D2 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		A1A2E0232547BF3D008DD0D2 /* Commendation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commendation.swift; sourceTree = "<group>"; };
+		A1A2E0272547D548008DD0D2 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		A1A409DD253EA13400645930 /* GamesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesAPI.swift; sourceTree = "<group>"; };
 		A1A409E0253EA23C00645930 /* GameDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameDetailViewController.xib; sourceTree = "<group>"; };
 		A1A409E2253EA24900645930 /* GameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameTableViewCell.xib; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 		5C6FAE0D252CE77B00F74AE6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A1A2E0272547D548008DD0D2 /* R.generated.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -729,6 +732,7 @@
 				5C70E539254152C800C45F76 /* Auth+Helper.swift in Sources */,
 				5C5775162547356000C1AD6D /* CommendationInteractor.swift in Sources */,
 				5C70E54025427E7500C45F76 /* SignInViewController.swift in Sources */,
+				A1A2E0282547D548008DD0D2 /* R.generated.swift in Sources */,
 				5C70E52F254142A200C45F76 /* AuthService.swift in Sources */,
 				5C57750C2547351E00C1AD6D /* PlayerService.swift in Sources */,
 				5C70E52325413EAE00C45F76 /* CoreService.swift in Sources */,
