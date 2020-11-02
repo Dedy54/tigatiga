@@ -166,6 +166,57 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.image` struct is generated, and contains static references to 5 images.
+  struct image {
+    /// Image `Awesome`.
+    static let awesome = Rswift.ImageResource(bundle: R.hostingBundle, name: "Awesome")
+    /// Image `Friendly`.
+    static let friendly = Rswift.ImageResource(bundle: R.hostingBundle, name: "Friendly")
+    /// Image `Great Work`.
+    static let greatWork = Rswift.ImageResource(bundle: R.hostingBundle, name: "Great Work")
+    /// Image `Icon`.
+    static let icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "Icon")
+    /// Image `Team Leader`.
+    static let teamLeader = Rswift.ImageResource(bundle: R.hostingBundle, name: "Team Leader")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Awesome", bundle: ..., traitCollection: ...)`
+    static func awesome(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.awesome, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Friendly", bundle: ..., traitCollection: ...)`
+    static func friendly(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.friendly, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Great Work", bundle: ..., traitCollection: ...)`
+    static func greatWork(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.greatWork, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Icon", bundle: ..., traitCollection: ...)`
+    static func icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Team Leader", bundle: ..., traitCollection: ...)`
+    static func teamLeader(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.teamLeader, compatibleWith: traitCollection)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+
   /// This `R.info` struct is generated, and contains static references to 1 properties.
   struct info {
     struct uiApplicationSceneManifest {
@@ -285,6 +336,7 @@ struct _R: Rswift.Validatable {
   #if os(iOS) || os(tvOS)
   struct nib: Rswift.Validatable {
     static func validate() throws {
+      try _searchForPlayerVC.validate()
       try _searchForTeamVC.validate()
     }
 
@@ -310,12 +362,22 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _searchForPlayerVC: Rswift.NibResourceType {
+    struct _searchForPlayerVC: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "searchForPlayerVC"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Awesome", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Awesome' is used in nib 'searchForPlayerVC', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Friendly", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Friendly' is used in nib 'searchForPlayerVC', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Great Work", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Great Work' is used in nib 'searchForPlayerVC', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Team Leader", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Team Leader' is used in nib 'searchForPlayerVC', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "chevron.down", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'chevron.down' is used in nib 'searchForPlayerVC', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}
