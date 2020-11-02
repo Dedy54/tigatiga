@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Game : String
+enum GameTitle: String
 {
     case Valorant = "Valorant"
     case Overwatch = "Overwatch"
