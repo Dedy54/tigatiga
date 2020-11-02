@@ -13,6 +13,12 @@
 		5C5775262547C79E00C1AD6D /* PlayerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5775232547C79E00C1AD6D /* PlayerInteractor.swift */; };
 		5C5775272547C79E00C1AD6D /* TeamInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5775242547C79E00C1AD6D /* TeamInteractor.swift */; };
 		5C5775282547C79E00C1AD6D /* CommendationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5775252547C79E00C1AD6D /* CommendationInteractor.swift */; };
+		5C57752E254FB0B800C1AD6D /* Notif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C57752D254FB0B800C1AD6D /* Notif.swift */; };
+		5C577530254FB19200C1AD6D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C57752F254FB19200C1AD6D /* Post.swift */; };
+		5C577532254FB1D600C1AD6D /* NotifService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C577531254FB1D600C1AD6D /* NotifService.swift */; };
+		5C577534254FB1E000C1AD6D /* PostInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C577533254FB1E000C1AD6D /* PostInteractor.swift */; };
+		5C577536254FB23600C1AD6D /* NotifInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C577535254FB23600C1AD6D /* NotifInteractor.swift */; };
+		5C577538254FBAC100C1AD6D /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C577537254FBAC100C1AD6D /* PostService.swift */; };
 		5C6FAE01252CE5FA00F74AE6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6FAE00252CE5FA00F74AE6 /* MainViewController.swift */; };
 		5C6FAE04252CE64C00F74AE6 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6FAE03252CE64C00F74AE6 /* ExampleViewController.swift */; };
 		5C6FAE06252CE66000F74AE6 /* Example.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C6FAE05252CE66000F74AE6 /* Example.storyboard */; };
@@ -99,6 +105,12 @@
 		5C5775232547C79E00C1AD6D /* PlayerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerInteractor.swift; sourceTree = "<group>"; };
 		5C5775242547C79E00C1AD6D /* TeamInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamInteractor.swift; sourceTree = "<group>"; };
 		5C5775252547C79E00C1AD6D /* CommendationInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommendationInteractor.swift; sourceTree = "<group>"; };
+		5C57752D254FB0B800C1AD6D /* Notif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notif.swift; sourceTree = "<group>"; };
+		5C57752F254FB19200C1AD6D /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		5C577531254FB1D600C1AD6D /* NotifService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifService.swift; sourceTree = "<group>"; };
+		5C577533254FB1E000C1AD6D /* PostInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInteractor.swift; sourceTree = "<group>"; };
+		5C577535254FB23600C1AD6D /* NotifInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifInteractor.swift; sourceTree = "<group>"; };
+		5C577537254FBAC100C1AD6D /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		5C6FAE00252CE5FA00F74AE6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5C6FAE03252CE64C00F74AE6 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		5C6FAE05252CE66000F74AE6 /* Example.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Example.storyboard; sourceTree = "<group>"; };
@@ -307,6 +319,8 @@
 				5C5775242547C79E00C1AD6D /* TeamInteractor.swift */,
 				5C70E529254140B500C45F76 /* AuthInteractor.swift */,
 				5C70E53425414AB100C45F76 /* UserInteractor.swift */,
+				5C577533254FB1E000C1AD6D /* PostInteractor.swift */,
+				5C577535254FB23600C1AD6D /* NotifInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -319,6 +333,8 @@
 				5C57751F2547C79600C1AD6D /* TeamService.swift */,
 				5C70E52E254142A200C45F76 /* AuthService.swift */,
 				5C70E53225414AA300C45F76 /* UserService.swift */,
+				5C577531254FB1D600C1AD6D /* NotifService.swift */,
+				5C577537254FBAC100C1AD6D /* PostService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -437,6 +453,8 @@
 				A1A2E01F2547BF31008DD0D2 /* Player.swift */,
 				A12C3339253DA898007EE971 /* Game.swift */,
 				5C70E530254144C900C45F76 /* Users.swift */,
+				5C57752D254FB0B800C1AD6D /* Notif.swift */,
+				5C57752F254FB19200C1AD6D /* Post.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -752,13 +770,16 @@
 				A12C333A253DA898007EE971 /* Game.swift in Sources */,
 				5C5775202547C79600C1AD6D /* PlayerService.swift in Sources */,
 				5C6FAE09252CE6F800F74AE6 /* UIViewController+Extension.swift in Sources */,
+				5C577538254FBAC100C1AD6D /* PostService.swift in Sources */,
 				5C5775282547C79E00C1AD6D /* CommendationInteractor.swift in Sources */,
 				6540D9CE254687F200701688 /* searchForPlayerVC.swift in Sources */,
 				5C70E52A254140B500C45F76 /* AuthInteractor.swift in Sources */,
+				5C57752E254FB0B800C1AD6D /* Notif.swift in Sources */,
 				5C6FAE0C252CE71B00F74AE6 /* PreferenceManager.swift in Sources */,
 				5CDE240F252C3CD900DF5601 /* ViewController.swift in Sources */,
 				5C70E52C254140DF00C45F76 /* BaseInteractor.swift in Sources */,
 				5C6FAE14252CE92500F74AE6 /* SecondExampleViewController.swift in Sources */,
+				5C577530254FB19200C1AD6D /* Post.swift in Sources */,
 				5C70E531254144CA00C45F76 /* Users.swift in Sources */,
 				5CDE240B252C3CD900DF5601 /* AppDelegate.swift in Sources */,
 				5C70E53525414AB100C45F76 /* UserInteractor.swift in Sources */,
@@ -779,6 +800,9 @@
 				5C70E54025427E7500C45F76 /* SignInViewController.swift in Sources */,
 				A1A2E0282547D548008DD0D2 /* R.generated.swift in Sources */,
 				5C70E52F254142A200C45F76 /* AuthService.swift in Sources */,
+				5C577534254FB1E000C1AD6D /* PostInteractor.swift in Sources */,
+				5C577536254FB23600C1AD6D /* NotifInteractor.swift in Sources */,
+				5C577532254FB1D600C1AD6D /* NotifService.swift in Sources */,
 				5C70E52325413EAE00C45F76 /* CoreService.swift in Sources */,
 				5C6FAE04252CE64C00F74AE6 /* ExampleViewController.swift in Sources */,
 				A1A409E9253EB0DA00645930 /* UITableViewController+Extension.swift in Sources */,

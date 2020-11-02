@@ -28,10 +28,7 @@ class searchPeopleVC: UIViewController, UITextFieldDelegate{
         UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
         setSegmentedViewInContainer()
         
-        
-        
-        
-       
+        overrideUserInterfaceStyle = .dark
         
     }
     
