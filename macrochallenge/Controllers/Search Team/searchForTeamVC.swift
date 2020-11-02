@@ -59,10 +59,12 @@ class searchForTeamVC: UIViewController, UITextFieldDelegate{
         setPickerColor(picker: membersizePicker)
         setPickerColor(picker: rolePicker)
         
+        
+        
     }
     
     
-    func setTextFieldShape2(txtfld : UITextField){
+    public func setTextFieldShape2(txtfld : UITextField){
         txtfld.layer.borderWidth = 0.5
         txtfld.layer.borderColor = mabarYellow
                 txtfld.layer.cornerRadius = 5
@@ -80,7 +82,7 @@ class searchForTeamVC: UIViewController, UITextFieldDelegate{
     
     
     
-    func setTextFieldShape(){
+    public func setTextFieldShape(){
         
         searchTeamTextField.layer.borderWidth = 1
         searchTeamTextField.layer.borderColor = mabarYellow
