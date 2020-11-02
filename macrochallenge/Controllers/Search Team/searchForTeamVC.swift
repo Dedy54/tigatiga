@@ -29,6 +29,8 @@ class searchForTeamVC: UIViewController, UITextFieldDelegate{
     
     let test = ["asd","fgh","jkl","zxc","vbnm"]
     
+//    var userInteractor: UserInteractor? = UserInteractor()
+    var teamInteractor: TeamInteractor? = TeamInteractor()
     
     override func viewDidLoad() {
         super.viewDidLoad()
