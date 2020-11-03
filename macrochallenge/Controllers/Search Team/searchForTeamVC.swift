@@ -21,10 +21,12 @@ class searchForTeamVC: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var searchTeamTextField: UITextField!
     
     
-    var roleINpicker = UIPickerView()
-    var skillRatingPicker = UIPickerView()
+    let gameRoles = SwitchGame()
+    let preferenceManager = PreferenceManager.instance
+    var roleINpicker = PickerDelegate()
+    var skillRatingPicker = PickerDelegate()
     var membersizePicker = UIPickerView()
-    var rolePicker = UIPickerView()
+    var rolePicker = PickerDelegate()
     let mabarYellow = UIColor(hex: "#ffce00ff")?.cgColor
     
     let test = ["asd","fgh","jkl","zxc","vbnm"]
@@ -61,15 +63,23 @@ class searchForTeamVC: UIViewController, UITextFieldDelegate{
         setPickerColor(picker: membersizePicker)
         setPickerColor(picker: rolePicker)
         
+        populatePicker()
         
-        
+    }
+    
+    func populatePicker() {
+//        gameRoles.setTitle(UserDefaults.standard.string(forKey: "game")!)
+        gameRoles.setTitle("Valorant")
+        roleINpicker.set(strings: gameRoles.roles)
+        skillRatingPicker.set(strings: gameRoles.skills)
+        rolePicker.set(strings: gameRoles.roles)
     }
     
     
     public func setTextFieldShape2(txtfld : UITextField){
         txtfld.layer.borderWidth = 0.5
         txtfld.layer.borderColor = mabarYellow
-                txtfld.layer.cornerRadius = 5
+        txtfld.layer.cornerRadius = 5
         txtfld.frame.size.height = 44
         
 // use rightView //

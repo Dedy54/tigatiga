@@ -54,6 +54,7 @@
 		6540D9D52546881D00701688 /* searchForTeamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6540D9D32546881D00701688 /* searchForTeamVC.swift */; };
 		6540D9D62546881D00701688 /* searchForTeamVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6540D9D42546881D00701688 /* searchForTeamVC.xib */; };
 		7B6E9A554E9A47C774D63ED6 /* Pods_macrochallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350624BE8F5C37B81E4C9EBC /* Pods_macrochallengeTests.framework */; };
+		A12B7BB62551D29E00D9EEAF /* PickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12B7BB52551D29E00D9EEAF /* PickerDelegate.swift */; };
 		A12C333A253DA898007EE971 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12C3339253DA898007EE971 /* Game.swift */; };
 		A13974B22542A3BC003E6D29 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13974B12542A3BC003E6D29 /* Feed.storyboard */; };
 		A13974B42542A3E0003E6D29 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13974B32542A3E0003E6D29 /* FeedViewController.swift */; };
@@ -157,6 +158,7 @@
 		6EE50F37C5CB3AF47180FBE2 /* Pods-macrochallenge-macrochallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macrochallenge-macrochallengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-macrochallenge-macrochallengeUITests/Pods-macrochallenge-macrochallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7A44DC05C142BBCC9F3B4C82 /* Pods-macrochallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macrochallengeTests.release.xcconfig"; path = "Target Support Files/Pods-macrochallengeTests/Pods-macrochallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		9E0C43FECE2CA2B919EBFBBC /* Pods-macrochallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macrochallenge.release.xcconfig"; path = "Target Support Files/Pods-macrochallenge/Pods-macrochallenge.release.xcconfig"; sourceTree = "<group>"; };
+		A12B7BB52551D29E00D9EEAF /* PickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDelegate.swift; sourceTree = "<group>"; };
 		A12C3339253DA898007EE971 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		A13974B12542A3BC003E6D29 /* Feed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
 		A13974B32542A3E0003E6D29 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 				5C6FAE0B252CE71B00F74AE6 /* PreferenceManager.swift */,
 				5C70E538254152C800C45F76 /* Auth+Helper.swift */,
 				A190A3D8254FD471007C5139 /* SearchTeam.swift */,
+				A12B7BB52551D29E00D9EEAF /* PickerDelegate.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -790,6 +793,7 @@
 				A1A2E0242547BF3D008DD0D2 /* Commendation.swift in Sources */,
 				A1A2E0202547BF31008DD0D2 /* Player.swift in Sources */,
 				A1A2E02A2547E709008DD0D2 /* UITextField+Extension.swift in Sources */,
+				A12B7BB62551D29E00D9EEAF /* PickerDelegate.swift in Sources */,
 				A1A409DE253EA13400645930 /* GamesAPI.swift in Sources */,
 				5C70E53325414AA300C45F76 /* UserService.swift in Sources */,
 				5C5775262547C79E00C1AD6D /* PlayerInteractor.swift in Sources */,

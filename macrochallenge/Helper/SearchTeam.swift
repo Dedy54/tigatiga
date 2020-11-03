@@ -16,25 +16,49 @@ enum GameTitle: String
     case PUBG = "Player Unknowns Battle Ground"
 }
 
-enum ValorantRole: Int {
-    case Sentinel = 1
-    case Duelist = 2
-    case Initiator = 3
-    case Controller = 4
+class SwitchGame {
+//    static let shared  = SwitchGame()
+    var roles: [String] = []
+    var skills: [String] = []
+    func setTitle(_ title: String) {
+        switch title {
+        case GameTitle.Valorant.rawValue:
+            roles = ValorantRole.allCases.map { $0.rawValue }
+            skills = ValorantSkill.allCases.map { $0.rawValue }
+        case GameTitle.Overwatch.rawValue:
+            roles = OverwatchRole.allCases.map { $0.rawValue }
+            skills = ValorantSkill.allCases.map { $0.rawValue }
+        case GameTitle.CSGO.rawValue:
+            roles = CounterStrikeRole.allCases.map { $0.rawValue }
+            skills = CounterStrikeSkill.allCases.map { $0.rawValue }
+        case GameTitle.PUBG.rawValue:
+            roles = PlayerUnknownsRole.allCases.map { $0.rawValue }
+            skills = PlayerUnknownsSkill.allCases.map { $0.rawValue }
+        default:
+            return
+        }
+    }
 }
 
-enum OverwatchRole: Int {
-    case Tank = 1
-    case DPS = 2
-    case Healer = 3
+enum ValorantRole: String, CaseIterable {
+    case Sentinel = "Sentinel"
+    case Duelist = "Duelist"
+    case Initiator = "Initiator"
+    case Controller = "Controller"
 }
 
-enum CounterStrikeRole: Int {
-    case Sniper = 1
-    case Bait = 2
+enum OverwatchRole: String, CaseIterable {
+    case Tank = "Tank"
+    case DPS = "DPS"
+    case Healer = "Healer"
 }
 
-enum PlayerUnknownsRole: String {
+enum CounterStrikeRole: String, CaseIterable {
+    case Sniper = "Sniper"
+    case Bait = "Bait"
+}
+
+enum PlayerUnknownsRole: String, CaseIterable {
     case Support = "Support"
     case Sniper = "Sniper"
     case Lurker = "Lurker"
@@ -43,7 +67,7 @@ enum PlayerUnknownsRole: String {
     case Scout = "Scout"
 }
 
-enum ValorantSkill: String {
+enum ValorantSkill: String, CaseIterable {
     case Iron1 = "Iron 1"
     case Iron2 = "Iron 2"
     case Iron3 = "Iron 3"
@@ -68,7 +92,7 @@ enum ValorantSkill: String {
     case Radiant = "Radiant"
 }
 
-enum OverwatchSkill: String {
+enum OverwatchSkill: String, CaseIterable {
     case Bronze = "Bronze"
     case Silver = "Silver"
     case Gold = "Gold"
@@ -78,7 +102,7 @@ enum OverwatchSkill: String {
     case GrandMaster = "GrandMaster"
 }
 
-enum CounterStrikeSkill: String {
+enum CounterStrikeSkill: String, CaseIterable {
     case Silver1 = "Silver I"
     case Silver2 = "Silver II"
     case Silver3 = "Silver III"
@@ -99,7 +123,7 @@ enum CounterStrikeSkill: String {
     case Supreme2 = "The Global Elite"
 }
 
-enum PlayerUnknownsSkill: String {
+enum PlayerUnknownsSkill: String, CaseIterable {
     case Bronze1 = "Bronze 5"
     case Bronze2 = "Bronze 4"
     case Bronze3 = "Bronze 3"
