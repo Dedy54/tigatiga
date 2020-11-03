@@ -117,10 +117,10 @@
             </objects>
             <point key="canvasLocation" x="1703" y="-1493"/>
         </scene>
-        <!--SearchPeople-->
+        <!--SearchResult-->
         <scene sceneID="EDs-Vo-aza">
             <objects>
-                <viewControllerPlaceholder storyboardName="SearchPeople" id="JwB-1F-JJ2" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="SearchResult" id="JwB-1F-JJ2" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="RDB-1Q-0fV"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Qs-fd-JZo" userLabel="First Responder" sceneMemberID="firstResponder"/>

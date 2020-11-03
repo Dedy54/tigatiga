@@ -25,7 +25,7 @@ class searchForPlayerVC: UIViewController {
     var rolePlayerPickerView = UIPickerView()
     var test = ["abc","dsa","afeg"]
     
-    var mabarYellowTranspararent = UIColor(hex: "#ffce00ff")
+    var mabarYellowTranspararent = UIColor(hex: "#ffce000a")
     
     override func viewDidLoad() {
         super.viewDidLoad()
