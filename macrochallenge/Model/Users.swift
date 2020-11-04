@@ -12,6 +12,7 @@ import FirebaseFirestoreSwift
 struct Users: Codable {
     var email: String?
     var uid: String?
+    var roomChat: [String]?
     
     enum CodingKeys: String, CodingKey {
         case email

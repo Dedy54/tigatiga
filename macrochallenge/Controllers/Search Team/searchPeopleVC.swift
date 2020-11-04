@@ -43,8 +43,10 @@ class searchPeopleVC: UIViewController, UITextFieldDelegate{
         
         for v in views {
             viewContainer.addSubview(v)
+            
         }
-        
+        self.addChild(searchForPlayerVC())
+        self.addChild(searchForTeamVC())
         viewContainer.bringSubviewToFront(views[0])
     }
     
@@ -60,6 +62,7 @@ class searchPeopleVC: UIViewController, UITextFieldDelegate{
 
     
     @IBAction func switchViewAction(_ sender: UISegmentedControl) {
+        views[sender.selectedSegmentIndex].isUserInteractionEnabled = false
         self.viewContainer.bringSubviewToFront(views[sender.selectedSegmentIndex])
     }
     

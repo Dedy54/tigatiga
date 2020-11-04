@@ -59,9 +59,12 @@ class searchForPlayerVC: UIViewController {
         searchForTeamVC().setPickerColor(picker: skillRatingPlayerPickerView)
         searchForTeamVC().setPickerColor(picker: rolePlayerPickerView)
         
+        
     }
     
-    
+    @objc func actionAwesomeBtn(_ sender: UIButton) {
+        print("aaaa")
+    }
 
     func setSearchShape(){
         searchPlayerTxtField.layer.borderWidth = 1
