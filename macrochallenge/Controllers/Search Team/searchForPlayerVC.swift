@@ -8,7 +8,7 @@
 
 import UIKit
 
-class searchForPlayerVC: UIViewController {
+class searchForPlayerVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var awesomeBtn: UIButton!
     @IBOutlet weak var greatBtn: UIButton!
@@ -23,14 +23,15 @@ class searchForPlayerVC: UIViewController {
     
     var skillRatingPlayerPickerView = UIPickerView()
     var rolePlayerPickerView = UIPickerView()
-    var test = ["abc","dsa","afeg"]
+    var test = ["abc","dsa","afeg","asdads","asdads"]
     
-    var mabarYellowTranspararent = UIColor(hex: "#ffce00ff")
+    var mabarYellowTranspararent = UIColor(hex: "#ffce000a")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setSearchShape()
+        searchPlayerTxtField.delegate = self
         
         awesomeBtn.layer.cornerRadius = 5
         greatBtn.layer.cornerRadius = 5
@@ -59,9 +60,12 @@ class searchForPlayerVC: UIViewController {
         searchForTeamVC().setPickerColor(picker: skillRatingPlayerPickerView)
         searchForTeamVC().setPickerColor(picker: rolePlayerPickerView)
         
+        
     }
     
-    
+    @objc func actionAwesomeBtn(_ sender: UIButton) {
+        print("aaaa")
+    }
 
     func setSearchShape(){
         searchPlayerTxtField.layer.borderWidth = 1
@@ -77,6 +81,10 @@ class searchForPlayerVC: UIViewController {
         searchPlayerTxtField.leftViewMode = .always
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
   
     
     
@@ -189,7 +197,14 @@ extension searchForPlayerVC : UIPickerViewDelegate,UIPickerViewDataSource{
         }
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //
+        switch pickerView.tag {
+        case 1:
+            skillRatingPlayerTextField.text = test[row]
+        case 2:
+            rolePlayerTextField.text = test[row]
+        default:
+            return
+        }
     }
     
 }

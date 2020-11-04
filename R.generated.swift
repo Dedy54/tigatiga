@@ -85,11 +85,12 @@ struct R: Rswift.Validatable {
   }
 
   static func validate() throws {
+    try font.validate()
     try intern.validate()
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 6 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 7 storyboards.
   struct storyboard {
     /// Storyboard `Example`.
     static let example = _R.storyboard.example()
@@ -101,6 +102,8 @@ struct R: Rswift.Validatable {
     static let main = _R.storyboard.main()
     /// Storyboard `SearchPeople`.
     static let searchPeople = _R.storyboard.searchPeople()
+    /// Storyboard `SearchResult`.
+    static let searchResult = _R.storyboard.searchResult()
     /// Storyboard `forgotPass`.
     static let forgotPass = _R.storyboard.forgotPass()
 
@@ -140,6 +143,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "SearchResult", bundle: ...)`
+    static func searchResult(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.searchResult)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "forgotPass", bundle: ...)`
     static func forgotPass(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.forgotPass)
@@ -161,10 +171,20 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 1 files.
+  /// This `R.file` struct is generated, and contains static references to 6 files.
   struct file {
     /// Resource file `GoogleService-Info.plist`.
     static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
+    /// Resource file `Hind-Bold.ttf`.
+    static let hindBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Hind-Bold", pathExtension: "ttf")
+    /// Resource file `Hind-Light.ttf`.
+    static let hindLightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Hind-Light", pathExtension: "ttf")
+    /// Resource file `Hind-Medium.ttf`.
+    static let hindMediumTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Hind-Medium", pathExtension: "ttf")
+    /// Resource file `Hind-Regular.ttf`.
+    static let hindRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Hind-Regular", pathExtension: "ttf")
+    /// Resource file `Hind-SemiBold.ttf`.
+    static let hindSemiBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Hind-SemiBold", pathExtension: "ttf")
 
     /// `bundle.url(forResource: "GoogleService-Info", withExtension: "plist")`
     static func googleServiceInfoPlist(_: Void = ()) -> Foundation.URL? {
@@ -172,10 +192,89 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
+    /// `bundle.url(forResource: "Hind-Bold", withExtension: "ttf")`
+    static func hindBoldTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.hindBoldTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Hind-Light", withExtension: "ttf")`
+    static func hindLightTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.hindLightTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Hind-Medium", withExtension: "ttf")`
+    static func hindMediumTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.hindMediumTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Hind-Regular", withExtension: "ttf")`
+    static func hindRegularTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.hindRegularTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Hind-SemiBold", withExtension: "ttf")`
+    static func hindSemiBoldTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.hindSemiBoldTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 5 images.
+  /// This `R.font` struct is generated, and contains static references to 5 fonts.
+  struct font: Rswift.Validatable {
+    /// Font `Hind-Bold`.
+    static let hindBold = Rswift.FontResource(fontName: "Hind-Bold")
+    /// Font `Hind-Light`.
+    static let hindLight = Rswift.FontResource(fontName: "Hind-Light")
+    /// Font `Hind-Medium`.
+    static let hindMedium = Rswift.FontResource(fontName: "Hind-Medium")
+    /// Font `Hind-Regular`.
+    static let hindRegular = Rswift.FontResource(fontName: "Hind-Regular")
+    /// Font `Hind-SemiBold`.
+    static let hindSemiBold = Rswift.FontResource(fontName: "Hind-SemiBold")
+
+    /// `UIFont(name: "Hind-Bold", size: ...)`
+    static func hindBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: hindBold, size: size)
+    }
+
+    /// `UIFont(name: "Hind-Light", size: ...)`
+    static func hindLight(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: hindLight, size: size)
+    }
+
+    /// `UIFont(name: "Hind-Medium", size: ...)`
+    static func hindMedium(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: hindMedium, size: size)
+    }
+
+    /// `UIFont(name: "Hind-Regular", size: ...)`
+    static func hindRegular(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: hindRegular, size: size)
+    }
+
+    /// `UIFont(name: "Hind-SemiBold", size: ...)`
+    static func hindSemiBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: hindSemiBold, size: size)
+    }
+
+    static func validate() throws {
+      if R.font.hindBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Hind-Bold' could not be loaded, is 'Hind-Bold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.hindLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Hind-Light' could not be loaded, is 'Hind-Light.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.hindMedium(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Hind-Medium' could not be loaded, is 'Hind-Medium.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.hindRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Hind-Regular' could not be loaded, is 'Hind-Regular.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.hindSemiBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Hind-SemiBold' could not be loaded, is 'Hind-SemiBold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.image` struct is generated, and contains static references to 6 images.
   struct image {
     /// Image `Awesome`.
     static let awesome = Rswift.ImageResource(bundle: R.hostingBundle, name: "Awesome")
@@ -187,6 +286,8 @@ struct R: Rswift.Validatable {
     static let icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "Icon")
     /// Image `Team Leader`.
     static let teamLeader = Rswift.ImageResource(bundle: R.hostingBundle, name: "Team Leader")
+    /// Image `pp`.
+    static let pp = Rswift.ImageResource(bundle: R.hostingBundle, name: "pp")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "Awesome", bundle: ..., traitCollection: ...)`
@@ -220,6 +321,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "Team Leader", bundle: ..., traitCollection: ...)`
     static func teamLeader(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.teamLeader, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "pp", bundle: ..., traitCollection: ...)`
+    static func pp(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.pp, compatibleWith: traitCollection)
     }
     #endif
 
@@ -343,6 +451,14 @@ struct R: Rswift.Validatable {
     static func signInViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.signInViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  struct reuseIdentifier {
+    /// Reuse identifier `resultCell`.
+    static let resultCell: Rswift.ReuseIdentifier<ResultTableViewCell> = Rswift.ReuseIdentifier(identifier: "resultCell")
 
     fileprivate init() {}
   }
@@ -482,6 +598,9 @@ struct _R: Rswift.Validatable {
       try searchPeople.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try searchResult.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try forgotPass.validate()
       #endif
     }
@@ -588,8 +707,31 @@ struct _R: Rswift.Validatable {
 
       let bundle = R.hostingBundle
       let name = "SearchPeople"
+      let searchPeople = StoryboardViewControllerResource<macrochallenge.searchPeopleVC>(identifier: "SearchPeople")
+
+      func searchPeople(_: Void = ()) -> macrochallenge.searchPeopleVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: searchPeople)
+      }
 
       static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.searchPeople().searchPeople() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'searchPeople' could not be loaded from storyboard 'SearchPeople' as 'macrochallenge.searchPeopleVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct searchResult: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = SearchResultVC
+
+      let bundle = R.hostingBundle
+      let name = "SearchResult"
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "pp", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'pp' is used in storyboard 'SearchResult', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
