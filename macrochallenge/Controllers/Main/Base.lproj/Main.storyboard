@@ -117,10 +117,10 @@
             </objects>
             <point key="canvasLocation" x="1703" y="-1493"/>
         </scene>
-        <!--SearchPeople-->
+        <!--SearchResult-->
         <scene sceneID="EDs-Vo-aza">
             <objects>
-                <viewControllerPlaceholder storyboardName="SearchPeople" id="JwB-1F-JJ2" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="SearchResult" id="JwB-1F-JJ2" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="RDB-1Q-0fV"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Qs-fd-JZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -137,10 +137,10 @@
             </objects>
             <point key="canvasLocation" x="1683" y="625"/>
         </scene>
-        <!--ExampleViewController-->
+        <!--SearchPeople-->
         <scene sceneID="b8X-U6-qfx">
             <objects>
-                <viewControllerPlaceholder storyboardName="Example" referencedIdentifier="ExampleViewController" id="T4X-NC-3Bx" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="SearchPeople" referencedIdentifier="SearchPeople" id="T4X-NC-3Bx" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="7IK-5b-f5Y"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XfQ-K5-hBs" userLabel="First Responder" sceneMemberID="firstResponder"/>

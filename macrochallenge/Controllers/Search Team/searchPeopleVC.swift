@@ -14,6 +14,9 @@ class searchPeopleVC: UIViewController, UITextFieldDelegate{
     @IBOutlet var applyButton: UIButton!
     @IBOutlet var segmentedControl: UISegmentedControl!
     
+    var searchPlayerVC = searchForPlayerVC()
+    var searchTeamVC = searchForTeamVC()
+    
    
     var views : [UIView]!
     
@@ -38,8 +41,8 @@ class searchPeopleVC: UIViewController, UITextFieldDelegate{
     
     func setSegmentedViewInContainer(){
         views = [UIView]()
-        views.append(searchForPlayerVC().view)
-        views.append(searchForTeamVC().view)
+        views.append(searchPlayerVC.view)
+        views.append(searchTeamVC.view)
         
         for v in views {
             viewContainer.addSubview(v)
