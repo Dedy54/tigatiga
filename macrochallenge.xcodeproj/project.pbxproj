@@ -7,21 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C57751A2547C78D00C1AD6D /* Commendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5775172547C78C00C1AD6D /* Commendation.swift */; };
-		5C57751B2547C78D00C1AD6D /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5775182547C78D00C1AD6D /* Team.swift */; };
-		5C57751C2547C78D00C1AD6D /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5775192547C78D00C1AD6D /* Player.swift */; };
-		5C5775202547C79600C1AD6D /* PlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C57751D2547C79500C1AD6D /* PlayerService.swift */; };
-		5C5775212547C79600C1AD6D /* CommendationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C57751E2547C79500C1AD6D /* CommendationService.swift */; };
-		5C5775222547C79600C1AD6D /* TeamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C57751F2547C79600C1AD6D /* TeamService.swift */; };
-		5C5775262547C79E00C1AD6D /* PlayerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5775232547C79E00C1AD6D /* PlayerInteractor.swift */; };
-		5C5775272547C79E00C1AD6D /* TeamInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5775242547C79E00C1AD6D /* TeamInteractor.swift */; };
-		5C5775282547C79E00C1AD6D /* CommendationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5775252547C79E00C1AD6D /* CommendationInteractor.swift */; };
-		5C57752E254FB0B800C1AD6D /* Notif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C57752D254FB0B800C1AD6D /* Notif.swift */; };
-		5C577530254FB19200C1AD6D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C57752F254FB19200C1AD6D /* Post.swift */; };
-		5C577532254FB1D600C1AD6D /* NotifService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C577531254FB1D600C1AD6D /* NotifService.swift */; };
-		5C577534254FB1E000C1AD6D /* PostInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C577533254FB1E000C1AD6D /* PostInteractor.swift */; };
-		5C577536254FB23600C1AD6D /* NotifInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C577535254FB23600C1AD6D /* NotifInteractor.swift */; };
-		5C577538254FBAC100C1AD6D /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C577537254FBAC100C1AD6D /* PostService.swift */; };
 		5C6FAE01252CE5FA00F74AE6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6FAE00252CE5FA00F74AE6 /* MainViewController.swift */; };
 		5C6FAE04252CE64C00F74AE6 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6FAE03252CE64C00F74AE6 /* ExampleViewController.swift */; };
 		5C6FAE06252CE66000F74AE6 /* Example.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C6FAE05252CE66000F74AE6 /* Example.storyboard */; };
@@ -41,10 +26,25 @@
 		5C70E539254152C800C45F76 /* Auth+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C70E538254152C800C45F76 /* Auth+Helper.swift */; };
 		5C70E54025427E7500C45F76 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C70E53E25427E7500C45F76 /* SignInViewController.swift */; };
 		5C70E54125427E7500C45F76 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C70E53F25427E7500C45F76 /* SignInViewController.xib */; };
-		5CD874452552479600040E7A /* RoomChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD874442552479600040E7A /* RoomChat.swift */; };
-		5CD8744725524D0E00040E7A /* ChatData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8744625524D0E00040E7A /* ChatData.swift */; };
-		5CD874492552630F00040E7A /* RoomChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD874482552630F00040E7A /* RoomChatService.swift */; };
-		5CD8744B2552634900040E7A /* RoomChatInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8744A2552634900040E7A /* RoomChatInteractor.swift */; };
+		5CD87471255286A900040E7A /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8746A255286A900040E7A /* Team.swift */; };
+		5CD87472255286A900040E7A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8746B255286A900040E7A /* Post.swift */; };
+		5CD87473255286A900040E7A /* RoomChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8746C255286A900040E7A /* RoomChat.swift */; };
+		5CD87474255286A900040E7A /* Commendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8746D255286A900040E7A /* Commendation.swift */; };
+		5CD87475255286A900040E7A /* ChatData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8746E255286A900040E7A /* ChatData.swift */; };
+		5CD87476255286A900040E7A /* Notif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8746F255286A900040E7A /* Notif.swift */; };
+		5CD87477255286A900040E7A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD87470255286A900040E7A /* Player.swift */; };
+		5CD8747E255286B200040E7A /* PlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD87478255286B200040E7A /* PlayerService.swift */; };
+		5CD8747F255286B200040E7A /* RoomChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD87479255286B200040E7A /* RoomChatService.swift */; };
+		5CD87480255286B200040E7A /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8747A255286B200040E7A /* PostService.swift */; };
+		5CD87481255286B200040E7A /* NotifService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8747B255286B200040E7A /* NotifService.swift */; };
+		5CD87482255286B200040E7A /* TeamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8747C255286B200040E7A /* TeamService.swift */; };
+		5CD87483255286B200040E7A /* CommendationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8747D255286B200040E7A /* CommendationService.swift */; };
+		5CD8748A255286BA00040E7A /* CommendationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD87484255286BA00040E7A /* CommendationInteractor.swift */; };
+		5CD8748B255286BA00040E7A /* PlayerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD87485255286BA00040E7A /* PlayerInteractor.swift */; };
+		5CD8748C255286BA00040E7A /* PostInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD87486255286BA00040E7A /* PostInteractor.swift */; };
+		5CD8748D255286BA00040E7A /* RoomChatInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD87487255286BA00040E7A /* RoomChatInteractor.swift */; };
+		5CD8748E255286BA00040E7A /* TeamInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD87488255286BA00040E7A /* TeamInteractor.swift */; };
+		5CD8748F255286BA00040E7A /* NotifInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD87489255286BA00040E7A /* NotifInteractor.swift */; };
 		5CDE240B252C3CD900DF5601 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE240A252C3CD900DF5601 /* AppDelegate.swift */; };
 		5CDE240D252C3CD900DF5601 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE240C252C3CD900DF5601 /* SceneDelegate.swift */; };
 		5CDE240F252C3CD900DF5601 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE240E252C3CD900DF5601 /* ViewController.swift */; };
@@ -61,6 +61,14 @@
 		6540D9CF254687F200701688 /* searchForPlayerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6540D9CD254687F200701688 /* searchForPlayerVC.xib */; };
 		6540D9D52546881D00701688 /* searchForTeamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6540D9D32546881D00701688 /* searchForTeamVC.swift */; };
 		6540D9D62546881D00701688 /* searchForTeamVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6540D9D42546881D00701688 /* searchForTeamVC.xib */; };
+		6540D9F925500D6E00701688 /* SearchResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6540D9F825500D6E00701688 /* SearchResultVC.swift */; };
+		6540D9FE25500D8200701688 /* SearchResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6540D9FD25500D8200701688 /* SearchResult.storyboard */; };
+		6540DA032550128200701688 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6540DA022550128200701688 /* ResultTableViewCell.swift */; };
+		6540DA0F25506CF700701688 /* Hind-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6540DA0A25506CF600701688 /* Hind-Regular.ttf */; };
+		6540DA1025506CF700701688 /* Hind-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6540DA0B25506CF700701688 /* Hind-Medium.ttf */; };
+		6540DA1125506CF700701688 /* Hind-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6540DA0C25506CF700701688 /* Hind-Light.ttf */; };
+		6540DA1225506CF700701688 /* Hind-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6540DA0D25506CF700701688 /* Hind-Bold.ttf */; };
+		6540DA1325506CF700701688 /* Hind-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6540DA0E25506CF700701688 /* Hind-SemiBold.ttf */; };
 		7B6E9A554E9A47C774D63ED6 /* Pods_macrochallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350624BE8F5C37B81E4C9EBC /* Pods_macrochallengeTests.framework */; };
 		EEC062E658292A48D89B3B62 /* Pods_macrochallenge_macrochallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A813D20B84577A87FACCFAFD /* Pods_macrochallenge_macrochallengeUITests.framework */; };
 		FA36FCEE74A2FDECF0E3D233 /* Pods_macrochallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2B3323AFEDE3F5A7B3F344A /* Pods_macrochallenge.framework */; };
@@ -87,21 +95,6 @@
 		07883CB8F9FD0E615F05EB62 /* Pods-macrochallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macrochallenge.debug.xcconfig"; path = "Target Support Files/Pods-macrochallenge/Pods-macrochallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		0E010BBAE23C8A637E40A9FA /* Pods-macrochallenge-macrochallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macrochallenge-macrochallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-macrochallenge-macrochallengeUITests/Pods-macrochallenge-macrochallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		350624BE8F5C37B81E4C9EBC /* Pods_macrochallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_macrochallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5C5775172547C78C00C1AD6D /* Commendation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commendation.swift; sourceTree = "<group>"; };
-		5C5775182547C78D00C1AD6D /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
-		5C5775192547C78D00C1AD6D /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		5C57751D2547C79500C1AD6D /* PlayerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerService.swift; sourceTree = "<group>"; };
-		5C57751E2547C79500C1AD6D /* CommendationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommendationService.swift; sourceTree = "<group>"; };
-		5C57751F2547C79600C1AD6D /* TeamService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamService.swift; sourceTree = "<group>"; };
-		5C5775232547C79E00C1AD6D /* PlayerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerInteractor.swift; sourceTree = "<group>"; };
-		5C5775242547C79E00C1AD6D /* TeamInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamInteractor.swift; sourceTree = "<group>"; };
-		5C5775252547C79E00C1AD6D /* CommendationInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommendationInteractor.swift; sourceTree = "<group>"; };
-		5C57752D254FB0B800C1AD6D /* Notif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notif.swift; sourceTree = "<group>"; };
-		5C57752F254FB19200C1AD6D /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		5C577531254FB1D600C1AD6D /* NotifService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifService.swift; sourceTree = "<group>"; };
-		5C577533254FB1E000C1AD6D /* PostInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInteractor.swift; sourceTree = "<group>"; };
-		5C577535254FB23600C1AD6D /* NotifInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifInteractor.swift; sourceTree = "<group>"; };
-		5C577537254FBAC100C1AD6D /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		5C6FAE00252CE5FA00F74AE6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5C6FAE03252CE64C00F74AE6 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		5C6FAE05252CE66000F74AE6 /* Example.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Example.storyboard; sourceTree = "<group>"; };
@@ -122,10 +115,25 @@
 		5C70E53E25427E7500C45F76 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		5C70E53F25427E7500C45F76 /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
 		5C70E5422542832100C45F76 /* macrochallenge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macrochallenge.entitlements; sourceTree = "<group>"; };
-		5CD874442552479600040E7A /* RoomChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomChat.swift; sourceTree = "<group>"; };
-		5CD8744625524D0E00040E7A /* ChatData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatData.swift; sourceTree = "<group>"; };
-		5CD874482552630F00040E7A /* RoomChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomChatService.swift; sourceTree = "<group>"; };
-		5CD8744A2552634900040E7A /* RoomChatInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomChatInteractor.swift; sourceTree = "<group>"; };
+		5CD8746A255286A900040E7A /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		5CD8746B255286A900040E7A /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		5CD8746C255286A900040E7A /* RoomChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomChat.swift; sourceTree = "<group>"; };
+		5CD8746D255286A900040E7A /* Commendation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commendation.swift; sourceTree = "<group>"; };
+		5CD8746E255286A900040E7A /* ChatData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatData.swift; sourceTree = "<group>"; };
+		5CD8746F255286A900040E7A /* Notif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notif.swift; sourceTree = "<group>"; };
+		5CD87470255286A900040E7A /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		5CD87478255286B200040E7A /* PlayerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerService.swift; sourceTree = "<group>"; };
+		5CD87479255286B200040E7A /* RoomChatService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomChatService.swift; sourceTree = "<group>"; };
+		5CD8747A255286B200040E7A /* PostService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		5CD8747B255286B200040E7A /* NotifService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifService.swift; sourceTree = "<group>"; };
+		5CD8747C255286B200040E7A /* TeamService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamService.swift; sourceTree = "<group>"; };
+		5CD8747D255286B200040E7A /* CommendationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommendationService.swift; sourceTree = "<group>"; };
+		5CD87484255286BA00040E7A /* CommendationInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommendationInteractor.swift; sourceTree = "<group>"; };
+		5CD87485255286BA00040E7A /* PlayerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerInteractor.swift; sourceTree = "<group>"; };
+		5CD87486255286BA00040E7A /* PostInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostInteractor.swift; sourceTree = "<group>"; };
+		5CD87487255286BA00040E7A /* RoomChatInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomChatInteractor.swift; sourceTree = "<group>"; };
+		5CD87488255286BA00040E7A /* TeamInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamInteractor.swift; sourceTree = "<group>"; };
+		5CD87489255286BA00040E7A /* NotifInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifInteractor.swift; sourceTree = "<group>"; };
 		5CDE2407252C3CD800DF5601 /* macrochallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = macrochallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CDE240A252C3CD900DF5601 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CDE240C252C3CD900DF5601 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +158,14 @@
 		6540D9CD254687F200701688 /* searchForPlayerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = searchForPlayerVC.xib; sourceTree = "<group>"; };
 		6540D9D32546881D00701688 /* searchForTeamVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchForTeamVC.swift; sourceTree = "<group>"; };
 		6540D9D42546881D00701688 /* searchForTeamVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = searchForTeamVC.xib; sourceTree = "<group>"; };
+		6540D9F825500D6E00701688 /* SearchResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultVC.swift; sourceTree = "<group>"; };
+		6540D9FD25500D8200701688 /* SearchResult.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchResult.storyboard; sourceTree = "<group>"; };
+		6540DA022550128200701688 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
+		6540DA0A25506CF600701688 /* Hind-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hind-Regular.ttf"; sourceTree = "<group>"; };
+		6540DA0B25506CF700701688 /* Hind-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hind-Medium.ttf"; sourceTree = "<group>"; };
+		6540DA0C25506CF700701688 /* Hind-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hind-Light.ttf"; sourceTree = "<group>"; };
+		6540DA0D25506CF700701688 /* Hind-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hind-Bold.ttf"; sourceTree = "<group>"; };
+		6540DA0E25506CF700701688 /* Hind-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hind-SemiBold.ttf"; sourceTree = "<group>"; };
 		6EE50F37C5CB3AF47180FBE2 /* Pods-macrochallenge-macrochallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macrochallenge-macrochallengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-macrochallenge-macrochallengeUITests/Pods-macrochallenge-macrochallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7A44DC05C142BBCC9F3B4C82 /* Pods-macrochallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macrochallengeTests.release.xcconfig"; path = "Target Support Files/Pods-macrochallengeTests/Pods-macrochallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		9E0C43FECE2CA2B919EBFBBC /* Pods-macrochallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macrochallenge.release.xcconfig"; path = "Target Support Files/Pods-macrochallenge/Pods-macrochallenge.release.xcconfig"; sourceTree = "<group>"; };
@@ -202,6 +218,7 @@
 		5C6FADFE252CE5C900F74AE6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6540D9F725500D4A00701688 /* Search Player Result */,
 				6540D9B6254682DA00701688 /* Search Team */,
 				6540D92A25466C0E00701688 /* Forgot Password */,
 				5C70E53D25427E5A00C45F76 /* SignIn */,
@@ -285,14 +302,14 @@
 		5C70E52525413FC400C45F76 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				5C5775252547C79E00C1AD6D /* CommendationInteractor.swift */,
-				5C5775232547C79E00C1AD6D /* PlayerInteractor.swift */,
-				5C5775242547C79E00C1AD6D /* TeamInteractor.swift */,
+				5CD87484255286BA00040E7A /* CommendationInteractor.swift */,
+				5CD87489255286BA00040E7A /* NotifInteractor.swift */,
+				5CD87485255286BA00040E7A /* PlayerInteractor.swift */,
+				5CD87486255286BA00040E7A /* PostInteractor.swift */,
+				5CD87487255286BA00040E7A /* RoomChatInteractor.swift */,
+				5CD87488255286BA00040E7A /* TeamInteractor.swift */,
 				5C70E529254140B500C45F76 /* AuthInteractor.swift */,
 				5C70E53425414AB100C45F76 /* UserInteractor.swift */,
-				5C577533254FB1E000C1AD6D /* PostInteractor.swift */,
-				5C577535254FB23600C1AD6D /* NotifInteractor.swift */,
-				5CD8744A2552634900040E7A /* RoomChatInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -300,14 +317,14 @@
 		5C70E52625413FCD00C45F76 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				5C57751E2547C79500C1AD6D /* CommendationService.swift */,
-				5C57751D2547C79500C1AD6D /* PlayerService.swift */,
-				5C57751F2547C79600C1AD6D /* TeamService.swift */,
+				5CD8747D255286B200040E7A /* CommendationService.swift */,
+				5CD8747B255286B200040E7A /* NotifService.swift */,
+				5CD87478255286B200040E7A /* PlayerService.swift */,
+				5CD8747A255286B200040E7A /* PostService.swift */,
+				5CD87479255286B200040E7A /* RoomChatService.swift */,
+				5CD8747C255286B200040E7A /* TeamService.swift */,
 				5C70E52E254142A200C45F76 /* AuthService.swift */,
 				5C70E53225414AA300C45F76 /* UserService.swift */,
-				5C577531254FB1D600C1AD6D /* NotifService.swift */,
-				5C577537254FBAC100C1AD6D /* PostService.swift */,
-				5CD874482552630F00040E7A /* RoomChatService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -315,14 +332,14 @@
 		5C70E52D2541410E00C45F76 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5C5775172547C78C00C1AD6D /* Commendation.swift */,
-				5C5775192547C78D00C1AD6D /* Player.swift */,
-				5C5775182547C78D00C1AD6D /* Team.swift */,
+				5CD8746E255286A900040E7A /* ChatData.swift */,
+				5CD8746D255286A900040E7A /* Commendation.swift */,
+				5CD8746F255286A900040E7A /* Notif.swift */,
+				5CD87470255286A900040E7A /* Player.swift */,
+				5CD8746B255286A900040E7A /* Post.swift */,
+				5CD8746C255286A900040E7A /* RoomChat.swift */,
+				5CD8746A255286A900040E7A /* Team.swift */,
 				5C70E530254144C900C45F76 /* Users.swift */,
-				5C57752D254FB0B800C1AD6D /* Notif.swift */,
-				5C57752F254FB19200C1AD6D /* Post.swift */,
-				5CD874442552479600040E7A /* RoomChat.swift */,
-				5CD8744625524D0E00040E7A /* ChatData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -362,6 +379,7 @@
 		5CDE2409252C3CD900DF5601 /* macrochallenge */ = {
 			isa = PBXGroup;
 			children = (
+				6540DA092550697700701688 /* Fonts */,
 				5C70E5422542832100C45F76 /* macrochallenge.entitlements */,
 				5C6FAE16252CEAAD00F74AE6 /* GoogleService-Info.plist */,
 				5CDE240A252C3CD900DF5601 /* AppDelegate.swift */,
@@ -428,6 +446,28 @@
 				6540D9D42546881D00701688 /* searchForTeamVC.xib */,
 			);
 			path = "Search Team";
+			sourceTree = "<group>";
+		};
+		6540D9F725500D4A00701688 /* Search Player Result */ = {
+			isa = PBXGroup;
+			children = (
+				6540D9F825500D6E00701688 /* SearchResultVC.swift */,
+				6540D9FD25500D8200701688 /* SearchResult.storyboard */,
+				6540DA022550128200701688 /* ResultTableViewCell.swift */,
+			);
+			path = "Search Player Result";
+			sourceTree = "<group>";
+		};
+		6540DA092550697700701688 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6540DA0D25506CF700701688 /* Hind-Bold.ttf */,
+				6540DA0C25506CF700701688 /* Hind-Light.ttf */,
+				6540DA0B25506CF700701688 /* Hind-Medium.ttf */,
+				6540DA0A25506CF600701688 /* Hind-Regular.ttf */,
+				6540DA0E25506CF700701688 /* Hind-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		F42E0A9D2869915E3A13702C /* Frameworks */ = {
@@ -552,12 +592,18 @@
 			files = (
 				5CDE2417252C3CDB00DF5601 /* LaunchScreen.storyboard in Resources */,
 				5C6FAE06252CE66000F74AE6 /* Example.storyboard in Resources */,
+				6540DA1325506CF700701688 /* Hind-SemiBold.ttf in Resources */,
 				5CDE2414252C3CDB00DF5601 /* Assets.xcassets in Resources */,
 				6540D9B8254684EC00701688 /* SearchPeople.storyboard in Resources */,
+				6540DA1025506CF700701688 /* Hind-Medium.ttf in Resources */,
 				6540D9922546816E00701688 /* forgotPass.storyboard in Resources */,
 				5C6FAE15252CE92500F74AE6 /* SecondExampleViewController.xib in Resources */,
 				6540D9D62546881D00701688 /* searchForTeamVC.xib in Resources */,
+				6540DA1125506CF700701688 /* Hind-Light.ttf in Resources */,
+				6540D9FE25500D8200701688 /* SearchResult.storyboard in Resources */,
+				6540DA1225506CF700701688 /* Hind-Bold.ttf in Resources */,
 				5C70E54125427E7500C45F76 /* SignInViewController.xib in Resources */,
+				6540DA0F25506CF700701688 /* Hind-Regular.ttf in Resources */,
 				5CDE2412252C3CD900DF5601 /* Main.storyboard in Resources */,
 				5C6FAE17252CEAAD00F74AE6 /* GoogleService-Info.plist in Resources */,
 				6540D9CF254687F200701688 /* searchForPlayerVC.xib in Resources */,
@@ -706,47 +752,49 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C5775202547C79600C1AD6D /* PlayerService.swift in Sources */,
-				5C57751A2547C78D00C1AD6D /* Commendation.swift in Sources */,
 				5C6FAE09252CE6F800F74AE6 /* UIViewController+Extension.swift in Sources */,
-				5C577538254FBAC100C1AD6D /* PostService.swift in Sources */,
-				5CD874452552479600040E7A /* RoomChat.swift in Sources */,
-				5C5775282547C79E00C1AD6D /* CommendationInteractor.swift in Sources */,
-				5CD874492552630F00040E7A /* RoomChatService.swift in Sources */,
 				6540D9CE254687F200701688 /* searchForPlayerVC.swift in Sources */,
 				5C70E52A254140B500C45F76 /* AuthInteractor.swift in Sources */,
-				5C57752E254FB0B800C1AD6D /* Notif.swift in Sources */,
-				5CD8744725524D0E00040E7A /* ChatData.swift in Sources */,
+				5CD8748E255286BA00040E7A /* TeamInteractor.swift in Sources */,
 				5C6FAE0C252CE71B00F74AE6 /* PreferenceManager.swift in Sources */,
+				5CD8748F255286BA00040E7A /* NotifInteractor.swift in Sources */,
 				5CDE240F252C3CD900DF5601 /* ViewController.swift in Sources */,
 				5C70E52C254140DF00C45F76 /* BaseInteractor.swift in Sources */,
 				5C6FAE14252CE92500F74AE6 /* SecondExampleViewController.swift in Sources */,
+				5CD8748B255286BA00040E7A /* PlayerInteractor.swift in Sources */,
 				5C6FAE10252CE8C500F74AE6 /* R.generated.swift in Sources */,
-				5C577530254FB19200C1AD6D /* Post.swift in Sources */,
+				5CD87476255286A900040E7A /* Notif.swift in Sources */,
+				6540D9F925500D6E00701688 /* SearchResultVC.swift in Sources */,
 				5C70E531254144CA00C45F76 /* Users.swift in Sources */,
 				5CDE240B252C3CD900DF5601 /* AppDelegate.swift in Sources */,
-				5CD8744B2552634900040E7A /* RoomChatInteractor.swift in Sources */,
+				5CD8747E255286B200040E7A /* PlayerService.swift in Sources */,
 				5C70E53525414AB100C45F76 /* UserInteractor.swift in Sources */,
-				5C57751B2547C78D00C1AD6D /* Team.swift in Sources */,
+				5CD87477255286A900040E7A /* Player.swift in Sources */,
 				6540D9D52546881D00701688 /* searchForTeamVC.swift in Sources */,
+				5CD87482255286B200040E7A /* TeamService.swift in Sources */,
+				5CD87471255286A900040E7A /* Team.swift in Sources */,
+				5CD8748D255286BA00040E7A /* RoomChatInteractor.swift in Sources */,
 				5CDE240D252C3CD900DF5601 /* SceneDelegate.swift in Sources */,
 				5C6FAE01252CE5FA00F74AE6 /* MainViewController.swift in Sources */,
+				5CD8747F255286B200040E7A /* RoomChatService.swift in Sources */,
 				5C70E53325414AA300C45F76 /* UserService.swift in Sources */,
-				5C5775262547C79E00C1AD6D /* PlayerInteractor.swift in Sources */,
+				5CD87472255286A900040E7A /* Post.swift in Sources */,
+				5CD8748C255286BA00040E7A /* PostInteractor.swift in Sources */,
 				6540D9912546816E00701688 /* forgotPassVC.swift in Sources */,
-				5C57751C2547C78D00C1AD6D /* Player.swift in Sources */,
-				5C5775272547C79E00C1AD6D /* TeamInteractor.swift in Sources */,
-				5C5775212547C79600C1AD6D /* CommendationService.swift in Sources */,
 				5C70E539254152C800C45F76 /* Auth+Helper.swift in Sources */,
+				5CD87475255286A900040E7A /* ChatData.swift in Sources */,
+				5CD87480255286B200040E7A /* PostService.swift in Sources */,
+				5CD87483255286B200040E7A /* CommendationService.swift in Sources */,
 				5C70E54025427E7500C45F76 /* SignInViewController.swift in Sources */,
 				5C70E52F254142A200C45F76 /* AuthService.swift in Sources */,
-				5C577534254FB1E000C1AD6D /* PostInteractor.swift in Sources */,
-				5C5775222547C79600C1AD6D /* TeamService.swift in Sources */,
-				5C577536254FB23600C1AD6D /* NotifInteractor.swift in Sources */,
-				5C577532254FB1D600C1AD6D /* NotifService.swift in Sources */,
 				5C70E52325413EAE00C45F76 /* CoreService.swift in Sources */,
+				5CD87473255286A900040E7A /* RoomChat.swift in Sources */,
+				5CD8748A255286BA00040E7A /* CommendationInteractor.swift in Sources */,
 				5C6FAE04252CE64C00F74AE6 /* ExampleViewController.swift in Sources */,
+				6540DA032550128200701688 /* ResultTableViewCell.swift in Sources */,
 				6540D9C02546871600701688 /* searchPeopleVC.swift in Sources */,
+				5CD87481255286B200040E7A /* NotifService.swift in Sources */,
+				5CD87474255286A900040E7A /* Commendation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

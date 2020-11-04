@@ -30,6 +30,7 @@ class searchForTeamVC: UIViewController, UITextFieldDelegate{
     let test = ["asd","fgh","jkl","zxc","vbnm"]
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,10 +50,10 @@ class searchForTeamVC: UIViewController, UITextFieldDelegate{
         
         teamPickerViewDelegate()
         
-        searchForTeamVC().roleINpicker.tag = 1
-        searchForTeamVC().skillRatingPicker.tag = 2
-        searchForTeamVC().membersizePicker.tag = 3
-        searchForTeamVC().rolePicker.tag = 4
+        roleINpicker.tag = 1
+        skillRatingPicker.tag = 2
+        membersizePicker.tag = 3
+        rolePicker.tag = 4
         
         setPickerColor(picker: roleINpicker)
         setPickerColor(picker: skillRatingPicker)
@@ -70,14 +71,7 @@ class searchForTeamVC: UIViewController, UITextFieldDelegate{
                 txtfld.layer.cornerRadius = 5
         txtfld.frame.size.height = 44
         
-// use rightView //
-//        let imageView = UIImageView()
-//        let image = UIImage(systemName: "chevron.down")
-//        imageView.tintColor = UIColor(hex: "#ffce00ff")
-//        imageView.image = image
-//        imageView.widthAnchor.set(to: 30.0)
-//        txtfld.rightView = imageView
-//        txtfld.rightViewMode = .always
+        txtfld.tintColor = .clear
     }
     
     
@@ -98,19 +92,24 @@ class searchForTeamVC: UIViewController, UITextFieldDelegate{
     }
 
     func teamPickerViewDelegate(){
-        searchForTeamVC().roleINpicker.delegate = self
-        searchForTeamVC().roleINpicker.dataSource = self
-        searchForTeamVC().skillRatingPicker.delegate = self
-        searchForTeamVC().skillRatingPicker.dataSource = self
-        searchForTeamVC().membersizePicker.delegate = self
-        searchForTeamVC().membersizePicker.dataSource = self
-        searchForTeamVC().rolePicker.delegate = self
-        searchForTeamVC().rolePicker.dataSource = self
+        roleINpicker.delegate = self
+        roleINpicker.dataSource = self
+        skillRatingPicker.delegate = self
+        skillRatingPicker.dataSource = self
+        membersizePicker.delegate = self
+        membersizePicker.dataSource = self
+        rolePicker.delegate = self
+        rolePicker.dataSource = self
     }
 
     func setPickerColor(picker : UIPickerView){
         picker.setValue(UIColor.white, forKey: "textColor")
         picker.setValue(UIColor.black, forKey: "backgroundColor")
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
     }
     
 }
@@ -220,7 +219,18 @@ extension searchForTeamVC : UIPickerViewDelegate,UIPickerViewDataSource{
         }
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //
+        switch pickerView.tag {
+        case 1:
+            roleINTxtField.text = test[row]
+        case 2:
+            skillRatingTxtField.text = test[row]
+        case 3:
+            memberSizeTxtField.text = test[row]
+        case 4:
+            roleTxtField.text = test[row]
+        default:
+            print("no data")
+        }
     }
     
 }
