@@ -625,10 +625,16 @@ struct _R: Rswift.Validatable {
 
       let bundle = R.hostingBundle
       let name = "SearchPeople"
+      let searchPeople = StoryboardViewControllerResource<macrochallenge.searchPeopleVC>(identifier: "SearchPeople")
+
+      func searchPeople(_: Void = ()) -> macrochallenge.searchPeopleVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: searchPeople)
+      }
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+        if _R.storyboard.searchPeople().searchPeople() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'searchPeople' could not be loaded from storyboard 'SearchPeople' as 'macrochallenge.searchPeopleVC'.") }
       }
 
       fileprivate init() {}
