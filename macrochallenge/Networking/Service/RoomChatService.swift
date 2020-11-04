@@ -11,10 +11,6 @@ import Firebase
 import FirebaseFirestoreSwift
 
 protocol RoomChatServiceDelegate {
-    func fetchPosts(success: @escaping ([Post]) -> (Void), failure: @escaping (Error) -> (Void))
-    func fetchPost(id: String, success: @escaping (Post) -> (Void), failure: @escaping (Error) -> (Void))
-    func createPost(post: Post, success: @escaping (Post) -> (Void), failure: @escaping (Error) -> (Void))
-    func updatePost(post: Post, success: @escaping (Post) -> (Void), failure: @escaping (Error) -> (Void))
 }
 
 extension CoreService: RoomChatServiceDelegate {
