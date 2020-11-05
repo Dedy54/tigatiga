@@ -8,7 +8,7 @@
 
 import UIKit
 
-class searchPeopleVC: UIViewController, UITextFieldDelegate{
+class searchPeopleVC: UIViewController{
 
     @IBOutlet var viewContainer: UIView!
     @IBOutlet var applyButton: UIButton!
@@ -48,24 +48,18 @@ class searchPeopleVC: UIViewController, UITextFieldDelegate{
             viewContainer.addSubview(v)
             
         }
-        self.addChild(searchForPlayerVC())
-        self.addChild(searchForTeamVC())
+        self.addChild(searchPlayerVC)
+        self.addChild(searchTeamVC)
         viewContainer.bringSubviewToFront(views[0])
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            textField.resignFirstResponder()
-           return false
-       }
-    
-    
-    
-    
-    
-
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//            textField.resignFirstResponder()
+//           return false
+//       }
     
     @IBAction func switchViewAction(_ sender: UISegmentedControl) {
-        views[sender.selectedSegmentIndex].isUserInteractionEnabled = false
+        views[sender.selectedSegmentIndex].isUserInteractionEnabled = true
         self.viewContainer.bringSubviewToFront(views[sender.selectedSegmentIndex])
     }
     

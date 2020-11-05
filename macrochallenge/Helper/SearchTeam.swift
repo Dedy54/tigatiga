@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum GameTitle: String
+enum GameTitle: String, CaseIterable
 {
     case Valorant = "Valorant"
     case Overwatch = "Overwatch"
@@ -16,22 +16,26 @@ enum GameTitle: String
     case PUBG = "Player Unknowns Battle Ground"
 }
 
+enum GameTeamMember: Int, CaseIterable {
+    
+}
+
 class SwitchGame {
 //    static let shared  = SwitchGame()
     var roles: [String] = []
     var skills: [String] = []
-    func setTitle(_ title: String) {
+    func setTitle(_ title: GameTitle) {
         switch title {
-        case GameTitle.Valorant.rawValue:
+        case .Valorant:
             roles = ValorantRole.allCases.map { $0.rawValue }
             skills = ValorantSkill.allCases.map { $0.rawValue }
-        case GameTitle.Overwatch.rawValue:
+        case .Overwatch:
             roles = OverwatchRole.allCases.map { $0.rawValue }
-            skills = ValorantSkill.allCases.map { $0.rawValue }
-        case GameTitle.CSGO.rawValue:
+            skills = OverwatchSkill.allCases.map { $0.rawValue }
+        case .CSGO:
             roles = CounterStrikeRole.allCases.map { $0.rawValue }
             skills = CounterStrikeSkill.allCases.map { $0.rawValue }
-        case GameTitle.PUBG.rawValue:
+        case .PUBG:
             roles = PlayerUnknownsRole.allCases.map { $0.rawValue }
             skills = PlayerUnknownsSkill.allCases.map { $0.rawValue }
         default:

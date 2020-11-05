@@ -23,17 +23,20 @@ class searchForTeamVC: UIViewController, UITextFieldDelegate{
     
     let gameRoles = SwitchGame()
     let preferenceManager = PreferenceManager.instance
-    var roleINpicker = PickerDelegate()
-    var skillRatingPicker = PickerDelegate()
+    var roleINpicker = UIPickerView()
+    var skillRatingPicker = UIPickerView()
     var membersizePicker = UIPickerView()
-    var rolePicker = PickerDelegate()
+    var rolePicker = UIPickerView()
     let mabarYellow = UIColor(hex: "#ffce00ff")?.cgColor
     
-    let test = ["asd","fgh","jkl","zxc","vbnm"]
+    let test = ["1","fgh","jkl","zxc","vbnm"]
     
 //    var userInteractor: UserInteractor? = UserInteractor()
     var teamInteractor: TeamInteractor? = TeamInteractor()
-    
+    var selectedGame = GameTitle.Valorant
+    var skillRatingDelegate: PickerDelegate?
+    var roleInPickerDelegate: PickerDelegate?
+    var rolePickerDelegate: PickerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,18 +67,7 @@ class searchForTeamVC: UIViewController, UITextFieldDelegate{
         setPickerColor(picker: membersizePicker)
         setPickerColor(picker: rolePicker)
         
-        populatePicker()
-        
     }
-    
-    func populatePicker() {
-//        gameRoles.setTitle(UserDefaults.standard.string(forKey: "game")!)
-        gameRoles.setTitle("Valorant")
-        roleINpicker.set(strings: gameRoles.roles)
-        skillRatingPicker.set(strings: gameRoles.skills)
-        rolePicker.set(strings: gameRoles.roles)
-    }
-    
     
     public func setTextFieldShape2(txtfld : UITextField){
         txtfld.layer.borderWidth = 0.5
@@ -104,14 +96,19 @@ class searchForTeamVC: UIViewController, UITextFieldDelegate{
     }
 
     func teamPickerViewDelegate(){
-        roleINpicker.delegate = self
-        roleINpicker.dataSource = self
-        skillRatingPicker.delegate = self
-        skillRatingPicker.dataSource = self
+//        gameRoles.setTitle("Valorant")
+        gameRoles.setTitle(selectedGame)
+        roleInPickerDelegate  = PickerDelegate(strings: gameRoles.roles, textField: roleINTxtField)
+        roleINpicker.delegate = roleInPickerDelegate
+        roleINpicker.dataSource = roleInPickerDelegate
+        skillRatingDelegate  = PickerDelegate(strings: gameRoles.skills, textField: skillRatingTxtField)
+        skillRatingPicker.delegate = skillRatingDelegate
+        skillRatingPicker.dataSource = skillRatingDelegate
         membersizePicker.delegate = self
         membersizePicker.dataSource = self
-        rolePicker.delegate = self
-        rolePicker.dataSource = self
+        rolePickerDelegate = PickerDelegate(strings: gameRoles.roles, textField: roleTxtField)
+        rolePicker.delegate = rolePickerDelegate
+        rolePicker.dataSource = rolePickerDelegate
     }
 
     func setPickerColor(picker : UIPickerView){

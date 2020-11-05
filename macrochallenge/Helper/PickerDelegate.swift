@@ -9,13 +9,16 @@
 import Foundation
 import UIKit
 
-class PickerDelegate: UIPickerView, UIPickerViewDataSource, UIPickerViewDelegate {
+class PickerDelegate: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
     var strings: [String] = []
+    
+    var textField: UITextField
 
-//    init(strings: [String]) {
-//        self.strings = strings
-//        super.init()
-//    }
+    init(strings: [String], textField: UITextField) {
+        self.strings = strings
+        self.textField = textField
+        super.init()
+    }
     
     func set(strings: [String]) {
          self.strings = strings
@@ -31,5 +34,9 @@ class PickerDelegate: UIPickerView, UIPickerViewDataSource, UIPickerViewDelegate
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return strings[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        textField.text = strings[row]
     }
 }
