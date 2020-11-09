@@ -29,14 +29,12 @@ class searchForTeamVC: UIViewController, UITextFieldDelegate{
     var rolePicker = UIPickerView()
     let mabarYellow = UIColor(hex: "#ffce00ff")?.cgColor
     
-    let test = ["1","fgh","jkl","zxc","vbnm"]
-    
 //    var userInteractor: UserInteractor? = UserInteractor()
-    var teamInteractor: TeamInteractor? = TeamInteractor()
     var selectedGame = GameTitle.Valorant
     var skillRatingDelegate: PickerDelegate?
     var roleInPickerDelegate: PickerDelegate?
     var rolePickerDelegate: PickerDelegate?
+    var memberSizeDelegate: PickerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +43,6 @@ class searchForTeamVC: UIViewController, UITextFieldDelegate{
         skillRatingTxtField.inputView = skillRatingPicker
         memberSizeTxtField.inputView = membersizePicker
         roleTxtField.inputView = rolePicker
-        
         
         searchTeamTextField.delegate = self
         setTextFieldShape()
@@ -78,8 +75,6 @@ class searchForTeamVC: UIViewController, UITextFieldDelegate{
         txtfld.tintColor = .clear
     }
     
-    
-    
     public func setTextFieldShape(){
         
         searchTeamTextField.layer.borderWidth = 1
@@ -104,8 +99,9 @@ class searchForTeamVC: UIViewController, UITextFieldDelegate{
         skillRatingDelegate  = PickerDelegate(strings: gameRoles.skills, textField: skillRatingTxtField)
         skillRatingPicker.delegate = skillRatingDelegate
         skillRatingPicker.dataSource = skillRatingDelegate
-        membersizePicker.delegate = self
-        membersizePicker.dataSource = self
+        memberSizeDelegate = PickerDelegate(strings: gameRoles.teamMembers, textField: memberSizeTxtField)
+        membersizePicker.delegate = memberSizeDelegate
+        membersizePicker.dataSource = memberSizeDelegate
         rolePickerDelegate = PickerDelegate(strings: gameRoles.roles, textField: roleTxtField)
         rolePicker.delegate = rolePickerDelegate
         rolePicker.dataSource = rolePickerDelegate
@@ -120,56 +116,4 @@ class searchForTeamVC: UIViewController, UITextFieldDelegate{
         textField.resignFirstResponder()
         return false
     }
-    
-}
-
-extension searchForTeamVC : UIPickerViewDelegate,UIPickerViewDataSource{
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        switch pickerView.tag {
-        case 1:
-            return test.count
-        case 2:
-            return test.count
-        case 3:
-            return test.count
-        case 4:
-            return test.count
-        default:
-            return 1
-        }
-    }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        switch pickerView.tag {
-        case 1:
-            return test[row]
-        case 2:
-            return test[row]
-        case 3:
-            return test[row]
-        case 4:
-            return test[row]
-        default:
-            return "no data"
-        }
-    }
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        switch pickerView.tag {
-        case 1:
-            roleINTxtField.text = test[row]
-        case 2:
-            skillRatingTxtField.text = test[row]
-        case 3:
-            memberSizeTxtField.text = test[row]
-        case 4:
-            roleTxtField.text = test[row]
-        default:
-            print("no data")
-        }
-    }
-    
 }

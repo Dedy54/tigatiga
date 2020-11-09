@@ -90,6 +90,30 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
+  /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
+  struct segue {
+    /// This struct is generated for `searchPeopleVC`, and contains static references to 1 segues.
+    struct macrochallengeSearchPeopleVC {
+      /// Segue identifier `showResult`.
+      static let showResult: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, macrochallenge.searchPeopleVC, SearchResultVC> = Rswift.StoryboardSegueIdentifier(identifier: "showResult")
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `showResult`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showResult(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, macrochallenge.searchPeopleVC, SearchResultVC>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.macrochallengeSearchPeopleVC.showResult, segue: segue)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+  #endif
+
+  #if os(iOS) || os(tvOS)
   /// This `R.storyboard` struct is generated, and contains static references to 7 storyboards.
   struct storyboard {
     /// Storyboard `Example`.
