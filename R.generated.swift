@@ -114,12 +114,14 @@ struct R: Rswift.Validatable {
   #endif
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 7 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 8 storyboards.
   struct storyboard {
     /// Storyboard `Example`.
     static let example = _R.storyboard.example()
     /// Storyboard `Feed`.
     static let feed = _R.storyboard.feed()
+    /// Storyboard `Feeds`.
+    static let feeds = _R.storyboard.feeds()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Main`.
@@ -142,6 +144,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Feed", bundle: ...)`
     static func feed(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.feed)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Feeds", bundle: ...)`
+    static func feeds(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.feeds)
     }
     #endif
 
@@ -298,25 +307,45 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 6 images.
+  /// This `R.image` struct is generated, and contains static references to 9 images.
   struct image {
+    /// Image `Add`.
+    static let add = Rswift.ImageResource(bundle: R.hostingBundle, name: "Add")
     /// Image `Awesome`.
     static let awesome = Rswift.ImageResource(bundle: R.hostingBundle, name: "Awesome")
+    /// Image `Filter`.
+    static let filter = Rswift.ImageResource(bundle: R.hostingBundle, name: "Filter")
     /// Image `Friendly`.
     static let friendly = Rswift.ImageResource(bundle: R.hostingBundle, name: "Friendly")
     /// Image `Great Work`.
     static let greatWork = Rswift.ImageResource(bundle: R.hostingBundle, name: "Great Work")
     /// Image `Icon`.
     static let icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "Icon")
+    /// Image `Line 1`.
+    static let line1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Line 1")
     /// Image `Team Leader`.
     static let teamLeader = Rswift.ImageResource(bundle: R.hostingBundle, name: "Team Leader")
     /// Image `pp`.
     static let pp = Rswift.ImageResource(bundle: R.hostingBundle, name: "pp")
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Add", bundle: ..., traitCollection: ...)`
+    static func add(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.add, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "Awesome", bundle: ..., traitCollection: ...)`
     static func awesome(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.awesome, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Filter", bundle: ..., traitCollection: ...)`
+    static func filter(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.filter, compatibleWith: traitCollection)
     }
     #endif
 
@@ -338,6 +367,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "Icon", bundle: ..., traitCollection: ...)`
     static func icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.icon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Line 1", bundle: ..., traitCollection: ...)`
+    static func line1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.line1, compatibleWith: traitCollection)
     }
     #endif
 
@@ -479,8 +515,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 3 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `postCell`.
+    static let postCell: Rswift.ReuseIdentifier<PostTableViewCell> = Rswift.ReuseIdentifier(identifier: "postCell")
+    /// Reuse identifier `recommendedCell`.
+    static let recommendedCell: Rswift.ReuseIdentifier<RecommendedCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "recommendedCell")
     /// Reuse identifier `resultCell`.
     static let resultCell: Rswift.ReuseIdentifier<ResultTableViewCell> = Rswift.ReuseIdentifier(identifier: "resultCell")
 
@@ -613,6 +653,9 @@ struct _R: Rswift.Validatable {
       try feed.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try feeds.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try launchScreen.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -650,10 +693,35 @@ struct _R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    struct feed: Rswift.StoryboardResourceType, Rswift.Validatable {
+    struct feed: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = FeedVC
+
+      let bundle = R.hostingBundle
+      let feedVC = StoryboardViewControllerResource<FeedVC>(identifier: "FeedVC")
+      let name = "Feed"
+
+      func feedVC(_: Void = ()) -> FeedVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: feedVC)
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Add", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Add' is used in storyboard 'Feed', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Filter", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Filter' is used in storyboard 'Feed', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Line 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Line 1' is used in storyboard 'Feed', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.feed().feedVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'feedVC' could not be loaded from storyboard 'Feed' as 'FeedVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct feeds: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let feedViewController = StoryboardViewControllerResource<FeedViewController>(identifier: "FeedViewController")
-      let name = "Feed"
+      let name = "Feeds"
 
       func feedViewController(_: Void = ()) -> FeedViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: feedViewController)
@@ -662,7 +730,7 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
-        if _R.storyboard.feed().feedViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'feedViewController' could not be loaded from storyboard 'Feed' as 'FeedViewController'.") }
+        if _R.storyboard.feeds().feedViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'feedViewController' could not be loaded from storyboard 'Feeds' as 'FeedViewController'.") }
       }
 
       fileprivate init() {}
