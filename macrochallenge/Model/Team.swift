@@ -12,11 +12,11 @@ import FirebaseFirestoreSwift
 struct Team: Codable {
     var id: String?
     var name: String?
-    var description: Int?
+    var description: String?
     var members: [Player]?
     var maxMember: Int?
-    var skillRating: Int?
-    var game: Int?
+    var skillRating: String?
+    var game: String?
     var dateCreated: Date?
     var lookingForMember: Bool?
     
