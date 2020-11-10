@@ -53,16 +53,6 @@ class searchPeopleVC: UIViewController, UITextFieldDelegate{
         viewContainer.bringSubviewToFront(views[0])
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            textField.resignFirstResponder()
-           return false
-       }
-    
-    
-    
-    
-    
-
     
     @IBAction func switchViewAction(_ sender: UISegmentedControl) {
         views[sender.selectedSegmentIndex].isUserInteractionEnabled = false
