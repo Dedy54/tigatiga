@@ -18,6 +18,8 @@ struct Player: Codable {
     var lookingForGroup: Bool?
     var imageProfile: String?
     var user: Users?
+    var skillRating: String?
+    var role: String?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -27,5 +29,7 @@ struct Player: Codable {
         case lookingForGroup
         case imageProfile
         case user
+        case skillRating
+        case role
     }
 }
