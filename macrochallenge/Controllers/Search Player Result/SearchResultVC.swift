@@ -11,7 +11,7 @@ import UIKit
 class SearchResultVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let test = ["abc","asd","asda","asd","asd"]
-    let magnifyingGlass = UIImage(systemName: "magnifiyingglass")
+    let magnifyingGlass = UIImage(systemName: "magnifyingglass")
     
     @IBOutlet weak var resultTableView: UITableView!
     
@@ -27,12 +27,24 @@ class SearchResultVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.title = "Result"
         
         magnifyingGlass?.withTintColor(UIColor(hex: "#ffce00ff")!)
-        let magIcon = UIBarButtonItem(image: magnifyingGlass, style: .plain, target: self, action: nil)
-        self.navigationController!.navigationItem.rightBarButtonItem  = magIcon
+//        let magIcon = UIBarButtonItem(image: magnifyingGlass, style: .plain, target: self, action: nil)
+//        self.navigationController!.navigationItem.rightBarButtonItem  = magIcon
+        let button1 = UIBarButtonItem(image: magnifyingGlass , style: .plain, target: self, action: #selector(tapped))
+        self.navigationItem.rightBarButtonItem  = button1
         
         overrideUserInterfaceStyle = .dark
         
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func tapped() {
+        performSegue(withIdentifier: "searchPeopleSegue", sender: nil)
+    }
+    
+    @IBAction func unwindToSearchResult(_ unwindSegue: UIStoryboardSegue) {
+//        let sourceViewController = unwindSegue.source
+        // Use data from the view controller which initiated the unwind segue
+        resultTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

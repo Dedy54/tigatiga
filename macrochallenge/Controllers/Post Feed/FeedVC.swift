@@ -33,7 +33,8 @@ class FeedVC: UIViewController{
          UIImage(named: "pp")!,
          UIImage(named: "pp")!,]
     
-    
+    var posts: [Post] = []
+    let postInteractor: PostInteractor? = PostInteractor()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +51,16 @@ class FeedVC: UIViewController{
         setUIBarItemLeft()
         setUIBarItemRight()
         
+        getPost()
+        
+    }
+    
+    func getPost() {
+        postInteractor?.fetchPosts(success: { (postResults) -> (Void) in
+            self.posts = postResults
+        }, failure: { (err) -> (Void) in
+            print("failed to get post data with error \(err)")
+        })
     }
     
     func setUIBarItemLeft(){
@@ -100,10 +111,9 @@ extension FeedVC : UICollectionViewDelegate, UICollectionViewDataSource{
 
 extension FeedVC: UITableViewDelegate,UITableViewDataSource{
     
-    
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return posts.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 172
@@ -116,7 +126,7 @@ extension FeedVC: UITableViewDelegate,UITableViewDataSource{
         cell.feedProfileImage.image = UIImage(named: "pp")
         cell.feedProfileImage.layer.cornerRadius = cell.feedProfileImage.frame.height / 2
         
-        cell.feedNameLabel.text = "@PlayerorTeamName"
+        cell.feedNameLabel.text = posts[indexPath.row].name
         cell.feedNameLabel.font = UIFont(name: "Hind-Bold", size: 12)
         
         cell.feedLookingForLabel.text = "Looking For Group"

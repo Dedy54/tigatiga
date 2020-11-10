@@ -90,12 +90,31 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 2 view controllers.
   struct segue {
-    /// This struct is generated for `searchPeopleVC`, and contains static references to 1 segues.
+    /// This struct is generated for `SearchResultVC`, and contains static references to 1 segues.
+    struct searchResultVC {
+      /// Segue identifier `searchPeopleSegue`.
+      static let searchPeopleSegue: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, SearchResultVC, macrochallenge.searchPeopleVC> = Rswift.StoryboardSegueIdentifier(identifier: "searchPeopleSegue")
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `searchPeopleSegue`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func searchPeopleSegue(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, SearchResultVC, macrochallenge.searchPeopleVC>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.searchResultVC.searchPeopleSegue, segue: segue)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
+    /// This struct is generated for `searchPeopleVC`, and contains static references to 2 segues.
     struct macrochallengeSearchPeopleVC {
       /// Segue identifier `showResult`.
       static let showResult: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, macrochallenge.searchPeopleVC, SearchResultVC> = Rswift.StoryboardSegueIdentifier(identifier: "showResult")
+      /// Segue identifier `unwindToResult`.
+      static let unwindToResult: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, macrochallenge.searchPeopleVC, UIKit.UIViewController> = Rswift.StoryboardSegueIdentifier(identifier: "unwindToResult")
 
       #if os(iOS) || os(tvOS)
       /// Optionally returns a typed version of segue `showResult`.
@@ -103,6 +122,15 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func showResult(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, macrochallenge.searchPeopleVC, SearchResultVC>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.macrochallengeSearchPeopleVC.showResult, segue: segue)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `unwindToResult`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func unwindToResult(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, macrochallenge.searchPeopleVC, UIKit.UIViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.macrochallengeSearchPeopleVC.unwindToResult, segue: segue)
       }
       #endif
 

@@ -22,7 +22,7 @@ class searchPeopleVC: UIViewController{
     
     let playerInteractor: PlayerInteractor? = PlayerInteractor()
     let teamInteractor: TeamInteractor? = TeamInteractor()
-    var selectedView: Int?
+    var selectedView: Int? = 0
     var players: [Player] = []
     var teams: [Team] = []
     
@@ -81,7 +81,7 @@ class searchPeopleVC: UIViewController{
                 print("call player interactor with data ", roleInNeed, avgSkillRating)
                 playerInteractor?.filterPlayers(teamName: teamName, roleInNeed: roleInNeed, avgSkillRating: avgSkillRating, memberSize: memberSize, role: role, success: { (playerResults) -> (Void) in
                     self.players = playerResults
-                    self.performSegue(withIdentifier: "showResult", sender: nil)
+                    self.performSegue(withIdentifier: "unwindToResult", sender: nil)
                 }, failure: { (err) -> (Void) in
                      print("failed to get player data with error \(err)")
                 })
@@ -94,7 +94,7 @@ class searchPeopleVC: UIViewController{
                 print("call team interactor with data ", roleInNeed, avgSkillRating, memberSize, role)
                 teamInteractor?.filterTeams(teamName: teamName, roleInNeed: roleInNeed, avgSkillRating: avgSkillRating, memberSize: memberSize, role: role, success: { (teamResults) -> (Void) in
                     self.teams = teamResults
-                    self.performSegue(withIdentifier: "showResult", sender: nil)
+                    self.performSegue(withIdentifier: "unwindToResult", sender: nil)
                 }, failure: { (err) -> (Void) in
                     print("failed to get team data with error \(err)")
                 })
@@ -105,7 +105,7 @@ class searchPeopleVC: UIViewController{
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showResults"
+        if segue.identifier == "unwindToResult"
         {
             let searchResultVC = segue.destination as! SearchResultVC
             searchResultVC.teams = teams
