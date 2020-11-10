@@ -21,15 +21,20 @@ class searchForTeamVC: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var searchTeamTextField: UITextField!
     
     
+    let gameRoles = SwitchGame()
+    let preferenceManager = PreferenceManager.instance
     var roleINpicker = UIPickerView()
     var skillRatingPicker = UIPickerView()
     var membersizePicker = UIPickerView()
     var rolePicker = UIPickerView()
     let mabarYellow = UIColor(hex: "#ffce00ff")?.cgColor
     
-    let test = ["asd","fgh","jkl","zxc","vbnm"]
-    
-    
+//    var userInteractor: UserInteractor? = UserInteractor()
+    var selectedGame = GameTitle.Valorant
+    var skillRatingDelegate: PickerDelegate?
+    var roleInPickerDelegate: PickerDelegate?
+    var rolePickerDelegate: PickerDelegate?
+    var memberSizeDelegate: PickerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +43,6 @@ class searchForTeamVC: UIViewController, UITextFieldDelegate{
         skillRatingTxtField.inputView = skillRatingPicker
         memberSizeTxtField.inputView = membersizePicker
         roleTxtField.inputView = rolePicker
-        
         
         searchTeamTextField.delegate = self
         setTextFieldShape()
@@ -60,21 +64,16 @@ class searchForTeamVC: UIViewController, UITextFieldDelegate{
         setPickerColor(picker: membersizePicker)
         setPickerColor(picker: rolePicker)
         
-        
-        
     }
-    
     
     public func setTextFieldShape2(txtfld : UITextField){
         txtfld.layer.borderWidth = 0.5
         txtfld.layer.borderColor = mabarYellow
-                txtfld.layer.cornerRadius = 5
+        txtfld.layer.cornerRadius = 5
         txtfld.frame.size.height = 44
         
         txtfld.tintColor = .clear
     }
-    
-    
     
     public func setTextFieldShape(){
         
@@ -92,14 +91,20 @@ class searchForTeamVC: UIViewController, UITextFieldDelegate{
     }
 
     func teamPickerViewDelegate(){
-        roleINpicker.delegate = self
-        roleINpicker.dataSource = self
-        skillRatingPicker.delegate = self
-        skillRatingPicker.dataSource = self
-        membersizePicker.delegate = self
-        membersizePicker.dataSource = self
-        rolePicker.delegate = self
-        rolePicker.dataSource = self
+//        gameRoles.setTitle("Valorant")
+        gameRoles.setTitle(selectedGame)
+        roleInPickerDelegate  = PickerDelegate(strings: gameRoles.roles, textField: roleINTxtField)
+        roleINpicker.delegate = roleInPickerDelegate
+        roleINpicker.dataSource = roleInPickerDelegate
+        skillRatingDelegate  = PickerDelegate(strings: gameRoles.skills, textField: skillRatingTxtField)
+        skillRatingPicker.delegate = skillRatingDelegate
+        skillRatingPicker.dataSource = skillRatingDelegate
+        memberSizeDelegate = PickerDelegate(strings: gameRoles.teamMembers, textField: memberSizeTxtField)
+        membersizePicker.delegate = memberSizeDelegate
+        membersizePicker.dataSource = memberSizeDelegate
+        rolePickerDelegate = PickerDelegate(strings: gameRoles.roles, textField: roleTxtField)
+        rolePicker.delegate = rolePickerDelegate
+        rolePicker.dataSource = rolePickerDelegate
     }
 
     func setPickerColor(picker : UIPickerView){
@@ -111,126 +116,4 @@ class searchForTeamVC: UIViewController, UITextFieldDelegate{
         textField.resignFirstResponder()
         return false
     }
-    
-}
-
-
-
-extension UIColor {
-    public convenience init?(hex: String) {
-        let r, g, b, a: CGFloat
-
-        if hex.hasPrefix("#") {
-            let start = hex.index(hex.startIndex, offsetBy: 1)
-            let hexColor = String(hex[start...])
-
-            if hexColor.count == 8 {
-                let scanner = Scanner(string: hexColor)
-                var hexNumber: UInt64 = 0
-
-                if scanner.scanHexInt64(&hexNumber) {
-                    r = CGFloat((hexNumber & 0xff000000) >> 24) / 255
-                    g = CGFloat((hexNumber & 0x00ff0000) >> 16) / 255
-                    b = CGFloat((hexNumber & 0x0000ff00) >> 8) / 255
-                    a = CGFloat(hexNumber & 0x000000ff) / 255
-
-                    self.init(red: r, green: g, blue: b, alpha: a)
-                    return
-                }
-            }
-        }
-
-        return nil
-    }
-}
-
-extension UITextField {
-    func setLeftPaddingPoints(_ amount:CGFloat){
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
-        self.leftView = paddingView
-        self.leftViewMode = .always
-    }
-    func setRightPaddingPoints(_ amount:CGFloat) {
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
-        self.rightView = paddingView
-        self.rightViewMode = .always
-    }
-}
-
-extension UIViewController {
-    func hideKeyboardWhenTapped() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
-    
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
-}
-
-extension NSLayoutDimension {
-
-@discardableResult
-func set(
-        to constant: CGFloat,
-        priority: UILayoutPriority = .required
-        ) -> NSLayoutConstraint {
-
-        let cons = constraint(equalToConstant: constant)
-        cons.priority = priority
-        cons.isActive = true
-        return cons
-    }
-}
-
-extension searchForTeamVC : UIPickerViewDelegate,UIPickerViewDataSource{
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        switch pickerView.tag {
-        case 1:
-            return test.count
-        case 2:
-            return test.count
-        case 3:
-            return test.count
-        case 4:
-            return test.count
-        default:
-            return 1
-        }
-    }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        switch pickerView.tag {
-        case 1:
-            return test[row]
-        case 2:
-            return test[row]
-        case 3:
-            return test[row]
-        case 4:
-            return test[row]
-        default:
-            return "no data"
-        }
-    }
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        switch pickerView.tag {
-        case 1:
-            roleINTxtField.text = test[row]
-        case 2:
-            skillRatingTxtField.text = test[row]
-        case 3:
-            memberSizeTxtField.text = test[row]
-        case 4:
-            roleTxtField.text = test[row]
-        default:
-            print("no data")
-        }
-    }
-    
 }

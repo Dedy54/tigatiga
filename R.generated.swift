@@ -90,12 +90,38 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 7 storyboards.
+  /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
+  struct segue {
+    /// This struct is generated for `searchPeopleVC`, and contains static references to 1 segues.
+    struct macrochallengeSearchPeopleVC {
+      /// Segue identifier `showResult`.
+      static let showResult: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, macrochallenge.searchPeopleVC, SearchResultVC> = Rswift.StoryboardSegueIdentifier(identifier: "showResult")
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `showResult`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showResult(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, macrochallenge.searchPeopleVC, SearchResultVC>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.macrochallengeSearchPeopleVC.showResult, segue: segue)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+  #endif
+
+  #if os(iOS) || os(tvOS)
+  /// This `R.storyboard` struct is generated, and contains static references to 8 storyboards.
   struct storyboard {
     /// Storyboard `Example`.
     static let example = _R.storyboard.example()
     /// Storyboard `Feed`.
     static let feed = _R.storyboard.feed()
+    /// Storyboard `Feeds`.
+    static let feeds = _R.storyboard.feeds()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Main`.
@@ -118,6 +144,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Feed", bundle: ...)`
     static func feed(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.feed)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Feeds", bundle: ...)`
+    static func feeds(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.feeds)
     }
     #endif
 
@@ -392,8 +425,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 6 nibs.
   struct nib {
+    /// Nib `GameDetailViewController`.
+    static let gameDetailViewController = _R.nib._GameDetailViewController()
+    /// Nib `GameTableViewCell`.
+    static let gameTableViewCell = _R.nib._GameTableViewCell()
     /// Nib `SecondExampleViewController`.
     static let secondExampleViewController = _R.nib._SecondExampleViewController()
     /// Nib `SignInViewController`.
@@ -402,6 +439,22 @@ struct R: Rswift.Validatable {
     static let searchForPlayerVC = _R.nib._searchForPlayerVC()
     /// Nib `searchForTeamVC`.
     static let searchForTeamVC = _R.nib._searchForTeamVC()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GameDetailViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gameDetailViewController) instead")
+    static func gameDetailViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gameDetailViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GameTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gameTableViewCell) instead")
+    static func gameTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gameTableViewCell)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "SecondExampleViewController", in: bundle)`
@@ -434,6 +487,14 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.searchForTeamVC)
     }
     #endif
+
+    static func gameDetailViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.gameDetailViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func gameTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GameTableViewCell? {
+      return R.nib.gameTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GameTableViewCell
+    }
 
     static func searchForPlayerVC(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.searchForPlayerVC.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
@@ -494,6 +555,28 @@ struct _R: Rswift.Validatable {
     static func validate() throws {
       try _searchForPlayerVC.validate()
       try _searchForTeamVC.validate()
+    }
+
+    struct _GameDetailViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "GameDetailViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GameTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "GameTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GameTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GameTableViewCell
+      }
+
+      fileprivate init() {}
     }
 
     struct _SecondExampleViewController: Rswift.NibResourceType {
@@ -570,6 +653,9 @@ struct _R: Rswift.Validatable {
       try feed.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try feeds.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try launchScreen.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -611,7 +697,12 @@ struct _R: Rswift.Validatable {
       typealias InitialController = FeedVC
 
       let bundle = R.hostingBundle
+      let feedVC = StoryboardViewControllerResource<FeedVC>(identifier: "FeedVC")
       let name = "Feed"
+
+      func feedVC(_: Void = ()) -> FeedVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: feedVC)
+      }
 
       static func validate() throws {
         if UIKit.UIImage(named: "Add", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Add' is used in storyboard 'Feed', but couldn't be loaded.") }
@@ -619,6 +710,27 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "Line 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Line 1' is used in storyboard 'Feed', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+        if _R.storyboard.feed().feedVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'feedVC' could not be loaded from storyboard 'Feed' as 'FeedVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct feeds: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let feedViewController = StoryboardViewControllerResource<FeedViewController>(identifier: "FeedViewController")
+      let name = "Feeds"
+
+      func feedViewController(_: Void = ()) -> FeedViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: feedViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.feeds().feedViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'feedViewController' could not be loaded from storyboard 'Feeds' as 'FeedViewController'.") }
       }
 
       fileprivate init() {}

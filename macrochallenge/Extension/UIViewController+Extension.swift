@@ -36,3 +36,19 @@ extension UIViewController {
         return UIScreen.main.bounds.width
     }
 }
+
+extension UIViewController {
+    func hideKeyboardWhenTapped() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
+//extension UIViewController: UITableViewDataSource, UIScrollViewDelegate, UITableViewDelegate, UISearchBarDelegate {
+//    
+//}

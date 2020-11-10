@@ -15,6 +15,8 @@ class SearchResultVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var resultTableView: UITableView!
     
+    var teams: [Team] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,7 +36,7 @@ class SearchResultVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return test.count
+        return teams.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -47,11 +49,12 @@ class SearchResultVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.cellView.layer.cornerRadius = 5
         cell.profilePicResult.layer.cornerRadius = cell.profilePicResult.frame.height / 2
         
-        cell.resultNameLabel.text = test[indexPath.row]
+        cell.resultNameLabel.text = teams[indexPath.row].name
         cell.resultNameLabel.font = UIFont(name: "Hind-Bold", size: 16)
         cell.profilePicResult.image = UIImage(named: "pp")
-        cell.roleResultLabel.text = test[indexPath.row]
+        cell.roleResultLabel.text = String(teams[indexPath.row].description!)
         cell.roleResultLabel.font = UIFont(name: "Hind-Regular", size: 16)
+        cell.skillRatingResultLabel.text = String(teams[indexPath.row].skillRating!)
         cell.skillRatingResultLabel.font = UIFont(name: "Hind-Regular", size: 16)
         
         return cell

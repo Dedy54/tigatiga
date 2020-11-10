@@ -27,6 +27,11 @@ class searchForPlayerVC: UIViewController, UITextFieldDelegate {
     
     var mabarYellowTranspararent = UIColor(hex: "#ffce000a")
     
+    let gameRoles = SwitchGame()
+    let selectedGame = GameTitle.Valorant
+    var rolePlayerDelegate: PickerDelegate?
+    var skillRatingPlayerDelegate: PickerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,21 +51,28 @@ class searchForPlayerVC: UIViewController, UITextFieldDelegate {
         searchForTeamVC().setTextFieldShape2(txtfld: skillRatingPlayerTextField)
         searchForTeamVC().setTextFieldShape2(txtfld: rolePlayerTextField)
         
-        rolePlayerPickerView.delegate = self
-        rolePlayerPickerView.dataSource = self
-        skillRatingPlayerPickerView.delegate = self
-        skillRatingPlayerPickerView.dataSource = self
+        skillRatingPlayerTextField.inputView = skillRatingPlayerPickerView
+        rolePlayerTextField.inputView = rolePlayerPickerView
+        
+        preparePicker()
         
         skillRatingPlayerPickerView.tag = 1
         rolePlayerPickerView.tag = 2
-        
-        skillRatingPlayerTextField.inputView = skillRatingPlayerPickerView
-        rolePlayerTextField.inputView = rolePlayerPickerView
         
         searchForTeamVC().setPickerColor(picker: skillRatingPlayerPickerView)
         searchForTeamVC().setPickerColor(picker: rolePlayerPickerView)
         
         
+    }
+    
+    func preparePicker() {
+        gameRoles.setTitle(selectedGame)
+        rolePlayerDelegate = PickerDelegate(strings: gameRoles.roles, textField: rolePlayerTextField)
+        rolePlayerPickerView.delegate = rolePlayerDelegate
+        rolePlayerPickerView.dataSource = rolePlayerDelegate
+        skillRatingPlayerDelegate = PickerDelegate(strings: gameRoles.skills, textField: skillRatingPlayerTextField)
+        skillRatingPlayerPickerView.delegate = skillRatingPlayerDelegate
+        skillRatingPlayerPickerView.dataSource = skillRatingPlayerDelegate
     }
     
     @objc func actionAwesomeBtn(_ sender: UIButton) {
@@ -131,41 +143,6 @@ class searchForPlayerVC: UIViewController, UITextFieldDelegate {
         else{
             sender.backgroundColor = nil
         }
-    }
-    
-}
-
-extension UIButton {
-    
-    func centerVertically(padding: CGFloat = 6.0) {
-        guard
-            let imageViewSize = self.imageView?.frame.size,
-            let titleLabelSize = self.titleLabel?.frame.size else {
-            return
-        }
-        
-        let totalHeight = imageViewSize.height + titleLabelSize.height + padding
-        
-        self.imageEdgeInsets = UIEdgeInsets(
-            top: max(0, -(totalHeight - imageViewSize.height)),
-            left: 0.0,
-            bottom: 0.0,
-            right: -titleLabelSize.width
-        )
-        
-        self.titleEdgeInsets = UIEdgeInsets(
-            top: 0.0,
-            left: -imageViewSize.width,
-            bottom: -(totalHeight - titleLabelSize.height),
-            right: 0.0
-        )
-        
-        self.contentEdgeInsets = UIEdgeInsets(
-            top: 0.0,
-            left: 0.0,
-            bottom: titleLabelSize.height,
-            right: 0.0
-        )
     }
     
 }

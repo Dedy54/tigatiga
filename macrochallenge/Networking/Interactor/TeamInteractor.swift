@@ -60,6 +60,7 @@ class TeamInteractor: BaseInteractor, TeamInteractorDelegate {
     
     // Mark: Func not yet
     func filterTeams(teamName: String, roleInNeed: String, avgSkillRating: String, memberSize: String, role: String, success: @escaping ([Team]) -> (Void), failure: @escaping (Error) -> (Void)) {
+        print("service fetch teams with data ", roleInNeed, avgSkillRating, memberSize, role)
         service.fetchTeams(success: { (teams) -> (Void) in
             print("teams : \(teams)")
             self.teams = teams
