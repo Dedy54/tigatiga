@@ -69,4 +69,13 @@ class PlayerInteractor: BaseInteractor, PlayerInteractorDelegate {
         }
     }
     
+    func currentPlayer(success: @escaping (Player) -> (Void), failure: @escaping (Error) -> (Void)) {
+        let uid = Auth.auth().currentUser?.uid ?? "0"
+        service.fetchPlayer(id: uid, success: { (player) -> (Void) in
+            self.player = player
+            success(player)
+        }) { (error) -> (Void) in
+            failure(error)
+        }
+    }
 }

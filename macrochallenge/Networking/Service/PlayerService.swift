@@ -36,7 +36,7 @@ extension CoreService {
     func fetchPlayer(id: String, success: @escaping (Player) -> (Void), failure: @escaping (Error) -> (Void)) {
         var players = [Player]()
         db.collection("players")
-            .whereField("id", isEqualTo: id ?? "")
+            .whereField("id", isEqualTo: id)
             .addSnapshotListener { (querySnapshot, error) in
                 if let querySnapshot = querySnapshot {
                     players = querySnapshot.documents.compactMap { document in
@@ -59,10 +59,7 @@ extension CoreService {
     
     func createPlayer(player: Player, success: @escaping (Player) -> (Void), failure: @escaping (Error) -> (Void)) {
         do {
-            let id = db.collection("players").document().documentID
-            var addedPlayer = player
-            addedPlayer.id = id
-            let _ = try db.collection("players").document(id).setData(from: addedPlayer)
+            let _ = try db.collection("players").document(player.id ?? "0").setData(from: player)
             success(player)
             return
         } catch {
