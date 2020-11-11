@@ -55,6 +55,7 @@ class AuthInteractor: BaseInteractor {
         service.signInWithApple(currentNonce: currentNonce, credential: credential, success: { (authDataResult) -> (Void) in
             self.authDataResult = authDataResult
             let email = authDataResult.user.email ?? ""
+            let displayName = authDataResult.user.displayName ?? ""
             let uid = Auth.auth().currentUser?.uid
             self.service.fetchUser(email: email, success: { (fetchUser) -> (Void) in
                 if fetchUser.uid == nil {
@@ -63,6 +64,12 @@ class AuthInteractor: BaseInteractor {
                     tempUser.uid = uid
                     self.service.createUser(users: tempUser, success: { (createUser) -> (Void) in
                         self.user = createUser
+                        let player = Player(id: uid, name: displayName, experience: "experience", commendations: nil, lookingForGroup: true, imageProfile: "", user: tempUser, skillRating: "skillRating", role: "role")
+                        self.service.createPlayer(player: player, success: { (player) -> (Void) in
+                            print(player)
+                        }) { (error) -> (Void) in
+                            print(error)
+                        }
                         success(authDataResult, createUser)
                     }) { (error) -> (Void) in
                         failure(error)

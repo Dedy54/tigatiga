@@ -71,7 +71,7 @@ extension CoreService: PostServiceDelegate {
             var addedPosts = post
             addedPosts.id = id
             let _ = try db.collection("posts").document(id).setData(from: addedPosts)
-            success(post)
+            success(addedPosts)
             return
         } catch {
             failure(error)
