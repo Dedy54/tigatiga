@@ -142,7 +142,7 @@ struct R: Rswift.Validatable {
   #endif
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 8 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 9 storyboards.
   struct storyboard {
     /// Storyboard `Example`.
     static let example = _R.storyboard.example()
@@ -154,6 +154,8 @@ struct R: Rswift.Validatable {
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Main`.
     static let main = _R.storyboard.main()
+    /// Storyboard `ProfilePeople`.
+    static let profilePeople = _R.storyboard.profilePeople()
     /// Storyboard `SearchPeople`.
     static let searchPeople = _R.storyboard.searchPeople()
     /// Storyboard `SearchResult`.
@@ -193,6 +195,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Main", bundle: ...)`
     static func main(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.main)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "ProfilePeople", bundle: ...)`
+    static func profilePeople(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.profilePeople)
     }
     #endif
 
@@ -335,7 +344,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 9 images.
+  /// This `R.image` struct is generated, and contains static references to 12 images.
   struct image {
     /// Image `Add`.
     static let add = Rswift.ImageResource(bundle: R.hostingBundle, name: "Add")
@@ -353,6 +362,12 @@ struct R: Rswift.Validatable {
     static let line1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Line 1")
     /// Image `Team Leader`.
     static let teamLeader = Rswift.ImageResource(bundle: R.hostingBundle, name: "Team Leader")
+    /// Image `background`.
+    static let background = Rswift.ImageResource(bundle: R.hostingBundle, name: "background")
+    /// Image `circle`.
+    static let circle = Rswift.ImageResource(bundle: R.hostingBundle, name: "circle")
+    /// Image `menu`.
+    static let menu = Rswift.ImageResource(bundle: R.hostingBundle, name: "menu")
     /// Image `pp`.
     static let pp = Rswift.ImageResource(bundle: R.hostingBundle, name: "pp")
 
@@ -413,6 +428,27 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "background", bundle: ..., traitCollection: ...)`
+    static func background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.background, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "circle", bundle: ..., traitCollection: ...)`
+    static func circle(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.circle, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "menu", bundle: ..., traitCollection: ...)`
+    static func menu(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.menu, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "pp", bundle: ..., traitCollection: ...)`
     static func pp(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.pp, compatibleWith: traitCollection)
@@ -453,7 +489,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 6 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 8 nibs.
   struct nib {
     /// Nib `GameDetailViewController`.
     static let gameDetailViewController = _R.nib._GameDetailViewController()
@@ -463,6 +499,10 @@ struct R: Rswift.Validatable {
     static let secondExampleViewController = _R.nib._SecondExampleViewController()
     /// Nib `SignInViewController`.
     static let signInViewController = _R.nib._SignInViewController()
+    /// Nib `profileForMeVC`.
+    static let profileForMeVC = _R.nib._profileForMeVC()
+    /// Nib `profileForMyTeamVC`.
+    static let profileForMyTeamVC = _R.nib._profileForMyTeamVC()
     /// Nib `searchForPlayerVC`.
     static let searchForPlayerVC = _R.nib._searchForPlayerVC()
     /// Nib `searchForTeamVC`.
@@ -501,6 +541,22 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "profileForMeVC", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.profileForMeVC) instead")
+    static func profileForMeVC(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.profileForMeVC)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "profileForMyTeamVC", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.profileForMyTeamVC) instead")
+    static func profileForMyTeamVC(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.profileForMyTeamVC)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "searchForPlayerVC", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.searchForPlayerVC) instead")
     static func searchForPlayerVC(_: Void = ()) -> UIKit.UINib {
@@ -522,6 +578,14 @@ struct R: Rswift.Validatable {
 
     static func gameTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GameTableViewCell? {
       return R.nib.gameTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GameTableViewCell
+    }
+
+    static func profileForMeVC(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> profileForMeVC? {
+      return R.nib.profileForMeVC.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? profileForMeVC
+    }
+
+    static func profileForMyTeamVC(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> profileForMyTeamVC? {
+      return R.nib.profileForMyTeamVC.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? profileForMyTeamVC
     }
 
     static func searchForPlayerVC(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -581,6 +645,8 @@ struct _R: Rswift.Validatable {
   #if os(iOS) || os(tvOS)
   struct nib: Rswift.Validatable {
     static func validate() throws {
+      try _profileForMeVC.validate()
+      try _profileForMyTeamVC.validate()
       try _searchForPlayerVC.validate()
       try _searchForTeamVC.validate()
     }
@@ -624,6 +690,48 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _profileForMeVC: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "profileForMeVC"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> profileForMeVC? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? profileForMeVC
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Awesome", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Awesome' is used in nib 'profileForMeVC', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Friendly", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Friendly' is used in nib 'profileForMeVC', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Great Work", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Great Work' is used in nib 'profileForMeVC', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Line 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Line 1' is used in nib 'profileForMeVC', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Team Leader", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Team Leader' is used in nib 'profileForMeVC', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'background' is used in nib 'profileForMeVC', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "pp", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'pp' is used in nib 'profileForMeVC', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _profileForMyTeamVC: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "profileForMyTeamVC"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> profileForMyTeamVC? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? profileForMyTeamVC
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Line 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Line 1' is used in nib 'profileForMyTeamVC', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'background' is used in nib 'profileForMyTeamVC', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "pp", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'pp' is used in nib 'profileForMyTeamVC', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}
@@ -688,6 +796,9 @@ struct _R: Rswift.Validatable {
       #endif
       #if os(iOS) || os(tvOS)
       try main.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try profilePeople.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try searchPeople.validate()
@@ -815,6 +926,22 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.main().mainViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainViewController' could not be loaded from storyboard 'Main' as 'MainViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct profilePeople: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = profilePeopleVC
+
+      let bundle = R.hostingBundle
+      let name = "ProfilePeople"
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}
