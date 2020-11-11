@@ -12,9 +12,11 @@ import FirebaseFirestoreSwift
 struct Post: Codable {
     var id: String?
     var name: String?
+    var creator: Player?
     
     enum CodingKeys: String, CodingKey {
         case id
         case name
+        case creator
     }
 }
