@@ -14,6 +14,7 @@ protocol PlayerInteractorDelegate {
     func fetchPlayer(id: String, success: @escaping (Player) -> (Void), failure: @escaping (Error) -> (Void))
     func createPlayer(player: Player, success: @escaping (Player) -> (Void), failure: @escaping (Error) -> (Void))
     func updatePlayer(player: Player, success: @escaping (Player) -> (Void), failure: @escaping (Error) -> (Void))
+    func currentPlayer(success: @escaping (Player) -> (Void), failure: @escaping (Error) -> (Void))
 }
 
 class PlayerInteractor: BaseInteractor, PlayerInteractorDelegate {
