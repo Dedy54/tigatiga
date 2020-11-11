@@ -21,6 +21,7 @@ struct Player: Codable {
     var skillRating: String?
     var role: String?
     var game: String?
+    var teams: [Team]?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -33,5 +34,6 @@ struct Player: Codable {
         case skillRating
         case role
         case game
+        case teams
     }
 }
