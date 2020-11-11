@@ -39,9 +39,16 @@ class PostInteractor: BaseInteractor, PostInteractorDelegate {
     }
     
     func createPost(post: Post, success: @escaping (Post) -> (Void), failure: @escaping (Error) -> (Void)) {
-        service.createPost(post: post, success: { (post) -> (Void) in
-            self.post = post
-            success(post)
+        let uid = Auth.auth().currentUser?.uid ?? "0"
+        service.fetchPlayer(id: uid, success: { (player) -> (Void) in
+            var tempPost = post
+            tempPost.creator = player
+            self.service.createPost(post: tempPost, success: { (post) -> (Void) in
+                self.post = post
+                success(post)
+            }) { (error) -> (Void) in
+                failure(error)
+            }
         }) { (error) -> (Void) in
             failure(error)
         }
