@@ -58,6 +58,7 @@ class FeedVC: UIViewController{
     func getPost() {
         postInteractor?.fetchPosts(success: { (postResults) -> (Void) in
             self.posts = postResults
+            self.feedTableView.reloadData()
         }, failure: { (err) -> (Void) in
             print("failed to get post data with error \(err)")
         })
@@ -129,13 +130,17 @@ extension FeedVC: UITableViewDelegate,UITableViewDataSource{
         cell.feedNameLabel.text = posts[indexPath.row].name
         cell.feedNameLabel.font = UIFont(name: "Hind-Bold", size: 12)
         
-        cell.feedLookingForLabel.text = "Looking For Group"
+        if posts[indexPath.row].creator!.lookingForGroup! {
+            cell.feedLookingForLabel.text = "Looking For Group"
+        }else {
+            cell.feedLookingForLabel.text = "Looking For Member"
+        }
         cell.feedLookingForLabel.font = UIFont(name: "Hind-Bold", size: 24)
         
-        cell.skillRatingLabel.text = "Master"
+        cell.skillRatingLabel.text = posts[indexPath.row].creator?.skillRating
         cell.skillRatingLabel.font = UIFont(name: "Hind-Regular", size: 16)
         
-        cell.roleLabel.text = "Damage"
+        cell.roleLabel.text = posts[indexPath.row].creator?.role
         cell.roleLabel.font = UIFont(name: "Hind-Regular", size: 16)
         
         cell.availibilityLabel.text = "Mon, 20.00-23.00"

@@ -108,7 +108,13 @@ class searchPeopleVC: UIViewController{
         if segue.identifier == "unwindToResult"
         {
             let searchResultVC = segue.destination as! SearchResultVC
-            searchResultVC.teams = teams
+            if views[selectedView!] == searchPlayerVC.view {
+                searchResultVC.players = players
+                searchResultVC.teams = []
+            }else {
+                searchResultVC.teams = teams
+                searchResultVC.players = []
+            }
         }
     }
     
