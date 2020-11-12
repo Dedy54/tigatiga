@@ -90,12 +90,14 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 14 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 15 storyboards.
   struct storyboard {
     /// Storyboard `AddPost`.
     static let addPost = _R.storyboard.addPost()
     /// Storyboard `Availability`.
     static let availability = _R.storyboard.availability()
+    /// Storyboard `CommendationInfo`.
+    static let commendationInfo = _R.storyboard.commendationInfo()
     /// Storyboard `Example`.
     static let example = _R.storyboard.example()
     /// Storyboard `Feed`.
@@ -132,6 +134,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Availability", bundle: ...)`
     static func availability(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.availability)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "CommendationInfo", bundle: ...)`
+    static func commendationInfo(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.commendationInfo)
     }
     #endif
 
@@ -613,8 +622,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 3 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `commendationCell`.
+    static let commendationCell: Rswift.ReuseIdentifier<CommendationTableViewCell> = Rswift.ReuseIdentifier(identifier: "commendationCell")
     /// Reuse identifier `postCell`.
     static let postCell: Rswift.ReuseIdentifier<PostTableViewCell> = Rswift.ReuseIdentifier(identifier: "postCell")
     /// Reuse identifier `recommendedCell`.
@@ -787,6 +798,9 @@ struct _R: Rswift.Validatable {
       try availability.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try commendationInfo.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try example.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -857,6 +871,22 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.availability().availability() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'availability' could not be loaded from storyboard 'Availability' as 'AvailabilityVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct commendationInfo: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = CommendationInfoVC
+
+      let bundle = R.hostingBundle
+      let name = "CommendationInfo"
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}

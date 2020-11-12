@@ -10,6 +10,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommendationVC" customModule="macrochallenge" customModuleProvider="target">
             <connections>
+                <outlet property="commendationTitle" destination="9EK-bJ-pW1" id="LYG-nW-WfE"/>
+                <outlet property="doYouTitle" destination="mZc-rh-GSc" id="lfw-pa-kJE"/>
+                <outlet property="howExpTitle" destination="nxl-cZ-MW5" id="Qsh-GR-BQd"/>
+                <outlet property="infoButton" destination="88H-o0-fCN" id="EJJ-Pj-em0"/>
+                <outlet property="sendButton" destination="Pg1-WA-ZVe" id="00l-5H-jmO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outletCollection property="starButton" destination="yIW-5d-mvA" collectionClass="NSMutableArray" id="l1J-cl-OpF"/>
                 <outletCollection property="starButton" destination="E8J-lC-taZ" collectionClass="NSMutableArray" id="Uer-Iu-ce0"/>
@@ -28,7 +33,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="TDx-F8-kWY">
-                    <rect key="frame" x="45" y="134" width="269" height="49"/>
+                    <rect key="frame" x="45" y="134.5" width="269" height="49"/>
                     <subviews>
                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOm-oc-1Lh">
                             <rect key="frame" x="0.0" y="0.0" width="49" height="49"/>
@@ -67,19 +72,8 @@
                         </button>
                     </subviews>
                 </stackView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pg1-WA-ZVe">
-                    <rect key="frame" x="45" y="392" width="269" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="1" green="0.80784313730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title=" SEND">
-                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                    <connections>
-                        <action selector="sendTapped:" destination="-1" eventType="touchUpInside" id="nqC-wI-eFL"/>
-                    </connections>
-                </button>
-                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="s1a-GU-ceg">
-                    <rect key="frame" x="43" y="231" width="267" height="56"/>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="s1a-GU-ceg">
+                    <rect key="frame" x="46" y="251" width="267" height="56"/>
                     <subviews>
                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XkZ-dC-NUr">
                             <rect key="frame" x="0.0" y="0.0" width="51" height="56"/>
@@ -111,14 +105,68 @@
                         </button>
                     </subviews>
                 </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Commendation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9EK-bJ-pW1">
+                    <rect key="frame" x="120" y="31" width="119" height="19.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <color key="textColor" red="1" green="0.80784313730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxl-cZ-MW5">
+                    <rect key="frame" x="47" y="80" width="264" height="38.5"/>
+                    <string key="text">How is your experience playing with 
+this player</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="1" green="0.80784313730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88H-o0-fCN">
+                    <rect key="frame" x="315" y="14" width="30" height="30"/>
+                    <state key="normal" title="info">
+                        <color key="titleColor" red="1" green="0.80784313730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="infoTapped:" destination="-1" eventType="touchUpInside" id="Dog-nd-rLG"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you want to commend  this player ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZc-rh-GSc">
+                    <rect key="frame" x="39" y="215.5" width="281" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="1" green="0.80784313730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pg1-WA-ZVe">
+                    <rect key="frame" x="28" y="352" width="304" height="50"/>
+                    <color key="backgroundColor" red="1" green="0.80784313730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title=" SEND">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="sendTapped:" destination="-1" eventType="touchUpInside" id="nqC-wI-eFL"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
-                <constraint firstItem="s1a-GU-ceg" firstAttribute="top" secondItem="TDx-F8-kWY" secondAttribute="bottom" constant="48" id="AyS-rD-yZp"/>
-                <constraint firstItem="TDx-F8-kWY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="90" id="QS2-wZ-RKc"/>
-                <constraint firstItem="TDx-F8-kWY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="45" id="mbz-ED-lOn"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TDx-F8-kWY" secondAttribute="trailing" constant="45" id="xpJ-od-Sc0"/>
+                <constraint firstItem="s1a-GU-ceg" firstAttribute="top" secondItem="mZc-rh-GSc" secondAttribute="bottom" constant="16" id="0h6-JT-6rw"/>
+                <constraint firstItem="mZc-rh-GSc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="39" id="0oT-LO-J79"/>
+                <constraint firstItem="9EK-bJ-pW1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="31" id="2rF-7g-L11"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Pg1-WA-ZVe" secondAttribute="trailing" constant="27" id="Aic-Q0-Z3g"/>
+                <constraint firstItem="s1a-GU-ceg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="46" id="CYm-YZ-zwr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nxl-cZ-MW5" secondAttribute="trailing" constant="48" id="MRh-VL-wno"/>
+                <constraint firstItem="TDx-F8-kWY" firstAttribute="top" secondItem="nxl-cZ-MW5" secondAttribute="bottom" constant="16" id="NYU-J3-dHz"/>
+                <constraint firstItem="88H-o0-fCN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="14" id="O5D-AJ-haS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mZc-rh-GSc" secondAttribute="trailing" constant="39" id="R0Y-Wj-YU0"/>
+                <constraint firstAttribute="trailing" secondItem="88H-o0-fCN" secondAttribute="trailing" constant="14" id="RjK-s5-Wp8"/>
+                <constraint firstItem="TDx-F8-kWY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="45" id="S6H-Sc-Q56"/>
+                <constraint firstItem="9EK-bJ-pW1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="120" id="SVp-pK-saq"/>
+                <constraint firstItem="Pg1-WA-ZVe" firstAttribute="top" secondItem="s1a-GU-ceg" secondAttribute="bottom" constant="45" id="Snh-io-zbT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TDx-F8-kWY" secondAttribute="trailing" constant="45" id="a1E-G0-RoP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="s1a-GU-ceg" secondAttribute="trailing" constant="46" id="aiY-pp-oGb"/>
+                <constraint firstItem="mZc-rh-GSc" firstAttribute="top" secondItem="TDx-F8-kWY" secondAttribute="bottom" constant="32" id="bfh-af-0mH"/>
+                <constraint firstItem="nxl-cZ-MW5" firstAttribute="top" secondItem="9EK-bJ-pW1" secondAttribute="bottom" constant="29.5" id="qEe-dx-z0c"/>
+                <constraint firstItem="nxl-cZ-MW5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="47" id="tOB-gu-AKo"/>
+                <constraint firstItem="Pg1-WA-ZVe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="28" id="tu6-Ip-Gep"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="138.40579710144928" y="93.75"/>

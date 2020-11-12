@@ -21,16 +21,36 @@ class CommendationVC: UIViewController {
     @IBOutlet var starButton: [UIButton]!
     @IBOutlet var commendationButton: [UIButton]!
     
-   
+    @IBOutlet weak var commendationTitle: UILabel!
+    @IBOutlet weak var howExpTitle: UILabel!
+    @IBOutlet weak var doYouTitle: UILabel!
+    @IBOutlet weak var infoButton: UIButton!
+    @IBOutlet weak var sendButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        sendButton.layer.cornerRadius = 20
         
+        self.view.layer.cornerRadius = 20
         
-        // Do any additional setup after loading the view.
+        setFont()
+        
     }
-
+    
+    func setFont(){
+        commendationTitle.font = UIFont(name: "Hind-Bold", size: 16)
+        howExpTitle.font = UIFont(name: "Hind-Regular", size: 16)
+        doYouTitle.font = UIFont(name: "Hind-Regular", size: 16)
+        infoButton.titleLabel?.font = UIFont(name: "Hind-Regular", size: 16)
+        sendButton.titleLabel?.font = UIFont(name: "Hind-Bold", size: 16)
+    }
+    
+    
+    @IBAction func infoTapped(_ sender: Any) {
+        
+    }
+    
     @IBAction func sendTapped(_ sender: Any) {
         let commendationType : commendations = getCommendationType()
         print(commendationType)
