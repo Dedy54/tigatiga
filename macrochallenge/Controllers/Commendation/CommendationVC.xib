@@ -16,6 +16,10 @@
                 <outletCollection property="starButton" destination="wZd-aT-AgO" collectionClass="NSMutableArray" id="AfV-lv-qqz"/>
                 <outletCollection property="starButton" destination="glI-QK-WAm" collectionClass="NSMutableArray" id="ghK-xC-Xkb"/>
                 <outletCollection property="starButton" destination="OOm-oc-1Lh" collectionClass="NSMutableArray" id="C0D-Sz-6te"/>
+                <outletCollection property="commendationButton" destination="XkZ-dC-NUr" collectionClass="NSMutableArray" id="2FB-c3-r8a"/>
+                <outletCollection property="commendationButton" destination="hxK-pV-yPR" collectionClass="NSMutableArray" id="gRz-d7-A6s"/>
+                <outletCollection property="commendationButton" destination="BxU-Vl-DWS" collectionClass="NSMutableArray" id="q1a-UT-9eP"/>
+                <outletCollection property="commendationButton" destination="KKJ-le-1he" collectionClass="NSMutableArray" id="FJD-RK-yPl"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -23,7 +27,7 @@
             <rect key="frame" x="0.0" y="0.0" width="359" height="454"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="TDx-F8-kWY">
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="TDx-F8-kWY">
                     <rect key="frame" x="45" y="134" width="269" height="49"/>
                     <subviews>
                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOm-oc-1Lh">
@@ -70,15 +74,61 @@
                     <state key="normal" title=" SEND">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="sendTapped:" destination="-1" eventType="touchUpInside" id="nqC-wI-eFL"/>
+                    </connections>
                 </button>
+                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="s1a-GU-ceg">
+                    <rect key="frame" x="43" y="231" width="267" height="56"/>
+                    <subviews>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XkZ-dC-NUr">
+                            <rect key="frame" x="0.0" y="0.0" width="51" height="56"/>
+                            <state key="normal" image="mvp"/>
+                            <connections>
+                                <action selector="commedationButtonTapped:" destination="-1" eventType="touchUpInside" id="5os-Ye-Vgw"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxK-pV-yPR">
+                            <rect key="frame" x="72" y="0.0" width="51" height="56"/>
+                            <state key="normal" image="Leader"/>
+                            <connections>
+                                <action selector="commedationButtonTapped:" destination="-1" eventType="touchUpInside" id="Yy4-ep-0gn"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BxU-Vl-DWS">
+                            <rect key="frame" x="144" y="0.0" width="51" height="56"/>
+                            <state key="normal" image="Friendly-1"/>
+                            <connections>
+                                <action selector="commedationButtonTapped:" destination="-1" eventType="touchUpInside" id="kr2-wV-wXu"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKJ-le-1he">
+                            <rect key="frame" x="216" y="0.0" width="51" height="56"/>
+                            <state key="normal" image="Team Player"/>
+                            <connections>
+                                <action selector="commedationButtonTapped:" destination="-1" eventType="touchUpInside" id="7Ts-N9-V2Y"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="s1a-GU-ceg" firstAttribute="top" secondItem="TDx-F8-kWY" secondAttribute="bottom" constant="48" id="AyS-rD-yZp"/>
+                <constraint firstItem="TDx-F8-kWY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="90" id="QS2-wZ-RKc"/>
+                <constraint firstItem="TDx-F8-kWY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="45" id="mbz-ED-lOn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TDx-F8-kWY" secondAttribute="trailing" constant="45" id="xpJ-od-Sc0"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="138.40579710144928" y="93.75"/>
         </view>
     </objects>
     <resources>
+        <image name="Friendly-1" width="51" height="56"/>
+        <image name="Leader" width="51" height="56"/>
         <image name="Star" width="49" height="49"/>
+        <image name="Team Player" width="51" height="56"/>
+        <image name="mvp" width="51" height="56"/>
     </resources>
 </document>

@@ -337,7 +337,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 11 images.
+  /// This `R.image` struct is generated, and contains static references to 15 images.
   struct image {
     /// Image `Add`.
     static let add = Rswift.ImageResource(bundle: R.hostingBundle, name: "Add")
@@ -345,12 +345,16 @@ struct R: Rswift.Validatable {
     static let awesome = Rswift.ImageResource(bundle: R.hostingBundle, name: "Awesome")
     /// Image `Filter`.
     static let filter = Rswift.ImageResource(bundle: R.hostingBundle, name: "Filter")
+    /// Image `Friendly-1`.
+    static let friendly1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Friendly-1")
     /// Image `Friendly`.
     static let friendly = Rswift.ImageResource(bundle: R.hostingBundle, name: "Friendly")
     /// Image `Great Work`.
     static let greatWork = Rswift.ImageResource(bundle: R.hostingBundle, name: "Great Work")
     /// Image `Icon`.
     static let icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "Icon")
+    /// Image `Leader`.
+    static let leader = Rswift.ImageResource(bundle: R.hostingBundle, name: "Leader")
     /// Image `Line 1`.
     static let line1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Line 1")
     /// Image `StarTransparent`.
@@ -359,6 +363,10 @@ struct R: Rswift.Validatable {
     static let star = Rswift.ImageResource(bundle: R.hostingBundle, name: "Star")
     /// Image `Team Leader`.
     static let teamLeader = Rswift.ImageResource(bundle: R.hostingBundle, name: "Team Leader")
+    /// Image `Team Player`.
+    static let teamPlayer = Rswift.ImageResource(bundle: R.hostingBundle, name: "Team Player")
+    /// Image `mvp`.
+    static let mvp = Rswift.ImageResource(bundle: R.hostingBundle, name: "mvp")
     /// Image `pp`.
     static let pp = Rswift.ImageResource(bundle: R.hostingBundle, name: "pp")
 
@@ -391,6 +399,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Friendly-1", bundle: ..., traitCollection: ...)`
+    static func friendly1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.friendly1, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "Great Work", bundle: ..., traitCollection: ...)`
     static func greatWork(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.greatWork, compatibleWith: traitCollection)
@@ -401,6 +416,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "Icon", bundle: ..., traitCollection: ...)`
     static func icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.icon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Leader", bundle: ..., traitCollection: ...)`
+    static func leader(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.leader, compatibleWith: traitCollection)
     }
     #endif
 
@@ -429,6 +451,20 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "Team Leader", bundle: ..., traitCollection: ...)`
     static func teamLeader(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.teamLeader, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Team Player", bundle: ..., traitCollection: ...)`
+    static func teamPlayer(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.teamPlayer, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "mvp", bundle: ..., traitCollection: ...)`
+    static func mvp(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.mvp, compatibleWith: traitCollection)
     }
     #endif
 
@@ -665,7 +701,11 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "Friendly-1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Friendly-1' is used in nib 'CommendationVC', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Leader", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Leader' is used in nib 'CommendationVC', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Star", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Star' is used in nib 'CommendationVC', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Team Player", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Team Player' is used in nib 'CommendationVC', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "mvp", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'mvp' is used in nib 'CommendationVC', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

@@ -10,15 +10,17 @@ import UIKit
 
 class PlayerCommendationVC: UIViewController {
 
-    @IBOutlet weak var viewContainer: UIView!
+
     
     var commendationview = CommendationVC()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        commendationview.view.center = CGPoint(x: view.frame.size.width  / 2,
+                                     y: view.frame.size.height / 2)
+        view.addSubview(commendationview.view)
         
-        viewContainer.addSubview(commendationview.view)
         // Do any additional setup after loading the view.
     }
     
