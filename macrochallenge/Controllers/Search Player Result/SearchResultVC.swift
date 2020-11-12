@@ -11,7 +11,10 @@ import UIKit
 class SearchResultVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let test = ["abc","asd","asda","asd","asd"]
-    let magnifyingGlass = UIImage(systemName: "magnifiyingglass")
+    
+    let magnifyingGlass = UIImage(systemName: "magnifyingglass")
+    
+    
     
     @IBOutlet weak var resultTableView: UITableView!
     
@@ -24,13 +27,22 @@ class SearchResultVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         self.title = "Result"
         
-        magnifyingGlass?.withTintColor(UIColor(hex: "#ffce00ff")!)
-        let magIcon = UIBarButtonItem(image: magnifyingGlass, style: .plain, target: self, action: nil)
-        self.navigationController!.navigationItem.rightBarButtonItem  = magIcon
+        
+        
+        let button1 = UIBarButtonItem(image: magnifyingGlass , style: .plain, target: self, action: #selector(tapp))
+        self.navigationItem.rightBarButtonItem  = button1
+        
+//        magnifyingGlass?.withTintColor(UIColor(hex: "#ffce00ff")!)
+//        let magIcon = UIBarButtonItem(image: magnifyingGlass, style: .plain, target: self, action: nil)
+//        self.navigationController!.navigationItem.rightBarButtonItem  = magIcon
         
         overrideUserInterfaceStyle = .dark
         
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func tapp(){
+        print ("abc")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

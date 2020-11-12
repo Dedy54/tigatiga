@@ -42,6 +42,7 @@ class FilterPostViewController: UIViewController {
         roleTextField.inputView = rolePickerview
         
         
+        
     }
     
     func setPickerviewDelagate(){

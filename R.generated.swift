@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 13 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 14 storyboards.
   struct storyboard {
     /// Storyboard `AddPost`.
     static let addPost = _R.storyboard.addPost()
@@ -106,6 +106,8 @@ struct R: Rswift.Validatable {
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Main`.
     static let main = _R.storyboard.main()
+    /// Storyboard `PlayerCommendation`.
+    static let playerCommendation = _R.storyboard.playerCommendation()
     /// Storyboard `PostDetailMember`.
     static let postDetailMember = _R.storyboard.postDetailMember()
     /// Storyboard `PostDetailTeam`.
@@ -165,6 +167,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Main", bundle: ...)`
     static func main(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.main)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "PlayerCommendation", bundle: ...)`
+    static func playerCommendation(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.playerCommendation)
     }
     #endif
 
@@ -328,7 +337,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 9 images.
+  /// This `R.image` struct is generated, and contains static references to 11 images.
   struct image {
     /// Image `Add`.
     static let add = Rswift.ImageResource(bundle: R.hostingBundle, name: "Add")
@@ -344,6 +353,10 @@ struct R: Rswift.Validatable {
     static let icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "Icon")
     /// Image `Line 1`.
     static let line1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Line 1")
+    /// Image `StarTransparent`.
+    static let starTransparent = Rswift.ImageResource(bundle: R.hostingBundle, name: "StarTransparent")
+    /// Image `Star`.
+    static let star = Rswift.ImageResource(bundle: R.hostingBundle, name: "Star")
     /// Image `Team Leader`.
     static let teamLeader = Rswift.ImageResource(bundle: R.hostingBundle, name: "Team Leader")
     /// Image `pp`.
@@ -399,6 +412,20 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Star", bundle: ..., traitCollection: ...)`
+    static func star(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.star, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "StarTransparent", bundle: ..., traitCollection: ...)`
+    static func starTransparent(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.starTransparent, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "Team Leader", bundle: ..., traitCollection: ...)`
     static func teamLeader(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.teamLeader, compatibleWith: traitCollection)
@@ -446,12 +473,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 6 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 7 nibs.
   struct nib {
     /// Nib `AddPostLFGroupVC`.
     static let addPostLFGroupVC = _R.nib._AddPostLFGroupVC()
     /// Nib `AddPostLFMemberVC`.
     static let addPostLFMemberVC = _R.nib._AddPostLFMemberVC()
+    /// Nib `CommendationVC`.
+    static let commendationVC = _R.nib._CommendationVC()
     /// Nib `SecondExampleViewController`.
     static let secondExampleViewController = _R.nib._SecondExampleViewController()
     /// Nib `SignInViewController`.
@@ -474,6 +503,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.addPostLFMemberVC) instead")
     static func addPostLFMemberVC(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.addPostLFMemberVC)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "CommendationVC", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.commendationVC) instead")
+    static func commendationVC(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.commendationVC)
     }
     #endif
 
@@ -515,6 +552,10 @@ struct R: Rswift.Validatable {
 
     static func addPostLFMemberVC(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.addPostLFMemberVC.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func commendationVC(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.commendationVC.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func searchForPlayerVC(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -574,6 +615,7 @@ struct _R: Rswift.Validatable {
     static func validate() throws {
       try _AddPostLFGroupVC.validate()
       try _AddPostLFMemberVC.validate()
+      try _CommendationVC.validate()
       try _searchForPlayerVC.validate()
       try _searchForTeamVC.validate()
     }
@@ -607,6 +649,23 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "chevron.down", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'chevron.down' is used in nib 'AddPostLFMemberVC', but couldn't be loaded.") }
         if UIKit.UIImage(named: "plus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plus' is used in nib 'AddPostLFMemberVC', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _CommendationVC: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "CommendationVC"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Star", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Star' is used in nib 'CommendationVC', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -701,6 +760,9 @@ struct _R: Rswift.Validatable {
       #endif
       #if os(iOS) || os(tvOS)
       try main.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try playerCommendation.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try postDetailMember.validate()
@@ -874,6 +936,22 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.main().mainViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainViewController' could not be loaded from storyboard 'Main' as 'MainViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct playerCommendation: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = PlayerCommendationVC
+
+      let bundle = R.hostingBundle
+      let name = "PlayerCommendation"
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}
