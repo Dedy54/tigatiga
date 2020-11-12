@@ -11,10 +11,10 @@ import AuthenticationServices
 
 class SignInViewController: UIViewController {
     
-    static func instantiateViewController() -> SignInViewController {
-        let controller = SignInViewController(nib: R.nib.signInViewController)
-        return controller
-    }
+//    static func instantiateViewController() -> SignInViewController {
+//        let controller = SignInViewController(nib: R.nib.signInViewController)
+//        return controller
+//    }
     
     @IBOutlet weak var appleIDStackView: UIStackView!
     var authInteractor: AuthInteractor? = AuthInteractor()

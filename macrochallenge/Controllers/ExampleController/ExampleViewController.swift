@@ -10,10 +10,10 @@ import UIKit
 
 class ExampleViewController: UIViewController {
     
-    static func instantiateViewController() -> ExampleViewController {
-        let controller = R.storyboard.example.exampleViewController()!
-        return controller
-    }
+//    static func instantiateViewController() -> ExampleViewController {
+//        let controller = R.storyboard.example.exampleViewController()!
+//        return controller
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,13 +33,13 @@ class ExampleViewController: UIViewController {
         }, failure: { (error) -> (Void) in
             print("error \(error)")
         })
-        let c = SignInViewController.instantiateViewController()
-        self.navigationController?.pushViewController(c, animated: true)
+//        let c = SignInViewController.instantiateViewController()
+//        self.navigationController?.pushViewController(c, animated: true)
     }
     
     func callSecondExampleViewController() {
-        let foodListViewController = ExampleViewController.instantiateViewController()
-        present(foodListViewController, animated: false, completion: nil)
+//        let foodListViewController = ExampleViewController.instantiateViewController()
+//        present(foodListViewController, animated: false, completion: nil)
     }
 
 }
