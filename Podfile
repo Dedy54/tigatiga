@@ -5,7 +5,6 @@ target 'macrochallenge' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   # Pods for macrochallenge
-  pod 'R.swift'
   pod 'ActionSheetPicker-3.0'
   pod 'Firebase/Analytics'
   pod 'Firebase/Firestore'

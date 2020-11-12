@@ -10,10 +10,10 @@ import UIKit
 
 class SecondExampleViewController: UIViewController {
 
-    static func instantiateViewController() -> SecondExampleViewController {
-        let controller = SecondExampleViewController(nib: R.nib.secondExampleViewController)
-        return controller
-    }
+//    static func instantiateViewController() -> SecondExampleViewController {
+//        let controller = SecondExampleViewController(nib: R.nib.secondExampleViewController)
+//        return controller
+//    }
     
     
     
@@ -23,8 +23,8 @@ class SecondExampleViewController: UIViewController {
     }
     
     func callExampleViewController() {
-        let foodListViewController = ExampleViewController.instantiateViewController()
-        present(foodListViewController, animated: false, completion: nil)
+//        let foodListViewController = ExampleViewController.instantiateViewController()
+//        present(foodListViewController, animated: false, completion: nil)
     }
 
 }

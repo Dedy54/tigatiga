@@ -85,7 +85,6 @@
 		A15671A1255B9B9F0072D375 /* profileForMeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A15671A0255B9B9F0072D375 /* profileForMeVC.xib */; };
 		A15671A3255B9C0A0072D375 /* profileForMyTeamVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A15671A2255B9C0A0072D375 /* profileForMyTeamVC.xib */; };
 		A190A3D9254FD471007C5139 /* SearchTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = A190A3D8254FD471007C5139 /* SearchTeam.swift */; };
-		A1A2E0282547D548008DD0D2 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2E0272547D548008DD0D2 /* R.generated.swift */; };
 		A1A2E02A2547E709008DD0D2 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2E0292547E708008DD0D2 /* UITextField+Extension.swift */; };
 		A1A2E02C2547E7AE008DD0D2 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2E02B2547E7AE008DD0D2 /* UIColor+Extension.swift */; };
 		A1A2E02E2547E7EF008DD0D2 /* NSLayoutDimension+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2E02D2547E7EF008DD0D2 /* NSLayoutDimension+Extension.swift */; };
@@ -212,7 +211,6 @@
 		A1A2E01F2547BF31008DD0D2 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		A1A2E0212547BF37008DD0D2 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		A1A2E0232547BF3D008DD0D2 /* Commendation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commendation.swift; sourceTree = "<group>"; };
-		A1A2E0272547D548008DD0D2 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		A1A2E0292547E708008DD0D2 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		A1A2E02B2547E7AE008DD0D2 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		A1A2E02D2547E7EF008DD0D2 /* NSLayoutDimension+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutDimension+Extension.swift"; sourceTree = "<group>"; };
@@ -283,6 +281,8 @@
 			isa = PBXGroup;
 			children = (
 				A1567199255B91A70072D375 /* Profile */,
+				5C7311F7255D002A00B6FFBA /* ChatDetail */,
+				5C7311F6255D002100B6FFBA /* Chat */,
 				5C18DC2B255A37D800A2825A /* Post Feed */,
 				A13974B02542A395003E6D29 /* Feed */,
 				A1A409DF253EA1AA00645930 /* GameViewController */,
@@ -342,7 +342,6 @@
 		5C6FAE0D252CE77B00F74AE6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A1A2E0272547D548008DD0D2 /* R.generated.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -412,6 +411,20 @@
 				5C70E53F25427E7500C45F76 /* SignInViewController.xib */,
 			);
 			path = SignIn;
+			sourceTree = "<group>";
+		};
+		5C7311F6255D002100B6FFBA /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		5C7311F7255D002A00B6FFBA /* ChatDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ChatDetail;
 			sourceTree = "<group>";
 		};
 		5CDE23FE252C3CD800DF5601 = {
@@ -613,7 +626,6 @@
 				5CDE2404252C3CD800DF5601 /* Frameworks */,
 				5CDE2405252C3CD800DF5601 /* Resources */,
 				5ADFEBE84F2FFC21B0748888 /* [CP] Embed Pods Frameworks */,
-				5C6FAE0E252CE89700F74AE6 /* R Swift Run Script */,
 			);
 			buildRules = (
 			);
@@ -794,24 +806,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-macrochallenge/Pods-macrochallenge-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5C6FAE0E252CE89700F74AE6 /* R Swift Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "R Swift Run Script";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate --disable-input-output-files-validation \"$SRCROOT/R.generated.swift\"\n";
-		};
 		827C9D01D8748840DC5A7D88 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -926,7 +920,6 @@
 				5CD87480255286B200040E7A /* PostService.swift in Sources */,
 				5CD87483255286B200040E7A /* CommendationService.swift in Sources */,
 				5C70E54025427E7500C45F76 /* SignInViewController.swift in Sources */,
-				A1A2E0282547D548008DD0D2 /* R.generated.swift in Sources */,
 				5C70E52F254142A200C45F76 /* AuthService.swift in Sources */,
 				5C70E52325413EAE00C45F76 /* CoreService.swift in Sources */,
 				5CD87473255286A900040E7A /* RoomChat.swift in Sources */,

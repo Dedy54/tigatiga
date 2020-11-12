@@ -10,9 +10,18 @@ import UIKit
 
 class MainViewController: UITabBarController, UITabBarControllerDelegate {
     
+    var teamInteractor: TeamInteractor?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
+        
+        teamInteractor = TeamInteractor()
+        teamInteractor?.fetchMyTeams(success: { (teams) -> (Void) in
+            print("aaaaaaaa \(teams)")
+        }, failure: { (error) -> (Void) in
+            print(error)
+        })
     }
     
     override func viewDidAppear(_ animated: Bool) {

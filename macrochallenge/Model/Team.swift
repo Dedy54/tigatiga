@@ -19,6 +19,7 @@ struct Team: Codable {
     var game: String?
     var dateCreated: Date?
     var lookingForMember: Bool?
+    var memberIds: [String]?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -30,5 +31,6 @@ struct Team: Codable {
         case game
         case dateCreated
         case lookingForMember
+        case memberIds
     }
 }

@@ -83,4 +83,25 @@ extension CoreService {
         }
     }
     
+    func fetchMyTeams(player: Player, success: @escaping ([Team]) -> (Void), failure: @escaping (Error) -> (Void)) {
+        db.collection("teams").whereField("memberIds", arrayContains: player.id ?? "0").addSnapshotListener { (querySnapshot, error) in
+            if let error = error {
+                failure(error)
+                return
+            }
+            
+            var teams = [Team]()
+            guard let documents = querySnapshot?.documents else {
+                print("No documents")
+                return
+            }
+            
+            teams = documents.compactMap { queryDocumentSnapshot -> Team? in
+                return try? queryDocumentSnapshot.data(as: Team.self)
+            }
+            
+            success(teams)
+        }
+    }
+    
 }
