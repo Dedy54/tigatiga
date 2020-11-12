@@ -580,8 +580,8 @@ struct R: Rswift.Validatable {
       return R.nib.gameTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GameTableViewCell
     }
 
-    static func profileForMeVC(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> profileForMeVC? {
-      return R.nib.profileForMeVC.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? profileForMeVC
+    static func profileForMeVC(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.profileForMeVC.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func profileForMyTeamVC(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> profileForMyTeamVC? {
@@ -699,8 +699,8 @@ struct _R: Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "profileForMeVC"
 
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> profileForMeVC? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? profileForMeVC
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       static func validate() throws {

@@ -26,9 +26,9 @@ class profilePeopleVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewContainer.addSubview(profileMeVC)
-//        self.addChild(profileMeVC)
-        viewContainer.bringSubviewToFront(profileMeVC)
+        viewContainer.addSubview(profileMeVC.view)
+        self.addChild(profileMeVC)
+        viewContainer.bringSubviewToFront(profileMeVC.view)
         
         setupTeamTableView()
         

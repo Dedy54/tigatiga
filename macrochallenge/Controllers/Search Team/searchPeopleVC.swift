@@ -73,7 +73,7 @@ class searchPeopleVC: UIViewController{
         switch sender {
         case applyButton:
             if views[selectedView!] == searchPlayerVC.view {
-                let teamName:String = ""
+                let teamName:String = searchPlayerVC.searchPlayerTxtField.text!
                 let roleInNeed = searchPlayerVC.rolePlayerTextField.text!
                 let avgSkillRating = searchPlayerVC.skillRatingPlayerTextField.text!
                 let memberSize: String = ""
@@ -86,7 +86,7 @@ class searchPeopleVC: UIViewController{
                      print("failed to get player data with error \(err)")
                 })
             }else{
-                let teamName:String = "Team C"
+                let teamName:String = searchPlayerVC.searchPlayerTxtField.text!
                 let roleInNeed = searchTeamVC.roleINTxtField.text!
                 let avgSkillRating = searchTeamVC.skillRatingTxtField.text!
                 let memberSize = searchTeamVC.memberSizeTxtField.text!

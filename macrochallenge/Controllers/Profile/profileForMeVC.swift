@@ -8,7 +8,7 @@
 
 import UIKit
 
-class profileForMeVC: UIView {
+class profileForMeVC: UIViewController {
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -24,6 +24,8 @@ class profileForMeVC: UIView {
     @IBOutlet weak var profileRole: UILabel!
     @IBOutlet weak var profileJoin: UILabel!
     @IBOutlet weak var profileExperience: UITextField!
+    @IBOutlet weak var inviteButton: UIButton!
+    @IBOutlet weak var commendButton: UIButton!
     
     override func awakeFromNib() {
        super.awakeFromNib()
