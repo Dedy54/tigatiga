@@ -13,10 +13,10 @@ class CommendationInfoVC: UIViewController {
     @IBOutlet weak var commendationTableView: UITableView!
     
     var commendationPicture : [UIImage] = [
-        UIImage(named: "pp")!,
-        UIImage(named: "pp")!,
-        UIImage(named: "pp")!,
-        UIImage(named: "pp")!
+        UIImage(named: "Badge")!,
+        UIImage(named: "Leader-1")!,
+        UIImage(named: "Friendly2")!,
+        UIImage(named: "Team")!
     ]
     var commendationName : [String] = [
         "MVP",
@@ -25,19 +25,21 @@ class CommendationInfoVC: UIViewController {
         "Team Player"
     ]
     var commendationDescription : [String] = [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Adipiscing sapien, blandit id nisl elementum turpis ipsum.",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Adipiscing sapien, blandit id nisl elementum turpis ipsum.",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Adipiscing sapien, blandit id nisl elementum turpis ipsum.",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Adipiscing sapien, blandit id nisl elementum turpis ipsum."
+        "Great experience playing with this person all round.",
+        "Willing to play together as a team.",
+        "Communicating with other players in the game well.",
+        "Able to call out strategy and lead the team to victory."
     ]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        commendationTableView.delegate = self
-        commendationTableView.dataSource = self
+        commendationTableView?.delegate = self
+        commendationTableView?.dataSource = self
      
     }
+    
+    
     
 
 }

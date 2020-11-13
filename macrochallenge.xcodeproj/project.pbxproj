@@ -328,10 +328,10 @@
 		5C5FA2E6255E1AFD00CDD060 /* Commendation */ = {
 			isa = PBXGroup;
 			children = (
-				5C5FA2E7255E1AFD00CDD060 /* CommendationVC.xib */,
-				5C5FA2E8255E1AFD00CDD060 /* PlayerCommendation.storyboard */,
 				5C5FA2E9255E1AFD00CDD060 /* info */,
+				5C5FA2E7255E1AFD00CDD060 /* CommendationVC.xib */,
 				5C5FA2ED255E1AFD00CDD060 /* CommendationVC.swift */,
+				5C5FA2E8255E1AFD00CDD060 /* PlayerCommendation.storyboard */,
 				5C5FA2EE255E1AFD00CDD060 /* PlayerCommendationVC.swift */,
 			);
 			path = Commendation;
