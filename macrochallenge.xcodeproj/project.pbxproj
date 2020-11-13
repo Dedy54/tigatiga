@@ -37,6 +37,12 @@
 		5C5FA31A255E1AFE00CDD060 /* AddPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5FA302255E1AFE00CDD060 /* AddPostVC.swift */; };
 		5C5FA31B255E1AFE00CDD060 /* AddPostLFGroupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C5FA303255E1AFE00CDD060 /* AddPostLFGroupVC.xib */; };
 		5C5FA31C255E1AFE00CDD060 /* AddPostLFMemberVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C5FA304255E1AFE00CDD060 /* AddPostLFMemberVC.xib */; };
+		5C5FA324255E1C8200CDD060 /* profileForMeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5FA31E255E1C8100CDD060 /* profileForMeVC.swift */; };
+		5C5FA325255E1C8200CDD060 /* profilePeopleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5FA31F255E1C8100CDD060 /* profilePeopleVC.swift */; };
+		5C5FA326255E1C8200CDD060 /* profileForMyTeamVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C5FA320255E1C8100CDD060 /* profileForMyTeamVC.xib */; };
+		5C5FA327255E1C8200CDD060 /* profileForMeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C5FA321255E1C8100CDD060 /* profileForMeVC.xib */; };
+		5C5FA328255E1C8200CDD060 /* ProfilePeople.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C5FA322255E1C8100CDD060 /* ProfilePeople.storyboard */; };
+		5C5FA329255E1C8200CDD060 /* profileForMyTeamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5FA323255E1C8100CDD060 /* profileForMyTeamVC.swift */; };
 		5C6FAE01252CE5FA00F74AE6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6FAE00252CE5FA00F74AE6 /* MainViewController.swift */; };
 		5C6FAE04252CE64C00F74AE6 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6FAE03252CE64C00F74AE6 /* ExampleViewController.swift */; };
 		5C6FAE06252CE66000F74AE6 /* Example.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C6FAE05252CE66000F74AE6 /* Example.storyboard */; };
@@ -100,14 +106,8 @@
 		6540DA1325506CF700701688 /* Hind-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6540DA0E25506CF700701688 /* Hind-SemiBold.ttf */; };
 		7B6E9A554E9A47C774D63ED6 /* Pods_macrochallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350624BE8F5C37B81E4C9EBC /* Pods_macrochallengeTests.framework */; };
 		A12B7BB62551D29E00D9EEAF /* PickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12B7BB52551D29E00D9EEAF /* PickerDelegate.swift */; };
-		A12B8C97255C741C007CD5B8 /* profileForMyTeamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12B8C96255C741C007CD5B8 /* profileForMyTeamVC.swift */; };
 		A12C333A253DA898007EE971 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12C3339253DA898007EE971 /* Game.swift */; };
 		A141E0242559438C00A63FA2 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A141E0232559438C00A63FA2 /* UIButton+Extension.swift */; };
-		A156719B255B96410072D375 /* ProfilePeople.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A156719A255B96410072D375 /* ProfilePeople.storyboard */; };
-		A156719D255B96550072D375 /* profilePeopleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A156719C255B96550072D375 /* profilePeopleVC.swift */; };
-		A156719F255B9B6E0072D375 /* profileForMeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A156719E255B9B6E0072D375 /* profileForMeVC.swift */; };
-		A15671A1255B9B9F0072D375 /* profileForMeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A15671A0255B9B9F0072D375 /* profileForMeVC.xib */; };
-		A15671A3255B9C0A0072D375 /* profileForMyTeamVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A15671A2255B9C0A0072D375 /* profileForMyTeamVC.xib */; };
 		A190A3D9254FD471007C5139 /* SearchTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = A190A3D8254FD471007C5139 /* SearchTeam.swift */; };
 		A1A2E02A2547E709008DD0D2 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2E0292547E708008DD0D2 /* UITextField+Extension.swift */; };
 		A1A2E02C2547E7AE008DD0D2 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2E02B2547E7AE008DD0D2 /* UIColor+Extension.swift */; };
@@ -173,6 +173,12 @@
 		5C5FA302255E1AFE00CDD060 /* AddPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostVC.swift; sourceTree = "<group>"; };
 		5C5FA303255E1AFE00CDD060 /* AddPostLFGroupVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPostLFGroupVC.xib; sourceTree = "<group>"; };
 		5C5FA304255E1AFE00CDD060 /* AddPostLFMemberVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPostLFMemberVC.xib; sourceTree = "<group>"; };
+		5C5FA31E255E1C8100CDD060 /* profileForMeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = profileForMeVC.swift; sourceTree = "<group>"; };
+		5C5FA31F255E1C8100CDD060 /* profilePeopleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = profilePeopleVC.swift; sourceTree = "<group>"; };
+		5C5FA320255E1C8100CDD060 /* profileForMyTeamVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = profileForMyTeamVC.xib; sourceTree = "<group>"; };
+		5C5FA321255E1C8100CDD060 /* profileForMeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = profileForMeVC.xib; sourceTree = "<group>"; };
+		5C5FA322255E1C8100CDD060 /* ProfilePeople.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProfilePeople.storyboard; sourceTree = "<group>"; };
+		5C5FA323255E1C8100CDD060 /* profileForMyTeamVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = profileForMyTeamVC.swift; sourceTree = "<group>"; };
 		5C6FAE00252CE5FA00F74AE6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5C6FAE03252CE64C00F74AE6 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		5C6FAE05252CE66000F74AE6 /* Example.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Example.storyboard; sourceTree = "<group>"; };
@@ -247,14 +253,8 @@
 		7A44DC05C142BBCC9F3B4C82 /* Pods-macrochallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macrochallengeTests.release.xcconfig"; path = "Target Support Files/Pods-macrochallengeTests/Pods-macrochallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		9E0C43FECE2CA2B919EBFBBC /* Pods-macrochallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macrochallenge.release.xcconfig"; path = "Target Support Files/Pods-macrochallenge/Pods-macrochallenge.release.xcconfig"; sourceTree = "<group>"; };
 		A12B7BB52551D29E00D9EEAF /* PickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDelegate.swift; sourceTree = "<group>"; };
-		A12B8C96255C741C007CD5B8 /* profileForMyTeamVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileForMyTeamVC.swift; sourceTree = "<group>"; };
 		A12C3339253DA898007EE971 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		A141E0232559438C00A63FA2 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
-		A156719A255B96410072D375 /* ProfilePeople.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfilePeople.storyboard; sourceTree = "<group>"; };
-		A156719C255B96550072D375 /* profilePeopleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profilePeopleVC.swift; sourceTree = "<group>"; };
-		A156719E255B9B6E0072D375 /* profileForMeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileForMeVC.swift; sourceTree = "<group>"; };
-		A15671A0255B9B9F0072D375 /* profileForMeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = profileForMeVC.xib; sourceTree = "<group>"; };
-		A15671A2255B9C0A0072D375 /* profileForMyTeamVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = profileForMyTeamVC.xib; sourceTree = "<group>"; };
 		A190A3D8254FD471007C5139 /* SearchTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTeam.swift; sourceTree = "<group>"; };
 		A1A2E01F2547BF31008DD0D2 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		A1A2E0212547BF37008DD0D2 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
@@ -400,10 +400,23 @@
 			path = "Add Post";
 			sourceTree = "<group>";
 		};
+		5C5FA31D255E1C8100CDD060 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				5C5FA31E255E1C8100CDD060 /* profileForMeVC.swift */,
+				5C5FA31F255E1C8100CDD060 /* profilePeopleVC.swift */,
+				5C5FA320255E1C8100CDD060 /* profileForMyTeamVC.xib */,
+				5C5FA321255E1C8100CDD060 /* profileForMeVC.xib */,
+				5C5FA322255E1C8100CDD060 /* ProfilePeople.storyboard */,
+				5C5FA323255E1C8100CDD060 /* profileForMyTeamVC.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		5C6FADFE252CE5C900F74AE6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A1567199255B91A70072D375 /* Profile */,
+				5C5FA31D255E1C8100CDD060 /* Profile */,
 				5C5FA2FE255E1AFE00CDD060 /* Add Post */,
 				5C5FA2EF255E1AFE00CDD060 /* Availability */,
 				5C5FA2E6255E1AFD00CDD060 /* Commendation */,
@@ -708,19 +721,6 @@
 			path = Feed;
 			sourceTree = "<group>";
 		};
-		A1567199255B91A70072D375 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				A156719A255B96410072D375 /* ProfilePeople.storyboard */,
-				A156719C255B96550072D375 /* profilePeopleVC.swift */,
-				A156719E255B9B6E0072D375 /* profileForMeVC.swift */,
-				A15671A0255B9B9F0072D375 /* profileForMeVC.xib */,
-				A15671A2255B9C0A0072D375 /* profileForMyTeamVC.xib */,
-				A12B8C96255C741C007CD5B8 /* profileForMyTeamVC.swift */,
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
 		A1A409DF253EA1AA00645930 /* GameViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -853,18 +853,18 @@
 			files = (
 				5CDE2417252C3CDB00DF5601 /* LaunchScreen.storyboard in Resources */,
 				5C6FAE06252CE66000F74AE6 /* Example.storyboard in Resources */,
+				5C5FA327255E1C8200CDD060 /* profileForMeVC.xib in Resources */,
 				5C5FA305255E1AFE00CDD060 /* CommendationVC.xib in Resources */,
 				6540DA1325506CF700701688 /* Hind-SemiBold.ttf in Resources */,
 				5C5FA308255E1AFE00CDD060 /* CommendationInfo.storyboard in Resources */,
+				5C5FA328255E1C8200CDD060 /* ProfilePeople.storyboard in Resources */,
 				5CDE2414252C3CDB00DF5601 /* Assets.xcassets in Resources */,
 				A1A409E3253EA24900645930 /* GameTableViewCell.xib in Resources */,
 				A1A409E1253EA23C00645930 /* GameDetailViewController.xib in Resources */,
 				6540D9B8254684EC00701688 /* SearchPeople.storyboard in Resources */,
 				5C18DC31255A37D800A2825A /* Feed.storyboard in Resources */,
 				5C18DC36255A39E500A2825A /* Feeds.storyboard in Resources */,
-				A156719B255B96410072D375 /* ProfilePeople.storyboard in Resources */,
 				6540DA1025506CF700701688 /* Hind-Medium.ttf in Resources */,
-				A15671A1255B9B9F0072D375 /* profileForMeVC.xib in Resources */,
 				6540D9922546816E00701688 /* forgotPass.storyboard in Resources */,
 				5C6FAE15252CE92500F74AE6 /* SecondExampleViewController.xib in Resources */,
 				5C5FA316255E1AFE00CDD060 /* FilterPost.storyboard in Resources */,
@@ -880,6 +880,7 @@
 				5C5FA31C255E1AFE00CDD060 /* AddPostLFMemberVC.xib in Resources */,
 				5C70E54125427E7500C45F76 /* SignInViewController.xib in Resources */,
 				5C5FA31B255E1AFE00CDD060 /* AddPostLFGroupVC.xib in Resources */,
+				5C5FA326255E1C8200CDD060 /* profileForMyTeamVC.xib in Resources */,
 				6540DA0F25506CF700701688 /* Hind-Regular.ttf in Resources */,
 				5CDE2412252C3CD900DF5601 /* Main.storyboard in Resources */,
 				A15671A3255B9C0A0072D375 /* profileForMyTeamVC.xib in Resources */,
@@ -1035,9 +1036,7 @@
 				5C18DC37255A39E500A2825A /* FeedViewController.swift in Sources */,
 				5C5FA309255E1AFE00CDD060 /* CommendationTableViewCell.swift in Sources */,
 				5C18DC30255A37D800A2825A /* RecommendedCollectionViewCell.swift in Sources */,
-				A156719D255B96550072D375 /* profilePeopleVC.swift in Sources */,
 				5CD8747E255286B200040E7A /* PlayerService.swift in Sources */,
-				A156719F255B9B6E0072D375 /* profileForMeVC.swift in Sources */,
 				5C70E53525414AB100C45F76 /* UserInteractor.swift in Sources */,
 				A190A3D9254FD471007C5139 /* SearchTeam.swift in Sources */,
 				5C5FA30B255E1AFE00CDD060 /* PlayerCommendationVC.swift in Sources */,
@@ -1047,12 +1046,15 @@
 				5C5FA317255E1AFE00CDD060 /* AddPostLFMemberVC.swift in Sources */,
 				5CD87482255286B200040E7A /* TeamService.swift in Sources */,
 				5C5FA315255E1AFE00CDD060 /* FilterPostViewController.swift in Sources */,
+				5C5FA325255E1C8200CDD060 /* profilePeopleVC.swift in Sources */,
 				5C5FA311255E1AFE00CDD060 /* PostDetailMemberVC.swift in Sources */,
 				5CD87471255286A900040E7A /* Team.swift in Sources */,
 				5CD8748D255286BA00040E7A /* RoomChatInteractor.swift in Sources */,
 				5CDE240D252C3CD900DF5601 /* SceneDelegate.swift in Sources */,
 				5C6FAE01252CE5FA00F74AE6 /* MainViewController.swift in Sources */,
 				A1A2E02A2547E709008DD0D2 /* UITextField+Extension.swift in Sources */,
+				5C5FA329255E1C8200CDD060 /* profileForMyTeamVC.swift in Sources */,
+				5C5FA324255E1C8200CDD060 /* profileForMeVC.swift in Sources */,
 				A12B7BB62551D29E00D9EEAF /* PickerDelegate.swift in Sources */,
 				A1A409DE253EA13400645930 /* GamesAPI.swift in Sources */,
 				5CD8747F255286B200040E7A /* RoomChatService.swift in Sources */,
