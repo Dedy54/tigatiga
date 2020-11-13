@@ -15,9 +15,18 @@ class FilterPostViewController: UIViewController {
     @IBOutlet weak var roleTextField: UITextField!
     @IBOutlet weak var availabilityTexTField: UITextField!
     
+    @IBOutlet weak var applyButton: UIButton!
+    
+    
+    @IBOutlet weak var LFTitleLabel: UILabel!
+    @IBOutlet weak var SRTitleLabel: UILabel!
+    @IBOutlet weak var RoleTitleLabel: UILabel!
+    
     let lookingForPickerview = UIPickerView()
     let skillRatingPickerview = UIPickerView()
     let rolePickerview = UIPickerView()
+    
+    
     
     
     
@@ -41,7 +50,12 @@ class FilterPostViewController: UIViewController {
         skillRatingTextField.inputView = skillRatingPickerview
         roleTextField.inputView = rolePickerview
         
+        applyButton.layer.cornerRadius = 20
+        applyButton.titleLabel?.font = UIFont(name: "Hind-Bold", size: 16)
         
+        LFTitleLabel.font = UIFont(name: "Hind-Regular", size: 16)
+        SRTitleLabel.font = UIFont(name: "Hind-Regular", size: 16)
+        RoleTitleLabel.font = UIFont(name: "Hind-Regular", size: 16)
         
     }
     
@@ -61,6 +75,11 @@ class FilterPostViewController: UIViewController {
         txtfld.frame.size.height = 44
         txtfld.tintColor = .clear
     }
+    
+    
+    @IBAction func applyTapped(_ sender: Any) {
+    }
+    
 
 }
 

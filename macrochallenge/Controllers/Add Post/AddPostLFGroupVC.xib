@@ -10,10 +10,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddPostLFGroupVC" customModule="macrochallenge" customModuleProvider="target">
             <connections>
+                <outlet property="avTitleLabel" destination="Ome-Yn-xa4" id="pvX-io-cb3"/>
                 <outlet property="availability" destination="sN2-Cu-kAQ" id="Eml-Oq-8aG"/>
+                <outlet property="avgSRTitleLabel" destination="XUk-sS-YpW" id="oAf-BK-nbv"/>
                 <outlet property="avgSkillRatingTextfield" destination="xmf-un-SD0" id="gi3-JD-DpP"/>
+                <outlet property="descTitleLabel" destination="qmz-TA-9dr" id="cm7-ny-Yx4"/>
                 <outlet property="descriptionTextview" destination="ERW-Cf-CQR" id="AYf-KD-we2"/>
                 <outlet property="roleTextfield" destination="y0Q-r7-BiY" id="1Wk-DZ-u08"/>
+                <outlet property="roleTitleLabel" destination="tba-aE-5jr" id="GyT-X0-ms7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -65,17 +69,12 @@
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" red="1" green="0.80784313730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="12:00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sN2-Cu-kAQ">
+                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Day, HH:MM-HH:MM " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sN2-Cu-kAQ">
                     <rect key="frame" x="23" y="208" width="368" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ujL-YA-3cY">
-                    <rect key="frame" x="351" y="215" width="20" height="30.5"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="tintColor" red="1" green="0.80784313730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qmz-TA-9dr">
                     <rect key="frame" x="23" y="262" width="84" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -100,6 +99,5 @@
     </objects>
     <resources>
         <image name="chevron.down" catalog="system" width="128" height="72"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
     </resources>
 </document>
