@@ -48,6 +48,11 @@ class CommendationVC: UIViewController {
     
     
     @IBAction func infoTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "CommendationInfo", bundle: nil)
+        
+        let commendationInfo = storyboard.instantiateViewController(withIdentifier: "CommendationInfo") as! CommendationInfoVC
+        
+        present(commendationInfo, animated: true, completion: nil)
         
     }
     
