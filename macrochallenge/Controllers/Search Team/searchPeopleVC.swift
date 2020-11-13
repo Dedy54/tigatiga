@@ -22,7 +22,7 @@ class searchPeopleVC: UIViewController{
     
     let playerInteractor: PlayerInteractor? = PlayerInteractor()
     let teamInteractor: TeamInteractor? = TeamInteractor()
-    var selectedView: Int?
+    var selectedView: Int? = 0
     var players: [Player] = []
     var teams: [Team] = []
     
@@ -73,7 +73,7 @@ class searchPeopleVC: UIViewController{
         switch sender {
         case applyButton:
             if views[selectedView!] == searchPlayerVC.view {
-                let teamName:String = ""
+                let teamName:String = searchPlayerVC.searchPlayerTxtField.text!
                 let roleInNeed = searchPlayerVC.rolePlayerTextField.text!
                 let avgSkillRating = searchPlayerVC.skillRatingPlayerTextField.text!
                 let memberSize: String = ""
@@ -81,12 +81,12 @@ class searchPeopleVC: UIViewController{
                 print("call player interactor with data ", roleInNeed, avgSkillRating)
                 playerInteractor?.filterPlayers(teamName: teamName, roleInNeed: roleInNeed, avgSkillRating: avgSkillRating, memberSize: memberSize, role: role, success: { (playerResults) -> (Void) in
                     self.players = playerResults
-                    self.performSegue(withIdentifier: "showResult", sender: nil)
+                    self.performSegue(withIdentifier: "unwindToResult", sender: nil)
                 }, failure: { (err) -> (Void) in
                      print("failed to get player data with error \(err)")
                 })
             }else{
-                let teamName:String = "Team C"
+                let teamName:String = searchPlayerVC.searchPlayerTxtField.text!
                 let roleInNeed = searchTeamVC.roleINTxtField.text!
                 let avgSkillRating = searchTeamVC.skillRatingTxtField.text!
                 let memberSize = searchTeamVC.memberSizeTxtField.text!
@@ -94,7 +94,7 @@ class searchPeopleVC: UIViewController{
                 print("call team interactor with data ", roleInNeed, avgSkillRating, memberSize, role)
                 teamInteractor?.filterTeams(teamName: teamName, roleInNeed: roleInNeed, avgSkillRating: avgSkillRating, memberSize: memberSize, role: role, success: { (teamResults) -> (Void) in
                     self.teams = teamResults
-                    self.performSegue(withIdentifier: "showResult", sender: nil)
+                    self.performSegue(withIdentifier: "unwindToResult", sender: nil)
                 }, failure: { (err) -> (Void) in
                     print("failed to get team data with error \(err)")
                 })
@@ -105,10 +105,16 @@ class searchPeopleVC: UIViewController{
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showResults"
+        if segue.identifier == "unwindToResult"
         {
             let searchResultVC = segue.destination as! SearchResultVC
-            searchResultVC.teams = teams
+            if views[selectedView!] == searchPlayerVC.view {
+                searchResultVC.players = players
+                searchResultVC.teams = []
+            }else {
+                searchResultVC.teams = teams
+                searchResultVC.players = []
+            }
         }
     }
     

@@ -37,6 +37,12 @@
 		5C5FA31A255E1AFE00CDD060 /* AddPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5FA302255E1AFE00CDD060 /* AddPostVC.swift */; };
 		5C5FA31B255E1AFE00CDD060 /* AddPostLFGroupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C5FA303255E1AFE00CDD060 /* AddPostLFGroupVC.xib */; };
 		5C5FA31C255E1AFE00CDD060 /* AddPostLFMemberVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C5FA304255E1AFE00CDD060 /* AddPostLFMemberVC.xib */; };
+		5C5FA324255E1C8200CDD060 /* profileForMeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5FA31E255E1C8100CDD060 /* profileForMeVC.swift */; };
+		5C5FA325255E1C8200CDD060 /* profilePeopleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5FA31F255E1C8100CDD060 /* profilePeopleVC.swift */; };
+		5C5FA326255E1C8200CDD060 /* profileForMyTeamVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C5FA320255E1C8100CDD060 /* profileForMyTeamVC.xib */; };
+		5C5FA327255E1C8200CDD060 /* profileForMeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C5FA321255E1C8100CDD060 /* profileForMeVC.xib */; };
+		5C5FA328255E1C8200CDD060 /* ProfilePeople.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C5FA322255E1C8100CDD060 /* ProfilePeople.storyboard */; };
+		5C5FA329255E1C8200CDD060 /* profileForMyTeamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5FA323255E1C8100CDD060 /* profileForMyTeamVC.swift */; };
 		5C6FAE01252CE5FA00F74AE6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6FAE00252CE5FA00F74AE6 /* MainViewController.swift */; };
 		5C6FAE04252CE64C00F74AE6 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6FAE03252CE64C00F74AE6 /* ExampleViewController.swift */; };
 		5C6FAE06252CE66000F74AE6 /* Example.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C6FAE05252CE66000F74AE6 /* Example.storyboard */; };
@@ -167,6 +173,12 @@
 		5C5FA302255E1AFE00CDD060 /* AddPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostVC.swift; sourceTree = "<group>"; };
 		5C5FA303255E1AFE00CDD060 /* AddPostLFGroupVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPostLFGroupVC.xib; sourceTree = "<group>"; };
 		5C5FA304255E1AFE00CDD060 /* AddPostLFMemberVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPostLFMemberVC.xib; sourceTree = "<group>"; };
+		5C5FA31E255E1C8100CDD060 /* profileForMeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = profileForMeVC.swift; sourceTree = "<group>"; };
+		5C5FA31F255E1C8100CDD060 /* profilePeopleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = profilePeopleVC.swift; sourceTree = "<group>"; };
+		5C5FA320255E1C8100CDD060 /* profileForMyTeamVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = profileForMyTeamVC.xib; sourceTree = "<group>"; };
+		5C5FA321255E1C8100CDD060 /* profileForMeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = profileForMeVC.xib; sourceTree = "<group>"; };
+		5C5FA322255E1C8100CDD060 /* ProfilePeople.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProfilePeople.storyboard; sourceTree = "<group>"; };
+		5C5FA323255E1C8100CDD060 /* profileForMyTeamVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = profileForMyTeamVC.swift; sourceTree = "<group>"; };
 		5C6FAE00252CE5FA00F74AE6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5C6FAE03252CE64C00F74AE6 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		5C6FAE05252CE66000F74AE6 /* Example.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Example.storyboard; sourceTree = "<group>"; };
@@ -388,9 +400,23 @@
 			path = "Add Post";
 			sourceTree = "<group>";
 		};
+		5C5FA31D255E1C8100CDD060 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				5C5FA31E255E1C8100CDD060 /* profileForMeVC.swift */,
+				5C5FA31F255E1C8100CDD060 /* profilePeopleVC.swift */,
+				5C5FA320255E1C8100CDD060 /* profileForMyTeamVC.xib */,
+				5C5FA321255E1C8100CDD060 /* profileForMeVC.xib */,
+				5C5FA322255E1C8100CDD060 /* ProfilePeople.storyboard */,
+				5C5FA323255E1C8100CDD060 /* profileForMyTeamVC.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		5C6FADFE252CE5C900F74AE6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5C5FA31D255E1C8100CDD060 /* Profile */,
 				5C5FA2FE255E1AFE00CDD060 /* Add Post */,
 				5C5FA2EF255E1AFE00CDD060 /* Availability */,
 				5C5FA2E6255E1AFD00CDD060 /* Commendation */,
@@ -827,9 +853,11 @@
 			files = (
 				5CDE2417252C3CDB00DF5601 /* LaunchScreen.storyboard in Resources */,
 				5C6FAE06252CE66000F74AE6 /* Example.storyboard in Resources */,
+				5C5FA327255E1C8200CDD060 /* profileForMeVC.xib in Resources */,
 				5C5FA305255E1AFE00CDD060 /* CommendationVC.xib in Resources */,
 				6540DA1325506CF700701688 /* Hind-SemiBold.ttf in Resources */,
 				5C5FA308255E1AFE00CDD060 /* CommendationInfo.storyboard in Resources */,
+				5C5FA328255E1C8200CDD060 /* ProfilePeople.storyboard in Resources */,
 				5CDE2414252C3CDB00DF5601 /* Assets.xcassets in Resources */,
 				A1A409E3253EA24900645930 /* GameTableViewCell.xib in Resources */,
 				A1A409E1253EA23C00645930 /* GameDetailViewController.xib in Resources */,
@@ -852,6 +880,7 @@
 				5C5FA31C255E1AFE00CDD060 /* AddPostLFMemberVC.xib in Resources */,
 				5C70E54125427E7500C45F76 /* SignInViewController.xib in Resources */,
 				5C5FA31B255E1AFE00CDD060 /* AddPostLFGroupVC.xib in Resources */,
+				5C5FA326255E1C8200CDD060 /* profileForMyTeamVC.xib in Resources */,
 				6540DA0F25506CF700701688 /* Hind-Regular.ttf in Resources */,
 				5CDE2412252C3CD900DF5601 /* Main.storyboard in Resources */,
 				5C5FA312255E1AFE00CDD060 /* PostFilterResult.storyboard in Resources */,
@@ -1015,12 +1044,15 @@
 				5C5FA317255E1AFE00CDD060 /* AddPostLFMemberVC.swift in Sources */,
 				5CD87482255286B200040E7A /* TeamService.swift in Sources */,
 				5C5FA315255E1AFE00CDD060 /* FilterPostViewController.swift in Sources */,
+				5C5FA325255E1C8200CDD060 /* profilePeopleVC.swift in Sources */,
 				5C5FA311255E1AFE00CDD060 /* PostDetailMemberVC.swift in Sources */,
 				5CD87471255286A900040E7A /* Team.swift in Sources */,
 				5CD8748D255286BA00040E7A /* RoomChatInteractor.swift in Sources */,
 				5CDE240D252C3CD900DF5601 /* SceneDelegate.swift in Sources */,
 				5C6FAE01252CE5FA00F74AE6 /* MainViewController.swift in Sources */,
 				A1A2E02A2547E709008DD0D2 /* UITextField+Extension.swift in Sources */,
+				5C5FA329255E1C8200CDD060 /* profileForMyTeamVC.swift in Sources */,
+				5C5FA324255E1C8200CDD060 /* profileForMeVC.swift in Sources */,
 				A12B7BB62551D29E00D9EEAF /* PickerDelegate.swift in Sources */,
 				A1A409DE253EA13400645930 /* GamesAPI.swift in Sources */,
 				5CD8747F255286B200040E7A /* RoomChatService.swift in Sources */,
