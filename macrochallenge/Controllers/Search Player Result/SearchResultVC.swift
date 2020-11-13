@@ -31,11 +31,14 @@ class SearchResultVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         self.title = "Result"
         
-        magnifyingGlass?.withTintColor(UIColor(hex: "#ffce00ff")!)
-//        let magIcon = UIBarButtonItem(image: magnifyingGlass, style: .plain, target: self, action: nil)
-//        self.navigationController!.navigationItem.rightBarButtonItem  = magIcon
+        
+        
         let button1 = UIBarButtonItem(image: magnifyingGlass , style: .plain, target: self, action: #selector(tapped))
         self.navigationItem.rightBarButtonItem  = button1
+        
+//        magnifyingGlass?.withTintColor(UIColor(hex: "#ffce00ff")!)
+//        let magIcon = UIBarButtonItem(image: magnifyingGlass, style: .plain, target: self, action: nil)
+//        self.navigationController!.navigationItem.rightBarButtonItem  = magIcon
         
         overrideUserInterfaceStyle = .dark
         
