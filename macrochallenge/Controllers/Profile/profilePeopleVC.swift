@@ -12,7 +12,7 @@ import UIKit
 class profilePeopleVC: UIViewController {
     
     @IBOutlet weak var teamTableView: UITableView!
-    @IBOutlet weak var viewContainer: UIView!
+    @IBOutlet weak var scrollContainer: UIScrollView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     var profileMeVC = profileForMeVC()
     var profileMyTeamVC = profileForMyTeamVC()
@@ -22,13 +22,19 @@ class profilePeopleVC: UIViewController {
 //    var selectedView: Int? = 0
     
     var teams: [Team] = []
+    let teamInteractor: TeamInteractor? = TeamInteractor()
+    var selectedPeople: Player?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewContainer.addSubview(profileMeVC.view)
+        let button1 = UIBarButtonItem(image: #imageLiteral(resourceName: "menu") , style: .plain, target: self, action: #selector(tapped))
+        self.navigationItem.rightBarButtonItem  = button1
+        profileMeVC.selectedPlayer = selectedPeople
+        scrollContainer.contentSize = CGSize(width: scrollContainer.frame.size.width, height: profileMeVC.view.frame.size.height)
+        scrollContainer.addSubview(profileMeVC.view)
         self.addChild(profileMeVC)
-        viewContainer.bringSubviewToFront(profileMeVC.view)
+        scrollContainer.bringSubviewToFront(profileMeVC.view)
         
         setupTeamTableView()
         
@@ -39,6 +45,11 @@ class profilePeopleVC: UIViewController {
         setSegmentedViewInContainer()
         
         overrideUserInterfaceStyle = .dark
+        getTeam()
+    }
+    
+    @objc func tapped() {
+        
     }
     
     private func setupTeamTableView() {
@@ -47,6 +58,15 @@ class profilePeopleVC: UIViewController {
         teamTableView.scrollsToTop = true
         teamTableView.register(UINib(nibName: "profileForMyTeamVC", bundle: nil), forCellReuseIdentifier:"TeamCell")
         teamTableView.estimatedRowHeight = 360
+    }
+    
+    func getTeam() {
+        teamInteractor?.fetchMyTeams(id: selectedPeople!.id!, success: { (teamResults) -> (Void) in
+            self.teams = teamResults
+            self.teamTableView.reloadData()
+        }, failure: { (err) -> (Void) in
+            print("failed to get my team data with error \(err)")
+        })
     }
     
     func setSegmentedViewInContainer(){
@@ -65,10 +85,10 @@ class profilePeopleVC: UIViewController {
     @IBAction func switchActionView(_ sender: UISegmentedControl) {
         if teamTableView.isHidden {
             teamTableView.isHidden = false
-            viewContainer.isHidden = true
+            scrollContainer.isHidden = true
         }else {
             teamTableView.isHidden = true
-            viewContainer.isHidden = false
+            scrollContainer.isHidden = false
         }
 //        views[sender.selectedSegmentIndex].isUserInteractionEnabled = true
 //       self.viewContainer.bringSubviewToFront(views[sender.selectedSegmentIndex])
@@ -82,10 +102,12 @@ extension profilePeopleVC: UITableViewDataSource, UIScrollViewDelegate, UITableV
     }
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = teamTableView.dequeueReusableCell(withIdentifier: "profileForMyTeamVC", for: indexPath) as? profileForMyTeamVC else {return UITableViewCell()}
+        guard let cell = teamTableView.dequeueReusableCell(withIdentifier: "TeamCell", for: indexPath) as? profileForMyTeamVC else {return UITableViewCell()}
             
         let team = self.teams[indexPath.row]
         cell.teamName.text = team.name
+        cell.teamSkill.text = team.skillRating ?? ""
+        
 //        cell.setData()
         
         return cell

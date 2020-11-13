@@ -29,11 +29,11 @@
             </objects>
             <point key="canvasLocation" x="-1004" y="1335"/>
         </scene>
-        <!--A-->
+        <!--Feed-->
         <scene sceneID="MeB-oH-FNH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b3L-ZP-2Os" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="A" image="person.circle" catalog="system" selectedImage="person.circle.fill" id="dQ7-fY-d3f"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="clock" catalog="system" selectedImage="clock.fill" id="dQ7-fY-d3f"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nDr-Qh-ADC">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -48,11 +48,11 @@
             </objects>
             <point key="canvasLocation" x="957.97101449275374" y="-1492.6339285714284"/>
         </scene>
-        <!--B-->
+        <!--People-->
         <scene sceneID="irw-Rb-Tj6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="skJ-aq-Ldn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="B" image="person.circle" catalog="system" selectedImage="person.circle.fill" id="Rw6-4x-Hoi"/>
+                    <tabBarItem key="tabBarItem" title="People" image="person.circle" catalog="system" selectedImage="person.circle.fill" id="Rw6-4x-Hoi"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yg3-Sw-V3t">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -67,11 +67,11 @@
             </objects>
             <point key="canvasLocation" x="957.97101449275374" y="-791.51785714285711"/>
         </scene>
-        <!--C-->
+        <!--Chat-->
         <scene sceneID="7Tu-Ah-gkI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TP7-Wk-djo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="C" image="person.circle" catalog="system" selectedImage="person.circle.fill" id="YkH-71-oKz"/>
+                    <tabBarItem key="tabBarItem" title="Chat" image="bubble.left.and.bubble.right" catalog="system" selectedImage="bubble.left.and.bubble.right.fill" id="YkH-71-oKz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DRH-C8-EYW">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -86,11 +86,11 @@
             </objects>
             <point key="canvasLocation" x="957.97101449275374" y="-83.035714285714278"/>
         </scene>
-        <!--D-->
+        <!--Updates-->
         <scene sceneID="nqu-q6-xMj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LCO-EB-dwf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="D" image="person.circle" catalog="system" selectedImage="person.circle.fill" id="VZT-WJ-eZw"/>
+                    <tabBarItem key="tabBarItem" title="Updates" image="bell" catalog="system" selectedImage="bell.fill" id="VZT-WJ-eZw"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HCZ-3H-1Se">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -105,20 +105,20 @@
             </objects>
             <point key="canvasLocation" x="957.97101449275374" y="625.44642857142856"/>
         </scene>
-        <!--FeedViewController-->
+        <!--FeedVC-->
         <scene sceneID="c7U-0z-yNX">
             <objects>
-                <viewControllerPlaceholder storyboardName="Feeds" referencedIdentifier="FeedViewController" id="GPX-jR-Hxk" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Feed" referencedIdentifier="FeedVC" id="GPX-jR-Hxk" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="hiK-Aq-oX6"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uBU-uq-Yrx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1703" y="-1493"/>
         </scene>
-        <!--SearchResult-->
+        <!--SearchVC-->
         <scene sceneID="EDs-Vo-aza">
             <objects>
-                <viewControllerPlaceholder storyboardName="SearchResult" id="JwB-1F-JJ2" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="SearchResult" referencedIdentifier="SearchVC" id="JwB-1F-JJ2" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="RDB-1Q-0fV"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Qs-fd-JZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -135,10 +135,10 @@
             </objects>
             <point key="canvasLocation" x="1683" y="625"/>
         </scene>
-        <!--FeedVC-->
+        <!--FeedViewController-->
         <scene sceneID="b8X-U6-qfx">
             <objects>
-                <viewControllerPlaceholder storyboardName="Feed" referencedIdentifier="FeedVC" id="T4X-NC-3Bx" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Feeds" referencedIdentifier="FeedViewController" id="T4X-NC-3Bx" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="7IK-5b-f5Y"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XfQ-K5-hBs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -147,13 +147,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="person.circle" catalog="system" width="128" height="121"/>
-        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <image name="bell" catalog="system" width="64" height="62"/>
+        <image name="bell.fill" catalog="system" width="64" height="62"/>
+        <image name="bubble.left.and.bubble.right" catalog="system" width="64" height="48"/>
+        <image name="bubble.left.and.bubble.right.fill" catalog="system" width="64" height="48"/>
+        <image name="clock" catalog="system" width="64" height="60"/>
+        <image name="clock.fill" catalog="system" width="64" height="60"/>
+        <image name="person.circle" catalog="system" width="64" height="60"/>
+        <image name="person.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
 </document>

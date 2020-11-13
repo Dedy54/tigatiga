@@ -14,7 +14,7 @@ protocol TeamInteractorDelegate {
     func fetchTeam(id: String, success: @escaping (Team) -> (Void), failure: @escaping (Error) -> (Void))
     func createTeam(team: Team, success: @escaping (Team) -> (Void), failure: @escaping (Error) -> (Void))
     func updateTeam(team: Team, success: @escaping (Team) -> (Void), failure: @escaping (Error) -> (Void))
-    func fetchMyTeams(success: @escaping ([Team]) -> (Void), failure: @escaping (Error) -> (Void))
+    func fetchMyTeams(id: String, success: @escaping ([Team]) -> (Void), failure: @escaping (Error) -> (Void))
 }
 
 class TeamInteractor: BaseInteractor, TeamInteractorDelegate {
@@ -71,8 +71,8 @@ class TeamInteractor: BaseInteractor, TeamInteractorDelegate {
         }
     }
     
-    func fetchMyTeams(success: @escaping ([Team]) -> (Void), failure: @escaping (Error) -> (Void)) {
-        let uid = Auth.auth().currentUser?.uid ?? "0"
+    func fetchMyTeams(id: String, success: @escaping ([Team]) -> (Void), failure: @escaping (Error) -> (Void)) {
+        let uid = Auth.auth().currentUser?.uid ?? id
         service.fetchPlayer(id: uid, success: { (player) -> (Void) in
             self.service.fetchMyTeams(player: player, success: { (teams) -> (Void) in
                 self.teams = teams
