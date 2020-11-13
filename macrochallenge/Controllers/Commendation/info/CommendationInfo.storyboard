@@ -11,7 +11,7 @@
         <!--Commendation InfoVC-->
         <scene sceneID="71T-cc-hr8">
             <objects>
-                <viewController id="YWZ-3y-sQn" customClass="CommendationInfoVC" customModule="macrochallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CommendationInfo" id="YWZ-3y-sQn" customClass="CommendationInfoVC" customModule="macrochallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EBy-Hp-8Oa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
