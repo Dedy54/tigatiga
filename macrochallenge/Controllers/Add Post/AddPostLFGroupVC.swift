@@ -17,6 +17,16 @@ class AddPostLFGroupVC: UIViewController {
     
     @IBOutlet weak var descriptionTextview: UITextView!
     
+    
+    @IBOutlet weak var avgSRTitleLabel: UILabel!
+    
+    @IBOutlet weak var roleTitleLabel: UILabel!
+    
+    @IBOutlet weak var avTitleLabel: UILabel!
+    
+    @IBOutlet weak var descTitleLabel: UILabel!
+    
+    
     let avgSkillRatingPicker = UIPickerView()
     let rolePicker = UIPickerView()
     
@@ -33,6 +43,12 @@ class AddPostLFGroupVC: UIViewController {
         setTextFieldShape(txtfld: avgSkillRatingTextfield)
         setTextFieldShape(txtfld: roleTextfield)
         
+        availability.layer.borderWidth = 1
+        availability.layer.borderColor = searchForTeamVC().mabarYellow
+        availability.layer.cornerRadius = 5
+        availability.frame.size.height = 44
+        
+        
         avgSkillRatingPicker.tag = 1
         rolePicker.tag = 2
         
@@ -48,7 +64,10 @@ class AddPostLFGroupVC: UIViewController {
         rolePicker.dataSource = self
         rolePicker.delegate = self
         
-        
+        avgSRTitleLabel.font = UIFont(name: "Hind-Regular", size: 16)
+        roleTitleLabel.font = UIFont(name: "Hind-Regular", size: 16)
+        avTitleLabel.font = UIFont(name: "Hind-Regular", size: 16)
+        descTitleLabel.font = UIFont(name: "Hind-Regular", size: 16)
         
     }
     
