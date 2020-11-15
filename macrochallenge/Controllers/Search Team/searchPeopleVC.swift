@@ -17,6 +17,13 @@ class searchPeopleVC: UIViewController{
     var searchPlayerVC = searchForPlayerVC()
     var searchTeamVC = searchForTeamVC()
     
+    enum commendations : Int{
+        case mvp
+        case teamleader
+        case friendly
+        case teamplayer
+    }
+    
    
     var views : [UIView]!
     
@@ -25,6 +32,7 @@ class searchPeopleVC: UIViewController{
     var selectedView: Int? = 0
     var players: [Player] = []
     var teams: [Team] = []
+    var mabarYellowTranspararent = UIColor(hex: "#ffce0032")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,10 +46,13 @@ class searchPeopleVC: UIViewController{
         
         overrideUserInterfaceStyle = .dark
         
+        self.title = "Search"
+        
     }
     
     func setApplyBtnShape(){
         applyButton.layer.cornerRadius = 10
+        applyButton.titleLabel?.font = UIFont(name: "Hind-Bold", size: 16)
     }
     
     func setSegmentedViewInContainer(){
@@ -102,7 +113,20 @@ class searchPeopleVC: UIViewController{
         default:
             return
         }
+        
+        let commendationType : commendations = getCommendationType()
+        
     }
+    
+    func getCommendationType() -> commendations{
+        for (index, button) in searchPlayerVC.commendationButton.enumerated(){
+            if button.backgroundColor == mabarYellowTranspararent{
+                return commendations(rawValue: index) ?? .mvp
+            }
+        }
+        return .mvp
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "unwindToResult"

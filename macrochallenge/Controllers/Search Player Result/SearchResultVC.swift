@@ -67,7 +67,7 @@ class SearchResultVC: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        let searchPeopleController = unwindSegue.source as! searchPeopleVC {
 //            self.teams = searchPeopleController.teams
 //        }
-        resultTableView.reloadData()
+        resultTableView?.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
