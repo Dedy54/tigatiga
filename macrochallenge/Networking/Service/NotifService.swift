@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 import FirebaseFirestoreSwift
+import FirebaseAuth
 
 protocol NotifServiceDelegate {
     func fetchNotifs(success: @escaping ([Notif]) -> (Void), failure: @escaping (Error) -> (Void))
