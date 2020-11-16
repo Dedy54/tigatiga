@@ -84,15 +84,15 @@ class searchPeopleVC: UIViewController{
         switch sender {
         case applyButton:
             if views[selectedView!] == searchPlayerVC.view {
-                let teamName:String = searchPlayerVC.searchPlayerTxtField.text!
-                let roleInNeed = searchPlayerVC.rolePlayerTextField.text!
-                let avgSkillRating = searchPlayerVC.skillRatingPlayerTextField.text!
-                let memberSize: String = ""
-                let role: String = ""
-                print("call player interactor with data ", roleInNeed, avgSkillRating)
-                playerInteractor?.filterPlayers(teamName: teamName, roleInNeed: roleInNeed, avgSkillRating: avgSkillRating, memberSize: memberSize, role: role, success: { (playerResults) -> (Void) in
+                let playerName:String = searchPlayerVC.searchPlayerTxtField.text!
+                let commendationType : commendations = getCommendationType()
+                let commendation = String(describing: commendationType)
+                let skillRating = searchPlayerVC.skillRatingPlayerTextField.text!
+                let role = searchPlayerVC.rolePlayerTextField.text!
+//                print("call player interactor with data ", roleInNeed, avgSkillRating)
+                playerInteractor?.searchPlayers(name: playerName, comendation: commendation, skillRating: skillRating, role: role, success: { (playerResults) -> (Void) in
                     self.players = playerResults
-                    self.performSegue(withIdentifier: "unwindToResult", sender: nil)
+                    self.performSegue(withIdentifier: "showResult", sender: nil)
                 }, failure: { (err) -> (Void) in
                      print("failed to get player data with error \(err)")
                 })
@@ -114,8 +114,6 @@ class searchPeopleVC: UIViewController{
             return
         }
         
-        let commendationType : commendations = getCommendationType()
-        
     }
     
     func getCommendationType() -> commendations{
@@ -129,7 +127,7 @@ class searchPeopleVC: UIViewController{
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "unwindToResult"
+        if segue.identifier == "showResult"
         {
             let searchResultVC = segue.destination as! SearchResultVC
             if views[selectedView!] == searchPlayerVC.view {

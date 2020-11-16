@@ -27,7 +27,7 @@ class SearchResultVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         resultTableView.delegate = self
         resultTableView.dataSource = self
         
-        defaultGet()
+//        defaultGet()
         
         self.title = "Result"
         
