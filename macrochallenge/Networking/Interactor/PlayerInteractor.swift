@@ -15,6 +15,7 @@ protocol PlayerInteractorDelegate {
     func createPlayer(player: Player, success: @escaping (Player) -> (Void), failure: @escaping (Error) -> (Void))
     func updatePlayer(player: Player, success: @escaping (Player) -> (Void), failure: @escaping (Error) -> (Void))
     func currentPlayer(success: @escaping (Player) -> (Void), failure: @escaping (Error) -> (Void))
+    func searchPlayers(name: String, comendation: String, skillRating: String, role: String, success: @escaping ([Player]) -> (Void), failure: @escaping (Error) -> (Void))
 }
 
 class PlayerInteractor: BaseInteractor, PlayerInteractorDelegate {
@@ -75,6 +76,16 @@ class PlayerInteractor: BaseInteractor, PlayerInteractorDelegate {
         service.fetchPlayer(id: uid, success: { (player) -> (Void) in
             self.player = player
             success(player)
+        }) { (error) -> (Void) in
+            failure(error)
+        }
+    }
+    
+    func searchPlayers(name: String, comendation: String, skillRating: String, role: String, success: @escaping ([Player]) -> (Void), failure: @escaping (Error) -> (Void)) {
+        service.searchPlayer(name: name, comendation: comendation, skillRating: skillRating, role: role, success: { (players) -> (Void) in
+            print("players : \(players)")
+            self.players = players
+            success(players)
         }) { (error) -> (Void) in
             failure(error)
         }

@@ -33,6 +33,33 @@ extension CoreService {
         }
     }
     
+    func searchPlayer(name: String, comendation: String, skillRating: String, role: String, success: @escaping ([Player]) -> (Void), failure: @escaping (Error) -> (Void)){
+        
+        db.collection("players")
+            .whereField("name", isEqualTo: name)
+            .whereField("skillRating", isEqualTo: skillRating)
+            .whereField("role", isEqualTo: role)
+            .addSnapshotListener { (querySnapshot, error) in
+            if let error = error {
+                failure(error)
+                return
+            }
+            
+            var players = [Player]()
+            guard let documents = querySnapshot?.documents else {
+                print("No documents")
+                return
+            }
+            
+            players = documents.compactMap { queryDocumentSnapshot -> Player? in
+                return try? queryDocumentSnapshot.data(as: Player.self)
+            }
+            
+            success(players)
+        }
+        
+    }
+    
     func fetchPlayer(id: String, success: @escaping (Player) -> (Void), failure: @escaping (Error) -> (Void)) {
         var players = [Player]()
         db.collection("players")

@@ -28,7 +28,7 @@ class SearchResultVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         resultTableView.delegate = self
         resultTableView.dataSource = self
         
-        defaultGet()
+//        defaultGet()
         
 //        self.title = "Result"
         
@@ -71,7 +71,7 @@ class SearchResultVC: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        let searchPeopleController = unwindSegue.source as! searchPeopleVC {
 //            self.teams = searchPeopleController.teams
 //        }
-        resultTableView.reloadData()
+        resultTableView?.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
