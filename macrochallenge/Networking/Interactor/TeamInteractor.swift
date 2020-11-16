@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import FirebaseAuth
 
 protocol TeamInteractorDelegate {
     func fetchTeams(success: @escaping ([Team]) -> (Void), failure: @escaping (Error) -> (Void))

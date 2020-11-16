@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import FirebaseAuth
 
 protocol PlayerInteractorDelegate {
     func fetchPlayers(success: @escaping ([Player]) -> (Void), failure: @escaping (Error) -> (Void))

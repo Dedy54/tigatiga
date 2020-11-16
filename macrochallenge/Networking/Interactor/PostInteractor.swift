@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import FirebaseAuth
 
 protocol PostInteractorDelegate {
     func fetchPosts(success: @escaping ([Post]) -> (Void), failure: @escaping (Error) -> (Void))

@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 import FirebaseFirestoreSwift
+import FirebaseFirestore
 
 extension CoreService {
     
@@ -35,11 +36,19 @@ extension CoreService {
     
     func searchPlayer(name: String, comendation: String, skillRating: String, role: String, success: @escaping ([Player]) -> (Void), failure: @escaping (Error) -> (Void)){
         
-        db.collection("players")
-            .whereField("name", isEqualTo: name)
-            .whereField("skillRating", isEqualTo: skillRating)
-            .whereField("role", isEqualTo: role)
-            .addSnapshotListener { (querySnapshot, error) in
+    
+        var collection : Query = db.collection("players")
+            
+        if name != ""{
+           collection = collection.whereField("name", isEqualTo: name)
+        }
+        if skillRating != ""{
+            collection = collection.whereField("skillRating", isEqualTo: skillRating)
+        }
+        if role != ""{
+            collection = collection.whereField("role", isEqualTo: role)
+        }
+            collection.addSnapshotListener { (querySnapshot, error) in
             if let error = error {
                 failure(error)
                 return
@@ -57,6 +66,7 @@ extension CoreService {
             
             success(players)
         }
+        
         
     }
     
