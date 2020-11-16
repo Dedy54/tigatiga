@@ -10,15 +10,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="searchForPlayerVC" customModule="macrochallenge" customModuleProvider="target">
             <connections>
-                <outlet property="awesomeBtn" destination="Fhf-mc-bJf" id="xNd-qa-IAC"/>
+                <outlet property="cmdTitleLabel" destination="t9w-g1-6LW" id="vM1-oZ-BNs"/>
                 <outlet property="commendationView" destination="4p7-8l-gLL" id="AES-aN-NbF"/>
-                <outlet property="friendlyBtn" destination="Xtg-Di-Fem" id="DT1-9A-vOk"/>
-                <outlet property="greatBtn" destination="mbN-Vv-0yK" id="MOR-ab-WPy"/>
                 <outlet property="rolePlayerTextField" destination="yf8-mT-2fr" id="SmQ-5n-NSQ"/>
+                <outlet property="roleTitleLabel" destination="rbn-aG-sWV" id="Pg0-hq-qOY"/>
                 <outlet property="searchPlayerTxtField" destination="gjC-oG-yIY" id="RQ3-aY-QJU"/>
                 <outlet property="skillRatingPlayerTextField" destination="kWg-21-QmU" id="xtC-gW-en7"/>
-                <outlet property="teamLeaderBtn" destination="Sim-rv-FpG" id="Lbe-mb-6j7"/>
+                <outlet property="srTitleLabel" destination="F5x-vh-BZ8" id="fSF-2y-xit"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="commendationButton" destination="Fhf-mc-bJf" collectionClass="NSMutableArray" id="xuO-rM-2jH"/>
+                <outletCollection property="commendationButton" destination="mbN-Vv-0yK" collectionClass="NSMutableArray" id="C3c-v3-Dtg"/>
+                <outletCollection property="commendationButton" destination="Sim-rv-FpG" collectionClass="NSMutableArray" id="JmE-y9-zxZ"/>
+                <outletCollection property="commendationButton" destination="Xtg-Di-Fem" collectionClass="NSMutableArray" id="WCh-7R-fd0"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -40,9 +43,8 @@
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" red="1" green="0.80784313730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Commendation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9w-g1-6LW">
-                    <rect key="frame" x="23" y="70" width="111" height="20"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Commendation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9w-g1-6LW">
+                    <rect key="frame" x="23" y="70" width="111" height="19.5"/>
                     <color key="tintColor" red="1" green="0.80784313730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" red="1" green="0.80784313730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -76,9 +78,8 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="tintColor" red="1" green="0.80784313730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
-                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Player Name" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="gjC-oG-yIY">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Player Name" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="gjC-oG-yIY">
                     <rect key="frame" x="23" y="16" width="368" height="34"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -89,69 +90,84 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4p7-8l-gLL">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4p7-8l-gLL">
                     <rect key="frame" x="23" y="98" width="368" height="76"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbN-Vv-0yK">
-                            <rect key="frame" x="108" y="6" width="58" height="64"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                            <state key="normal" image="Great Work">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <connections>
-                                <action selector="greatTouched:" destination="-1" eventType="touchUpInside" id="vm7-Af-A5K"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sim-rv-FpG">
-                            <rect key="frame" x="202" y="6" width="58" height="64"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                            <state key="normal" image="Team Leader">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <connections>
-                                <action selector="teamLeaderTouched:" destination="-1" eventType="touchUpInside" id="dbG-4u-lrd"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xtg-Di-Fem">
-                            <rect key="frame" x="295" y="6" width="58" height="64"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                            <state key="normal" image="Friendly">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <connections>
-                                <action selector="friendlyTouched:" destination="-1" eventType="touchUpInside" id="4ty-QX-Gpx"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fhf-mc-bJf">
-                            <rect key="frame" x="15" y="6" width="58" height="64"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                            <state key="normal" image="Awesome">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <connections>
-                                <action selector="awesomeTapped:" destination="-1" eventType="touchUpInside" id="D4b-8v-wzv"/>
-                            </connections>
-                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="N06-N7-lh4">
+                            <rect key="frame" x="20" y="10" width="327" height="56"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fhf-mc-bJf">
+                                    <rect key="frame" x="0.0" y="0.0" width="51" height="56"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                    <state key="normal" image="mvp">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="commendationTapped:" destination="-1" eventType="touchUpInside" id="TIa-s4-uLg"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbN-Vv-0yK">
+                                    <rect key="frame" x="92" y="0.0" width="51" height="56"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                    <state key="normal" image="Leader">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="commendationTapped:" destination="-1" eventType="touchUpInside" id="EI0-I5-dsb"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sim-rv-FpG">
+                                    <rect key="frame" x="184" y="0.0" width="51" height="56"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                    <state key="normal" image="Friendly-1">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="commendationTapped:" destination="-1" eventType="touchUpInside" id="Kmo-6m-QmR"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xtg-Di-Fem">
+                                    <rect key="frame" x="276" y="0.0" width="51" height="56"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                    <state key="normal" image="Team Player">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="commendationTapped:" destination="-1" eventType="touchUpInside" id="q6f-Nm-EAj"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
                     </subviews>
                     <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstItem="N06-N7-lh4" firstAttribute="top" secondItem="4p7-8l-gLL" secondAttribute="top" constant="10" id="KDP-M9-9W0"/>
+                        <constraint firstAttribute="trailing" secondItem="N06-N7-lh4" secondAttribute="trailing" constant="21" id="Nf5-1g-cqU"/>
+                        <constraint firstAttribute="bottom" secondItem="N06-N7-lh4" secondAttribute="bottom" constant="10" id="VWR-26-qEI"/>
+                    </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.14509931209999999" green="0.14509573579999999" blue="0.14509817959999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4p7-8l-gLL" secondAttribute="trailing" constant="23" id="B0n-Y2-mkp"/>
+                <constraint firstItem="4p7-8l-gLL" firstAttribute="top" secondItem="t9w-g1-6LW" secondAttribute="bottom" constant="8.5" id="BNN-5c-85J"/>
+                <constraint firstItem="4p7-8l-gLL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="23" id="PCU-NI-lRw"/>
+                <constraint firstItem="t9w-g1-6LW" firstAttribute="top" secondItem="gjC-oG-yIY" secondAttribute="bottom" constant="20" id="Qm0-1E-QJu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gjC-oG-yIY" secondAttribute="trailing" constant="23" id="WT0-Zk-QZz"/>
+                <constraint firstItem="gjC-oG-yIY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="23" id="avD-en-FmG"/>
+                <constraint firstItem="gjC-oG-yIY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="16" id="opy-OA-fu7"/>
+                <constraint firstItem="t9w-g1-6LW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="23" id="rWL-d8-4br"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="144.92753623188406" y="131.91964285714286"/>
         </view>
     </objects>
     <resources>
-        <image name="Awesome" width="60" height="60"/>
-        <image name="Friendly" width="50" height="56"/>
-        <image name="Great Work" width="60" height="60"/>
-        <image name="Team Leader" width="60" height="60"/>
+        <image name="Friendly-1" width="51" height="56"/>
+        <image name="Leader" width="51" height="56"/>
+        <image name="Team Player" width="51" height="56"/>
         <image name="chevron.down" catalog="system" width="128" height="72"/>
+        <image name="mvp" width="51" height="56"/>
     </resources>
 </document>

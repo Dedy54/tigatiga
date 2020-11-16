@@ -82,7 +82,7 @@ class PlayerInteractor: BaseInteractor, PlayerInteractorDelegate {
     }
     
     func searchPlayers(name: String, comendation: String, skillRating: String, role: String, success: @escaping ([Player]) -> (Void), failure: @escaping (Error) -> (Void)) {
-        service.fetchPlayers(success: { (players) -> (Void) in
+        service.searchPlayer(name: name, comendation: comendation, skillRating: skillRating, role: role, success: { (players) -> (Void) in
             print("players : \(players)")
             self.players = players
             success(players)

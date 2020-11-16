@@ -17,6 +17,13 @@ class searchPeopleVC: UIViewController{
     var searchPlayerVC = searchForPlayerVC()
     var searchTeamVC = searchForTeamVC()
     
+    enum commendations : Int{
+        case mvp
+        case teamleader
+        case friendly
+        case teamplayer
+    }
+    
    
     var views : [UIView]!
     
@@ -25,6 +32,7 @@ class searchPeopleVC: UIViewController{
     var selectedView: Int? = 0
     var players: [Player] = []
     var teams: [Team] = []
+    var mabarYellowTranspararent = UIColor(hex: "#ffce0032")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,10 +46,13 @@ class searchPeopleVC: UIViewController{
         
         overrideUserInterfaceStyle = .dark
         
+        self.title = "Search"
+        
     }
     
     func setApplyBtnShape(){
         applyButton.layer.cornerRadius = 10
+        applyButton.titleLabel?.font = UIFont(name: "Hind-Bold", size: 16)
     }
     
     func setSegmentedViewInContainer(){
@@ -73,15 +84,15 @@ class searchPeopleVC: UIViewController{
         switch sender {
         case applyButton:
             if views[selectedView!] == searchPlayerVC.view {
-                let teamName:String = searchPlayerVC.searchPlayerTxtField.text!
-                let roleInNeed = searchPlayerVC.rolePlayerTextField.text!
-                let avgSkillRating = searchPlayerVC.skillRatingPlayerTextField.text!
-                let memberSize: String = ""
-                let role: String = ""
-                print("call player interactor with data ", roleInNeed, avgSkillRating)
-                playerInteractor?.filterPlayers(teamName: teamName, roleInNeed: roleInNeed, avgSkillRating: avgSkillRating, memberSize: memberSize, role: role, success: { (playerResults) -> (Void) in
+                let playerName:String = searchPlayerVC.searchPlayerTxtField.text!
+                let commendationType : commendations = getCommendationType()
+                let commendation = String(describing: commendationType)
+                let skillRating = searchPlayerVC.skillRatingPlayerTextField.text!
+                let role = searchPlayerVC.rolePlayerTextField.text!
+//                print("call player interactor with data ", roleInNeed, avgSkillRating)
+                playerInteractor?.searchPlayers(name: playerName, comendation: commendation, skillRating: skillRating, role: role, success: { (playerResults) -> (Void) in
                     self.players = playerResults
-                    self.performSegue(withIdentifier: "unwindToResult", sender: nil)
+                    self.performSegue(withIdentifier: "showResult", sender: nil)
                 }, failure: { (err) -> (Void) in
                      print("failed to get player data with error \(err)")
                 })
@@ -102,10 +113,21 @@ class searchPeopleVC: UIViewController{
         default:
             return
         }
+        
     }
     
+    func getCommendationType() -> commendations{
+        for (index, button) in searchPlayerVC.commendationButton.enumerated(){
+            if button.backgroundColor == mabarYellowTranspararent{
+                return commendations(rawValue: index) ?? .mvp
+            }
+        }
+        return .mvp
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "unwindToResult"
+        if segue.identifier == "showResult"
         {
             let searchResultVC = segue.destination as! SearchResultVC
             if views[selectedView!] == searchPlayerVC.view {

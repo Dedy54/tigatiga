@@ -10,10 +10,16 @@ import UIKit
 
 class searchForPlayerVC: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var awesomeBtn: UIButton!
-    @IBOutlet weak var greatBtn: UIButton!
-    @IBOutlet weak var teamLeaderBtn: UIButton!
-    @IBOutlet weak var friendlyBtn: UIButton!
+//    @IBOutlet weak var awesomeBtn: UIButton!
+//    @IBOutlet weak var greatBtn: UIButton!
+//    @IBOutlet weak var teamLeaderBtn: UIButton!
+//    @IBOutlet weak var friendlyBtn: UIButton!
+    
+    
+    @IBOutlet var commendationButton: [UIButton]!
+    
+    
+    
     @IBOutlet weak var searchPlayerTxtField: UITextField!
     
     @IBOutlet weak var skillRatingPlayerTextField: UITextField!
@@ -25,7 +31,12 @@ class searchForPlayerVC: UIViewController, UITextFieldDelegate {
     var rolePlayerPickerView = UIPickerView()
     var test = ["abc","dsa","afeg","asdads","asdads"]
     
-    var mabarYellowTranspararent = UIColor(hex: "#ffce000a")
+    var mabarYellowTranspararent = UIColor(hex: "#ffce0032")
+    
+    
+    @IBOutlet weak var cmdTitleLabel: UILabel!
+    @IBOutlet weak var roleTitleLabel: UILabel!
+    @IBOutlet weak var srTitleLabel: UILabel!
     
     let gameRoles = SwitchGame()
     let selectedGame = GameTitle.Valorant
@@ -38,10 +49,10 @@ class searchForPlayerVC: UIViewController, UITextFieldDelegate {
         setSearchShape()
         searchPlayerTxtField.delegate = self
         
-        awesomeBtn.layer.cornerRadius = 5
-        greatBtn.layer.cornerRadius = 5
-        teamLeaderBtn.layer.cornerRadius = 5
-        friendlyBtn.layer.cornerRadius = 5
+//        awesomeBtn.layer.cornerRadius = 5
+//        greatBtn.layer.cornerRadius = 5
+//        teamLeaderBtn.layer.cornerRadius = 5
+//        friendlyBtn.layer.cornerRadius = 5
 
         commendationView.layer.borderColor = searchForTeamVC().mabarYellow
         commendationView.layer.borderWidth = 1
@@ -61,6 +72,10 @@ class searchForPlayerVC: UIViewController, UITextFieldDelegate {
         
         searchForTeamVC().setPickerColor(picker: skillRatingPlayerPickerView)
         searchForTeamVC().setPickerColor(picker: rolePlayerPickerView)
+        
+        cmdTitleLabel.font = UIFont(name: "Hind-Regular", size: 16)
+        srTitleLabel.font = UIFont(name: "Hind-Regular", size: 16)
+        roleTitleLabel.font = UIFont(name: "Hind-Regular", size: 16)
         
         
     }
@@ -99,52 +114,60 @@ class searchForPlayerVC: UIViewController, UITextFieldDelegate {
     }
   
     
-    
-    @IBAction func awesomeTapped(_ sender: UIButton) {
-        print("abc")
-        sender.isSelected = !sender.isSelected
+    @IBAction func commendationTapped(_ sender: UIButton) {
+        commendationButton.forEach({
+            $0.backgroundColor = nil
+        })
+        sender.backgroundColor = mabarYellowTranspararent
+        sender.layer.cornerRadius = 10
         
-        if sender.isSelected{
-            sender.backgroundColor = mabarYellowTranspararent
-        }
-        else{
-            sender.backgroundColor = nil
-        }
     }
     
-    
-    @IBAction func greatTouched(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        
-        if sender.isSelected{
-            sender.backgroundColor = mabarYellowTranspararent
-        }
-        else{
-            sender.backgroundColor = nil
-        }
-    }
-    
-    @IBAction func teamLeaderTouched(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        
-        if sender.isSelected{
-            sender.backgroundColor = mabarYellowTranspararent
-        }
-        else{
-            sender.backgroundColor = nil
-        }
-    }
-    @IBAction func friendlyTouched(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        
-        if sender.isSelected{
-            sender.backgroundColor = mabarYellowTranspararent
-        }
-        else{
-            sender.backgroundColor = nil
-        }
-    }
-    
+//    @IBAction func awesomeTapped(_ sender: UIButton) {
+//        print("abc")
+//        sender.isSelected = !sender.isSelected
+//
+//        if sender.isSelected{
+//            sender.backgroundColor = mabarYellowTranspararent
+//        }
+//        else{
+//            sender.backgroundColor = nil
+//        }
+//    }
+//
+//
+//    @IBAction func greatTouched(_ sender: UIButton) {
+//        sender.isSelected = !sender.isSelected
+//
+//        if sender.isSelected{
+//            sender.backgroundColor = mabarYellowTranspararent
+//        }
+//        else{
+//            sender.backgroundColor = nil
+//        }
+//    }
+//
+//    @IBAction func teamLeaderTouched(_ sender: UIButton) {
+//        sender.isSelected = !sender.isSelected
+//
+//        if sender.isSelected{
+//            sender.backgroundColor = mabarYellowTranspararent
+//        }
+//        else{
+//            sender.backgroundColor = nil
+//        }
+//    }
+//    @IBAction func friendlyTouched(_ sender: UIButton) {
+//        sender.isSelected = !sender.isSelected
+//
+//        if sender.isSelected{
+//            sender.backgroundColor = mabarYellowTranspararent
+//        }
+//        else{
+//            sender.backgroundColor = nil
+//        }
+//    }
+//
 }
 
 extension searchForPlayerVC : UIPickerViewDelegate,UIPickerViewDataSource{
