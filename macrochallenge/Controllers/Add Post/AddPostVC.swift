@@ -38,15 +38,18 @@ class AddPostVC: UIViewController {
     }
     
     func setSegmentedViewInContainer(){
-        views = [UIView]()
-        views.append(addPostPlayer.view)
-        views.append(addPostTeam.view)
+//        views = [UIView]()
+//        views.append(addPostPlayer.view)
+//        views.append(addPostTeam.view)
+//
+//        for v in views {
+//            viewContainer.addSubview(v)
+//        }
+//
+//        viewContainer.bringSubviewToFront(views[0])
         
-        for v in views {
-            viewContainer.addSubview(v)
-        }
+        viewContainer.addSubview(addPostTeam.view)
         
-        viewContainer.bringSubviewToFront(views[0])
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
