@@ -55,11 +55,13 @@
                         <outlet property="segmentedControl" destination="44i-lN-6EQ" id="5lo-t1-414"/>
                         <outlet property="viewContainer" destination="ev9-rH-qyR" id="aHM-bj-vz9"/>
                         <segue destination="V5c-PV-R6J" kind="show" identifier="showResult" id="rke-fp-Ju1"/>
+                        <segue destination="Vsw-LW-5EI" kind="unwind" identifier="unwindToResult" unwindAction="unwindToSearchResult:" id="NS7-Cd-lLR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WVS-co-5TE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Vsw-LW-5EI" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-2297" y="-804"/>
+            <point key="canvasLocation" x="-2212" y="-804"/>
         </scene>
         <!--SearchResult-->
         <scene sceneID="lBr-K3-eLW">
