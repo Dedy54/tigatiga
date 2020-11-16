@@ -108,6 +108,9 @@
 		A12B7BB62551D29E00D9EEAF /* PickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12B7BB52551D29E00D9EEAF /* PickerDelegate.swift */; };
 		A12C333A253DA898007EE971 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12C3339253DA898007EE971 /* Game.swift */; };
 		A141E0242559438C00A63FA2 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A141E0232559438C00A63FA2 /* UIButton+Extension.swift */; };
+		A163C1122562187E00667165 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A163C1102562187E00667165 /* EditProfileViewController.swift */; };
+		A163C1132562187E00667165 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A163C1112562187E00667165 /* EditProfileViewController.xib */; };
+		A163C1152562395400667165 /* profileMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A163C1142562395400667165 /* profileMenuViewController.swift */; };
 		A190A3D9254FD471007C5139 /* SearchTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = A190A3D8254FD471007C5139 /* SearchTeam.swift */; };
 		A1A2E02A2547E709008DD0D2 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2E0292547E708008DD0D2 /* UITextField+Extension.swift */; };
 		A1A2E02C2547E7AE008DD0D2 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2E02B2547E7AE008DD0D2 /* UIColor+Extension.swift */; };
@@ -255,6 +258,9 @@
 		A12B7BB52551D29E00D9EEAF /* PickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDelegate.swift; sourceTree = "<group>"; };
 		A12C3339253DA898007EE971 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		A141E0232559438C00A63FA2 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		A163C1102562187E00667165 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		A163C1112562187E00667165 /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
+		A163C1142562395400667165 /* profileMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileMenuViewController.swift; sourceTree = "<group>"; };
 		A190A3D8254FD471007C5139 /* SearchTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTeam.swift; sourceTree = "<group>"; };
 		A1A2E01F2547BF31008DD0D2 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		A1A2E0212547BF37008DD0D2 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
@@ -409,6 +415,9 @@
 				5C5FA321255E1C8100CDD060 /* profileForMeVC.xib */,
 				5C5FA322255E1C8100CDD060 /* ProfilePeople.storyboard */,
 				5C5FA323255E1C8100CDD060 /* profileForMyTeamVC.swift */,
+				A163C1102562187E00667165 /* EditProfileViewController.swift */,
+				A163C1112562187E00667165 /* EditProfileViewController.xib */,
+				A163C1142562395400667165 /* profileMenuViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -859,6 +868,7 @@
 				5C5FA308255E1AFE00CDD060 /* CommendationInfo.storyboard in Resources */,
 				5C5FA328255E1C8200CDD060 /* ProfilePeople.storyboard in Resources */,
 				5CDE2414252C3CDB00DF5601 /* Assets.xcassets in Resources */,
+				A163C1132562187E00667165 /* EditProfileViewController.xib in Resources */,
 				A1A409E3253EA24900645930 /* GameTableViewCell.xib in Resources */,
 				A1A409E1253EA23C00645930 /* GameDetailViewController.xib in Resources */,
 				6540D9B8254684EC00701688 /* SearchPeople.storyboard in Resources */,
@@ -883,7 +893,6 @@
 				5C5FA326255E1C8200CDD060 /* profileForMyTeamVC.xib in Resources */,
 				6540DA0F25506CF700701688 /* Hind-Regular.ttf in Resources */,
 				5CDE2412252C3CD900DF5601 /* Main.storyboard in Resources */,
-				A15671A3255B9C0A0072D375 /* profileForMyTeamVC.xib in Resources */,
 				5C5FA312255E1AFE00CDD060 /* PostFilterResult.storyboard in Resources */,
 				5C6FAE17252CEAAD00F74AE6 /* GoogleService-Info.plist in Resources */,
 				6540D9CF254687F200701688 /* searchForPlayerVC.xib in Resources */,
@@ -1026,6 +1035,7 @@
 				5C6FAE0C252CE71B00F74AE6 /* PreferenceManager.swift in Sources */,
 				5CD8748F255286BA00040E7A /* NotifInteractor.swift in Sources */,
 				5CDE240F252C3CD900DF5601 /* ViewController.swift in Sources */,
+				A163C1152562395400667165 /* profileMenuViewController.swift in Sources */,
 				5C70E52C254140DF00C45F76 /* BaseInteractor.swift in Sources */,
 				5C6FAE14252CE92500F74AE6 /* SecondExampleViewController.swift in Sources */,
 				5CD8748B255286BA00040E7A /* PlayerInteractor.swift in Sources */,
@@ -1042,7 +1052,7 @@
 				5C5FA30B255E1AFE00CDD060 /* PlayerCommendationVC.swift in Sources */,
 				5CD87477255286A900040E7A /* Player.swift in Sources */,
 				6540D9D52546881D00701688 /* searchForTeamVC.swift in Sources */,
-				A12B8C97255C741C007CD5B8 /* profileForMyTeamVC.swift in Sources */,
+				A163C1122562187E00667165 /* EditProfileViewController.swift in Sources */,
 				5C5FA317255E1AFE00CDD060 /* AddPostLFMemberVC.swift in Sources */,
 				5CD87482255286B200040E7A /* TeamService.swift in Sources */,
 				5C5FA315255E1AFE00CDD060 /* FilterPostViewController.swift in Sources */,

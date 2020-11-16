@@ -84,10 +84,6 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.22745098039215686" green="0.22745098039215686" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pp" translatesAutoresizingMaskIntoConstraints="NO" id="YLI-iN-FL3">
-                                <rect key="frame" x="43" y="154" width="203" height="74"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="KuulTeam" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vlL-Zn-fmj">
                                 <rect key="frame" x="61" y="75" width="166" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -96,7 +92,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="dmZ-Bd-mfk">
-                                <rect key="frame" x="0.0" y="-10" width="288" height="307"/>
+                                <rect key="frame" x="0.0" y="-8" width="288" height="209"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pp" translatesAutoresizingMaskIntoConstraints="NO" id="hIr-GN-tXG">
+                                <rect key="frame" x="43" y="154" width="203" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -116,7 +116,6 @@
             <connections>
                 <outlet property="teamBackground" destination="dmZ-Bd-mfk" id="emD-pt-Tn0"/>
                 <outlet property="teamCreated" destination="kqg-nS-Pa4" id="FrK-bK-nLK"/>
-                <outlet property="teamImage" destination="YLI-iN-FL3" id="DYx-xN-SCH"/>
                 <outlet property="teamMember" destination="La3-gL-p5s" id="Z1L-vM-DS9"/>
                 <outlet property="teamName" destination="vlL-Zn-fmj" id="JQr-gJ-IeP"/>
                 <outlet property="teamSkill" destination="JhO-zD-fZ6" id="MEs-Fq-qRY"/>

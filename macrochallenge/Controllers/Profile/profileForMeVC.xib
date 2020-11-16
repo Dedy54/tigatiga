@@ -196,6 +196,9 @@
                     <state key="normal" title="CHAT">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="chatPeople:" destination="-1" eventType="touchUpInside" id="S1O-DQ-aCB"/>
+                    </connections>
                 </button>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJu-eR-Sef">
                     <rect key="frame" x="236" y="646" width="165" height="50"/>
@@ -205,6 +208,9 @@
                     <state key="normal" title="COMMEND">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="commendPeople:" destination="-1" eventType="touchUpInside" id="Dv7-Vq-bfk"/>
+                    </connections>
                 </button>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kq4-M0-OBu">
                     <rect key="frame" x="123" y="645" width="165" height="50"/>
@@ -214,6 +220,9 @@
                     <state key="normal" title="EDIT PROFILE">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="editProfile:" destination="-1" eventType="touchUpInside" id="RjB-7f-ymM"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.14509931209999999" green="0.14509573579999999" blue="0.14509817959999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
