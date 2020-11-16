@@ -13,6 +13,14 @@
 		5C18DC33255A37D800A2825A /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C18DC2F255A37D800A2825A /* PostTableViewCell.swift */; };
 		5C18DC36255A39E500A2825A /* Feeds.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C18DC34255A39E500A2825A /* Feeds.storyboard */; };
 		5C18DC37255A39E500A2825A /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C18DC35255A39E500A2825A /* FeedViewController.swift */; };
+		5C5FA334255E276900CDD060 /* SheetSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5FA32F255E276900CDD060 /* SheetSize.swift */; };
+		5C5FA335255E276900CDD060 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5FA330255E276900CDD060 /* UIViewControllerExtension.swift */; };
+		5C5FA336255E276900CDD060 /* InitialTouchPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5FA331255E276900CDD060 /* InitialTouchPanGestureRecognizer.swift */; };
+		5C5FA337255E276900CDD060 /* Yalta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5FA332255E276900CDD060 /* Yalta.swift */; };
+		5C5FA338255E276900CDD060 /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5FA333255E276900CDD060 /* SheetViewController.swift */; };
+		5C5FA33C255E2BD400CDD060 /* CompleteProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5FA33A255E2BD400CDD060 /* CompleteProfileViewController.swift */; };
+		5C5FA33D255E2BD400CDD060 /* CompleteProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C5FA33B255E2BD400CDD060 /* CompleteProfileViewController.xib */; };
+		5C5FA33F255E2E4100CDD060 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5FA33E255E2E4100CDD060 /* UIView+Extension.swift */; };
 		5C6FAE01252CE5FA00F74AE6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6FAE00252CE5FA00F74AE6 /* MainViewController.swift */; };
 		5C6FAE04252CE64C00F74AE6 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6FAE03252CE64C00F74AE6 /* ExampleViewController.swift */; };
 		5C6FAE06252CE66000F74AE6 /* Example.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C6FAE05252CE66000F74AE6 /* Example.storyboard */; };
@@ -119,6 +127,14 @@
 		5C18DC2F255A37D800A2825A /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		5C18DC34255A39E500A2825A /* Feeds.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feeds.storyboard; sourceTree = "<group>"; };
 		5C18DC35255A39E500A2825A /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		5C5FA32F255E276900CDD060 /* SheetSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetSize.swift; sourceTree = "<group>"; };
+		5C5FA330255E276900CDD060 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		5C5FA331255E276900CDD060 /* InitialTouchPanGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialTouchPanGestureRecognizer.swift; sourceTree = "<group>"; };
+		5C5FA332255E276900CDD060 /* Yalta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Yalta.swift; sourceTree = "<group>"; };
+		5C5FA333255E276900CDD060 /* SheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
+		5C5FA33A255E2BD400CDD060 /* CompleteProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteProfileViewController.swift; sourceTree = "<group>"; };
+		5C5FA33B255E2BD400CDD060 /* CompleteProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompleteProfileViewController.xib; sourceTree = "<group>"; };
+		5C5FA33E255E2E4100CDD060 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		5C6FAE00252CE5FA00F74AE6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5C6FAE03252CE64C00F74AE6 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		5C6FAE05252CE66000F74AE6 /* Example.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Example.storyboard; sourceTree = "<group>"; };
@@ -265,9 +281,39 @@
 			path = "Post Feed";
 			sourceTree = "<group>";
 		};
+		5C5FA32D255E275100CDD060 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				5C5FA32E255E276900CDD060 /* FittedSheets */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		5C5FA32E255E276900CDD060 /* FittedSheets */ = {
+			isa = PBXGroup;
+			children = (
+				5C5FA32F255E276900CDD060 /* SheetSize.swift */,
+				5C5FA330255E276900CDD060 /* UIViewControllerExtension.swift */,
+				5C5FA331255E276900CDD060 /* InitialTouchPanGestureRecognizer.swift */,
+				5C5FA332255E276900CDD060 /* Yalta.swift */,
+				5C5FA333255E276900CDD060 /* SheetViewController.swift */,
+			);
+			path = FittedSheets;
+			sourceTree = "<group>";
+		};
+		5C5FA339255E2BC000CDD060 /* CompleteProfile */ = {
+			isa = PBXGroup;
+			children = (
+				5C5FA33A255E2BD400CDD060 /* CompleteProfileViewController.swift */,
+				5C5FA33B255E2BD400CDD060 /* CompleteProfileViewController.xib */,
+			);
+			path = CompleteProfile;
+			sourceTree = "<group>";
+		};
 		5C6FADFE252CE5C900F74AE6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5C5FA339255E2BC000CDD060 /* CompleteProfile */,
 				5C7311F7255D002A00B6FFBA /* ChatDetail */,
 				5C7311F6255D002100B6FFBA /* Chat */,
 				5C18DC2B255A37D800A2825A /* Post Feed */,
@@ -305,6 +351,7 @@
 		5C6FAE07252CE6E700F74AE6 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				5C5FA33E255E2E4100CDD060 /* UIView+Extension.swift */,
 				5C6FAE08252CE6F800F74AE6 /* UIViewController+Extension.swift */,
 				A1A409E8253EB0DA00645930 /* UITableViewController+Extension.swift */,
 				A1A2E0292547E708008DD0D2 /* UITextField+Extension.swift */,
@@ -448,6 +495,7 @@
 				5CDE2413252C3CDB00DF5601 /* Assets.xcassets */,
 				5CDE2415252C3CDB00DF5601 /* LaunchScreen.storyboard */,
 				5CDE2418252C3CDB00DF5601 /* Info.plist */,
+				5C5FA32D255E275100CDD060 /* External */,
 				A12C3338253DA873007EE971 /* Model */,
 				6540DA092550697700701688 /* Fonts */,
 				5C70E52425413FB400C45F76 /* Networking */,
@@ -702,6 +750,7 @@
 				6540DA1325506CF700701688 /* Hind-SemiBold.ttf in Resources */,
 				5CDE2414252C3CDB00DF5601 /* Assets.xcassets in Resources */,
 				A1A409E3253EA24900645930 /* GameTableViewCell.xib in Resources */,
+				5C5FA33D255E2BD400CDD060 /* CompleteProfileViewController.xib in Resources */,
 				A1A409E1253EA23C00645930 /* GameDetailViewController.xib in Resources */,
 				6540D9B8254684EC00701688 /* SearchPeople.storyboard in Resources */,
 				5C18DC31255A37D800A2825A /* Feed.storyboard in Resources */,
@@ -845,10 +894,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C5FA337255E276900CDD060 /* Yalta.swift in Sources */,
 				A12C333A253DA898007EE971 /* Game.swift in Sources */,
 				5C6FAE09252CE6F800F74AE6 /* UIViewController+Extension.swift in Sources */,
 				6540D9CE254687F200701688 /* searchForPlayerVC.swift in Sources */,
 				5C18DC32255A37D800A2825A /* FeedVC.swift in Sources */,
+				5C5FA336255E276900CDD060 /* InitialTouchPanGestureRecognizer.swift in Sources */,
 				A141E0242559438C00A63FA2 /* UIButton+Extension.swift in Sources */,
 				5C18DC33255A37D800A2825A /* PostTableViewCell.swift in Sources */,
 				5C70E52A254140B500C45F76 /* AuthInteractor.swift in Sources */,
@@ -861,6 +912,7 @@
 				5CD8748B255286BA00040E7A /* PlayerInteractor.swift in Sources */,
 				5CD87476255286A900040E7A /* Notif.swift in Sources */,
 				6540D9F925500D6E00701688 /* SearchResultVC.swift in Sources */,
+				5C5FA33F255E2E4100CDD060 /* UIView+Extension.swift in Sources */,
 				5C70E531254144CA00C45F76 /* Users.swift in Sources */,
 				5CDE240B252C3CD900DF5601 /* AppDelegate.swift in Sources */,
 				5C18DC37255A39E500A2825A /* FeedViewController.swift in Sources */,
@@ -869,6 +921,7 @@
 				5C70E53525414AB100C45F76 /* UserInteractor.swift in Sources */,
 				A190A3D9254FD471007C5139 /* SearchTeam.swift in Sources */,
 				5CD87477255286A900040E7A /* Player.swift in Sources */,
+				5C5FA338255E276900CDD060 /* SheetViewController.swift in Sources */,
 				6540D9D52546881D00701688 /* searchForTeamVC.swift in Sources */,
 				5CD87482255286B200040E7A /* TeamService.swift in Sources */,
 				5CD87471255286A900040E7A /* Team.swift in Sources */,
@@ -880,6 +933,7 @@
 				A1A409DE253EA13400645930 /* GamesAPI.swift in Sources */,
 				5CD8747F255286B200040E7A /* RoomChatService.swift in Sources */,
 				5C70E53325414AA300C45F76 /* UserService.swift in Sources */,
+				5C5FA33C255E2BD400CDD060 /* CompleteProfileViewController.swift in Sources */,
 				5CD87472255286A900040E7A /* Post.swift in Sources */,
 				5CD8748C255286BA00040E7A /* PostInteractor.swift in Sources */,
 				6540D9912546816E00701688 /* forgotPassVC.swift in Sources */,
@@ -891,10 +945,12 @@
 				5C70E52F254142A200C45F76 /* AuthService.swift in Sources */,
 				5C70E52325413EAE00C45F76 /* CoreService.swift in Sources */,
 				5CD87473255286A900040E7A /* RoomChat.swift in Sources */,
+				5C5FA335255E276900CDD060 /* UIViewControllerExtension.swift in Sources */,
 				5CD8748A255286BA00040E7A /* CommendationInteractor.swift in Sources */,
 				5C6FAE04252CE64C00F74AE6 /* ExampleViewController.swift in Sources */,
 				A1A409E9253EB0DA00645930 /* UITableViewController+Extension.swift in Sources */,
 				A1A409E5253EA3A700645930 /* GameTableViewCell.swift in Sources */,
+				5C5FA334255E276900CDD060 /* SheetSize.swift in Sources */,
 				A1A2E02E2547E7EF008DD0D2 /* NSLayoutDimension+Extension.swift in Sources */,
 				A1A409E7253EA3E100645930 /* GameDetailViewController.swift in Sources */,
 				A1A2E02C2547E7AE008DD0D2 /* UIColor+Extension.swift in Sources */,

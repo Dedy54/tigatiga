@@ -11,10 +11,24 @@ import AuthenticationServices
 
 class SignInViewController: UIViewController {
     
-//    static func instantiateViewController() -> SignInViewController {
-//        let controller = SignInViewController(nib: R.nib.signInViewController)
-//        return controller
-//    }
+    static func instantiateViewController() -> SignInViewController {
+        let controller = SignInViewController(nibName: "SignInViewController", bundle: nil)
+        return controller
+    }
+    
+    static func instantiateSheetViewController(isCanDismiss: Bool) -> SheetViewController {
+        let controller = SignInViewController(nibName: "SignInViewController", bundle: nil)
+        let sheetController = SheetViewController(controller: controller, sizes: [.fixed(540)])
+        sheetController.dismissable = isCanDismiss
+        sheetController.adjustForBottomSafeArea = false
+        sheetController.blurBottomSafeArea = false
+        sheetController.dismissOnBackgroundTap = true
+        sheetController.extendBackgroundBehindHandle = false
+        sheetController.topCornersRadius = 20
+        sheetController.willDismiss = { _ in print("Will dismiss ")}
+        sheetController.didDismiss = { _ in print("Will dismiss ")}
+        return sheetController
+    }
     
     @IBOutlet weak var appleIDStackView: UIStackView!
     var authInteractor: AuthInteractor? = AuthInteractor()
