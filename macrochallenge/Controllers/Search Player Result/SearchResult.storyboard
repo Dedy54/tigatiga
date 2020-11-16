@@ -10,7 +10,7 @@
         <!--Search ResultVC-->
         <scene sceneID="UTQ-Az-Ywi">
             <objects>
-                <viewController id="N8L-gB-WYS" customClass="SearchResultVC" customModule="macrochallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchVC" id="N8L-gB-WYS" customClass="SearchResultVC" customModule="macrochallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ebv-6m-am0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -86,11 +86,22 @@
                     <connections>
                         <outlet property="resultTableView" destination="KkS-y1-0oR" id="mFQ-1s-8xj"/>
                         <segue destination="Ab5-Kv-WHF" kind="show" identifier="searchPeopleSegue" id="JsK-C5-K12"/>
+                        <segue destination="ehi-Wr-6CS" kind="show" identifier="peopleProfile" id="YzJ-Fb-zrD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dXl-xu-cAu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-531.8840579710145" y="77.678571428571431"/>
+        </scene>
+        <!--ProfilePeople-->
+        <scene sceneID="iNI-zW-5NX">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ProfilePeople" id="ehi-Wr-6CS" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="4j4-vO-MP8"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MIh-CQ-I8j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="44" y="-132"/>
         </scene>
         <!--SearchPeople-->
         <scene sceneID="9Qy-vG-RzZ">

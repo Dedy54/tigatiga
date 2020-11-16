@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class profileForMeVC: UIViewController {
 
@@ -26,9 +28,38 @@ class profileForMeVC: UIViewController {
     @IBOutlet weak var profileExperience: UITextField!
     @IBOutlet weak var inviteButton: UIButton!
     @IBOutlet weak var commendButton: UIButton!
+    @IBOutlet weak var editButton: UIButton!
     
-    override func awakeFromNib() {
-       super.awakeFromNib()
-   }
-
+    var selectedPlayer: Player?
+    
+     override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupPlayer()
+    }
+    
+    @IBAction func editProfile(_ sender: UIButton) {
+        let editProfile = EditProfileViewController(nibName: "EditProfileViewController", bundle: nil)
+        
+        self.navigationController?.pushViewController(editProfile, animated: true)
+    }
+    @IBAction func chatPeople(_ sender: UIButton) {
+    }
+    @IBAction func commendPeople(_ sender: UIButton) {
+    }
+    func setupPlayer() {
+        if selectedPlayer?.id == Auth.auth().currentUser?.uid ?? "0" {
+            inviteButton.isHidden = true
+            commendButton.isHidden = true
+            editButton.isHidden = false
+        }else {
+            inviteButton.isHidden = false
+            commendButton.isHidden = false
+            editButton.isHidden = true
+        }
+        profileSkill.text = selectedPlayer?.skillRating
+        profileRole.text = selectedPlayer?.role
+        profileGame.text = selectedPlayer?.game
+        profileExperience.text = selectedPlayer?.experience
+    }
 }

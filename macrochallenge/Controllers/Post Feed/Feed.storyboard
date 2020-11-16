@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="B1c-d6-ga3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="B1c-d6-ga3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -178,11 +178,17 @@
                                 <rect key="frame" x="295" y="190" width="44" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Add"/>
+                                <connections>
+                                    <segue destination="uRk-1H-Pp3" kind="show" id="rLL-8N-ApN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIm-hJ-jsT">
                                 <rect key="frame" x="347" y="190" width="44" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Filter"/>
+                                <connections>
+                                    <segue destination="8bz-kZ-7fB" kind="show" id="QZg-xv-S4S"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -193,11 +199,42 @@
                         <outlet property="postTitleLabel" destination="Agg-3D-Mn3" id="Yvb-hG-QEY"/>
                         <outlet property="recommendationTitleLabel" destination="Hk2-1W-6rv" id="nfl-b7-zhG"/>
                         <outlet property="recommendedCollectionView" destination="8aa-O6-vit" id="b6t-HN-58l"/>
+                        <segue destination="cag-AU-e0x" kind="show" identifier="profileSegue" id="Ygb-C8-nDD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4cx-x2-4zj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="79.710144927536234" y="-7.3660714285714279"/>
+        </scene>
+        <!--FilterPost-->
+        <scene sceneID="Bi1-dq-hz2">
+            <objects>
+                <viewControllerPlaceholder storyboardName="FilterPost" id="8bz-kZ-7fB" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="7hj-lM-oMf"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UbR-by-4iE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="760" y="-273"/>
+        </scene>
+        <!--AddPost-->
+        <scene sceneID="b3t-zZ-wpR">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AddPost" id="uRk-1H-Pp3" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Cxg-xt-arH"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M0Q-Mu-8on" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="756" y="-233"/>
+        </scene>
+        <!--ProfilePeople-->
+        <scene sceneID="DqJ-b0-mOu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ProfilePeople" id="cag-AU-e0x" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="rSx-hA-MTT"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zFA-SU-h7Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="817" y="-156"/>
         </scene>
     </scenes>
     <resources>

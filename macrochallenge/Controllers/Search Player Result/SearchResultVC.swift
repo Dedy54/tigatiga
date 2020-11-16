@@ -20,6 +20,7 @@ class SearchResultVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     let playerInteractor: PlayerInteractor? = PlayerInteractor()
     let teamInteractor: TeamInteractor? = TeamInteractor()
+    var selectedPeople: Player?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,13 +30,16 @@ class SearchResultVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         
 //        defaultGet()
         
-        self.title = "Result"
+//        self.title = "Result"
         
-        magnifyingGlass?.withTintColor(UIColor(hex: "#ffce00ff")!)
-//        let magIcon = UIBarButtonItem(image: magnifyingGlass, style: .plain, target: self, action: nil)
-//        self.navigationController!.navigationItem.rightBarButtonItem  = magIcon
+        
+        
         let button1 = UIBarButtonItem(image: magnifyingGlass , style: .plain, target: self, action: #selector(tapped))
         self.navigationItem.rightBarButtonItem  = button1
+        
+//        magnifyingGlass?.withTintColor(UIColor(hex: "#ffce00ff")!)
+//        let magIcon = UIBarButtonItem(image: magnifyingGlass, style: .plain, target: self, action: nil)
+//        self.navigationController!.navigationItem.rightBarButtonItem  = magIcon
         
         overrideUserInterfaceStyle = .dark
         
@@ -68,6 +72,14 @@ class SearchResultVC: UIViewController, UITableViewDelegate, UITableViewDataSour
 //            self.teams = searchPeopleController.teams
 //        }
         resultTableView?.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "peopleProfile"
+        {
+            let profilePeopleVC = segue.destination as! profilePeopleVC
+            profilePeopleVC.selectedPeople = selectedPeople
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -103,5 +115,13 @@ class SearchResultVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.row < players.count {
+            selectedPeople = players[indexPath.row]
+            performSegue(withIdentifier: "peopleProfile", sender: nil)
+        }
+   }
 
 }
