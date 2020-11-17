@@ -12,7 +12,7 @@ import UIKit
 class profilePeopleVC: UIViewController {
     
     @IBOutlet weak var teamTableView: UITableView!
-    @IBOutlet weak var viewContainer: UIView!
+    @IBOutlet weak var scrollContainer: UIScrollView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     var profileMeVC = profileForMeVC()
     var profileMyTeamVC = profileForMyTeamVC()
@@ -22,13 +22,19 @@ class profilePeopleVC: UIViewController {
 //    var selectedView: Int? = 0
     
     var teams: [Team] = []
+    let teamInteractor: TeamInteractor? = TeamInteractor()
+    var selectedPeople: Player?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewContainer.addSubview(profileMeVC.view)
+        let button1 = UIBarButtonItem(image: #imageLiteral(resourceName: "menu") , style: .plain, target: self, action: #selector(tapped))
+        self.navigationItem.rightBarButtonItem  = button1
+        profileMeVC.selectedPlayer = selectedPeople
+        scrollContainer.contentSize = CGSize(width: scrollContainer.frame.size.width, height: profileMeVC.view.frame.size.height)
+        scrollContainer.addSubview(profileMeVC.view)
         self.addChild(profileMeVC)
-        viewContainer.bringSubviewToFront(profileMeVC.view)
+        scrollContainer.bringSubviewToFront(profileMeVC.view)
         
         setupTeamTableView()
         
@@ -39,6 +45,16 @@ class profilePeopleVC: UIViewController {
         setSegmentedViewInContainer()
         
         overrideUserInterfaceStyle = .dark
+        getTeam()
+    }
+    
+    @objc func tapped() {
+        let menuProfileVC = self.storyboard?.instantiateViewController(identifier: "profileMenuVC") as! profileMenuViewController
+        menuProfileVC.transitioningDelegate = self
+        menuProfileVC.modalPresentationStyle = .custom
+        menuProfileVC.modalTransitionStyle = .coverVertical
+        menuProfileVC.view.layer.cornerRadius = 34
+        self.present(menuProfileVC, animated: true, completion: nil)
     }
     
     private func setupTeamTableView() {
@@ -47,6 +63,17 @@ class profilePeopleVC: UIViewController {
         teamTableView.scrollsToTop = true
         teamTableView.register(UINib(nibName: "profileForMyTeamVC", bundle: nil), forCellReuseIdentifier:"TeamCell")
         teamTableView.estimatedRowHeight = 360
+    }
+    
+    func getTeam() {
+        if selectedPeople?.id != nil {
+            teamInteractor?.fetchMyTeams(id: selectedPeople!.id!, success: { (teamResults) -> (Void) in
+                self.teams = teamResults
+                self.teamTableView.reloadData()
+            }, failure: { (err) -> (Void) in
+                print("failed to get my team data with error \(err)")
+            })
+        }
     }
     
     func setSegmentedViewInContainer(){
@@ -65,15 +92,66 @@ class profilePeopleVC: UIViewController {
     @IBAction func switchActionView(_ sender: UISegmentedControl) {
         if teamTableView.isHidden {
             teamTableView.isHidden = false
-            viewContainer.isHidden = true
+            scrollContainer.isHidden = true
         }else {
             teamTableView.isHidden = true
-            viewContainer.isHidden = false
+            scrollContainer.isHidden = false
         }
 //        views[sender.selectedSegmentIndex].isUserInteractionEnabled = true
 //       self.viewContainer.bringSubviewToFront(views[sender.selectedSegmentIndex])
 //       selectedView = sender.selectedSegmentIndex
     }
+}
+
+extension profilePeopleVC:  UIActionSheetDelegate, UIViewControllerTransitioningDelegate {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        return OverlayPresentationController(presentedViewController:presented, presenting:presenting)
+    }
+}
+
+class OverlayPresentationController: UIPresentationController {
+    
+    private let dimmedBackgroundView = UIView()
+    private let height: CGFloat = 450
+    
+    override init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?) {
+        super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backgroundTapped))
+        self.dimmedBackgroundView.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    override var frameOfPresentedViewInContainerView: CGRect {
+        var frame =  CGRect.zero
+        if let containerBounds = containerView?.bounds {
+            frame = CGRect(x: 0,
+                           y: containerBounds.height/2.3,
+                           width: containerBounds.width,
+                           height: containerBounds.height/1.5)
+        }
+        return frame
+    }
+    
+    override func presentationTransitionWillBegin() {
+        if let containerView = self.containerView, let coordinator = presentingViewController.transitionCoordinator {
+            containerView.addSubview(self.dimmedBackgroundView)
+            self.dimmedBackgroundView.backgroundColor = .black
+            self.dimmedBackgroundView.frame = containerView.bounds
+            self.dimmedBackgroundView.alpha = 0
+            coordinator.animate(alongsideTransition: { _ in
+                self.dimmedBackgroundView.alpha = 0.5
+            }, completion: nil)
+        }
+    }
+    
+    override func dismissalTransitionDidEnd(_ completed: Bool) {
+        self.dimmedBackgroundView.removeFromSuperview()
+    }
+    
+    @objc private func backgroundTapped() {
+        self.presentedViewController.dismiss(animated: true, completion: nil)
+    }
+    
+    
 }
 
 extension profilePeopleVC: UITableViewDataSource, UIScrollViewDelegate, UITableViewDelegate {
@@ -82,10 +160,12 @@ extension profilePeopleVC: UITableViewDataSource, UIScrollViewDelegate, UITableV
     }
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = teamTableView.dequeueReusableCell(withIdentifier: "profileForMyTeamVC", for: indexPath) as? profileForMyTeamVC else {return UITableViewCell()}
+        guard let cell = teamTableView.dequeueReusableCell(withIdentifier: "TeamCell", for: indexPath) as? profileForMyTeamVC else {return UITableViewCell()}
             
         let team = self.teams[indexPath.row]
         cell.teamName.text = team.name
+        cell.teamSkill.text = team.skillRating ?? ""
+        
 //        cell.setData()
         
         return cell

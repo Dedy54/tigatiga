@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 import FirebaseFirestoreSwift
+import FirebaseFirestore
 
 extension CoreService {
     
@@ -31,6 +32,42 @@ extension CoreService {
             
             success(players)
         }
+    }
+    
+    func searchPlayer(name: String, comendation: String, skillRating: String, role: String, success: @escaping ([Player]) -> (Void), failure: @escaping (Error) -> (Void)){
+        
+    
+        var collection : Query = db.collection("players")
+            
+        if name != ""{
+           collection = collection.whereField("name", isEqualTo: name)
+        }
+        if skillRating != ""{
+            collection = collection.whereField("skillRating", isEqualTo: skillRating)
+        }
+        if role != ""{
+            collection = collection.whereField("role", isEqualTo: role)
+        }
+            collection.addSnapshotListener { (querySnapshot, error) in
+            if let error = error {
+                failure(error)
+                return
+            }
+            
+            var players = [Player]()
+            guard let documents = querySnapshot?.documents else {
+                print("No documents")
+                return
+            }
+            
+            players = documents.compactMap { queryDocumentSnapshot -> Player? in
+                return try? queryDocumentSnapshot.data(as: Player.self)
+            }
+            
+            success(players)
+        }
+        
+        
     }
     
     func fetchPlayer(id: String, success: @escaping (Player) -> (Void), failure: @escaping (Error) -> (Void)) {

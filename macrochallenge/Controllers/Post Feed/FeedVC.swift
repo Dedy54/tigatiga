@@ -35,6 +35,8 @@ class FeedVC: UIViewController{
     
     var posts: [Post] = []
     let postInteractor: PostInteractor? = PostInteractor()
+    let playerInteractor: PlayerInteractor? = PlayerInteractor()
+    var currentPlayer: Player?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,14 +85,38 @@ class FeedVC: UIViewController{
         imageview.layer.cornerRadius = 20
         imageview.layer.masksToBounds = true
         containView.addSubview(imageview)
+        let profileTap = UITapGestureRecognizer(target: self, action: #selector(ppTouched))
+        containView.addGestureRecognizer(profileTap)
         let rightBarButton = UIBarButtonItem(customView: containView)
         self.navigationItem.rightBarButtonItem = rightBarButton
     }
     
     @objc func ppTouched(){
-        print("abc")
+        playerInteractor?.currentPlayer(success: { (playerResult) -> (Void) in
+            self.currentPlayer = playerResult
+            self.performSegue(withIdentifier: "profileSegue", sender: nil)
+        }, failure: { (err) -> (Void) in
+            print("failed to current player data with error \(err)")
+        })
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "profileSegue"
+        {
+            let profilePeopleVC = segue.destination as! profilePeopleVC
+            profilePeopleVC.selectedPeople = currentPlayer
+        }
+    }
+    
+    @IBAction func unwindToFeedPost(_ unwindSegue: UIStoryboardSegue) {
+//        if unwindSegue.source is AddPostVC {
+//        }else
+        if unwindSegue.source is FilterPostViewController {
+            
+        }
+        feedTableView.reloadData()
+        // Use data from the view controller which initiated the unwind segue
+    }
 
 }
 

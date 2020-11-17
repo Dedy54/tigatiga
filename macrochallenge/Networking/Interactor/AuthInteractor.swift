@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 import AuthenticationServices
+import FirebaseAuth
 
 class AuthInteractor: BaseInteractor {
     
