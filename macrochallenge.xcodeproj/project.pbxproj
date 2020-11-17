@@ -55,6 +55,8 @@
 		5C5FA387256231E600CDD060 /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C5FA385256231E600CDD060 /* ChatViewController.xib */; };
 		5C5FA38B256234F100CDD060 /* ChatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5FA389256234F100CDD060 /* ChatCollectionViewCell.swift */; };
 		5C5FA38C256234F100CDD060 /* ChatCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C5FA38A256234F100CDD060 /* ChatCollectionViewCell.xib */; };
+		5C5FA3952563721700CDD060 /* ChatDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5FA3932563721700CDD060 /* ChatDetailViewController.swift */; };
+		5C5FA3962563721700CDD060 /* ChatDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C5FA3942563721700CDD060 /* ChatDetailViewController.xib */; };
 		5C6FAE01252CE5FA00F74AE6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6FAE00252CE5FA00F74AE6 /* MainViewController.swift */; };
 		5C6FAE04252CE64C00F74AE6 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6FAE03252CE64C00F74AE6 /* ExampleViewController.swift */; };
 		5C6FAE06252CE66000F74AE6 /* Example.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C6FAE05252CE66000F74AE6 /* Example.storyboard */; };
@@ -203,6 +205,8 @@
 		5C5FA385256231E600CDD060 /* ChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
 		5C5FA389256234F100CDD060 /* ChatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCollectionViewCell.swift; sourceTree = "<group>"; };
 		5C5FA38A256234F100CDD060 /* ChatCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatCollectionViewCell.xib; sourceTree = "<group>"; };
+		5C5FA3932563721700CDD060 /* ChatDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatDetailViewController.swift; sourceTree = "<group>"; };
+		5C5FA3942563721700CDD060 /* ChatDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatDetailViewController.xib; sourceTree = "<group>"; };
 		5C6FAE00252CE5FA00F74AE6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5C6FAE03252CE64C00F74AE6 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		5C6FAE05252CE66000F74AE6 /* Example.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Example.storyboard; sourceTree = "<group>"; };
@@ -631,6 +635,8 @@
 		5C7311F7255D002A00B6FFBA /* ChatDetail */ = {
 			isa = PBXGroup;
 			children = (
+				5C5FA3932563721700CDD060 /* ChatDetailViewController.swift */,
+				5C5FA3942563721700CDD060 /* ChatDetailViewController.xib */,
 			);
 			path = ChatDetail;
 			sourceTree = "<group>";
@@ -925,6 +931,7 @@
 				6540DA1325506CF700701688 /* Hind-SemiBold.ttf in Resources */,
 				5CDE2414252C3CDB00DF5601 /* Assets.xcassets in Resources */,
 				5C5FA37525621E1100CDD060 /* PostDetailTeam.storyboard in Resources */,
+				5C5FA3962563721700CDD060 /* ChatDetailViewController.xib in Resources */,
 				5C5FA35F25621DD500CDD060 /* AddPostLFMemberVC.xib in Resources */,
 				5C5FA35E25621DD500CDD060 /* AddPostLFGroupVC.xib in Resources */,
 				A1A409E3253EA24900645930 /* GameTableViewCell.xib in Resources */,
@@ -1129,6 +1136,7 @@
 				A1A2E02A2547E709008DD0D2 /* UITextField+Extension.swift in Sources */,
 				A12B7BB62551D29E00D9EEAF /* PickerDelegate.swift in Sources */,
 				A1A409DE253EA13400645930 /* GamesAPI.swift in Sources */,
+				5C5FA3952563721700CDD060 /* ChatDetailViewController.swift in Sources */,
 				5CD8747F255286B200040E7A /* RoomChatService.swift in Sources */,
 				5C70E53325414AA300C45F76 /* UserService.swift in Sources */,
 				5C5FA33C255E2BD400CDD060 /* CompleteProfileViewController.swift in Sources */,
