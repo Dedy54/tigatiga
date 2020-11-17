@@ -44,7 +44,7 @@
                                 </state>
                                 <connections>
                                     <action selector="postTapped:" destination="80r-iF-xuo" eventType="touchUpInside" id="oRc-dA-jNm"/>
-                                    <segue destination="CIL-El-EfW" kind="unwind" identifier="unwindAddPost" unwindAction="unwindToFeedPost:" id="PzX-g4-90u"/>
+                                    <segue destination="CIL-El-EfW" kind="unwind" identifier="unwindAddSegue" unwindAction="unwindToFeedPost:" id="qfl-DV-xzo"/>
                                 </connections>
                             </button>
                         </subviews>

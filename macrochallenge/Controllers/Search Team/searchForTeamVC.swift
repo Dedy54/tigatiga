@@ -36,6 +36,8 @@ class searchForTeamVC: UIViewController, UITextFieldDelegate{
     var rolePickerDelegate: PickerDelegate?
     var memberSizeDelegate: PickerDelegate?
     
+    let playerInteractor: PlayerInteractor? = PlayerInteractor()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -92,19 +94,24 @@ class searchForTeamVC: UIViewController, UITextFieldDelegate{
 
     func teamPickerViewDelegate(){
 //        gameRoles.setTitle("Valorant")
-        gameRoles.setTitle(selectedGame)
-        roleInPickerDelegate  = PickerDelegate(strings: gameRoles.roles, textField: roleINTxtField)
-        roleINpicker.delegate = roleInPickerDelegate
-        roleINpicker.dataSource = roleInPickerDelegate
-        skillRatingDelegate  = PickerDelegate(strings: gameRoles.skills, textField: skillRatingTxtField)
-        skillRatingPicker.delegate = skillRatingDelegate
-        skillRatingPicker.dataSource = skillRatingDelegate
-        memberSizeDelegate = PickerDelegate(strings: gameRoles.teamMembers, textField: memberSizeTxtField)
-        membersizePicker.delegate = memberSizeDelegate
-        membersizePicker.dataSource = memberSizeDelegate
-        rolePickerDelegate = PickerDelegate(strings: gameRoles.roles, textField: roleTxtField)
-        rolePicker.delegate = rolePickerDelegate
-        rolePicker.dataSource = rolePickerDelegate
+//        gameRoles.setTitle(selectedGame)
+        playerInteractor?.currentPlayer(success: { (playerResult) -> (Void) in
+            self.gameRoles.setTitle(playerResult.game!)
+            self.roleInPickerDelegate  = PickerDelegate(strings: self.gameRoles.roles, textField: self.roleINTxtField)
+            self.roleINpicker.delegate = self.roleInPickerDelegate
+            self.roleINpicker.dataSource = self.roleInPickerDelegate
+            self.skillRatingDelegate  = PickerDelegate(strings: self.gameRoles.skills, textField: self.skillRatingTxtField)
+            self.skillRatingPicker.delegate = self.skillRatingDelegate
+            self.skillRatingPicker.dataSource = self.skillRatingDelegate
+            self.memberSizeDelegate = PickerDelegate(strings: self.gameRoles.teamMembers, textField: self.memberSizeTxtField)
+            self.membersizePicker.delegate = self.memberSizeDelegate
+            self.membersizePicker.dataSource = self.memberSizeDelegate
+            self.rolePickerDelegate = PickerDelegate(strings: self.gameRoles.roles, textField: self.roleTxtField)
+            self.rolePicker.delegate = self.rolePickerDelegate
+            self.rolePicker.dataSource = self.rolePickerDelegate
+        }, failure: { (err) -> (Void) in
+            print("failed to current player data with error \(err)")
+        })
     }
 
     func setPickerColor(picker : UIPickerView){

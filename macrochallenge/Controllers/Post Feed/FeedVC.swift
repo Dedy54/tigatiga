@@ -106,6 +106,11 @@ class FeedVC: UIViewController{
             let profilePeopleVC = segue.destination as! profilePeopleVC
             profilePeopleVC.selectedPeople = currentPlayer
         }
+        else if segue.identifier == "addPostSegue"
+        {
+            let addPostVC = segue.destination as! AddPostVC
+            addPostVC.selectedPeople = currentPlayer
+        }
     }
     
     @IBAction func unwindToFeedPost(_ unwindSegue: UIStoryboardSegue) {
@@ -180,6 +185,11 @@ extension FeedVC: UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //
+        if posts[indexPath.row].creator!.lookingForGroup! {
+            self.performSegue(withIdentifier: "segueDetailMember", sender: nil)
+        }else {
+            self.performSegue(withIdentifier: "segueDetailTeam", sender: nil)
+        }
     }
     
 }

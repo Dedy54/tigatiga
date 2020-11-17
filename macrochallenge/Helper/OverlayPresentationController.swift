@@ -44,7 +44,9 @@ class OverlayPresentationController: UIPresentationController {
     }
     
     override func dismissalTransitionDidEnd(_ completed: Bool) {
-        self.dimmedBackgroundView.removeFromSuperview()
+        if !completed {
+            self.dimmedBackgroundView.removeFromSuperview()
+        }
     }
     
     @objc private func backgroundTapped() {

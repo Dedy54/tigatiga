@@ -20,6 +20,9 @@ class AddPostVC: UIViewController {
     
     var views : [UIView]!
     
+    let postInteractor: PostInteractor? = PostInteractor()
+    var selectedPeople: Player?
+    var selectedView: Int? = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +66,27 @@ class AddPostVC: UIViewController {
     
     
     @IBAction func postTapped(_ sender: Any) {
-        
+        if views[selectedView!] == addPostPlayer.view {
+            let teamName =  addPostPlayer.teamNameTextfield.text
+            let description = addPostPlayer.descriptionTextview.text
+            let postTemp = Post(id: teamName, name: description, creator: selectedPeople)
+            postInteractor?.createPost(post: postTemp, success: { (postResult) -> (Void) in
+                print("call post interactor with data ", postResult)
+                self.performSegue(withIdentifier: "unwindAddSegue", sender: nil)
+            }, failure: { (err) -> (Void) in
+                print("failed to add post data with error \(err)")
+            })
+        }else{
+            let availability =  addPostTeam.availability.text
+            let description = addPostTeam.descriptionTextview.text
+            let postTemp = Post(id: availability, name: description, creator: selectedPeople)
+            postInteractor?.createPost(post: postTemp, success: { (postResult) -> (Void) in
+                print("call post interactor with data ", postResult)
+                self.performSegue(withIdentifier: "unwindAddSegue", sender: nil)
+            }, failure: { (err) -> (Void) in
+                print("failed to add post data with error \(err)")
+            })
+        }
     }
     
 }

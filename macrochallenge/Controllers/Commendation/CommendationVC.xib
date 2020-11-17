@@ -38,35 +38,35 @@
                             <rect key="frame" x="0.0" y="0.0" width="0.0" height="98"/>
                             <state key="normal" image="Star"/>
                             <connections>
-                                <action selector="starButtonTapped:" destination="-1" eventType="touchDown" id="nG6-x9-Pah"/>
+                                <action selector="starButtonTapped:" destination="-1" eventType="touchUpInside" id="Qdy-ZO-qHd"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="2" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glI-QK-WAm">
                             <rect key="frame" x="6" y="0.0" width="0.0" height="98"/>
                             <state key="normal" image="Star"/>
                             <connections>
-                                <action selector="starButtonTapped:" destination="-1" eventType="touchDown" id="Xre-2V-zoJ"/>
+                                <action selector="starButtonTapped:" destination="-1" eventType="touchUpInside" id="Xbe-WT-6dk"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="3" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZd-aT-AgO">
                             <rect key="frame" x="12" y="0.0" width="49" height="98"/>
                             <state key="normal" image="Star"/>
                             <connections>
-                                <action selector="starButtonTapped:" destination="-1" eventType="touchDown" id="fvp-uo-6eu"/>
+                                <action selector="starButtonTapped:" destination="-1" eventType="touchUpInside" id="71a-rX-Usv"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="4" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8J-lC-taZ">
                             <rect key="frame" x="67" y="0.0" width="98" height="98"/>
                             <state key="normal" image="Star"/>
                             <connections>
-                                <action selector="starButtonTapped:" destination="-1" eventType="touchDown" id="TYY-CK-AnV"/>
+                                <action selector="starButtonTapped:" destination="-1" eventType="touchUpInside" id="gqc-ko-71X"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="5" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIW-5d-mvA">
                             <rect key="frame" x="171" y="0.0" width="98" height="98"/>
                             <state key="normal" image="Star"/>
                             <connections>
-                                <action selector="starButtonTapped:" destination="-1" eventType="touchDown" id="KLz-0K-cQt"/>
+                                <action selector="starButtonTapped:" destination="-1" eventType="touchUpInside" id="St3-ew-2eX"/>
                             </connections>
                         </button>
                     </subviews>

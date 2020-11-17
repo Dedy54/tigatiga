@@ -16,6 +16,13 @@ enum GameTitle: String, CaseIterable
     case PUBG = "Player Unknowns Battle Ground"
 }
 
+enum commendations : Int{
+    case mvp
+    case teamleader
+    case friendly
+    case teamplayer
+}
+
 enum GameTeamMember: String, CaseIterable {
     case One = "1"
     case Two = "2"
@@ -34,20 +41,22 @@ class SwitchGame {
     var roles: [String] = []
     var skills: [String] = []
     var teamMembers: [String] = GameTeamMember.allCases.map { $0.rawValue }
-    func setTitle(_ title: GameTitle) {
+    func setTitle(_ title: String) {
         switch title {
-        case .Valorant:
+        case GameTitle.Valorant.rawValue:
             roles = ValorantRole.allCases.map { $0.rawValue }
             skills = ValorantSkill.allCases.map { $0.rawValue }
-        case .Overwatch:
+        case GameTitle.Overwatch.rawValue:
             roles = OverwatchRole.allCases.map { $0.rawValue }
             skills = OverwatchSkill.allCases.map { $0.rawValue }
-        case .CSGO:
+        case GameTitle.CSGO.rawValue:
             roles = CounterStrikeRole.allCases.map { $0.rawValue }
             skills = CounterStrikeSkill.allCases.map { $0.rawValue }
-        case .PUBG:
+        case GameTitle.PUBG.rawValue:
             roles = PlayerUnknownsRole.allCases.map { $0.rawValue }
             skills = PlayerUnknownsSkill.allCases.map { $0.rawValue }
+        default:
+            return
         }
     }
 }

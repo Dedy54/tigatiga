@@ -26,9 +26,11 @@ class FilterPostViewController: UIViewController {
     let skillRatingPickerview = UIPickerView()
     let rolePickerview = UIPickerView()
     
-    
-    
-    
+    var selectedPeople: Player?
+    let gameRoles = SwitchGame()
+    var rolePlayerDelegate: PickerDelegate?
+    var skillRatingPlayerDelegate: PickerDelegate?
+    let playerInteractor: PlayerInteractor? = PlayerInteractor()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +59,22 @@ class FilterPostViewController: UIViewController {
         SRTitleLabel.font = UIFont(name: "Hind-Regular", size: 16)
         RoleTitleLabel.font = UIFont(name: "Hind-Regular", size: 16)
         
+        preparePicker()
+        
+    }
+    
+    func preparePicker() {
+       playerInteractor?.currentPlayer(success: { (playerResult) -> (Void) in
+            self.gameRoles.setTitle(playerResult.game!)
+            self.rolePlayerDelegate = PickerDelegate(strings: self.gameRoles.roles, textField: self.roleTextField)
+            self.rolePickerview.delegate = self.rolePlayerDelegate
+            self.rolePickerview.dataSource = self.rolePlayerDelegate
+            self.skillRatingPlayerDelegate = PickerDelegate(strings: self.gameRoles.skills, textField: self.skillRatingTextField)
+            self.skillRatingPickerview.delegate = self.skillRatingPlayerDelegate
+            self.skillRatingPickerview.dataSource = self.skillRatingPlayerDelegate
+        }, failure: { (err) -> (Void) in
+            print("failed to current player data with error \(err)")
+        })
     }
     
     func setPickerviewDelagate(){
