@@ -11,12 +11,14 @@ import FirebaseFirestoreSwift
 
 struct RoomChat: Codable {
     var id: String?
-    var name: String?
+    var playerIds: [String]?
+    var players: [Player]?
     var chatData: [ChatData]?
     
     enum CodingKeys: String, CodingKey {
         case id
-        case name
+        case playerIds
+        case players
         case chatData
     }
 }

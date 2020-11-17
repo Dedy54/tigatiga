@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import Firebase
 
 open class BaseInteractor {
     
     public var service = CoreService.instance
+    let db = Firestore.firestore()
     
 }

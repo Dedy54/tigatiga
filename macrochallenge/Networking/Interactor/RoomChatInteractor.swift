@@ -8,13 +8,11 @@
 
 import Foundation
 import Firebase
+import FirebaseFirestoreSwift
 
 protocol RoomChatInteractorDelegate {
-    func fetchRoomChats(success: @escaping ([RoomChat]) -> (Void), failure: @escaping (Error) -> (Void))
-    func fetchRoomChat(id: String, success: @escaping (RoomChat) -> (Void), failure: @escaping (Error) -> (Void))
-    func fetchRoomChatCurrentUser(id: String, success: @escaping ([RoomChat]) -> (Void), failure: @escaping (Error) -> (Void))
-    func createRoomChat(success: @escaping (RoomChat) -> (Void), failure: @escaping (Error) -> (Void))
-    func createChat(roomChatId: String, text: String, success: @escaping (RoomChat) -> (Void), failure: @escaping (Error) -> (Void))
+    func fetchRoomChatCurrentUser(success: @escaping ([RoomChat]) -> (Void), failure: @escaping (Error) -> (Void))
+    func createRoomChatWith(playerId: String, success: @escaping (RoomChat) -> (Void), failure: @escaping (Error) -> (Void))
 }
 
 class RoomChatInteractor: BaseInteractor, RoomChatInteractorDelegate {
@@ -22,24 +20,35 @@ class RoomChatInteractor: BaseInteractor, RoomChatInteractorDelegate {
     var roomChats: [RoomChat] = []
     var roomChat: RoomChat = RoomChat()
     
-    func fetchRoomChats(success: @escaping ([RoomChat]) -> (Void), failure: @escaping (Error) -> (Void)) {
-        
+    func fetchRoomChatCurrentUser(success: @escaping ([RoomChat]) -> (Void), failure: @escaping (Error) -> (Void)) {
+        service.fetchRoomChatCurrentUser(success: { (rooms) -> (Void) in
+            self.roomChats = rooms
+            success(rooms)
+        }) { (error) -> (Void) in
+            failure(error)
+        }
     }
     
-    func fetchRoomChat(id: String, success: @escaping (RoomChat) -> (Void), failure: @escaping (Error) -> (Void)) {
-        
+    func createRoomChatWith(playerId: String, success: @escaping (RoomChat) -> (Void), failure: @escaping (Error) -> (Void)) {
+        let playerInteractor = PlayerInteractor()
+        playerInteractor.currentPlayer(success: { (currentPlayer) -> (Void) in
+            let currentPlayer = currentPlayer
+            playerInteractor.fetchPlayer(id: playerId, success: { (otherPlayer) -> (Void) in
+                let otherPlayer = otherPlayer
+                let id = self.db.collection("room_chats").document().documentID
+                let uid = PreferenceManager.instance.uid ?? "0"
+                let roomChat = RoomChat(id: id, playerIds: [playerId, uid], players: [otherPlayer, currentPlayer], chatData: nil)
+                self.service.createRoomChat(roomChat: roomChat, success: { (roomChat) -> (Void) in
+                    self.roomChat = roomChat
+                    success(roomChat)
+                }) { (error) -> (Void) in
+                    failure(error)
+                }
+            }) { (error) -> (Void) in
+                failure(error)
+            }
+        }) { (error) -> (Void) in
+            failure(error)
+        }
     }
-    
-    func fetchRoomChatCurrentUser(id: String, success: @escaping ([RoomChat]) -> (Void), failure: @escaping (Error) -> (Void)) {
-        
-    }
-    
-    func createRoomChat(success: @escaping (RoomChat) -> (Void), failure: @escaping (Error) -> (Void)) {
-        
-    }
-    
-    func createChat(roomChatId: String, text: String, success: @escaping (RoomChat) -> (Void), failure: @escaping (Error) -> (Void)) {
-        
-    }
-    
 }
