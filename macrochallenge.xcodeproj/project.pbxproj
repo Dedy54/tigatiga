@@ -51,6 +51,10 @@
 		5C5FA38125621E1100CDD060 /* profileForMeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C5FA37225621E1100CDD060 /* profileForMeVC.xib */; };
 		5C5FA38225621E1100CDD060 /* ProfilePeople.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C5FA37325621E1100CDD060 /* ProfilePeople.storyboard */; };
 		5C5FA38325621E1100CDD060 /* profileForMyTeamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5FA37425621E1100CDD060 /* profileForMyTeamVC.swift */; };
+		5C5FA386256231E600CDD060 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5FA384256231E600CDD060 /* ChatViewController.swift */; };
+		5C5FA387256231E600CDD060 /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C5FA385256231E600CDD060 /* ChatViewController.xib */; };
+		5C5FA38B256234F100CDD060 /* ChatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5FA389256234F100CDD060 /* ChatCollectionViewCell.swift */; };
+		5C5FA38C256234F100CDD060 /* ChatCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C5FA38A256234F100CDD060 /* ChatCollectionViewCell.xib */; };
 		5C6FAE01252CE5FA00F74AE6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6FAE00252CE5FA00F74AE6 /* MainViewController.swift */; };
 		5C6FAE04252CE64C00F74AE6 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6FAE03252CE64C00F74AE6 /* ExampleViewController.swift */; };
 		5C6FAE06252CE66000F74AE6 /* Example.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C6FAE05252CE66000F74AE6 /* Example.storyboard */; };
@@ -199,6 +203,10 @@
 		5C5FA37225621E1100CDD060 /* profileForMeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = profileForMeVC.xib; sourceTree = "<group>"; };
 		5C5FA37325621E1100CDD060 /* ProfilePeople.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProfilePeople.storyboard; sourceTree = "<group>"; };
 		5C5FA37425621E1100CDD060 /* profileForMyTeamVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = profileForMyTeamVC.swift; sourceTree = "<group>"; };
+		5C5FA384256231E600CDD060 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		5C5FA385256231E600CDD060 /* ChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
+		5C5FA389256234F100CDD060 /* ChatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCollectionViewCell.swift; sourceTree = "<group>"; };
+		5C5FA38A256234F100CDD060 /* ChatCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatCollectionViewCell.xib; sourceTree = "<group>"; };
 		5C6FAE00252CE5FA00F74AE6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5C6FAE03252CE64C00F74AE6 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		5C6FAE05252CE66000F74AE6 /* Example.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Example.storyboard; sourceTree = "<group>"; };
@@ -469,6 +477,15 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		5C5FA388256234D000CDD060 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5C5FA389256234F100CDD060 /* ChatCollectionViewCell.swift */,
+				5C5FA38A256234F100CDD060 /* ChatCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		5C6FADFE252CE5C900F74AE6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -616,6 +633,9 @@
 		5C7311F6255D002100B6FFBA /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				5C5FA388256234D000CDD060 /* Cell */,
+				5C5FA384256231E600CDD060 /* ChatViewController.swift */,
+				5C5FA385256231E600CDD060 /* ChatViewController.xib */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -922,6 +942,7 @@
 				5C5FA35E25621DD500CDD060 /* AddPostLFGroupVC.xib in Resources */,
 				A1A409E3253EA24900645930 /* GameTableViewCell.xib in Resources */,
 				5C5FA33D255E2BD400CDD060 /* CompleteProfileViewController.xib in Resources */,
+				5C5FA38C256234F100CDD060 /* ChatCollectionViewCell.xib in Resources */,
 				A1A409E1253EA23C00645930 /* GameDetailViewController.xib in Resources */,
 				6540D9B8254684EC00701688 /* SearchPeople.storyboard in Resources */,
 				5C18DC31255A37D800A2825A /* Feed.storyboard in Resources */,
@@ -931,6 +952,7 @@
 				6540D9922546816E00701688 /* forgotPass.storyboard in Resources */,
 				5C6FAE15252CE92500F74AE6 /* SecondExampleViewController.xib in Resources */,
 				6540D9D62546881D00701688 /* searchForTeamVC.xib in Resources */,
+				5C5FA387256231E600CDD060 /* ChatViewController.xib in Resources */,
 				5C5FA37725621E1100CDD060 /* PostDetailMember.storyboard in Resources */,
 				5C5FA37D25621E1100CDD060 /* FilterPost.storyboard in Resources */,
 				5C5FA38225621E1100CDD060 /* ProfilePeople.storyboard in Resources */,
@@ -1130,9 +1152,11 @@
 				5CD8748C255286BA00040E7A /* PostInteractor.swift in Sources */,
 				6540D9912546816E00701688 /* forgotPassVC.swift in Sources */,
 				5C70E539254152C800C45F76 /* Auth+Helper.swift in Sources */,
+				5C5FA386256231E600CDD060 /* ChatViewController.swift in Sources */,
 				5C5FA37A25621E1100CDD060 /* PostFilterResultVC.swift in Sources */,
 				5CD87475255286A900040E7A /* ChatData.swift in Sources */,
 				5CD87480255286B200040E7A /* PostService.swift in Sources */,
+				5C5FA38B256234F100CDD060 /* ChatCollectionViewCell.swift in Sources */,
 				5C5FA34F25621D9000CDD060 /* PlayerCommendationVC.swift in Sources */,
 				5CD87483255286B200040E7A /* CommendationService.swift in Sources */,
 				5C5FA37F25621E1100CDD060 /* profilePeopleVC.swift in Sources */,

@@ -96,7 +96,10 @@ extension CoreService {
     
     func createPlayer(player: Player, success: @escaping (Player) -> (Void), failure: @escaping (Error) -> (Void)) {
         do {
-            let _ = try db.collection("players").document(player.id ?? "0").setData(from: player)
+            let uid = Auth.auth().currentUser?.uid ?? "0"
+            var tempPlayer = player
+            tempPlayer.id = uid
+            let _ = try db.collection("players").document(player.id ?? "0").setData(from: tempPlayer)
             success(player)
             return
         } catch {
