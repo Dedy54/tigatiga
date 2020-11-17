@@ -16,8 +16,9 @@ class SignInViewController: UIViewController {
         return controller
     }
     
-    static func instantiateSheetViewController(isCanDismiss: Bool) -> SheetViewController {
+    static func instantiateSheetViewController(isCanDismiss: Bool, lastViewController: UIViewController) -> SheetViewController {
         let controller = SignInViewController(nibName: "SignInViewController", bundle: nil)
+        controller.lastViewController = lastViewController
         let sheetController = SheetViewController(controller: controller, sizes: [.fixed(540)])
         sheetController.dismissable = isCanDismiss
         sheetController.adjustForBottomSafeArea = false
@@ -33,6 +34,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var appleIDStackView: UIStackView!
     var authInteractor: AuthInteractor? = AuthInteractor()
     var userInteractor: UserInteractor? = UserInteractor()
+    var lastViewController: UIViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,9 +71,21 @@ extension SignInViewController : ASAuthorizationControllerDelegate, ASAuthorizat
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         switch authorization.credential {
         case let appleIDCredential as ASAuthorizationAppleIDCredential:
-            self.authInteractor?.signInWithApple(currentNonce: AuthHelper.randomNonceString(), credential: appleIDCredential, success: { (authResult, users) -> (Void) in
-                print(authResult)
-                print(users)
+            self.authInteractor?.signInWithApple(currentNonce: AuthHelper.randomNonceString(), credential: appleIDCredential, success: { (authResult, users, player) -> (Void) in
+                PreferenceManager.instance.isLogin = true
+                PreferenceManager.instance.uid = users.uid
+                if let player = player, let game = player.game, game != "" {
+                    self.dismiss(animated: true, completion: nil)
+                } else {
+                    self.dismiss(animated: true) {
+                        let completeProfileViewController = CompleteProfileViewController.instantiateViewController()
+                        completeProfileViewController.users = users
+                        completeProfileViewController.hidesBottomBarWhenPushed = true
+                        completeProfileViewController.title = "Complete Registration"
+                        self.lastViewController?.present(completeProfileViewController, animated: false, completion: nil)
+                        self.sheetViewController?.closeSheet()
+                    }
+                }
             }, failure: { (error) -> (Void) in
                 print(error)
             })

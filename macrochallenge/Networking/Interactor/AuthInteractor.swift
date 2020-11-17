@@ -52,7 +52,7 @@ class AuthInteractor: BaseInteractor {
         }
     }
     
-    func signInWithApple(currentNonce: String?, credential: ASAuthorizationAppleIDCredential?, success: @escaping (AuthDataResult, Users) -> (Void), failure: @escaping (Error) -> (Void)) {
+    func signInWithApple(currentNonce: String?, credential: ASAuthorizationAppleIDCredential?, success: @escaping (AuthDataResult, Users, Player?) -> (Void), failure: @escaping (Error) -> (Void)) {
         service.signInWithApple(currentNonce: currentNonce, credential: credential, success: { (authDataResult) -> (Void) in
             self.authDataResult = authDataResult
             let email = authDataResult.user.email ?? ""
@@ -65,18 +65,19 @@ class AuthInteractor: BaseInteractor {
                     tempUser.uid = uid
                     self.service.createUser(users: tempUser, success: { (createUser) -> (Void) in
                         self.user = createUser
-                        let player = Player(id: uid, name: displayName, experience: "experience", commendations: nil, lookingForGroup: true, imageProfile: "", user: tempUser, skillRating: "skillRating", role: "role")
-                        self.service.createPlayer(player: player, success: { (player) -> (Void) in
+                        var tempPlayer = Player(id: uid, name: displayName, experience: "", commendations: nil, lookingForGroup: true, imageProfile: "", user: tempUser, skillRating: "", role: "")
+                        self.service.createPlayer(player: tempPlayer, success: { (player) -> (Void) in
                             print(player)
+                            tempPlayer = player
                         }) { (error) -> (Void) in
                             print(error)
                         }
-                        success(authDataResult, createUser)
+                        success(authDataResult, createUser, tempPlayer)
                     }) { (error) -> (Void) in
                         failure(error)
                     }
                 } else {
-                    success(authDataResult, fetchUser)
+                    success(authDataResult, fetchUser, nil)
                 }
             }) { (error) -> (Void) in
                 failure(error)

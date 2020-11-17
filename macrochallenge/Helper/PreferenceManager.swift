@@ -11,6 +11,8 @@ import Foundation
 class PreferenceManager: NSObject {
     
     private static let FinishedOnboarding = "finished_onboarding"
+    private static let IsLogin = "is_login"
+    private static let UID = "uid"
     
     static let instance = PreferenceManager()
     private let userDefaults: UserDefaults
@@ -29,6 +31,24 @@ class PreferenceManager: NSObject {
         }
         set (newValue) {
             userDefaults.set(newValue, forKey: PreferenceManager.FinishedOnboarding)
+        }
+    }
+    
+    var isLogin: Bool {
+        get {
+            return userDefaults.bool(forKey: PreferenceManager.IsLogin)
+        }
+        set (newValue) {
+            userDefaults.set(newValue, forKey: PreferenceManager.IsLogin)
+        }
+    }
+    
+    var uid: String? {
+        get {
+            return userDefaults.string(forKey: PreferenceManager.UID)
+        }
+        set (newValue) {
+            userDefaults.set(newValue, forKey: PreferenceManager.UID)
         }
     }
     
