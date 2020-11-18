@@ -31,8 +31,8 @@ class FeedViewController: UIViewController {
         super.viewDidLoad()
         additionalSetup()
         
-        let foodListViewController = SignInViewController.instantiateSheetViewController(isCanDismiss: true)
-        self.present(foodListViewController, animated: false, completion: nil)
+//        let foodListViewController = SignInViewController.instantiateSheetViewController(isCanDismiss: true, lastViewController: self)
+//        self.present(foodListViewController, animated: false, completion: nil)
     }
     
     func additionalSetup() {

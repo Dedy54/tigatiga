@@ -102,6 +102,8 @@
 		5CDE2417252C3CDB00DF5601 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CDE2415252C3CDB00DF5601 /* LaunchScreen.storyboard */; };
 		5CDE2422252C3CDB00DF5601 /* macrochallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE2421252C3CDB00DF5601 /* macrochallengeTests.swift */; };
 		5CDE242D252C3CDB00DF5601 /* macrochallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE242C252C3CDB00DF5601 /* macrochallengeUITests.swift */; };
+		5CE750FD2564BEC200D505AF /* ChatDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE750FB2564BEC200D505AF /* ChatDetailTableViewCell.swift */; };
+		5CE750FE2564BEC200D505AF /* ChatDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CE750FC2564BEC200D505AF /* ChatDetailTableViewCell.xib */; };
 		6540D9912546816E00701688 /* forgotPassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6540D98F2546816E00701688 /* forgotPassVC.swift */; };
 		6540D9922546816E00701688 /* forgotPass.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6540D9902546816E00701688 /* forgotPass.storyboard */; };
 		6540D9B8254684EC00701688 /* SearchPeople.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6540D9B7254684EC00701688 /* SearchPeople.storyboard */; };
@@ -262,6 +264,8 @@
 		5CDE2428252C3CDB00DF5601 /* macrochallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = macrochallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CDE242C252C3CDB00DF5601 /* macrochallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = macrochallengeUITests.swift; sourceTree = "<group>"; };
 		5CDE242E252C3CDB00DF5601 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CE750FB2564BEC200D505AF /* ChatDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailTableViewCell.swift; sourceTree = "<group>"; };
+		5CE750FC2564BEC200D505AF /* ChatDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatDetailTableViewCell.xib; sourceTree = "<group>"; };
 		652BA1F0253E955F000F554D /* forgotPass.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = forgotPass.storyboard; sourceTree = "<group>"; };
 		652BA1F8253E95C3000F554D /* forgotPassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forgotPassVC.swift; sourceTree = "<group>"; };
 		6540D98F2546816E00701688 /* forgotPassVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = forgotPassVC.swift; path = macrochallenge/Controllers/ForgotPassword/forgotPassVC.swift; sourceTree = SOURCE_ROOT; };
@@ -644,6 +648,7 @@
 		5C7311F7255D002A00B6FFBA /* ChatDetail */ = {
 			isa = PBXGroup;
 			children = (
+				5CE750FA2564BEAA00D505AF /* Cell */,
 				5C5FA3932563721700CDD060 /* ChatDetailViewController.swift */,
 				5C5FA3942563721700CDD060 /* ChatDetailViewController.xib */,
 			);
@@ -713,6 +718,15 @@
 				5CDE242E252C3CDB00DF5601 /* Info.plist */,
 			);
 			path = macrochallengeUITests;
+			sourceTree = "<group>";
+		};
+		5CE750FA2564BEAA00D505AF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5CE750FB2564BEC200D505AF /* ChatDetailTableViewCell.swift */,
+				5CE750FC2564BEC200D505AF /* ChatDetailTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		6540D92625466BBF00701688 /* Recovered References */ = {
@@ -941,6 +955,7 @@
 				5CDE2414252C3CDB00DF5601 /* Assets.xcassets in Resources */,
 				A163C1132562187E00667165 /* EditProfileViewController.xib in Resources */,
 				5C5FA37525621E1100CDD060 /* PostDetailTeam.storyboard in Resources */,
+				5CE750FE2564BEC200D505AF /* ChatDetailTableViewCell.xib in Resources */,
 				5C5FA3962563721700CDD060 /* ChatDetailViewController.xib in Resources */,
 				5C5FA35F25621DD500CDD060 /* AddPostLFMemberVC.xib in Resources */,
 				5C5FA35E25621DD500CDD060 /* AddPostLFGroupVC.xib in Resources */,
@@ -1139,7 +1154,6 @@
 				5C5FA338255E276900CDD060 /* SheetViewController.swift in Sources */,
 				6540D9D52546881D00701688 /* searchForTeamVC.swift in Sources */,
 				A163C1122562187E00667165 /* EditProfileViewController.swift in Sources */,
-				5C5FA317255E1AFE00CDD060 /* AddPostLFMemberVC.swift in Sources */,
 				5CD87482255286B200040E7A /* TeamService.swift in Sources */,
 				5CD87471255286A900040E7A /* Team.swift in Sources */,
 				5C5FA34B25621D9000CDD060 /* CommendationInfoVC.swift in Sources */,
@@ -1166,6 +1180,7 @@
 				5CD87483255286B200040E7A /* CommendationService.swift in Sources */,
 				5C5FA37F25621E1100CDD060 /* profilePeopleVC.swift in Sources */,
 				5C70E54025427E7500C45F76 /* SignInViewController.swift in Sources */,
+				5CE750FD2564BEC200D505AF /* ChatDetailTableViewCell.swift in Sources */,
 				5C70E52F254142A200C45F76 /* AuthService.swift in Sources */,
 				5C70E52325413EAE00C45F76 /* CoreService.swift in Sources */,
 				5CD87473255286A900040E7A /* RoomChat.swift in Sources */,

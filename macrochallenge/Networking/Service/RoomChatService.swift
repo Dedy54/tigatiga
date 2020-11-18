@@ -13,9 +13,34 @@ import FirebaseFirestoreSwift
 protocol RoomChatServiceDelegate {
     func fetchRoomChatCurrentUser(success: @escaping ([RoomChat]) -> (Void), failure: @escaping (Error) -> (Void))
     func createRoomChat(roomChat: RoomChat, success: @escaping (RoomChat) -> (Void), failure: @escaping (Error) -> (Void))
+    func fetchRoomChat(roomId: String, success: @escaping (RoomChat) -> (Void), failure: @escaping (Error) -> (Void))
 }
 
 extension CoreService: RoomChatServiceDelegate {
+    
+    func fetchRoomChat(roomId: String, success: @escaping (RoomChat) -> (Void), failure: @escaping (Error) -> (Void)) {
+        var roomChats = [RoomChat]()
+        db.collection("room_chats")
+            .whereField("id", isEqualTo: roomId)
+            .addSnapshotListener { (querySnapshot, error) in
+                if let querySnapshot = querySnapshot {
+                    roomChats = querySnapshot.documents.compactMap { document in
+                        try? document.data(as: RoomChat.self)
+                    }
+                    if roomChats.count != 0 {
+                        success(roomChats[0])
+                        return
+                    }
+                    
+                    success(RoomChat())
+                }
+                
+                if let error = error {
+                    failure(error)
+                    return
+                }
+        }
+    }
     
     func createRoomChat(roomChat: RoomChat, success: @escaping (RoomChat) -> (Void), failure: @escaping (Error) -> (Void)) {
         do {

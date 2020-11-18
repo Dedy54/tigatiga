@@ -13,11 +13,12 @@ import FirebaseFirestoreSwift
 protocol RoomChatInteractorDelegate {
     func fetchRoomChatCurrentUser(success: @escaping ([RoomChat]) -> (Void), failure: @escaping (Error) -> (Void))
     func createRoomChatWith(playerId: String, success: @escaping (RoomChat) -> (Void), failure: @escaping (Error) -> (Void))
+    func fetchRoomChat(roomId: String, success: @escaping (RoomChat) -> (Void), failure: @escaping (Error) -> (Void))
 }
 
 class RoomChatInteractor: BaseInteractor, RoomChatInteractorDelegate {
     
-    var roomChats: [RoomChat] = []
+    var roomChats: [RoomChat] = [RoomChat]()
     var roomChat: RoomChat = RoomChat()
     
     func fetchRoomChatCurrentUser(success: @escaping ([RoomChat]) -> (Void), failure: @escaping (Error) -> (Void)) {
@@ -47,6 +48,15 @@ class RoomChatInteractor: BaseInteractor, RoomChatInteractorDelegate {
             }) { (error) -> (Void) in
                 failure(error)
             }
+        }) { (error) -> (Void) in
+            failure(error)
+        }
+    }
+    
+    func fetchRoomChat(roomId: String, success: @escaping (RoomChat) -> (Void), failure: @escaping (Error) -> (Void)) {
+        service.fetchRoomChat(roomId: roomId, success: { (roomChat) -> (Void) in
+            self.roomChat = roomChat
+            success(roomChat)
         }) { (error) -> (Void) in
             failure(error)
         }

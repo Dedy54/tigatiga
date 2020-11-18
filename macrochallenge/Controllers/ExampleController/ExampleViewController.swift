@@ -27,6 +27,7 @@ class ExampleViewController: UIViewController {
     }
     
     var roomChatInteractor: RoomChatInteractor?
+    var rooms: [RoomChat]?
     
     static func instantiateViewController() -> ChatViewController {
         let controller = ChatViewController(nibName: "ChatViewController", bundle: nil)
@@ -38,6 +39,7 @@ class ExampleViewController: UIViewController {
         self.title = "Chat"
         self.roomChatInteractor = RoomChatInteractor()
         self.roomChatInteractor?.fetchRoomChatCurrentUser(success: { (rooms) -> (Void) in
+            self.rooms = rooms
             self.collectionView.reloadData()
         }, failure: { (error) -> (Void) in })
     }
@@ -47,7 +49,7 @@ extension ExampleViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ChatCollectionViewCell", for: indexPath) as! ChatCollectionViewCell
-        cell.chatRoom = self.roomChatInteractor?.roomChats[indexPath.row]
+        cell.chatRoom = self.rooms?[indexPath.row]
         return cell
     }
     
@@ -56,8 +58,11 @@ extension ExampleViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let chatDetailViewController = ChatDetailViewController.instantiateViewController()
+        chatDetailViewController.roomChat = self.rooms?[indexPath.row]
+        self.navigationController?.pushViewController(chatDetailViewController, animated: true)
     }
+    
 }
 
 extension ExampleViewController: UICollectionViewDelegateFlowLayout {
