@@ -42,6 +42,7 @@ class FeedVC: UIViewController{
         super.viewDidLoad()
         
         
+        
         overrideUserInterfaceStyle = .dark
         recommendedCollectionView.dataSource = self
         recommendedCollectionView.delegate = self
@@ -56,6 +57,7 @@ class FeedVC: UIViewController{
         getPost()
         
     }
+    
     
     func getPost() {
         postInteractor?.fetchPosts(success: { (postResults) -> (Void) in
