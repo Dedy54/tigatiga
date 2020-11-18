@@ -37,6 +37,7 @@ class FeedVC: UIViewController{
     let postInteractor: PostInteractor? = PostInteractor()
     let playerInteractor: PlayerInteractor? = PlayerInteractor()
     var currentPlayer: Player?
+    var selectedPost: Post?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,6 +111,16 @@ class FeedVC: UIViewController{
         {
             let addPostVC = segue.destination as! AddPostVC
             addPostVC.selectedPeople = currentPlayer
+        }
+        else if segue.identifier == "segueDetailMember"
+        {
+            let detailMemberVC = segue.destination as! PostDetailMemberVC
+            detailMemberVC.selectedPost = selectedPost
+        }
+        else if segue.identifier == "segueDetailTeam"
+        {
+            let detailTeamVC = segue.destination as! PostDetailTeamVC
+            detailTeamVC.selectedPost = selectedPost
         }
     }
     
@@ -185,6 +196,7 @@ extension FeedVC: UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //
+        selectedPost = posts[indexPath.row]
         if posts[indexPath.row].creator!.lookingForGroup! {
             self.performSegue(withIdentifier: "segueDetailMember", sender: nil)
         }else {

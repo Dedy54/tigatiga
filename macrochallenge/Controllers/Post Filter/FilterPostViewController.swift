@@ -30,7 +30,11 @@ class FilterPostViewController: UIViewController {
     let gameRoles = SwitchGame()
     var rolePlayerDelegate: PickerDelegate?
     var skillRatingPlayerDelegate: PickerDelegate?
+    var lookingForDelegate: PickerDelegate?
     let playerInteractor: PlayerInteractor? = PlayerInteractor()
+    let postInteractor: PostInteractor? = PostInteractor()
+    
+    var posts: [Post] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +70,9 @@ class FilterPostViewController: UIViewController {
     func preparePicker() {
        playerInteractor?.currentPlayer(success: { (playerResult) -> (Void) in
             self.gameRoles.setTitle(playerResult.game!)
+            self.lookingForDelegate = PickerDelegate(strings: self.gameRoles.lookingFor, textField: self.lookingForTextField)
+            self.lookingForPickerview.delegate = self.lookingForDelegate
+            self.lookingForPickerview.dataSource = self.lookingForDelegate
             self.rolePlayerDelegate = PickerDelegate(strings: self.gameRoles.roles, textField: self.roleTextField)
             self.rolePickerview.delegate = self.rolePlayerDelegate
             self.rolePickerview.dataSource = self.rolePlayerDelegate
@@ -94,8 +101,37 @@ class FilterPostViewController: UIViewController {
         txtfld.tintColor = .clear
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "unwindFeedResult"
+        {
+            let feedVC = segue.destination as! FeedVC
+            feedVC.posts = posts
+        }
+        if segue.identifier == "segueFeedResult"
+        {
+            let feedResultVC = segue.destination as! PostFilterResultVC
+            feedResultVC.posts = posts
+        }
+    }
     
     @IBAction func applyTapped(_ sender: Any) {
+        var lookingForGroup: Bool = false
+        if lookingForTextField.text == "Group" {
+            lookingForGroup = true
+        }
+        let skillRating = skillRatingTextField.text!
+        let role = roleTextField.text!
+        postInteractor?.fetchPosts(success: { (postResults) -> (Void) in
+            for post in postResults {
+                if post.creator?.lookingForGroup == lookingForGroup || post.creator?.skillRating == skillRating || post.creator?.role == role {
+                    self.posts.append(post)
+                }
+            }
+//            self.performSegue(withIdentifier: "unwindFeedResult", sender: nil)
+            self.performSegue(withIdentifier: "segueFeedResult", sender: nil)
+        }, failure: { (err) -> (Void) in
+            print("failed to get post data with error \(err)")
+        })
     }
     
 

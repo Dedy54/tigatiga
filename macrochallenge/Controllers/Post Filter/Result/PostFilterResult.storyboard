@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dCL-4l-N9v">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dCL-4l-N9v">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -122,16 +121,38 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="PMz-VS-AOb"/>
                         <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="PMz-VS-AOb"/>
                     </view>
                     <connections>
                         <outlet property="postResultTableView" destination="QPV-90-ycA" id="1Jh-vg-7Nm"/>
+                        <segue destination="hNN-Zd-gGC" kind="show" identifier="segueDetailMember" id="cLy-j8-jZ9"/>
+                        <segue destination="zCX-gq-uri" kind="show" identifier="segueDetailTeam" id="Uwb-a7-7Cg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VMA-XB-K9l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-149.27536231884059" y="68.973214285714278"/>
+        </scene>
+        <!--PostDetailMember-->
+        <scene sceneID="X4f-gp-Gxd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PostDetailMember" id="hNN-Zd-gGC" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="4ba-ah-3yP"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f5E-00-rMa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="554" y="-122"/>
+        </scene>
+        <!--PostDetailTeam-->
+        <scene sceneID="pkU-9L-IF9">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PostDetailTeam" id="zCX-gq-uri" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="5Kt-XG-x4m"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8z5-3g-Ljk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="580" y="-63"/>
         </scene>
     </scenes>
     <resources>

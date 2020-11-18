@@ -153,10 +153,48 @@
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" red="1" green="0.80784313730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 </label>
+                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VuJ-yU-dca">
+                    <rect key="frame" x="24" y="533" width="368" height="76"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="33F-Ll-Zpv">
+                            <rect key="frame" x="20" y="10" width="0.0" height="0.0"/>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="33F-Ll-Zpv" secondAttribute="bottom" constant="10" id="7hZ-8B-M79"/>
+                        <constraint firstAttribute="trailing" secondItem="33F-Ll-Zpv" secondAttribute="trailing" constant="21" id="nbJ-as-GS3"/>
+                        <constraint firstItem="33F-Ll-Zpv" firstAttribute="top" secondItem="VuJ-yU-dca" secondAttribute="top" constant="10" id="tpM-96-Bcf"/>
+                    </constraints>
+                </view>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gZM-Qe-TQc">
                     <rect key="frame" x="14" y="523" width="387" height="76"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xdu-as-PgC">
+                            <rect key="frame" x="22" y="6" width="51" height="64"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                            <state key="normal" image="mvp">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWE-cb-GY5">
+                            <rect key="frame" x="111" y="8" width="52" height="56"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                            <state key="normal" image="Leader">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="01U-aA-ISl">
+                            <rect key="frame" x="206" y="6" width="50" height="60"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                            <state key="normal" image="Friendly-1">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUw-6s-hEn">
                             <rect key="frame" x="108" y="6" width="58" height="64"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -182,10 +220,18 @@
                             </state>
                         </button>
                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1SL-kX-83j">
-                            <rect key="frame" x="15" y="6" width="58" height="64"/>
+                            <rect key="frame" x="18" y="6" width="58" height="64"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="8"/>
                             <state key="normal" image="Awesome">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ice-gg-ZbS">
+                            <rect key="frame" x="302" y="10" width="44" height="56"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                            <state key="normal" image="Team Player">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                         </button>
@@ -228,50 +274,6 @@
                         <action selector="editProfile:" destination="-1" eventType="touchUpInside" id="RjB-7f-ymM"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VuJ-yU-dca">
-                    <rect key="frame" x="24" y="533" width="368" height="76"/>
-                    <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="33F-Ll-Zpv">
-                            <rect key="frame" x="20" y="10" width="0.0" height="0.0"/>
-                            <subviews>
-                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xdu-as-PgC">
-                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="56"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                    <state key="normal" image="mvp">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </state>
-                                </button>
-                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWE-cb-GY5">
-                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="56"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                    <state key="normal" image="Leader">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </state>
-                                </button>
-                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="01U-aA-ISl">
-                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="56"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                    <state key="normal" image="Friendly-1">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </state>
-                                </button>
-                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ice-gg-ZbS">
-                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="56"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                    <state key="normal" image="Team Player">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </state>
-                                </button>
-                            </subviews>
-                        </stackView>
-                    </subviews>
-                    <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <constraints>
-                        <constraint firstAttribute="bottom" secondItem="33F-Ll-Zpv" secondAttribute="bottom" constant="10" id="7hZ-8B-M79"/>
-                        <constraint firstAttribute="trailing" secondItem="33F-Ll-Zpv" secondAttribute="trailing" constant="21" id="nbJ-as-GS3"/>
-                        <constraint firstItem="33F-Ll-Zpv" firstAttribute="top" secondItem="VuJ-yU-dca" secondAttribute="top" constant="10" id="tpM-96-Bcf"/>
-                    </constraints>
-                </view>
             </subviews>
             <color key="backgroundColor" red="0.14509931209999999" green="0.14509573579999999" blue="0.14509817959999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

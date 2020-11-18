@@ -36,11 +36,17 @@ enum GameTeamMember: String, CaseIterable {
     case Ten = "10"
 }
 
+enum LookingFor: String, CaseIterable {
+    case Group = "Group"
+    case Member = "Member"
+}
+
 class SwitchGame {
 //    static let shared  = SwitchGame()
     var roles: [String] = []
     var skills: [String] = []
     var teamMembers: [String] = GameTeamMember.allCases.map { $0.rawValue }
+    var lookingFor: [String] = LookingFor.allCases.map { $0.rawValue }
     func setTitle(_ title: String) {
         switch title {
         case GameTitle.Valorant.rawValue:

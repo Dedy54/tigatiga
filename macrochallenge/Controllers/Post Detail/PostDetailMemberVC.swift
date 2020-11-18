@@ -36,6 +36,7 @@ class PostDetailMemberVC: UIViewController {
     
     @IBOutlet weak var joinButton: UIButton!
     
+    var selectedPost: Post?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +55,13 @@ class PostDetailMemberVC: UIViewController {
         
         joinButton.layer.cornerRadius = 15
         
-        
+        populatePost()
+    }
+    
+    func populatePost() {
+        skillRatingTextview.text = selectedPost?.creator?.skillRating
+        roleRatingTextview.text = selectedPost?.creator?.role
+        availabilityTextview.text = selectedPost?.id
     }
     
     func setFont(){

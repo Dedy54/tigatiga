@@ -32,6 +32,8 @@ class PostDetailTeamVC: UIViewController {
     
     @IBOutlet weak var inviteButton: UIButton!
     
+    var selectedPost: Post?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,6 +48,13 @@ class PostDetailTeamVC: UIViewController {
         profileImage.layer.cornerRadius = profileImage.frame.height / 2
         
         inviteButton.layer.cornerRadius = 15
+        
+        populatePost()
+    }
+    
+    func populatePost() {
+        avgSkillRatingTextview.text = selectedPost?.creator?.skillRating
+        availabilityTextview.text = selectedPost?.id
     }
     
     func setFont(){
