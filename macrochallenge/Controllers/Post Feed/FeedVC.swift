@@ -37,6 +37,7 @@ class FeedVC: UIViewController{
     let postInteractor: PostInteractor? = PostInteractor()
     let playerInteractor: PlayerInteractor? = PlayerInteractor()
     var currentPlayer: Player?
+    var selectedPost: Post?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -108,15 +109,30 @@ class FeedVC: UIViewController{
             let profilePeopleVC = segue.destination as! profilePeopleVC
             profilePeopleVC.selectedPeople = currentPlayer
         }
+        else if segue.identifier == "addPostSegue"
+        {
+            let addPostVC = segue.destination as! AddPostVC
+            addPostVC.selectedPeople = currentPlayer
+        }
+        else if segue.identifier == "segueDetailMember"
+        {
+            let detailMemberVC = segue.destination as! PostDetailMemberVC
+            detailMemberVC.selectedPost = selectedPost
+        }
+        else if segue.identifier == "segueDetailTeam"
+        {
+            let detailTeamVC = segue.destination as! PostDetailTeamVC
+            detailTeamVC.selectedPost = selectedPost
+        }
     }
     
     @IBAction func unwindToFeedPost(_ unwindSegue: UIStoryboardSegue) {
 //        if unwindSegue.source is AddPostVC {
 //        }else
-        if unwindSegue.source is FilterPostViewController {
-            
-        }
-        feedTableView.reloadData()
+//        if unwindSegue.source is FilterPostViewController {
+//
+//        }
+        feedTableView?.reloadData()
         // Use data from the view controller which initiated the unwind segue
     }
 
@@ -182,6 +198,12 @@ extension FeedVC: UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //
+        selectedPost = posts[indexPath.row]
+        if posts[indexPath.row].creator!.lookingForGroup! {
+            self.performSegue(withIdentifier: "segueDetailMember", sender: nil)
+        }else {
+            self.performSegue(withIdentifier: "segueDetailTeam", sender: nil)
+        }
     }
     
 }

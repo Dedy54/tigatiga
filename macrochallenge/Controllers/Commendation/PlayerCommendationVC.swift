@@ -13,12 +13,18 @@ class PlayerCommendationVC: UIViewController {
 
     
     var commendationview = CommendationVC()
+     var selectedPeople: Player?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        commendationview.view.frame = self.view.frame
         commendationview.view.center = CGPoint(x: view.frame.size.width  / 2,
-                                     y: view.frame.size.height / 2)
+                                               y: commendationview.view.center.y)
+        commendationview.selectedPeople = selectedPeople
+        commendationview.onClose = {
+            self.dismiss(animated: true, completion: nil)
+        }
         view.addSubview(commendationview.view)
         
         // Do any additional setup after loading the view.

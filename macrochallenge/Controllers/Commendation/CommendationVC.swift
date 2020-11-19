@@ -27,6 +27,11 @@ class CommendationVC: UIViewController {
     @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var sendButton: UIButton!
     
+    let playerInteractor: PlayerInteractor? = PlayerInteractor()
+     var selectedPeople: Player?
+    
+    var onClose: (() -> ())?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,9 +63,19 @@ class CommendationVC: UIViewController {
     
     @IBAction func sendTapped(_ sender: Any) {
         let commendationType : commendations = getCommendationType()
-        print(commendationType)
-        dismiss(animated: true, completion: nil)
-        
+        let commendationTemp = Commendation(id: "\(commendationType)")
+        if selectedPeople?.commendations == nil {
+            selectedPeople?.commendations = []
+        }
+        selectedPeople?.commendations?.append(commendationTemp)
+        playerInteractor?.updatePlayer(player: selectedPeople!, success: { (playerUpdated) -> (Void) in
+            print("success to update player with data \(playerUpdated)")
+            print(commendationType)
+            self.onClose!()
+        }, failure: { (err) -> (Void) in
+            print("failed to update player data with error \(err)")
+            self.onClose!()
+        })
     }
     
     func getCommendationType() -> commendations{

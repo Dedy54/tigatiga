@@ -29,6 +29,9 @@ class PostFilterResultVC: UIViewController {
          UIImage(named: "pp")!,
          UIImage(named: "pp")!,]
     
+    var posts: [Post] = []
+    var selectedPost: Post?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,13 +40,26 @@ class PostFilterResultVC: UIViewController {
         overrideUserInterfaceStyle = .dark
 
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueDetailMember"
+        {
+            let detailMemberVC = segue.destination as! PostDetailMemberVC
+            detailMemberVC.selectedPost = selectedPost
+        }
+        else if segue.identifier == "segueDetailTeam"
+        {
+            let detailTeamVC = segue.destination as! PostDetailTeamVC
+            detailTeamVC.selectedPost = selectedPost
+        }
+    }
 
 }
 
 extension PostFilterResultVC: UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return posts.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 172
@@ -60,13 +76,17 @@ extension PostFilterResultVC: UITableViewDelegate,UITableViewDataSource{
         cell.feedNameLabel.text = "@PlayerorTeamName"
         cell.feedNameLabel.font = UIFont(name: "Hind-Bold", size: 12)
         
-        cell.feedLookingForLabel.text = "Looking For Group"
+        if posts[indexPath.row].creator!.lookingForGroup! {
+            cell.feedLookingForLabel.text = "Looking For Group"
+        }else {
+            cell.feedLookingForLabel.text = "Looking For Member"
+        }
         cell.feedLookingForLabel.font = UIFont(name: "Hind-Bold", size: 24)
         
-        cell.skillRatingLabel.text = "Master"
+        cell.skillRatingLabel.text = posts[indexPath.row].creator?.skillRating
         cell.skillRatingLabel.font = UIFont(name: "Hind-Regular", size: 16)
         
-        cell.roleLabel.text = "Damage"
+        cell.roleLabel.text = posts[indexPath.row].creator?.role
         cell.roleLabel.font = UIFont(name: "Hind-Regular", size: 16)
         
         cell.availibilityLabel.text = "Mon, 20.00-23.00"
@@ -80,6 +100,12 @@ extension PostFilterResultVC: UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //
+        selectedPost = posts[indexPath.row]
+        if posts[indexPath.row].creator!.lookingForGroup! {
+            self.performSegue(withIdentifier: "segueDetailMember", sender: nil)
+        }else {
+            self.performSegue(withIdentifier: "segueDetailTeam", sender: nil)
+        }
     }
     
 }

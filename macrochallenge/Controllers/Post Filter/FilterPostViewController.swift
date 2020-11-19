@@ -26,9 +26,15 @@ class FilterPostViewController: UIViewController {
     let skillRatingPickerview = UIPickerView()
     let rolePickerview = UIPickerView()
     
+    var selectedPeople: Player?
+    let gameRoles = SwitchGame()
+    var rolePlayerDelegate: PickerDelegate?
+    var skillRatingPlayerDelegate: PickerDelegate?
+    var lookingForDelegate: PickerDelegate?
+    let playerInteractor: PlayerInteractor? = PlayerInteractor()
+    let postInteractor: PostInteractor? = PostInteractor()
     
-    
-    
+    var posts: [Post] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +63,25 @@ class FilterPostViewController: UIViewController {
         SRTitleLabel.font = UIFont(name: "Hind-Regular", size: 16)
         RoleTitleLabel.font = UIFont(name: "Hind-Regular", size: 16)
         
+        preparePicker()
+        
+    }
+    
+    func preparePicker() {
+       playerInteractor?.currentPlayer(success: { (playerResult) -> (Void) in
+            self.gameRoles.setTitle(playerResult.game!)
+            self.lookingForDelegate = PickerDelegate(strings: self.gameRoles.lookingFor, textField: self.lookingForTextField)
+            self.lookingForPickerview.delegate = self.lookingForDelegate
+            self.lookingForPickerview.dataSource = self.lookingForDelegate
+            self.rolePlayerDelegate = PickerDelegate(strings: self.gameRoles.roles, textField: self.roleTextField)
+            self.rolePickerview.delegate = self.rolePlayerDelegate
+            self.rolePickerview.dataSource = self.rolePlayerDelegate
+            self.skillRatingPlayerDelegate = PickerDelegate(strings: self.gameRoles.skills, textField: self.skillRatingTextField)
+            self.skillRatingPickerview.delegate = self.skillRatingPlayerDelegate
+            self.skillRatingPickerview.dataSource = self.skillRatingPlayerDelegate
+        }, failure: { (err) -> (Void) in
+            print("failed to current player data with error \(err)")
+        })
     }
     
     func setPickerviewDelagate(){
@@ -76,8 +101,49 @@ class FilterPostViewController: UIViewController {
         txtfld.tintColor = .clear
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "unwindFeedResult"
+        {
+            let feedVC = segue.destination as! FeedVC
+            feedVC.posts = posts
+        }
+        if segue.identifier == "segueFeedResult"
+        {
+            let feedResultVC = segue.destination as! PostFilterResultVC
+            feedResultVC.posts = posts
+        }
+    }
     
     @IBAction func applyTapped(_ sender: Any) {
+        var lookingForGroup: Bool = false
+        if lookingForTextField.text == LookingFor.Group.rawValue {
+            lookingForGroup = true
+        }
+        let skillRating = skillRatingTextField.text!
+        let role = roleTextField.text!
+        postInteractor?.fetchPosts(success: { (postResults) -> (Void) in
+            for post in postResults {
+                var trueLook: Bool = false
+                var trueSkill: Bool = false
+                var trueRole: Bool = false
+                if post.creator?.lookingForGroup == lookingForGroup || self.lookingForTextField.text == "" {
+                    trueLook = true
+                }
+                if post.creator?.skillRating == skillRating || skillRating == "" {
+                    trueSkill = true
+                }
+                if post.creator?.role == role || role == "" {
+                    trueRole = true
+                }
+                if trueLook && trueSkill && trueRole {
+                    self.posts.append(post)
+                }
+            }
+            self.performSegue(withIdentifier: "unwindFeedResult", sender: nil)
+//            self.performSegue(withIdentifier: "segueFeedResult", sender: nil)
+        }, failure: { (err) -> (Void) in
+            print("failed to get post data with error \(err)")
+        })
     }
     
 

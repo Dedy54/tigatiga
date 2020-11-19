@@ -16,14 +16,6 @@ class searchPeopleVC: UIViewController{
     
     var searchPlayerVC = searchForPlayerVC()
     var searchTeamVC = searchForTeamVC()
-    
-    enum commendations : Int{
-        case mvp
-        case teamleader
-        case friendly
-        case teamplayer
-    }
-    
    
     var views : [UIView]!
     

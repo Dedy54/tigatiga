@@ -21,6 +21,12 @@ class AddPostLFMemberVC: UIViewController,UITextFieldDelegate {
     let skillRatingPicker = UIPickerView()
     let rolePicker = UIPickerView()
     
+     let playerInteractor: PlayerInteractor? = PlayerInteractor()
+    var selectedPeople: Player?
+    let gameRoles = SwitchGame()
+    var rolePlayerDelegate: PickerDelegate?
+    var skillRatingPlayerDelegate: PickerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,8 +61,22 @@ class AddPostLFMemberVC: UIViewController,UITextFieldDelegate {
         descriptionTextview.layer.borderWidth = 1
         descriptionTextview.layer.borderColor = searchForTeamVC().mabarYellow
         
+        preparePicker()
         
-        
+    }
+    
+    func preparePicker() {
+       playerInteractor?.currentPlayer(success: { (playerResult) -> (Void) in
+            self.gameRoles.setTitle(playerResult.game!)
+            self.rolePlayerDelegate = PickerDelegate(strings: self.gameRoles.roles, textField: self.roleTextfield)
+            self.rolePicker.delegate = self.rolePlayerDelegate
+            self.rolePicker.dataSource = self.rolePlayerDelegate
+            self.skillRatingPlayerDelegate = PickerDelegate(strings: self.gameRoles.skills, textField: self.skillRatingTextfield)
+            self.skillRatingPicker.delegate = self.skillRatingPlayerDelegate
+            self.skillRatingPicker.dataSource = self.skillRatingPlayerDelegate
+        }, failure: { (err) -> (Void) in
+            print("failed to current player data with error \(err)")
+        })
     }
 
     func setTextFieldShape(txtfld : UITextField){

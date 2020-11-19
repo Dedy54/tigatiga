@@ -32,6 +32,12 @@ class AddPostLFGroupVC: UIViewController {
     
     var test = ["a","b","c"]
     
+    var selectedPeople: Player?
+    let gameRoles = SwitchGame()
+    var rolePlayerDelegate: PickerDelegate?
+    var skillRatingPlayerDelegate: PickerDelegate?
+    let playerInteractor: PlayerInteractor? = PlayerInteractor()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +75,22 @@ class AddPostLFGroupVC: UIViewController {
         avTitleLabel.font = UIFont(name: "Hind-Regular", size: 16)
         descTitleLabel.font = UIFont(name: "Hind-Regular", size: 16)
         
+        preparePicker()
+        
+    }
+    
+    func preparePicker() {
+       playerInteractor?.currentPlayer(success: { (playerResult) -> (Void) in
+            self.gameRoles.setTitle(playerResult.game!)
+            self.rolePlayerDelegate = PickerDelegate(strings: self.gameRoles.roles, textField: self.roleTextfield)
+            self.rolePicker.delegate = self.rolePlayerDelegate
+            self.rolePicker.dataSource = self.rolePlayerDelegate
+            self.skillRatingPlayerDelegate = PickerDelegate(strings: self.gameRoles.skills, textField: self.avgSkillRatingTextfield)
+            self.avgSkillRatingPicker.delegate = self.skillRatingPlayerDelegate
+            self.avgSkillRatingPicker.dataSource = self.skillRatingPlayerDelegate
+        }, failure: { (err) -> (Void) in
+            print("failed to current player data with error \(err)")
+        })
     }
     
     func setTextFieldShape(txtfld : UITextField){

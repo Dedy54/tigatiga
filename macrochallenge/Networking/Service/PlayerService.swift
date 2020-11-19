@@ -48,7 +48,7 @@ extension CoreService {
         if role != ""{
             collection = collection.whereField("role", isEqualTo: role)
         }
-            collection.addSnapshotListener { (querySnapshot, error) in
+            collection.getDocuments { (querySnapshot, error) in
             if let error = error {
                 failure(error)
                 return

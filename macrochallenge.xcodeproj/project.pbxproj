@@ -132,6 +132,7 @@
 		A1A2E02A2547E709008DD0D2 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2E0292547E708008DD0D2 /* UITextField+Extension.swift */; };
 		A1A2E02C2547E7AE008DD0D2 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2E02B2547E7AE008DD0D2 /* UIColor+Extension.swift */; };
 		A1A2E02E2547E7EF008DD0D2 /* NSLayoutDimension+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2E02D2547E7EF008DD0D2 /* NSLayoutDimension+Extension.swift */; };
+		A1A39E3525636E3200CC80B5 /* OverlayPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A39E3425636E3200CC80B5 /* OverlayPresentationController.swift */; };
 		A1A409DE253EA13400645930 /* GamesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A409DD253EA13400645930 /* GamesAPI.swift */; };
 		A1A409E1253EA23C00645930 /* GameDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1A409E0253EA23C00645930 /* GameDetailViewController.xib */; };
 		A1A409E3253EA24900645930 /* GameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1A409E2253EA24900645930 /* GameTableViewCell.xib */; };
@@ -302,6 +303,7 @@
 		A1A2E0292547E708008DD0D2 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		A1A2E02B2547E7AE008DD0D2 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		A1A2E02D2547E7EF008DD0D2 /* NSLayoutDimension+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutDimension+Extension.swift"; sourceTree = "<group>"; };
+		A1A39E3425636E3200CC80B5 /* OverlayPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayPresentationController.swift; sourceTree = "<group>"; };
 		A1A409DD253EA13400645930 /* GamesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesAPI.swift; sourceTree = "<group>"; };
 		A1A409E0253EA23C00645930 /* GameDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameDetailViewController.xib; sourceTree = "<group>"; };
 		A1A409E2253EA24900645930 /* GameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameTableViewCell.xib; sourceTree = "<group>"; };
@@ -560,6 +562,7 @@
 				5C70E538254152C800C45F76 /* Auth+Helper.swift */,
 				A190A3D8254FD471007C5139 /* SearchTeam.swift */,
 				A12B7BB52551D29E00D9EEAF /* PickerDelegate.swift */,
+				A1A39E3425636E3200CC80B5 /* OverlayPresentationController.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1165,6 +1168,7 @@
 				5CDE240D252C3CD900DF5601 /* SceneDelegate.swift in Sources */,
 				5C6FAE01252CE5FA00F74AE6 /* MainViewController.swift in Sources */,
 				A1A2E02A2547E709008DD0D2 /* UITextField+Extension.swift in Sources */,
+				A1A39E3525636E3200CC80B5 /* OverlayPresentationController.swift in Sources */,
 				A12B7BB62551D29E00D9EEAF /* PickerDelegate.swift in Sources */,
 				A1A409DE253EA13400645930 /* GamesAPI.swift in Sources */,
 				5C5FA3952563721700CDD060 /* ChatDetailViewController.swift in Sources */,

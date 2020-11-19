@@ -24,16 +24,16 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
 //        })
     }
     
-    override func viewDidLayoutSubviews() {
-            super.viewDidLayoutSubviews()
-        
-            if Core.shared.isNewUser(){
-                let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
-                let pageCtrl = storyboard.instantiateViewController(withIdentifier: "pageOnboarding") as! UIPageViewController
-                self.present(pageCtrl,animated: true,completion: nil)
-                
-            }
-        }
+//    override func viewDidLayoutSubviews() {
+//            super.viewDidLayoutSubviews()
+//        
+//            if Core.shared.isNewUser(){
+//                let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+//                let pageCtrl = storyboard.instantiateViewController(withIdentifier: "pageOnboarding") as! UIPageViewController
+//                self.present(pageCtrl,animated: true,completion: nil)
+//                
+//            }
+//        }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

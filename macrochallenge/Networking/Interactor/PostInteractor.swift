@@ -65,8 +65,8 @@ class PostInteractor: BaseInteractor, PostInteractorDelegate {
     }
     
     // Mark: Func not yet
-    func filterPost(success: @escaping ([Post]) -> (Void), failure: @escaping (Error) -> (Void)) {
-        service.fetchPosts(success: { (posts) -> (Void) in
+    func filterPost(lookingForGroup: Bool, skillRating: String, role: String, success: @escaping ([Post]) -> (Void), failure: @escaping (Error) -> (Void)) {
+        service.searchPosts(lookingForGroup: lookingForGroup, skillRating: skillRating, role: role, success: { (posts) -> (Void) in
             self.posts = posts
             success(posts)
         }) { (error) -> (Void) in

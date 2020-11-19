@@ -179,7 +179,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Add"/>
                                 <connections>
-                                    <segue destination="uRk-1H-Pp3" kind="show" id="rLL-8N-ApN"/>
+                                    <segue destination="uRk-1H-Pp3" kind="show" identifier="addPostSegue" id="rLL-8N-ApN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIm-hJ-jsT">
@@ -187,7 +187,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Filter"/>
                                 <connections>
-                                    <segue destination="8bz-kZ-7fB" kind="show" id="QZg-xv-S4S"/>
+                                    <segue destination="8bz-kZ-7fB" kind="show" identifier="filterPostSegue" id="QZg-xv-S4S"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -200,6 +200,8 @@
                         <outlet property="recommendationTitleLabel" destination="Hk2-1W-6rv" id="nfl-b7-zhG"/>
                         <outlet property="recommendedCollectionView" destination="8aa-O6-vit" id="b6t-HN-58l"/>
                         <segue destination="cag-AU-e0x" kind="show" identifier="profileSegue" id="Ygb-C8-nDD"/>
+                        <segue destination="rGL-cZ-rh2" kind="show" identifier="segueDetailMember" id="D63-q8-pTk"/>
+                        <segue destination="1pC-xl-wwO" kind="show" identifier="segueDetailTeam" id="R8i-BR-KGo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4cx-x2-4zj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -235,6 +237,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFA-SU-h7Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="817" y="-156"/>
+        </scene>
+        <!--PostDetailMember-->
+        <scene sceneID="5lR-QO-88a">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PostDetailMember" id="rGL-cZ-rh2" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="STi-Wt-Ldf"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="doU-DS-Rkk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="738" y="-29"/>
+        </scene>
+        <!--PostDetailTeam-->
+        <scene sceneID="DhW-Vs-OY8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PostDetailTeam" id="1pC-xl-wwO" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="J21-hG-qhu"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d9C-N3-Ozd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="719" y="33"/>
         </scene>
     </scenes>
     <resources>

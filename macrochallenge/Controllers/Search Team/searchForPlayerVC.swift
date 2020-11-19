@@ -39,9 +39,9 @@ class searchForPlayerVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var srTitleLabel: UILabel!
     
     let gameRoles = SwitchGame()
-    let selectedGame = GameTitle.Valorant
     var rolePlayerDelegate: PickerDelegate?
     var skillRatingPlayerDelegate: PickerDelegate?
+    let playerInteractor: PlayerInteractor? = PlayerInteractor()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,13 +81,17 @@ class searchForPlayerVC: UIViewController, UITextFieldDelegate {
     }
     
     func preparePicker() {
-        gameRoles.setTitle(selectedGame)
-        rolePlayerDelegate = PickerDelegate(strings: gameRoles.roles, textField: rolePlayerTextField)
-        rolePlayerPickerView.delegate = rolePlayerDelegate
-        rolePlayerPickerView.dataSource = rolePlayerDelegate
-        skillRatingPlayerDelegate = PickerDelegate(strings: gameRoles.skills, textField: skillRatingPlayerTextField)
-        skillRatingPlayerPickerView.delegate = skillRatingPlayerDelegate
-        skillRatingPlayerPickerView.dataSource = skillRatingPlayerDelegate
+        playerInteractor?.currentPlayer(success: { (playerResult) -> (Void) in
+            self.gameRoles.setTitle(playerResult.game!)
+            self.rolePlayerDelegate = PickerDelegate(strings: self.gameRoles.roles, textField: self.rolePlayerTextField)
+            self.rolePlayerPickerView.delegate = self.rolePlayerDelegate
+            self.rolePlayerPickerView.dataSource = self.rolePlayerDelegate
+            self.skillRatingPlayerDelegate = PickerDelegate(strings: self.gameRoles.skills, textField: self.skillRatingPlayerTextField)
+            self.skillRatingPlayerPickerView.delegate = self.skillRatingPlayerDelegate
+            self.skillRatingPlayerPickerView.dataSource = self.skillRatingPlayerDelegate
+        }, failure: { (err) -> (Void) in
+            print("failed to current player data with error \(err)")
+        })
     }
     
     @objc func actionAwesomeBtn(_ sender: UIButton) {
