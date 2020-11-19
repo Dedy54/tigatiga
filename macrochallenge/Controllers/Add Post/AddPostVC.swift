@@ -41,9 +41,9 @@ class AddPostVC: UIViewController {
     }
     
     func setSegmentedViewInContainer(){
-//        views = [UIView]()
+        views = [UIView]()
 //        views.append(addPostPlayer.view)
-//        views.append(addPostTeam.view)
+        views.append(addPostTeam.view)
 //
 //        for v in views {
 //            viewContainer.addSubview(v)

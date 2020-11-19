@@ -116,19 +116,31 @@ class FilterPostViewController: UIViewController {
     
     @IBAction func applyTapped(_ sender: Any) {
         var lookingForGroup: Bool = false
-        if lookingForTextField.text == "Group" {
+        if lookingForTextField.text == LookingFor.Group.rawValue {
             lookingForGroup = true
         }
         let skillRating = skillRatingTextField.text!
         let role = roleTextField.text!
         postInteractor?.fetchPosts(success: { (postResults) -> (Void) in
             for post in postResults {
-                if post.creator?.lookingForGroup == lookingForGroup || post.creator?.skillRating == skillRating || post.creator?.role == role {
+                var trueLook: Bool = false
+                var trueSkill: Bool = false
+                var trueRole: Bool = false
+                if post.creator?.lookingForGroup == lookingForGroup || self.lookingForTextField.text == "" {
+                    trueLook = true
+                }
+                if post.creator?.skillRating == skillRating || skillRating == "" {
+                    trueSkill = true
+                }
+                if post.creator?.role == role || role == "" {
+                    trueRole = true
+                }
+                if trueLook && trueSkill && trueRole {
                     self.posts.append(post)
                 }
             }
-//            self.performSegue(withIdentifier: "unwindFeedResult", sender: nil)
-            self.performSegue(withIdentifier: "segueFeedResult", sender: nil)
+            self.performSegue(withIdentifier: "unwindFeedResult", sender: nil)
+//            self.performSegue(withIdentifier: "segueFeedResult", sender: nil)
         }, failure: { (err) -> (Void) in
             print("failed to get post data with error \(err)")
         })

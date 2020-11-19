@@ -79,7 +79,6 @@
                                 </state>
                                 <connections>
                                     <action selector="applyTapped:" destination="itl-uF-1s0" eventType="touchUpInside" id="f3c-LB-s8D"/>
-                                    <segue destination="Mt8-Kk-Q5N" kind="unwind" identifier="unwindFeedResult" unwindAction="unwindToFeedPost:" id="ZHP-W1-gL3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -95,6 +94,7 @@
                         <outlet property="roleTextField" destination="Blf-h4-Nc3" id="90X-qj-E95"/>
                         <outlet property="skillRatingTextField" destination="xGv-O2-owy" id="Qex-r9-ctX"/>
                         <segue destination="Bck-0B-nu5" kind="show" identifier="segueFeedResult" id="LHh-OE-uQd"/>
+                        <segue destination="Mt8-Kk-Q5N" kind="unwind" identifier="unwindFeedResult" unwindAction="unwindToFeedPost:" id="vvy-dm-AYF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xmV-L1-N1O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

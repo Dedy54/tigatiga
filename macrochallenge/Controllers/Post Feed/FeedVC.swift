@@ -127,10 +127,10 @@ class FeedVC: UIViewController{
     @IBAction func unwindToFeedPost(_ unwindSegue: UIStoryboardSegue) {
 //        if unwindSegue.source is AddPostVC {
 //        }else
-        if unwindSegue.source is FilterPostViewController {
-            
-        }
-        feedTableView.reloadData()
+//        if unwindSegue.source is FilterPostViewController {
+//
+//        }
+        feedTableView?.reloadData()
         // Use data from the view controller which initiated the unwind segue
     }
 
