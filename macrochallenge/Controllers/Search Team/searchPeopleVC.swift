@@ -40,6 +40,9 @@ class searchPeopleVC: UIViewController{
         
         self.title = "Search"
         
+        extendedLayoutIncludesOpaqueBars = true
+        self.navigationController?.navigationBar.isTranslucent = false
+        
     }
     
     func setApplyBtnShape(){
