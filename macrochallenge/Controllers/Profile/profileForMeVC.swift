@@ -26,7 +26,7 @@ class profileForMeVC: UIViewController {
     @IBOutlet weak var profileRole: UILabel!
     @IBOutlet weak var profileJoin: UILabel!
     @IBOutlet weak var profileExperience: UITextField!
-    @IBOutlet weak var inviteButton: UIButton!
+    @IBOutlet weak var chatButton: UIButton!
     @IBOutlet weak var commendButton: UIButton!
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var mvpCommendation: UIButton!
@@ -34,12 +34,21 @@ class profileForMeVC: UIViewController {
     @IBOutlet weak var friendlyCommendation: UIButton!
     @IBOutlet weak var teamPlayerCommendation: UIButton!
     
+    @IBOutlet weak var detailView: UIView!
+    
+    @IBOutlet weak var commendationView: UIView!
+    
+    
     var selectedPlayer: Player?
     
      override func viewDidLoad() {
         super.viewDidLoad()
         
         setupPlayer()
+        
+        setBorder()
+        setFont()
+        
         
     }
     
@@ -61,13 +70,36 @@ class profileForMeVC: UIViewController {
         commendPlayerVC.view.layer.cornerRadius = 34
         self.present(commendPlayerVC, animated: true, completion: nil)
     }
+    
+    func setBorder(){
+        profileBackground.layer.cornerRadius = 10
+        profileImage.layer.cornerRadius = profileImage.frame.height / 2
+        detailView.layer.cornerRadius = 10
+        
+        profileExperience.layer.borderWidth = 1
+        profileExperience.layer.borderColor = searchForTeamVC().mabarYellow
+        profileExperience.layer.cornerRadius = 5
+        
+        commendationView.layer.cornerRadius = 5
+        commendationView.layer.borderWidth = 1
+        commendationView.layer.borderColor = searchForTeamVC().mabarYellow
+        
+        chatButton.layer.cornerRadius = 20
+        commendButton.layer.cornerRadius = 20
+        editButton.layer.cornerRadius = 20
+    }
+    
+    func setFont(){
+        
+    }
+    
     func setupPlayer() {
         if selectedPlayer?.id == Auth.auth().currentUser?.uid ?? "0" {
-            inviteButton.isHidden = true
+            chatButton.isHidden = true
             commendButton.isHidden = true
             editButton.isHidden = false
         }else {
-            inviteButton.isHidden = false
+            chatButton.isHidden = false
             commendButton.isHidden = false
             editButton.isHidden = true
         }
