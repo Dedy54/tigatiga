@@ -57,6 +57,8 @@ class FeedVC: UIViewController{
         
         getPost()
         
+        extendedLayoutIncludesOpaqueBars = true
+        self.navigationController?.navigationBar.isTranslucent = false
     }
     
     
@@ -70,22 +72,19 @@ class FeedVC: UIViewController{
     }
     
     func setUIBarItemLeft(){
-        let leftItem = UIBarButtonItem(title: "Post",
-                                       style: UIBarButtonItem.Style.plain,
-                                           target: nil,
-                                           action: nil)
-        leftItem.isEnabled = false
-        leftItem.tintColor = UIColor.black
-        
-        self.navigationItem.leftBarButtonItem = leftItem
+        let label = UILabel()
+        label.text = "Post"
+        label.font = UIFont(name: "Hind-Bold", size: 24)
+        label.textColor = UIColor(hex: "#ffce00ff")
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: label)
     }
     
     func setUIBarItemRight() {
-        let containView = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-        let imageview = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        let containView = UIView(frame: CGRect(x: 0, y: 0, width: 36, height: 36))
+        let imageview = UIImageView(frame: CGRect(x: 0, y: 0, width: 36, height: 36))
         imageview.image = UIImage(named: "pp")
         imageview.contentMode = UIView.ContentMode.scaleAspectFill
-        imageview.layer.cornerRadius = 20
+        imageview.layer.cornerRadius = 18
         imageview.layer.masksToBounds = true
         containView.addSubview(imageview)
         let profileTap = UITapGestureRecognizer(target: self, action: #selector(ppTouched))
