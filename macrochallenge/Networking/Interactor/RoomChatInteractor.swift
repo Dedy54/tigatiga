@@ -14,6 +14,7 @@ protocol RoomChatInteractorDelegate {
     func fetchRoomChatCurrentUser(success: @escaping ([RoomChat]) -> (Void), failure: @escaping (Error) -> (Void))
     func createRoomChatWith(playerId: String, success: @escaping (RoomChat) -> (Void), failure: @escaping (Error) -> (Void))
     func fetchRoomChat(roomId: String, success: @escaping (RoomChat) -> (Void), failure: @escaping (Error) -> (Void))
+    func createChat(roomId: String, text: String, success: @escaping (RoomChat) -> (Void), failure: @escaping (Error) -> (Void))
 }
 
 class RoomChatInteractor: BaseInteractor, RoomChatInteractorDelegate {
@@ -57,6 +58,26 @@ class RoomChatInteractor: BaseInteractor, RoomChatInteractorDelegate {
         service.fetchRoomChat(roomId: roomId, success: { (roomChat) -> (Void) in
             self.roomChat = roomChat
             success(roomChat)
+        }) { (error) -> (Void) in
+            failure(error)
+        }
+    }
+    
+    func createChat(roomId: String, text: String, success: @escaping (RoomChat) -> (Void), failure: @escaping (Error) -> (Void)) {
+        let playerInteractor = PlayerInteractor()
+        playerInteractor.currentPlayer(success: { (currentPlayer) -> (Void) in
+            let chatData = ChatData(id: UUID().uuidString, playerId: currentPlayer.id, text: text)
+            self.service.fetchRoomChat(roomId: roomId, success: { (roomChat) -> (Void) in
+                self.roomChat = roomChat
+                self.roomChat.chatData?.append(chatData)
+                self.service.updateRoomChat(roomChat: self.roomChat, success: { (roomChat) -> (Void) in
+                    success(self.roomChat)
+                }) { (error) -> (Void) in
+                    failure(error)
+                }
+            }) { (error) -> (Void) in
+                failure(error)
+            }
         }) { (error) -> (Void) in
             failure(error)
         }

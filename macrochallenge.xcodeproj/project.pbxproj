@@ -250,7 +250,7 @@
 		5CD87487255286BA00040E7A /* RoomChatInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomChatInteractor.swift; sourceTree = "<group>"; };
 		5CD87488255286BA00040E7A /* TeamInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamInteractor.swift; sourceTree = "<group>"; };
 		5CD87489255286BA00040E7A /* NotifInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifInteractor.swift; sourceTree = "<group>"; };
-		5CDE2407252C3CD800DF5601 /* macrochallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = macrochallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CDE2407252C3CD800DF5601 /* Mabar: Maen Bareng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mabar: Maen Bareng.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CDE240A252C3CD900DF5601 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CDE240C252C3CD900DF5601 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5CDE240E252C3CD900DF5601 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -671,7 +671,7 @@
 		5CDE2408252C3CD800DF5601 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5CDE2407252C3CD800DF5601 /* macrochallenge.app */,
+				5CDE2407252C3CD800DF5601 /* Mabar: Maen Bareng.app */,
 				5CDE241D252C3CDB00DF5601 /* macrochallengeTests.xctest */,
 				5CDE2428252C3CDB00DF5601 /* macrochallengeUITests.xctest */,
 			);
@@ -858,7 +858,7 @@
 			);
 			name = macrochallenge;
 			productName = macrochallenge;
-			productReference = 5CDE2407252C3CD800DF5601 /* macrochallenge.app */;
+			productReference = 5CDE2407252C3CD800DF5601 /* Mabar: Maen Bareng.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5CDE241C252C3CDB00DF5601 /* macrochallengeTests */ = {
@@ -1377,7 +1377,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = macrochallenge/macrochallenge.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7863FB5B6W;
+				DEVELOPMENT_TEAM = 52CL477F5B;
 				INFOPLIST_FILE = macrochallenge/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1385,7 +1385,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tigatiga.macrochallenge;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Mabar: Maen Bareng";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1398,7 +1398,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = macrochallenge/macrochallenge.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7863FB5B6W;
+				DEVELOPMENT_TEAM = 52CL477F5B;
 				INFOPLIST_FILE = macrochallenge/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1406,7 +1406,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tigatiga.macrochallenge;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Mabar: Maen Bareng";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

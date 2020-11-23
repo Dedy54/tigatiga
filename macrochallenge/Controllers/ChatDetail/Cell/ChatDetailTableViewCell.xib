@@ -73,6 +73,10 @@
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imagePerson" destination="e9g-sC-rCc" id="a40-pN-Yvz"/>
+                <outlet property="labelText" destination="lkn-X7-e8G" id="bMx-6b-KRp"/>
+            </connections>
             <point key="canvasLocation" x="139" y="153"/>
         </tableViewCell>
     </objects>

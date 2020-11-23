@@ -53,6 +53,18 @@ extension CoreService: RoomChatServiceDelegate {
         }
     }
     
+    func updateRoomChat(roomChat: RoomChat, success: @escaping (RoomChat) -> (Void), failure: @escaping (Error) -> (Void)) {
+        if let id = roomChat.id {
+            do {
+                try db.collection("room_chats").document(id).setData(from: roomChat)
+                success(roomChat)
+            } catch {
+                failure(error)
+                return
+            }
+        }
+    }
+    
     func fetchRoomChatCurrentUser(success: @escaping ([RoomChat]) -> (Void), failure: @escaping (Error) -> (Void)) {
         let uid = PreferenceManager.instance.uid ?? "0"
         var roomChats = [RoomChat]()

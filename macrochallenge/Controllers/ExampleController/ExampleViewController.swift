@@ -60,6 +60,7 @@ extension ExampleViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let chatDetailViewController = ChatDetailViewController.instantiateViewController()
         chatDetailViewController.roomChat = self.rooms?[indexPath.row]
+        chatDetailViewController.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(chatDetailViewController, animated: true)
     }
     
