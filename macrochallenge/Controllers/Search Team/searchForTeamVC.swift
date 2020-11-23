@@ -96,7 +96,7 @@ class searchForTeamVC: UIViewController, UITextFieldDelegate{
 //        gameRoles.setTitle("Valorant")
 //        gameRoles.setTitle(selectedGame)
         playerInteractor?.currentPlayer(success: { (playerResult) -> (Void) in
-            self.gameRoles.setTitle(playerResult.game!)
+            self.gameRoles.setTitle(playerResult.game ?? GameTitle.Valorant.rawValue)
             self.roleInPickerDelegate  = PickerDelegate(strings: self.gameRoles.roles, textField: self.roleINTxtField)
             self.roleINpicker.delegate = self.roleInPickerDelegate
             self.roleINpicker.dataSource = self.roleInPickerDelegate

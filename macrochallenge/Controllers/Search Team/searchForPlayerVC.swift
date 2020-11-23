@@ -82,7 +82,7 @@ class searchForPlayerVC: UIViewController, UITextFieldDelegate {
     
     func preparePicker() {
         playerInteractor?.currentPlayer(success: { (playerResult) -> (Void) in
-            self.gameRoles.setTitle(playerResult.game!)
+            self.gameRoles.setTitle(playerResult.game ?? GameTitle.Valorant.rawValue)
             self.rolePlayerDelegate = PickerDelegate(strings: self.gameRoles.roles, textField: self.rolePlayerTextField)
             self.rolePlayerPickerView.delegate = self.rolePlayerDelegate
             self.rolePlayerPickerView.dataSource = self.rolePlayerDelegate

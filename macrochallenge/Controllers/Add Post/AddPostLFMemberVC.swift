@@ -67,7 +67,7 @@ class AddPostLFMemberVC: UIViewController,UITextFieldDelegate {
     
     func preparePicker() {
        playerInteractor?.currentPlayer(success: { (playerResult) -> (Void) in
-            self.gameRoles.setTitle(playerResult.game!)
+        self.gameRoles.setTitle(playerResult.game ?? GameTitle.Valorant.rawValue)
             self.rolePlayerDelegate = PickerDelegate(strings: self.gameRoles.roles, textField: self.roleTextfield)
             self.rolePicker.delegate = self.rolePlayerDelegate
             self.rolePicker.dataSource = self.rolePlayerDelegate
