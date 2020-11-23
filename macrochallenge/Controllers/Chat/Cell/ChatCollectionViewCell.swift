@@ -16,7 +16,7 @@ class ChatCollectionViewCell: UICollectionViewCell {
     var chatRoom: RoomChat? {
         didSet{
             if let chatRoom = chatRoom {
-                self.titleLabel.text = chatRoom.players?[0].name
+                self.titleLabel.text = chatRoom.players?[0].user?.email
                 self.subtitleLabel.text = "Hi There!"
             }
         }
