@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c3e-Vn-ksF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c3e-Vn-ksF">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,7 +10,7 @@
         <!--Search PeopleVC-->
         <scene sceneID="wI0-m8-pFU">
             <objects>
-                <viewController storyboardIdentifier="SearchPeople" id="c3e-Vn-ksF" customClass="searchPeopleVC" customModule="macrochallenge" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchPeople" id="c3e-Vn-ksF" customClass="searchPeopleVC" customModule="MABAR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JVv-ba-aGx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,7 +34,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfy-T9-ew0">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfy-T9-ew0">
                                 <rect key="frame" x="23" y="734" width="368" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.80784313725490198" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -44,15 +43,15 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="callInteractor:" destination="c3e-Vn-ksF" eventType="touchUpInside" id="4on-bz-cI5"/>
+                                    <action selector="callInteractor:" destination="c3e-Vn-ksF" eventType="touchUpInside" id="ib2-jD-ezT"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="ypa-z6-i9q"/>
                         <color key="backgroundColor" red="0.14509931209999999" green="0.14509573579999999" blue="0.14509817959999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="ypa-z6-i9q"/>
                     </view>
                     <connections>
-                        <outlet property="applyButton" destination="sfy-T9-ew0" id="eQ2-su-a5l"/>
+                        <outlet property="applyButton" destination="sfy-T9-ew0" id="t2a-HO-DXH"/>
                         <outlet property="segmentedControl" destination="44i-lN-6EQ" id="5lo-t1-414"/>
                         <outlet property="viewContainer" destination="ev9-rH-qyR" id="aHM-bj-vz9"/>
                         <segue destination="V5c-PV-R6J" kind="show" identifier="showResult" id="rke-fp-Ju1"/>
