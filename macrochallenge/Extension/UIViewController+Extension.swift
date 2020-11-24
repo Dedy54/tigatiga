@@ -24,6 +24,15 @@ extension UIViewController {
     @objc func endEditingKeyboard() {
         view.endEditing(true)
     }
+    
+    func checkLoginUser() {
+        if PreferenceManager.instance.isLogin {
+            return
+        }
+        
+        let signInViewController = SignInViewController.instantiateSheetViewController(isCanDismiss: true, lastViewController: self)
+        self.present(signInViewController, animated: false, completion: nil)
+    }
 }
 
 extension UIViewController {
