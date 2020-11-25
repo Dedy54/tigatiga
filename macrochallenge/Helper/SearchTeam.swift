@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum GameTitle: String, CaseIterable
 {
@@ -181,4 +182,49 @@ enum PlayerUnknownsSkill: String, CaseIterable {
     case Master3 = "Master 3"
     case Master4 = "Master 2"
     case Master5 = "Master 1"
+}
+
+enum AvatarPicture : CaseIterable{
+    
+    case picture1
+    case picture2
+    case picture3
+    case picture4
+    case picture5
+    case picture6
+    case picture7
+    case picture8
+    case picture9
+    case picture10
+    case picture11
+    case picture12
+    case picture13
+    case picture14
+    case picture15
+    
+    var image: UIImage{
+        switch self{
+        case .picture1: return UIImage(named: "1")!
+        case .picture2: return UIImage(named: "2")!
+        case .picture3: return UIImage(named: "3")!
+        case .picture4: return UIImage(named: "4")!
+        case .picture5: return UIImage(named: "5")!
+        case .picture6: return UIImage(named: "6")!
+        case .picture7: return UIImage(named: "7")!
+        case .picture8: return UIImage(named: "8")!
+        case .picture9: return UIImage(named: "9")!
+        case .picture10: return UIImage(named: "10")!
+        case .picture11: return UIImage(named: "11")!
+        case .picture12: return UIImage(named: "12")!
+        case .picture13: return UIImage(named: "13")!
+        case .picture14: return UIImage(named: "14")!
+        case .picture15: return UIImage(named: "15")!
+        }
+    }
+    
+    static func random() ->UIImage? {
+        let a = AvatarPicture.allCases.randomElement()
+        return a?.image
+    }
+    
 }
