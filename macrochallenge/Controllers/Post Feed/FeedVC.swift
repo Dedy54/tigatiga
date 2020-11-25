@@ -105,13 +105,25 @@ class FeedVC: UIViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "profileSegue"
         {
-            let profilePeopleVC = segue.destination as! profilePeopleVC
-            profilePeopleVC.selectedPeople = currentPlayer
+            if !PreferenceManager.instance.isLogin {
+                let signInViewController = SignInViewController.instantiateSheetViewController(isCanDismiss: true, lastViewController: self)
+                self.present(signInViewController, animated: false, completion: nil)
+                return
+            } else {
+                let profilePeopleVC = segue.destination as! profilePeopleVC
+                profilePeopleVC.selectedPeople = currentPlayer
+            }
         }
         else if segue.identifier == "addPostSegue"
         {
-            let addPostVC = segue.destination as! AddPostVC
-            addPostVC.selectedPeople = currentPlayer
+            if !PreferenceManager.instance.isLogin {
+                let signInViewController = SignInViewController.instantiateSheetViewController(isCanDismiss: true, lastViewController: self)
+                self.present(signInViewController, animated: false, completion: nil)
+                return
+            } else {
+                let addPostVC = segue.destination as! AddPostVC
+                addPostVC.selectedPeople = currentPlayer
+            } 
         }
         else if segue.identifier == "segueDetailMember"
         {
@@ -150,6 +162,15 @@ extension FeedVC : UICollectionViewDelegate, UICollectionViewDataSource{
         cell.recommendedImage.layer.cornerRadius = cell.recommendedImage.frame.height / 2
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if !PreferenceManager.instance.isLogin {
+            let signInViewController = SignInViewController.instantiateSheetViewController(isCanDismiss: true, lastViewController: self)
+            self.present(signInViewController, animated: false, completion: nil)
+            return
+        }
+        
     }
 }
 

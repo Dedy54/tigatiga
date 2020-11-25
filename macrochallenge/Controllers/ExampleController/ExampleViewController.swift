@@ -37,12 +37,15 @@ class ExampleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Chat"
+        self.checkLoginUser()
         self.roomChatInteractor = RoomChatInteractor()
         self.roomChatInteractor?.fetchRoomChatCurrentUser(success: { (rooms) -> (Void) in
             self.rooms = rooms
             self.collectionView.reloadData()
         }, failure: { (error) -> (Void) in })
     }
+    
+    
 }
 
 extension ExampleViewController: UICollectionViewDataSource {
