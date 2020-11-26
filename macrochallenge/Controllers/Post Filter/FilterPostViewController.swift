@@ -65,6 +65,9 @@ class FilterPostViewController: UIViewController {
         
         preparePicker()
         
+        extendedLayoutIncludesOpaqueBars = true
+        self.navigationController?.navigationBar.isTranslucent = false
+        
     }
     
     func preparePicker() {
