@@ -46,6 +46,9 @@ class profilePeopleVC: UIViewController {
         
         overrideUserInterfaceStyle = .dark
         getTeam()
+        
+        extendedLayoutIncludesOpaqueBars = true
+        self.navigationController?.navigationBar.isTranslucent = false
     }
     
     @objc func tapped() {
