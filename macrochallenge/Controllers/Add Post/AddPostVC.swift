@@ -53,6 +53,9 @@ class AddPostVC: UIViewController {
         
         viewContainer.addSubview(addPostTeam.view)
         
+        extendedLayoutIncludesOpaqueBars = true
+        self.navigationController?.navigationBar.isTranslucent = false
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

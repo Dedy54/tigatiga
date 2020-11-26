@@ -48,7 +48,8 @@ class profileForMeVC: UIViewController {
         
         setBorder()
         setFont()
-        
+        extendedLayoutIncludesOpaqueBars = true
+        self.navigationController?.navigationBar.isTranslucent = false
         
     }
     
