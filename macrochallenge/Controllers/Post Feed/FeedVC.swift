@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class FeedVC: UIViewController{
 
@@ -14,6 +15,7 @@ class FeedVC: UIViewController{
     @IBOutlet weak var feedTableView: UITableView!
     @IBOutlet weak var recommendationTitleLabel: UILabel!
     @IBOutlet weak var postTitleLabel: UILabel!
+    @IBOutlet weak var addPostButton: UIButton!
     
     
     let photo :[UIImage] =
@@ -34,10 +36,12 @@ class FeedVC: UIViewController{
          UIImage(named: "pp")!,]
     
     var posts: [Post] = []
+    var players: [Player] = []
     let postInteractor: PostInteractor? = PostInteractor()
     let playerInteractor: PlayerInteractor? = PlayerInteractor()
     var currentPlayer: Player?
     var selectedPost: Post?
+    var selectedPlayer: Player?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,21 +57,54 @@ class FeedVC: UIViewController{
         recommendationTitleLabel.font = UIFont(name: "Hind-Bold", size: 12)
         postTitleLabel.font = UIFont(name: "Hind-Bold", size: 12)
         setUIBarItemLeft()
-        setUIBarItemRight()
+        getPlayer()
         
-        getPost()
+        getPosts()
+        getPlayers()
         
         extendedLayoutIncludesOpaqueBars = true
         self.navigationController?.navigationBar.isTranslucent = false
     }
+    @IBAction func addPostAction(_ sender: UIButton) {
+        if sender == addPostButton {
+            if !PreferenceManager.instance.isLogin {
+                let signInViewController = SignInViewController.instantiateSheetViewController(isCanDismiss: true, lastViewController: self)
+                self.present(signInViewController, animated: false, completion: nil)
+                return
+            } else {
+                self.performSegue(withIdentifier: "addPostSegue", sender: nil)
+            }
+        }
+    }
     
+    func getPlayer() {
+        playerInteractor?.currentPlayer(success: { (playerResult) -> (Void) in
+            self.currentPlayer = playerResult
+            self.setUIBarItemRight()
+        }, failure: { (err) -> (Void) in
+            print("failed to current player data with error \(err)")
+        })
+    }
     
-    func getPost() {
+    func getPosts() {
         postInteractor?.fetchPosts(success: { (postResults) -> (Void) in
             self.posts = postResults
             self.feedTableView.reloadData()
         }, failure: { (err) -> (Void) in
-            print("failed to get post data with error \(err)")
+            print("failed to get posts data with error \(err)")
+        })
+    }
+    
+    func getPlayers() {
+        playerInteractor?.fetchPlayers(success: { (playerResults) -> (Void) in
+            for player in playerResults {
+                if player.id != Auth.auth().currentUser?.uid ?? "0" {
+                    self.players.append(player)
+                }
+            }
+            self.recommendedCollectionView.reloadData()
+        }, failure: { (err) -> (Void) in
+            print("failed to get players data with error \(err)")
         })
     }
     
@@ -82,7 +119,11 @@ class FeedVC: UIViewController{
     func setUIBarItemRight() {
         let containView = UIView(frame: CGRect(x: 0, y: 0, width: 36, height: 36))
         let imageview = UIImageView(frame: CGRect(x: 0, y: 0, width: 36, height: 36))
-        imageview.image = UIImage(named: "pp")
+        if currentPlayer?.imageProfile == "" {
+            imageview.image = AvatarPicture.random()
+        }else {
+            imageview.image = #imageLiteral(resourceName: currentPlayer!.imageProfile!)
+        }
         imageview.contentMode = UIView.ContentMode.scaleAspectFill
         imageview.layer.cornerRadius = 18
         imageview.layer.masksToBounds = true
@@ -94,36 +135,30 @@ class FeedVC: UIViewController{
     }
     
     @objc func ppTouched(){
-        playerInteractor?.currentPlayer(success: { (playerResult) -> (Void) in
-            self.currentPlayer = playerResult
+        self.selectedPlayer = nil
+        if !PreferenceManager.instance.isLogin {
+            let signInViewController = SignInViewController.instantiateSheetViewController(isCanDismiss: true, lastViewController: self)
+            self.present(signInViewController, animated: false, completion: nil)
+            return
+        } else {
             self.performSegue(withIdentifier: "profileSegue", sender: nil)
-        }, failure: { (err) -> (Void) in
-            print("failed to current player data with error \(err)")
-        })
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "profileSegue"
         {
-            if !PreferenceManager.instance.isLogin {
-                let signInViewController = SignInViewController.instantiateSheetViewController(isCanDismiss: true, lastViewController: self)
-                self.present(signInViewController, animated: false, completion: nil)
-                return
-            } else {
-                let profilePeopleVC = segue.destination as! profilePeopleVC
+            let profilePeopleVC = segue.destination as! profilePeopleVC
+            if selectedPlayer == nil {
                 profilePeopleVC.selectedPeople = currentPlayer
+            }else {
+                profilePeopleVC.selectedPeople = selectedPlayer
             }
         }
         else if segue.identifier == "addPostSegue"
         {
-            if !PreferenceManager.instance.isLogin {
-                let signInViewController = SignInViewController.instantiateSheetViewController(isCanDismiss: true, lastViewController: self)
-                self.present(signInViewController, animated: false, completion: nil)
-                return
-            } else {
-                let addPostVC = segue.destination as! AddPostVC
-                addPostVC.selectedPeople = currentPlayer
-            } 
+            let addPostVC = segue.destination as! AddPostVC
+            addPostVC.selectedPeople = currentPlayer
         }
         else if segue.identifier == "segueDetailMember"
         {
@@ -152,13 +187,17 @@ class FeedVC: UIViewController{
 extension FeedVC : UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photo.count
+        return players.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendedCell", for: indexPath) as! RecommendedCollectionViewCell
         
-        cell.recommendedImage.image = photo[indexPath.item]
+        if players[indexPath.row].imageProfile == "" {
+            cell.recommendedImage.image = AvatarPicture.random()
+        }else{
+            cell.recommendedImage.image = #imageLiteral(resourceName: players[indexPath.row].imageProfile!)
+        }
         cell.recommendedImage.layer.cornerRadius = cell.recommendedImage.frame.height / 2
         
         return cell
@@ -170,7 +209,8 @@ extension FeedVC : UICollectionViewDelegate, UICollectionViewDataSource{
             self.present(signInViewController, animated: false, completion: nil)
             return
         }
-        
+        selectedPlayer = players[indexPath.row]
+        self.performSegue(withIdentifier: "profileSegue", sender: nil)
     }
 }
 
@@ -188,7 +228,11 @@ extension FeedVC: UITableViewDelegate,UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
         cell.postView.layer.cornerRadius = 10
         
-        cell.feedProfileImage.image = UIImage(named: "pp")
+        if posts[indexPath.row].creator?.imageProfile == "" {
+            cell.feedProfileImage.image = AvatarPicture.random()
+        }else {
+            cell.feedProfileImage.image = #imageLiteral(resourceName: posts[indexPath.row].creator!.imageProfile!)
+        }
         cell.feedProfileImage.layer.cornerRadius = cell.feedProfileImage.frame.height / 2
         
         cell.feedNameLabel.text = posts[indexPath.row].name

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
 
 class profilePeopleVC: UIViewController {
     
@@ -28,8 +29,11 @@ class profilePeopleVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let button1 = UIBarButtonItem(image: #imageLiteral(resourceName: "menu") , style: .plain, target: self, action: #selector(tapped))
-        self.navigationItem.rightBarButtonItem  = button1
+        if selectedPeople?.id == Auth.auth().currentUser?.uid ?? "0" {
+            let button1 = UIBarButtonItem(image: #imageLiteral(resourceName: "menu") , style: .plain, target: self, action: #selector(tapped))
+            self.navigationItem.rightBarButtonItem  = button1
+        }
+        self.title = selectedPeople?.name
         profileMeVC.selectedPlayer = selectedPeople
         scrollContainer.contentSize = CGSize(width: scrollContainer.frame.size.width, height: profileMeVC.view.frame.size.height)
         scrollContainer.addSubview(profileMeVC.view)

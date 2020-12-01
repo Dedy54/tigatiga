@@ -72,7 +72,7 @@ class FilterPostViewController: UIViewController {
     
     func preparePicker() {
        playerInteractor?.currentPlayer(success: { (playerResult) -> (Void) in
-        self.gameRoles.setTitle(playerResult.game ?? GameTitle.Valorant.rawValue)
+            self.gameRoles.setTitle(playerResult.game ?? GameTitle.Valorant.rawValue)
             self.lookingForDelegate = PickerDelegate(strings: self.gameRoles.lookingFor, textField: self.lookingForTextField)
             self.lookingForPickerview.delegate = self.lookingForDelegate
             self.lookingForPickerview.dataSource = self.lookingForDelegate
