@@ -55,6 +55,11 @@ class PostDetailTeamVC: UIViewController {
     func populatePost() {
         avgSkillRatingTextview.text = selectedPost?.creator?.skillRating
         availabilityTextview.text = selectedPost?.id
+        if selectedPost?.creator?.imageProfile == "" {
+            profileImage.image = AvatarPicture.random()
+        }else {
+            profileImage.image = #imageLiteral(resourceName: (selectedPost?.creator!.imageProfile)!)
+        }
     }
     
     func setFont(){

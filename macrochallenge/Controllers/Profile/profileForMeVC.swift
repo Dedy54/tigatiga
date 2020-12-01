@@ -104,11 +104,16 @@ class profileForMeVC: UIViewController {
             commendButton.isHidden = false
             editButton.isHidden = true
         }
+        if selectedPlayer?.imageProfile == "" {
+            profileImage.image = AvatarPicture.random()
+        }else {
+            profileImage.image = #imageLiteral(resourceName: selectedPlayer!.imageProfile!)
+        }
         profileSkill.text = selectedPlayer?.skillRating
         profileRole.text = selectedPlayer?.role
         profileGame.text = selectedPlayer?.game
         profileExperience.text = selectedPlayer?.experience
-        if selectedPlayer!.commendations != nil {
+        if selectedPlayer?.commendations != nil {
             for commendation in selectedPlayer!.commendations! {
                 if commendation.id == "\(commendations.mvp)" {
                     mvpCommendation.isHidden = false
