@@ -63,6 +63,8 @@ class AddPostLFMemberVC: UIViewController,UITextFieldDelegate {
         
         preparePicker()
         
+        extendedLayoutIncludesOpaqueBars = true
+        self.navigationController?.navigationBar.isTranslucent = false
     }
     
     func preparePicker() {

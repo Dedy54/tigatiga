@@ -107,7 +107,7 @@ class profileForMeVC: UIViewController {
         if selectedPlayer?.imageProfile == "" {
             profileImage.image = AvatarPicture.random()
         }else {
-            profileImage.image = #imageLiteral(resourceName: selectedPlayer!.imageProfile!)
+            profileImage.image = UIImage(named: "pp")
         }
         profileSkill.text = selectedPlayer?.skillRating
         profileRole.text = selectedPlayer?.role

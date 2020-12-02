@@ -122,7 +122,7 @@ class FeedVC: UIViewController{
         if currentPlayer?.imageProfile == "" {
             imageview.image = AvatarPicture.random()
         }else {
-            imageview.image = #imageLiteral(resourceName: currentPlayer!.imageProfile!)
+            imageview.image = UIImage(named: "pp")
         }
         imageview.contentMode = UIView.ContentMode.scaleAspectFill
         imageview.layer.cornerRadius = 18
