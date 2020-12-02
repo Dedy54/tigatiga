@@ -257,6 +257,11 @@ extension FeedVC: UITableViewDelegate,UITableViewDataSource{
         cell.skillRatingTitleLabel.font = UIFont(name: "Hind-Bold", size: 12)
         cell.availabilityTitleLabel.font = UIFont(name: "Hind-Bold", size: 12)
         cell.roleTitleLabel.font = UIFont(name: "Hind-Bold", size: 12)
+        
+        cell.postView.layer.shadowColor = UIColor.black.cgColor
+        cell.postView.layer.shadowOpacity = 0.6
+        cell.postView.layer.shadowOffset = .zero
+        cell.postView.layer.shadowRadius = 8
         return cell
     }
     
