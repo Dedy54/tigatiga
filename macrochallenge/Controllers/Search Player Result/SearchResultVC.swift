@@ -30,7 +30,7 @@ class SearchResultVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         
 //        defaultGet()
         
-//        self.title = "Result"
+        self.title = "Result"
         
         
         
@@ -42,6 +42,10 @@ class SearchResultVC: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        self.navigationController!.navigationItem.rightBarButtonItem  = magIcon
         
         overrideUserInterfaceStyle = .dark
+        
+        extendedLayoutIncludesOpaqueBars = true
+        self.navigationController?.navigationBar.isTranslucent = false
+        
         
         // Do any additional setup after loading the view.
     }
@@ -112,6 +116,11 @@ class SearchResultVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.profilePicResult.image = UIImage(named: "pp")
         cell.roleResultLabel.font = UIFont(name: "Hind-Regular", size: 16)
         cell.skillRatingResultLabel.font = UIFont(name: "Hind-Regular", size: 16)
+        
+        cell.cellView.layer.shadowColor = UIColor.black.cgColor
+        cell.cellView.layer.shadowOpacity = 0.6
+        cell.cellView.layer.shadowOffset = .zero
+        cell.cellView.layer.shadowRadius = 5
         
         return cell
     }

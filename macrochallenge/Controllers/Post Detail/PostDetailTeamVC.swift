@@ -50,6 +50,9 @@ class PostDetailTeamVC: UIViewController {
         inviteButton.layer.cornerRadius = 15
         
         populatePost()
+        
+        extendedLayoutIncludesOpaqueBars = true
+        self.navigationController?.navigationBar.isTranslucent = false
     }
     
     func populatePost() {

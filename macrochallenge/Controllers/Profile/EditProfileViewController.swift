@@ -18,12 +18,39 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var profileGame: UITextField!
     @IBOutlet weak var profileSkillRating: UITextField!
     @IBOutlet weak var profileRole: UITextField!
-    @IBOutlet weak var profileExperience: UITextField!
+    @IBOutlet weak var profileExperience: UITextView!
+    @IBOutlet weak var imageCorner: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = "Edit Profile"
         retreiveData()
         // Do any additional setup after loading the view.
+        imageCorner.layer.cornerRadius = imageCorner.frame.height / 2
+        
+        setTextFieldShape2(txtfld: profileUsername)
+        setTextFieldShape2(txtfld: profileGame)
+        setTextFieldShape2(txtfld: profileSkillRating)
+        setTextFieldShape2(txtfld: profileRole)
+        
+        profileExperience.layer.borderWidth = 0.5
+        profileExperience.layer.borderColor = searchForTeamVC().mabarYellow
+        profileExperience.layer.cornerRadius = 5
+        
+        overrideUserInterfaceStyle = .dark
+        
+        extendedLayoutIncludesOpaqueBars = true
+        self.navigationController?.navigationBar.isTranslucent = false
+        
+    }
+    
+    public func setTextFieldShape2(txtfld : UITextField){
+        txtfld.layer.borderWidth = 0.5
+        txtfld.layer.borderColor = searchForTeamVC().mabarYellow
+        txtfld.layer.cornerRadius = 5
+        txtfld.frame.size.height = 44
+        txtfld.tintColor = .clear
     }
     
     func retreiveData() {

@@ -25,6 +25,8 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var roleTitleLabel: UILabel!
     @IBOutlet weak var availabilityTitleLabel: UILabel!
     
+    @IBOutlet var starImageOutlet: [UIImageView]!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

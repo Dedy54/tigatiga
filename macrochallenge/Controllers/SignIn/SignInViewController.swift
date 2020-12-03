@@ -65,10 +65,12 @@ class SignInViewController: UIViewController {
 extension SignInViewController : ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
     
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        
         return self.view.window!
     }
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        
         switch authorization.credential {
         case let appleIDCredential as ASAuthorizationAppleIDCredential:
             self.authInteractor?.signInWithApple(currentNonce: AuthHelper.randomNonceString(), credential: appleIDCredential, success: { (authResult, users, player) -> (Void) in
