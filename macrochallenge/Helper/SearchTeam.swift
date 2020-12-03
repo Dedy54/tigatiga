@@ -227,4 +227,14 @@ enum AvatarPicture : CaseIterable{
         return a?.image
     }
     
+    static func selectImage() ->(UIImage?, String) {
+        let a = Int.random(in: 1...15)
+        return (AvatarPicture.allCases[a].image, "\(a)")
+    }
+    
 }
+
+//class EditProfile {
+//    var selectedPicture: Int?
+//
+//}

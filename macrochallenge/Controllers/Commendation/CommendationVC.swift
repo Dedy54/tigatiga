@@ -28,7 +28,7 @@ class CommendationVC: UIViewController {
     @IBOutlet weak var sendButton: UIButton!
     
     let playerInteractor: PlayerInteractor? = PlayerInteractor()
-     var selectedPeople: Player?
+    var selectedPeople: Player?
     
     var onClose: (() -> ())?
     
