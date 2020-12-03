@@ -22,10 +22,12 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var editImageButton: UILabel!
     
     let playerInteractor: PlayerInteractor? = PlayerInteractor()
+    @IBOutlet weak var imageCorner: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = "Edit Profile"
         retreiveData()
         // Do any additional setup after loading the view.
         self.navigationItem.hidesBackButton = true
@@ -33,6 +35,21 @@ class EditProfileViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = newBackButton
         let editImage = UITapGestureRecognizer(target: self, action: #selector(generateRandomImage))
         editImageButton.addGestureRecognizer(editImage)
+        imageCorner.layer.cornerRadius = imageCorner.frame.height / 2
+        
+        setTextFieldShape2(txtfld: profileUsername)
+        setTextFieldShape2(txtfld: profileGame)
+        setTextFieldShape2(txtfld: profileSkillRating)
+        setTextFieldShape2(txtfld: profileRole)
+        
+        profileExperience.layer.borderWidth = 0.5
+        profileExperience.layer.borderColor = searchForTeamVC().mabarYellow
+        profileExperience.layer.cornerRadius = 5
+        
+        overrideUserInterfaceStyle = .dark
+        
+        extendedLayoutIncludesOpaqueBars = true
+        self.navigationController?.navigationBar.isTranslucent = false
     }
     
     @objc func generateRandomImage(){
@@ -56,6 +73,15 @@ class EditProfileViewController: UIViewController {
             print("failed to update player data with error \(err)")
         })
         self.navigationController?.popViewController(animated: true)
+        
+    }
+    
+    public func setTextFieldShape2(txtfld : UITextField){
+        txtfld.layer.borderWidth = 0.5
+        txtfld.layer.borderColor = searchForTeamVC().mabarYellow
+        txtfld.layer.cornerRadius = 5
+        txtfld.frame.size.height = 44
+        txtfld.tintColor = .clear
     }
     
     func retreiveData() {

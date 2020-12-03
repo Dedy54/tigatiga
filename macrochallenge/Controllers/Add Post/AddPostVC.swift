@@ -38,6 +38,9 @@ class AddPostVC: UIViewController {
         
         postButton.layer.cornerRadius = 15
         
+        extendedLayoutIncludesOpaqueBars = true
+        self.navigationController?.navigationBar.isTranslucent = false
+        
     }
     
     func setSegmentedViewInContainer(){

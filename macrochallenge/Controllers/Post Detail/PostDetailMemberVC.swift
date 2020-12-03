@@ -56,6 +56,9 @@ class PostDetailMemberVC: UIViewController {
         joinButton.layer.cornerRadius = 15
         
         populatePost()
+        
+        extendedLayoutIncludesOpaqueBars = true
+        self.navigationController?.navigationBar.isTranslucent = false
     }
     
     func populatePost() {

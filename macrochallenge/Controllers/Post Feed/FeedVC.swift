@@ -122,7 +122,7 @@ class FeedVC: UIViewController{
         if currentPlayer?.imageProfile == "" {
             imageview.image = AvatarPicture.random()
         }else {
-            imageview.image = #imageLiteral(resourceName: currentPlayer!.imageProfile!)
+            imageview.image = UIImage(named: "pp")
         }
         imageview.contentMode = UIView.ContentMode.scaleAspectFill
         imageview.layer.cornerRadius = 18
@@ -257,8 +257,28 @@ extension FeedVC: UITableViewDelegate,UITableViewDataSource{
         cell.skillRatingTitleLabel.font = UIFont(name: "Hind-Bold", size: 12)
         cell.availabilityTitleLabel.font = UIFont(name: "Hind-Bold", size: 12)
         cell.roleTitleLabel.font = UIFont(name: "Hind-Bold", size: 12)
+        
+        cell.postView.layer.shadowColor = UIColor.black.cgColor
+        cell.postView.layer.shadowOpacity = 0.6
+        cell.postView.layer.shadowOffset = .zero
+        cell.postView.layer.shadowRadius = 8
+        
+        
+//        for star in cell.starImageOutlet{
+//           if star.tag <= posts[indexPath.row].creator?.rating  {
+//                star.image = UIImage(named: "Star")
+//            }else{
+//                star.image = UIImage(named: "StarTransparent")
+//            }
+//            star.layer.shadowColor = UIColor.black.cgColor
+//            star.layer.shadowOpacity = 0.6
+//            star.layer.shadowOffset = .zero
+//            star.layer.shadowRadius = 8
+//        }
+        
         return cell
     }
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //
