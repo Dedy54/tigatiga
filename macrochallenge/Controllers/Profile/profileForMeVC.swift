@@ -39,6 +39,9 @@ class profileForMeVC: UIViewController {
     @IBOutlet weak var commendationView: UIView!
     
     
+    @IBOutlet var ratingOutlet: [UIImageView]!
+    
+    
     var selectedPlayer: Player?
     
      override func viewDidLoad() {
@@ -113,6 +116,15 @@ class profileForMeVC: UIViewController {
         profileRole.text = selectedPlayer?.role
         profileGame.text = selectedPlayer?.game
         profileExperience.text = selectedPlayer?.experience
+        
+//        for star in ratingOutlet{
+//            if star.tag <= selectedPlayer?.rating {
+//                star.image = UIImage(named: "Star")
+//            }else{
+//                star.image = UIImage(named: "StarTransparent")
+//            }
+//        }
+        
         if selectedPlayer?.commendations != nil {
             for commendation in selectedPlayer!.commendations! {
                 if commendation.id == "\(commendations.mvp)" {

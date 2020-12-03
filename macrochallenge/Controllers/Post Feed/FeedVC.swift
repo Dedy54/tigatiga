@@ -262,8 +262,23 @@ extension FeedVC: UITableViewDelegate,UITableViewDataSource{
         cell.postView.layer.shadowOpacity = 0.6
         cell.postView.layer.shadowOffset = .zero
         cell.postView.layer.shadowRadius = 8
+        
+        
+//        for star in cell.starImageOutlet{
+//           if star.tag <= posts[indexPath.row].creator?.rating  {
+//                star.image = UIImage(named: "Star")
+//            }else{
+//                star.image = UIImage(named: "StarTransparent")
+//            }
+//            star.layer.shadowColor = UIColor.black.cgColor
+//            star.layer.shadowOpacity = 0.6
+//            star.layer.shadowOffset = .zero
+//            star.layer.shadowRadius = 8
+//        }
+        
         return cell
     }
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //
