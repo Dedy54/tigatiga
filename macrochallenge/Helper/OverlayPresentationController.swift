@@ -12,7 +12,7 @@ import UIKit
 class OverlayPresentationController: UIPresentationController {
     
     private let dimmedBackgroundView = UIView()
-    private let height: CGFloat = 450
+    private let height: CGFloat = 200
     
     override init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?) {
         super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
@@ -24,9 +24,9 @@ class OverlayPresentationController: UIPresentationController {
         var frame =  CGRect.zero
         if let containerBounds = containerView?.bounds {
             frame = CGRect(x: 0,
-                           y: containerBounds.height/2.3,
+                           y: containerBounds.height - 200,
                            width: containerBounds.width,
-                           height: containerBounds.height/1.5)
+                           height: 200)
         }
         return frame
     }
