@@ -28,9 +28,11 @@ class CommendationVC: UIViewController {
     @IBOutlet weak var sendButton: UIButton!
     
     let playerInteractor: PlayerInteractor? = PlayerInteractor()
-     var selectedPeople: Player?
+    var selectedPeople: Player?
     
     var onClose: (() -> ())?
+    
+    var selectedRating: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +70,7 @@ class CommendationVC: UIViewController {
             selectedPeople?.commendations = []
         }
         selectedPeople?.commendations?.append(commendationTemp)
+        selectedPeople?.playerRating = selectedRating
         playerInteractor?.updatePlayer(player: selectedPeople!, success: { (playerUpdated) -> (Void) in
             print("success to update player with data \(playerUpdated)")
             print(commendationType)
@@ -96,6 +99,7 @@ class CommendationVC: UIViewController {
     
     
     @IBAction func starButtonTapped(_ sender: UIButton) {
+        selectedRating = sender.tag
         for button in starButton{
             if button.tag <= sender.tag {
                 button.setImage(UIImage(named: "Star"), for: .normal)

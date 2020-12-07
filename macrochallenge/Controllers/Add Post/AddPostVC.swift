@@ -85,7 +85,7 @@ class AddPostVC: UIViewController {
         }else{
             let availability =  addPostTeam.availability.text
             let description = addPostTeam.descriptionTextview.text
-            let postTemp = Post(id: availability, name: description, creator: selectedPeople)
+            let postTemp = Post(id: availability, name: description, creator: selectedPeople, availability: addPostTeam.availability.text)
             postInteractor?.createPost(post: postTemp, success: { (postResult) -> (Void) in
                 print("call post interactor with data ", postResult)
                 self.performSegue(withIdentifier: "unwindAddSegue", sender: nil)

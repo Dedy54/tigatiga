@@ -97,6 +97,7 @@ class FeedVC: UIViewController{
     
     func getPlayers() {
         playerInteractor?.fetchPlayers(success: { (playerResults) -> (Void) in
+            self.players  = []
             for player in playerResults {
                 if player.id != Auth.auth().currentUser?.uid ?? "0" {
                     self.players.append(player)
@@ -228,8 +229,10 @@ extension FeedVC: UITableViewDelegate,UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
         cell.postView.layer.cornerRadius = 10
         
+        let (image, name) = AvatarPicture.selectImage()
         if posts[indexPath.row].creator?.imageProfile == "" {
-            cell.feedProfileImage.image = AvatarPicture.random()
+            cell.feedProfileImage.image = image
+            posts[indexPath.row].creator?.imageProfile = name
         }else {
             cell.feedProfileImage.image = #imageLiteral(resourceName: posts[indexPath.row].creator!.imageProfile!)
         }
@@ -240,8 +243,12 @@ extension FeedVC: UITableViewDelegate,UITableViewDataSource{
         
         if posts[indexPath.row].creator!.lookingForGroup! {
             cell.feedLookingForLabel.text = "Looking For Group"
+            cell.availibilityLabel.text = posts[indexPath.row].availability
+            cell.availibilityLabel.font = UIFont(name: "Hind-Regular", size: 16)
         }else {
             cell.feedLookingForLabel.text = "Looking For Member"
+            cell.availibilityLabel.text = "Mon, 20.00-23.00"
+            cell.availibilityLabel.font = UIFont(name: "Hind-Regular", size: 16)
         }
         cell.feedLookingForLabel.font = UIFont(name: "Hind-Bold", size: 24)
         
@@ -250,9 +257,6 @@ extension FeedVC: UITableViewDelegate,UITableViewDataSource{
         
         cell.roleLabel.text = posts[indexPath.row].creator?.role
         cell.roleLabel.font = UIFont(name: "Hind-Regular", size: 16)
-        
-        cell.availibilityLabel.text = "Mon, 20.00-23.00"
-        cell.availibilityLabel.font = UIFont(name: "Hind-Regular", size: 16)
         
         cell.skillRatingTitleLabel.font = UIFont(name: "Hind-Bold", size: 12)
         cell.availabilityTitleLabel.font = UIFont(name: "Hind-Bold", size: 12)
@@ -264,17 +268,17 @@ extension FeedVC: UITableViewDelegate,UITableViewDataSource{
         cell.postView.layer.shadowRadius = 8
         
         
-//        for star in cell.starImageOutlet{
-//           if star.tag <= posts[indexPath.row].creator?.rating  {
-//                star.image = UIImage(named: "Star")
-//            }else{
-//                star.image = UIImage(named: "StarTransparent")
-//            }
-//            star.layer.shadowColor = UIColor.black.cgColor
-//            star.layer.shadowOpacity = 0.6
-//            star.layer.shadowOffset = .zero
-//            star.layer.shadowRadius = 8
-//        }
+        for star in cell.starImageOutlet{
+            if star.tag <= posts[indexPath.row].creator!.playerRating ?? 0  {
+                star.image = UIImage(named: "Star")
+            }else{
+                star.image = UIImage(named: "StarTransparent")
+            }
+            star.layer.shadowColor = UIColor.black.cgColor
+            star.layer.shadowOpacity = 0.6
+            star.layer.shadowOffset = .zero
+            star.layer.shadowRadius = 8
+        }
         
         return cell
     }

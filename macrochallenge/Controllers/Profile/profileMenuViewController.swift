@@ -32,4 +32,9 @@ class profileMenuViewController: UIViewController {
         return sheetController
     }
     
+    @IBAction func logoutUser(_ sender: UIButton) {
+        PreferenceManager.instance.isLogin = false
+        self.performSegue(withIdentifier: "logoutToFeed", sender: nil)
+    }
+    
 }

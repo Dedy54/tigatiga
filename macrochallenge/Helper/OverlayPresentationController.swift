@@ -12,7 +12,7 @@ import UIKit
 class OverlayPresentationController: UIPresentationController {
     
     private let dimmedBackgroundView = UIView()
-    private let height: CGFloat = 200
+    private var height: CGFloat = 200
     
     override init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?) {
         super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
@@ -20,13 +20,17 @@ class OverlayPresentationController: UIPresentationController {
         self.dimmedBackgroundView.addGestureRecognizer(tapGestureRecognizer)
     }
     
+    func setHeight(height: CGFloat) {
+        self.height = height
+    }
+    
     override var frameOfPresentedViewInContainerView: CGRect {
         var frame =  CGRect.zero
         if let containerBounds = containerView?.bounds {
             frame = CGRect(x: 0,
-                           y: containerBounds.height - 200,
+                           y: containerBounds.height - self.height,
                            width: containerBounds.width,
-                           height: 200)
+                           height: self.height)
         }
         return frame
     }

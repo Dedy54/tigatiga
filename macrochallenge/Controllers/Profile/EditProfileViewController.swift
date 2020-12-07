@@ -18,7 +18,10 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var profileGame: UITextField!
     @IBOutlet weak var profileSkillRating: UITextField!
     @IBOutlet weak var profileRole: UITextField!
-    @IBOutlet weak var profileExperience: UITextView!
+    @IBOutlet weak var profileExperience: UITextField!
+    @IBOutlet weak var editImageButton: UILabel!
+    
+    let playerInteractor: PlayerInteractor? = PlayerInteractor()
     @IBOutlet weak var imageCorner: UIView!
     
     override func viewDidLoad() {
@@ -27,6 +30,11 @@ class EditProfileViewController: UIViewController {
         self.title = "Edit Profile"
         retreiveData()
         // Do any additional setup after loading the view.
+        self.navigationItem.hidesBackButton = true
+        let newBackButton = UIBarButtonItem(title: "< Back", style: .plain, target: self, action: #selector(back))
+        self.navigationItem.leftBarButtonItem = newBackButton
+        let editImage = UITapGestureRecognizer(target: self, action: #selector(generateRandomImage))
+        editImageButton.addGestureRecognizer(editImage)
         imageCorner.layer.cornerRadius = imageCorner.frame.height / 2
         
         setTextFieldShape2(txtfld: profileUsername)
@@ -42,6 +50,29 @@ class EditProfileViewController: UIViewController {
         
         extendedLayoutIncludesOpaqueBars = true
         self.navigationController?.navigationBar.isTranslucent = false
+    }
+    
+    @objc func generateRandomImage(){
+        let (image, name) = AvatarPicture.selectImage()
+        profileImage.image = image
+        selectedPeople?.imageProfile = name
+    }
+    
+    @objc func back() {
+        // Perform your custom actions
+        // ...
+        // Go back to the previous ViewController
+        selectedPeople?.name = profileUsername.text
+        selectedPeople?.game = profileGame.text
+        selectedPeople?.skillRating = profileSkillRating.text
+        selectedPeople?.role = profileRole.text
+        selectedPeople?.experience = profileExperience.text
+        playerInteractor?.updatePlayer(player: selectedPeople!, success: { (updatedPlayer) -> (Void) in
+            print("success to update player with data \(updatedPlayer)")
+        }, failure: { (err) -> (Void) in
+            print("failed to update player data with error \(err)")
+        })
+        self.navigationController?.popViewController(animated: true)
         
     }
     
@@ -59,6 +90,11 @@ class EditProfileViewController: UIViewController {
         profileSkillRating.text = selectedPeople?.skillRating
         profileRole.text = selectedPeople?.role
         profileExperience.text = selectedPeople?.experience
+        if selectedPeople?.imageProfile == "" {
+            profileImage.image = AvatarPicture.random()
+        }else{
+            profileImage.image = #imageLiteral(resourceName: selectedPeople!.imageProfile!)
+        }
     }
 
 

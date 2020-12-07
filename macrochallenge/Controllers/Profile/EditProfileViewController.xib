@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditProfileViewController" customModule="MABAR" customModuleProvider="target">
             <connections>
+                <outlet property="editImageButton" destination="meX-zA-iYi" id="B79-Po-33M"/>
                 <outlet property="imageCorner" destination="2qM-Pj-bHj" id="Cm1-3X-ndr"/>
                 <outlet property="profileExperience" destination="Ltf-gs-vUt" id="pxL-fp-IhP"/>
                 <outlet property="profileGame" destination="lww-EF-nyv" id="pfF-mZ-G88"/>
