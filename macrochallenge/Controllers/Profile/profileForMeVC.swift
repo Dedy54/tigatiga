@@ -41,6 +41,8 @@ class profileForMeVC: UIViewController {
     
     @IBOutlet var ratingOutlet: [UIImageView]!
     
+    @IBOutlet var commendationButton: [UIButton]!
+    
     
     var selectedPlayer: Player?
     
@@ -117,26 +119,30 @@ class profileForMeVC: UIViewController {
         profileGame.text = selectedPlayer?.game
         profileExperience.text = selectedPlayer?.experience
         
-//        for star in ratingOutlet{
-//            if star.tag <= selectedPlayer?.rating {
-//                star.image = UIImage(named: "Star")
-//            }else{
-//                star.image = UIImage(named: "StarTransparent")
-//            }
-//        }
+        for star in ratingOutlet{
+            if star.tag <= selectedPlayer!.playerRating ?? 0 {
+                star.image = UIImage(named: "Star")
+            }else{
+                star.image = UIImage(named: "StarTransparent")
+            }
+        }
         
         if selectedPlayer?.commendations != nil {
             for commendation in selectedPlayer!.commendations! {
                 if commendation.id == "\(commendations.mvp)" {
-                    mvpCommendation.isHidden = false
+//                    mvpCommendation.isHidden = false
+                    commendationButton[0].isHidden = false
                 }
                 else if commendation.id == "\(commendations.teamleader)" {
-                    teamLeaderCommendation.isHidden = false
+//                    teamLeaderCommendation.isHidden = false
+                    commendationButton[1].isHidden = false
                 }
                 else if commendation.id == "\(commendations.teamplayer)" {
-                    teamPlayerCommendation.isHidden = false
+//                    teamPlayerCommendation.isHidden = false
+                    commendationButton[3].isHidden = false
                 }else {
-                    friendlyCommendation.isHidden = false
+//                    friendlyCommendation.isHidden = false
+                    commendationButton[2].isHidden = false
                 }
             }
         }

@@ -31,7 +31,7 @@ class EditProfileViewController: UIViewController {
         retreiveData()
         // Do any additional setup after loading the view.
         self.navigationItem.hidesBackButton = true
-        let newBackButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(back))
+        let newBackButton = UIBarButtonItem(title: "< Back", style: .plain, target: self, action: #selector(back))
         self.navigationItem.leftBarButtonItem = newBackButton
         let editImage = UITapGestureRecognizer(target: self, action: #selector(generateRandomImage))
         editImageButton.addGestureRecognizer(editImage)

@@ -97,6 +97,7 @@ class FeedVC: UIViewController{
     
     func getPlayers() {
         playerInteractor?.fetchPlayers(success: { (playerResults) -> (Void) in
+            self.players  = []
             for player in playerResults {
                 if player.id != Auth.auth().currentUser?.uid ?? "0" {
                     self.players.append(player)
@@ -264,17 +265,17 @@ extension FeedVC: UITableViewDelegate,UITableViewDataSource{
         cell.postView.layer.shadowRadius = 8
         
         
-//        for star in cell.starImageOutlet{
-//           if star.tag <= posts[indexPath.row].creator?.rating  {
-//                star.image = UIImage(named: "Star")
-//            }else{
-//                star.image = UIImage(named: "StarTransparent")
-//            }
-//            star.layer.shadowColor = UIColor.black.cgColor
-//            star.layer.shadowOpacity = 0.6
-//            star.layer.shadowOffset = .zero
-//            star.layer.shadowRadius = 8
-//        }
+        for star in cell.starImageOutlet{
+            if star.tag <= posts[indexPath.row].creator!.playerRating ?? 0  {
+                star.image = UIImage(named: "Star")
+            }else{
+                star.image = UIImage(named: "StarTransparent")
+            }
+            star.layer.shadowColor = UIColor.black.cgColor
+            star.layer.shadowOpacity = 0.6
+            star.layer.shadowOffset = .zero
+            star.layer.shadowRadius = 8
+        }
         
         return cell
     }
