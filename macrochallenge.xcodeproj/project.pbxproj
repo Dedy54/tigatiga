@@ -123,13 +123,13 @@
 		656C31E925626B54008CB64C /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 656C31E825626B54008CB64C /* Onboarding.storyboard */; };
 		656C31F625626C2E008CB64C /* PageCtrlOnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656C31F525626C2E008CB64C /* PageCtrlOnboardingVC.swift */; };
 		656C31FB25627512008CB64C /* Onboarding4VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656C31FA25627512008CB64C /* Onboarding4VC.swift */; };
+		65A5BB32257D6D3400BBD8F3 /* profileMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5BB30257D6D3400BBD8F3 /* profileMenuViewController.swift */; };
 		7B6E9A554E9A47C774D63ED6 /* Pods_macrochallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350624BE8F5C37B81E4C9EBC /* Pods_macrochallengeTests.framework */; };
 		A12B7BB62551D29E00D9EEAF /* PickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12B7BB52551D29E00D9EEAF /* PickerDelegate.swift */; };
 		A12C333A253DA898007EE971 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12C3339253DA898007EE971 /* Game.swift */; };
 		A141E0242559438C00A63FA2 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A141E0232559438C00A63FA2 /* UIButton+Extension.swift */; };
 		A163C1122562187E00667165 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A163C1102562187E00667165 /* EditProfileViewController.swift */; };
 		A163C1132562187E00667165 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A163C1112562187E00667165 /* EditProfileViewController.xib */; };
-		A163C1152562395400667165 /* profileMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A163C1142562395400667165 /* profileMenuViewController.swift */; };
 		A190A3D9254FD471007C5139 /* SearchTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = A190A3D8254FD471007C5139 /* SearchTeam.swift */; };
 		A1A2E02A2547E709008DD0D2 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2E0292547E708008DD0D2 /* UITextField+Extension.swift */; };
 		A1A2E02C2547E7AE008DD0D2 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2E02B2547E7AE008DD0D2 /* UIColor+Extension.swift */; };
@@ -291,6 +291,7 @@
 		656C31E825626B54008CB64C /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		656C31F525626C2E008CB64C /* PageCtrlOnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCtrlOnboardingVC.swift; sourceTree = "<group>"; };
 		656C31FA25627512008CB64C /* Onboarding4VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding4VC.swift; sourceTree = "<group>"; };
+		65A5BB30257D6D3400BBD8F3 /* profileMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileMenuViewController.swift; sourceTree = "<group>"; };
 		6EE50F37C5CB3AF47180FBE2 /* Pods-macrochallenge-macrochallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macrochallenge-macrochallengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-macrochallenge-macrochallengeUITests/Pods-macrochallenge-macrochallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7A44DC05C142BBCC9F3B4C82 /* Pods-macrochallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macrochallengeTests.release.xcconfig"; path = "Target Support Files/Pods-macrochallengeTests/Pods-macrochallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		9E0C43FECE2CA2B919EBFBBC /* Pods-macrochallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macrochallenge.release.xcconfig"; path = "Target Support Files/Pods-macrochallenge/Pods-macrochallenge.release.xcconfig"; sourceTree = "<group>"; };
@@ -299,7 +300,6 @@
 		A141E0232559438C00A63FA2 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		A163C1102562187E00667165 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		A163C1112562187E00667165 /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
-		A163C1142562395400667165 /* profileMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileMenuViewController.swift; sourceTree = "<group>"; };
 		A190A3D8254FD471007C5139 /* SearchTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTeam.swift; sourceTree = "<group>"; };
 		A1A2E01F2547BF31008DD0D2 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		A1A2E0212547BF37008DD0D2 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
@@ -480,7 +480,7 @@
 			children = (
 				A163C1102562187E00667165 /* EditProfileViewController.swift */,
 				A163C1112562187E00667165 /* EditProfileViewController.xib */,
-				A163C1142562395400667165 /* profileMenuViewController.swift */,
+				65A5BB30257D6D3400BBD8F3 /* profileMenuViewController.swift */,
 				5C5FA36F25621E1100CDD060 /* profileForMeVC.swift */,
 				5C5FA37025621E1100CDD060 /* profilePeopleVC.swift */,
 				5C5FA37125621E1100CDD060 /* profileForMyTeamVC.xib */,
@@ -1152,13 +1152,13 @@
 				5C6FAE0C252CE71B00F74AE6 /* PreferenceManager.swift in Sources */,
 				5CD8748F255286BA00040E7A /* NotifInteractor.swift in Sources */,
 				5CDE240F252C3CD900DF5601 /* ViewController.swift in Sources */,
-				A163C1152562395400667165 /* profileMenuViewController.swift in Sources */,
 				5C70E52C254140DF00C45F76 /* BaseInteractor.swift in Sources */,
 				5C5FA37E25621E1100CDD060 /* profileForMeVC.swift in Sources */,
 				5C5FA38325621E1100CDD060 /* profileForMyTeamVC.swift in Sources */,
 				656C31F625626C2E008CB64C /* PageCtrlOnboardingVC.swift in Sources */,
 				5C6FAE14252CE92500F74AE6 /* SecondExampleViewController.swift in Sources */,
 				5CD8748B255286BA00040E7A /* PlayerInteractor.swift in Sources */,
+				65A5BB32257D6D3400BBD8F3 /* profileMenuViewController.swift in Sources */,
 				5CD87476255286A900040E7A /* Notif.swift in Sources */,
 				5C5FA37C25621E1100CDD060 /* FilterPostViewController.swift in Sources */,
 				6540D9F925500D6E00701688 /* SearchResultVC.swift in Sources */,

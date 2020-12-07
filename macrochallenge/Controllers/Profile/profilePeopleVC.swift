@@ -26,6 +26,8 @@ class profilePeopleVC: UIViewController {
     let teamInteractor: TeamInteractor? = TeamInteractor()
     var selectedPeople: Player?
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,6 +35,8 @@ class profilePeopleVC: UIViewController {
             let button1 = UIBarButtonItem(image: #imageLiteral(resourceName: "menu") , style: .plain, target: self, action: #selector(tapped))
             self.navigationItem.rightBarButtonItem  = button1
         }
+        
+        
         self.title = selectedPeople?.name
         profileMeVC.selectedPlayer = selectedPeople
         scrollContainer.contentSize = CGSize(width: scrollContainer.frame.size.width, height: profileMeVC.view.frame.size.height)
@@ -51,9 +55,12 @@ class profilePeopleVC: UIViewController {
         overrideUserInterfaceStyle = .dark
         getTeam()
         
+        
         extendedLayoutIncludesOpaqueBars = true
         self.navigationController?.navigationBar.isTranslucent = false
     }
+    
+
     
     @objc func tapped() {
         let menuProfileVC = self.storyboard?.instantiateViewController(identifier: "profileMenuVC") as! profileMenuViewController
@@ -62,6 +69,9 @@ class profilePeopleVC: UIViewController {
         menuProfileVC.modalTransitionStyle = .coverVertical
         menuProfileVC.view.layer.cornerRadius = 34
         self.present(menuProfileVC, animated: true, completion: nil)
+        
+//        let menuViewController = profileMenuViewController.instantiateSheetViewController(isCanDismiss: true, lastViewController: self)
+//        self.present(menuViewController, animated: false, completion: nil)
     }
     
     private func setupTeamTableView() {
