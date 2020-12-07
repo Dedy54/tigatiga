@@ -13,10 +13,12 @@ struct Post: Codable {
     var id: String?
     var name: String?
     var creator: Player?
+    var availability: String?
     
     enum CodingKeys: String, CodingKey {
         case id
         case name
         case creator
+        case availability
     }
 }

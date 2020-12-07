@@ -62,6 +62,9 @@ class PostDetailMemberVC: UIViewController {
     }
     
     func populatePost() {
+        avgSkillLabel.text = selectedPost?.creator?.skillRating
+        memberLabel.text = selectedPost?.creator?.role
+        teamNameLabel.text = selectedPost?.creator?.name
         skillRatingTextview.text = selectedPost?.creator?.skillRating
         roleRatingTextview.text = selectedPost?.creator?.role
         availabilityTextview.text = selectedPost?.id

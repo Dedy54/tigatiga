@@ -56,6 +56,9 @@ class PostDetailTeamVC: UIViewController {
     }
     
     func populatePost() {
+        skillRatingLabel.text = selectedPost?.creator?.skillRating
+        roleLabel.text = selectedPost?.creator?.role
+        memberNameLabel.text = selectedPost?.creator?.name
         avgSkillRatingTextview.text = selectedPost?.creator?.skillRating
         availabilityTextview.text = selectedPost?.id
         if selectedPost?.creator?.imageProfile == "" {
