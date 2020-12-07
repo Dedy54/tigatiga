@@ -65,6 +65,10 @@ class profileForMeVC: UIViewController {
         self.navigationController?.pushViewController(editProfile, animated: true)
     }
     @IBAction func chatPeople(_ sender: UIButton) {
+        let chatDetailViewController = ChatDetailViewController.instantiateViewController()
+//        chatDetailViewController.roomChat = self.rooms?[indexPath.row]
+        chatDetailViewController.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(chatDetailViewController, animated: true)
     }
     @IBAction func commendPeople(_ sender: UIButton) {
         let playerCommendation = UIStoryboard.init(name: "PlayerCommendation", bundle: nil)
@@ -151,6 +155,8 @@ class profileForMeVC: UIViewController {
 
 extension profileForMeVC:  UIActionSheetDelegate, UIViewControllerTransitioningDelegate {
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        return OverlayPresentationController(presentedViewController:presented, presenting:presenting)
+        let customModal = OverlayPresentationController(presentedViewController:presented, presenting:presenting)
+        customModal.setHeight(height: 450)
+        return customModal
     }
 }
