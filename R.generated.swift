@@ -85,23 +85,83 @@ struct R: Rswift.Validatable {
   }
 
   static func validate() throws {
+    try font.validate()
     try intern.validate()
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 15 storyboards.
   struct storyboard {
+    /// Storyboard `AddPost`.
+    static let addPost = _R.storyboard.addPost()
+    /// Storyboard `Availability`.
+    static let availability = _R.storyboard.availability()
+    /// Storyboard `CommendationInfo`.
+    static let commendationInfo = _R.storyboard.commendationInfo()
     /// Storyboard `Example`.
     static let example = _R.storyboard.example()
+    /// Storyboard `Feed`.
+    static let feed = _R.storyboard.feed()
+    /// Storyboard `FilterPost`.
+    static let filterPost = _R.storyboard.filterPost()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Main`.
     static let main = _R.storyboard.main()
+    /// Storyboard `PlayerCommendation`.
+    static let playerCommendation = _R.storyboard.playerCommendation()
+    /// Storyboard `PostDetailMember`.
+    static let postDetailMember = _R.storyboard.postDetailMember()
+    /// Storyboard `PostDetailTeam`.
+    static let postDetailTeam = _R.storyboard.postDetailTeam()
+    /// Storyboard `PostFilterResult`.
+    static let postFilterResult = _R.storyboard.postFilterResult()
+    /// Storyboard `SearchPeople`.
+    static let searchPeople = _R.storyboard.searchPeople()
+    /// Storyboard `SearchResult`.
+    static let searchResult = _R.storyboard.searchResult()
+    /// Storyboard `forgotPass`.
+    static let forgotPass = _R.storyboard.forgotPass()
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "AddPost", bundle: ...)`
+    static func addPost(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.addPost)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Availability", bundle: ...)`
+    static func availability(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.availability)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "CommendationInfo", bundle: ...)`
+    static func commendationInfo(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.commendationInfo)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "Example", bundle: ...)`
     static func example(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.example)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Feed", bundle: ...)`
+    static func feed(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.feed)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "FilterPost", bundle: ...)`
+    static func filterPost(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.filterPost)
     }
     #endif
 
@@ -119,20 +179,310 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "PlayerCommendation", bundle: ...)`
+    static func playerCommendation(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.playerCommendation)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "PostDetailMember", bundle: ...)`
+    static func postDetailMember(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.postDetailMember)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "PostDetailTeam", bundle: ...)`
+    static func postDetailTeam(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.postDetailTeam)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "PostFilterResult", bundle: ...)`
+    static func postFilterResult(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.postFilterResult)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "SearchPeople", bundle: ...)`
+    static func searchPeople(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.searchPeople)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "SearchResult", bundle: ...)`
+    static func searchResult(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.searchResult)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "forgotPass", bundle: ...)`
+    static func forgotPass(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.forgotPass)
+    }
+    #endif
+
     fileprivate init() {}
   }
   #endif
 
-  /// This `R.file` struct is generated, and contains static references to 1 files.
+  /// This `R.entitlements` struct is generated, and contains static references to 1 properties.
+  struct entitlements {
+    struct comAppleDeveloperApplesignin {
+      static let `default` = infoPlistString(path: ["com.apple.developer.applesignin"], key: "Default") ?? "Default"
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.file` struct is generated, and contains static references to 6 files.
   struct file {
     /// Resource file `GoogleService-Info.plist`.
     static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
+    /// Resource file `Hind-Bold.ttf`.
+    static let hindBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Hind-Bold", pathExtension: "ttf")
+    /// Resource file `Hind-Light.ttf`.
+    static let hindLightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Hind-Light", pathExtension: "ttf")
+    /// Resource file `Hind-Medium.ttf`.
+    static let hindMediumTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Hind-Medium", pathExtension: "ttf")
+    /// Resource file `Hind-Regular.ttf`.
+    static let hindRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Hind-Regular", pathExtension: "ttf")
+    /// Resource file `Hind-SemiBold.ttf`.
+    static let hindSemiBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Hind-SemiBold", pathExtension: "ttf")
 
     /// `bundle.url(forResource: "GoogleService-Info", withExtension: "plist")`
     static func googleServiceInfoPlist(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.googleServiceInfoPlist
       return fileResource.bundle.url(forResource: fileResource)
     }
+
+    /// `bundle.url(forResource: "Hind-Bold", withExtension: "ttf")`
+    static func hindBoldTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.hindBoldTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Hind-Light", withExtension: "ttf")`
+    static func hindLightTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.hindLightTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Hind-Medium", withExtension: "ttf")`
+    static func hindMediumTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.hindMediumTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Hind-Regular", withExtension: "ttf")`
+    static func hindRegularTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.hindRegularTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Hind-SemiBold", withExtension: "ttf")`
+    static func hindSemiBoldTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.hindSemiBoldTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.font` struct is generated, and contains static references to 5 fonts.
+  struct font: Rswift.Validatable {
+    /// Font `Hind-Bold`.
+    static let hindBold = Rswift.FontResource(fontName: "Hind-Bold")
+    /// Font `Hind-Light`.
+    static let hindLight = Rswift.FontResource(fontName: "Hind-Light")
+    /// Font `Hind-Medium`.
+    static let hindMedium = Rswift.FontResource(fontName: "Hind-Medium")
+    /// Font `Hind-Regular`.
+    static let hindRegular = Rswift.FontResource(fontName: "Hind-Regular")
+    /// Font `Hind-SemiBold`.
+    static let hindSemiBold = Rswift.FontResource(fontName: "Hind-SemiBold")
+
+    /// `UIFont(name: "Hind-Bold", size: ...)`
+    static func hindBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: hindBold, size: size)
+    }
+
+    /// `UIFont(name: "Hind-Light", size: ...)`
+    static func hindLight(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: hindLight, size: size)
+    }
+
+    /// `UIFont(name: "Hind-Medium", size: ...)`
+    static func hindMedium(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: hindMedium, size: size)
+    }
+
+    /// `UIFont(name: "Hind-Regular", size: ...)`
+    static func hindRegular(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: hindRegular, size: size)
+    }
+
+    /// `UIFont(name: "Hind-SemiBold", size: ...)`
+    static func hindSemiBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: hindSemiBold, size: size)
+    }
+
+    static func validate() throws {
+      if R.font.hindBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Hind-Bold' could not be loaded, is 'Hind-Bold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.hindLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Hind-Light' could not be loaded, is 'Hind-Light.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.hindMedium(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Hind-Medium' could not be loaded, is 'Hind-Medium.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.hindRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Hind-Regular' could not be loaded, is 'Hind-Regular.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.hindSemiBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Hind-SemiBold' could not be loaded, is 'Hind-SemiBold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.image` struct is generated, and contains static references to 15 images.
+  struct image {
+    /// Image `Add`.
+    static let add = Rswift.ImageResource(bundle: R.hostingBundle, name: "Add")
+    /// Image `Awesome`.
+    static let awesome = Rswift.ImageResource(bundle: R.hostingBundle, name: "Awesome")
+    /// Image `Filter`.
+    static let filter = Rswift.ImageResource(bundle: R.hostingBundle, name: "Filter")
+    /// Image `Friendly-1`.
+    static let friendly1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Friendly-1")
+    /// Image `Friendly`.
+    static let friendly = Rswift.ImageResource(bundle: R.hostingBundle, name: "Friendly")
+    /// Image `Great Work`.
+    static let greatWork = Rswift.ImageResource(bundle: R.hostingBundle, name: "Great Work")
+    /// Image `Icon`.
+    static let icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "Icon")
+    /// Image `Leader`.
+    static let leader = Rswift.ImageResource(bundle: R.hostingBundle, name: "Leader")
+    /// Image `Line 1`.
+    static let line1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Line 1")
+    /// Image `StarTransparent`.
+    static let starTransparent = Rswift.ImageResource(bundle: R.hostingBundle, name: "StarTransparent")
+    /// Image `Star`.
+    static let star = Rswift.ImageResource(bundle: R.hostingBundle, name: "Star")
+    /// Image `Team Leader`.
+    static let teamLeader = Rswift.ImageResource(bundle: R.hostingBundle, name: "Team Leader")
+    /// Image `Team Player`.
+    static let teamPlayer = Rswift.ImageResource(bundle: R.hostingBundle, name: "Team Player")
+    /// Image `mvp`.
+    static let mvp = Rswift.ImageResource(bundle: R.hostingBundle, name: "mvp")
+    /// Image `pp`.
+    static let pp = Rswift.ImageResource(bundle: R.hostingBundle, name: "pp")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Add", bundle: ..., traitCollection: ...)`
+    static func add(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.add, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Awesome", bundle: ..., traitCollection: ...)`
+    static func awesome(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.awesome, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Filter", bundle: ..., traitCollection: ...)`
+    static func filter(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.filter, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Friendly", bundle: ..., traitCollection: ...)`
+    static func friendly(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.friendly, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Friendly-1", bundle: ..., traitCollection: ...)`
+    static func friendly1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.friendly1, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Great Work", bundle: ..., traitCollection: ...)`
+    static func greatWork(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.greatWork, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Icon", bundle: ..., traitCollection: ...)`
+    static func icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Leader", bundle: ..., traitCollection: ...)`
+    static func leader(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.leader, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Line 1", bundle: ..., traitCollection: ...)`
+    static func line1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.line1, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Star", bundle: ..., traitCollection: ...)`
+    static func star(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.star, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "StarTransparent", bundle: ..., traitCollection: ...)`
+    static func starTransparent(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.starTransparent, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Team Leader", bundle: ..., traitCollection: ...)`
+    static func teamLeader(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.teamLeader, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Team Player", bundle: ..., traitCollection: ...)`
+    static func teamPlayer(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.teamPlayer, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "mvp", bundle: ..., traitCollection: ...)`
+    static func mvp(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.mvp, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "pp", bundle: ..., traitCollection: ...)`
+    static func pp(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.pp, compatibleWith: traitCollection)
+    }
+    #endif
 
     fileprivate init() {}
   }
@@ -168,10 +518,46 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 7 nibs.
   struct nib {
+    /// Nib `AddPostLFGroupVC`.
+    static let addPostLFGroupVC = _R.nib._AddPostLFGroupVC()
+    /// Nib `AddPostLFMemberVC`.
+    static let addPostLFMemberVC = _R.nib._AddPostLFMemberVC()
+    /// Nib `CommendationVC`.
+    static let commendationVC = _R.nib._CommendationVC()
     /// Nib `SecondExampleViewController`.
     static let secondExampleViewController = _R.nib._SecondExampleViewController()
+    /// Nib `SignInViewController`.
+    static let signInViewController = _R.nib._SignInViewController()
+    /// Nib `searchForPlayerVC`.
+    static let searchForPlayerVC = _R.nib._searchForPlayerVC()
+    /// Nib `searchForTeamVC`.
+    static let searchForTeamVC = _R.nib._searchForTeamVC()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AddPostLFGroupVC", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.addPostLFGroupVC) instead")
+    static func addPostLFGroupVC(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.addPostLFGroupVC)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AddPostLFMemberVC", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.addPostLFMemberVC) instead")
+    static func addPostLFMemberVC(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.addPostLFMemberVC)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "CommendationVC", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.commendationVC) instead")
+    static func commendationVC(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.commendationVC)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "SecondExampleViewController", in: bundle)`
@@ -181,9 +567,69 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "SignInViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.signInViewController) instead")
+    static func signInViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.signInViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "searchForPlayerVC", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.searchForPlayerVC) instead")
+    static func searchForPlayerVC(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.searchForPlayerVC)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "searchForTeamVC", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.searchForTeamVC) instead")
+    static func searchForTeamVC(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.searchForTeamVC)
+    }
+    #endif
+
+    static func addPostLFGroupVC(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.addPostLFGroupVC.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func addPostLFMemberVC(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.addPostLFMemberVC.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func commendationVC(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.commendationVC.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func searchForPlayerVC(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.searchForPlayerVC.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func searchForTeamVC(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.searchForTeamVC.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func secondExampleViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.secondExampleViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
+
+    static func signInViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.signInViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 3 reuse identifiers.
+  struct reuseIdentifier {
+    /// Reuse identifier `commendationCell`.
+    static let commendationCell: Rswift.ReuseIdentifier<CommendationTableViewCell> = Rswift.ReuseIdentifier(identifier: "commendationCell")
+    /// Reuse identifier `postCell`.
+    static let postCell: Rswift.ReuseIdentifier<PostTableViewCell> = Rswift.ReuseIdentifier(identifier: "postCell")
+    /// Reuse identifier `recommendedCell`.
+    static let recommendedCell: Rswift.ReuseIdentifier<RecommendedCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "recommendedCell")
 
     fileprivate init() {}
   }
@@ -204,18 +650,135 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     #if os(iOS) || os(tvOS)
+    try nib.validate()
+    #endif
+    #if os(iOS) || os(tvOS)
     try storyboard.validate()
     #endif
   }
 
   #if os(iOS) || os(tvOS)
-  struct nib {
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _AddPostLFGroupVC.validate()
+      try _AddPostLFMemberVC.validate()
+      try _CommendationVC.validate()
+      try _searchForPlayerVC.validate()
+      try _searchForTeamVC.validate()
+    }
+
+    struct _AddPostLFGroupVC: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "AddPostLFGroupVC"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "chevron.down", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'chevron.down' is used in nib 'AddPostLFGroupVC', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "plus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plus' is used in nib 'AddPostLFGroupVC', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _AddPostLFMemberVC: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "AddPostLFMemberVC"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "chevron.down", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'chevron.down' is used in nib 'AddPostLFMemberVC', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "plus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plus' is used in nib 'AddPostLFMemberVC', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _CommendationVC: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "CommendationVC"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Friendly-1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Friendly-1' is used in nib 'CommendationVC', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Leader", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Leader' is used in nib 'CommendationVC', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Star", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Star' is used in nib 'CommendationVC', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Team Player", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Team Player' is used in nib 'CommendationVC', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "mvp", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'mvp' is used in nib 'CommendationVC', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
     struct _SecondExampleViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "SecondExampleViewController"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _SignInViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "SignInViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _searchForPlayerVC: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "searchForPlayerVC"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Awesome", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Awesome' is used in nib 'searchForPlayerVC', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Friendly", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Friendly' is used in nib 'searchForPlayerVC', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Great Work", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Great Work' is used in nib 'searchForPlayerVC', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Team Leader", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Team Leader' is used in nib 'searchForPlayerVC', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "chevron.down", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'chevron.down' is used in nib 'searchForPlayerVC', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _searchForTeamVC: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "searchForTeamVC"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "chevron.down", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'chevron.down' is used in nib 'searchForTeamVC', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}
@@ -229,7 +792,22 @@ struct _R: Rswift.Validatable {
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       #if os(iOS) || os(tvOS)
+      try addPost.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try availability.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try commendationInfo.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try example.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try feed.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try filterPost.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try launchScreen.validate()
@@ -237,7 +815,83 @@ struct _R: Rswift.Validatable {
       #if os(iOS) || os(tvOS)
       try main.validate()
       #endif
+      #if os(iOS) || os(tvOS)
+      try playerCommendation.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try postDetailMember.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try postDetailTeam.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try postFilterResult.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try searchPeople.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try searchResult.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try forgotPass.validate()
+      #endif
     }
+
+    #if os(iOS) || os(tvOS)
+    struct addPost: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = AddPostVC
+
+      let bundle = R.hostingBundle
+      let name = "AddPost"
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct availability: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = AvailabilityVC
+
+      let availability = StoryboardViewControllerResource<AvailabilityVC>(identifier: "Availability")
+      let bundle = R.hostingBundle
+      let name = "Availability"
+
+      func availability(_: Void = ()) -> AvailabilityVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: availability)
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "chevron.down", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'chevron.down' is used in storyboard 'Availability', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.availability().availability() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'availability' could not be loaded from storyboard 'Availability' as 'AvailabilityVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct commendationInfo: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = CommendationInfoVC
+
+      let bundle = R.hostingBundle
+      let name = "CommendationInfo"
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     struct example: Rswift.StoryboardResourceType, Rswift.Validatable {
@@ -253,6 +907,65 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.example().exampleViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'exampleViewController' could not be loaded from storyboard 'Example' as 'ExampleViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct feed: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = FeedVC
+
+      let bundle = R.hostingBundle
+      let name = "Feed"
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Add", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Add' is used in storyboard 'Feed', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Filter", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Filter' is used in storyboard 'Feed', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Line 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Line 1' is used in storyboard 'Feed', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct filterPost: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = FilterPostViewController
+
+      let bundle = R.hostingBundle
+      let filterPost = StoryboardViewControllerResource<FilterPostViewController>(identifier: "FilterPost")
+      let name = "FilterPost"
+
+      func filterPost(_: Void = ()) -> FilterPostViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: filterPost)
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "chevron.down", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'chevron.down' is used in storyboard 'FilterPost', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "plus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plus' is used in storyboard 'FilterPost', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.filterPost().filterPost() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'filterPost' could not be loaded from storyboard 'FilterPost' as 'FilterPostViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct forgotPass: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = forgotPassVC
+
+      let bundle = R.hostingBundle
+      let name = "forgotPass"
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}
@@ -293,6 +1006,112 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.main().mainViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainViewController' could not be loaded from storyboard 'Main' as 'MainViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct playerCommendation: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = PlayerCommendationVC
+
+      let bundle = R.hostingBundle
+      let name = "PlayerCommendation"
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct postDetailMember: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = PostDetailMemberVC
+
+      let bundle = R.hostingBundle
+      let name = "PostDetailMember"
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "pp", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'pp' is used in storyboard 'PostDetailMember', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct postDetailTeam: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = PostDetailTeamVC
+
+      let bundle = R.hostingBundle
+      let name = "PostDetailTeam"
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "pp", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'pp' is used in storyboard 'PostDetailTeam', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct postFilterResult: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = PostFilterResultVC
+
+      let bundle = R.hostingBundle
+      let name = "PostFilterResult"
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Line 1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Line 1' is used in storyboard 'PostFilterResult', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct searchPeople: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = macrochallenge.searchPeopleVC
+
+      let bundle = R.hostingBundle
+      let name = "SearchPeople"
+      let searchPeople = StoryboardViewControllerResource<macrochallenge.searchPeopleVC>(identifier: "SearchPeople")
+
+      func searchPeople(_: Void = ()) -> macrochallenge.searchPeopleVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: searchPeople)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.searchPeople().searchPeople() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'searchPeople' could not be loaded from storyboard 'SearchPeople' as 'macrochallenge.searchPeopleVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct searchResult: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = SearchResultVC
+
+      let bundle = R.hostingBundle
+      let name = "SearchResult"
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "pp", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'pp' is used in storyboard 'SearchResult', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}

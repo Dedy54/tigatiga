@@ -1,43 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MUJ-uy-LZD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MUJ-uy-LZD">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
         <scene sceneID="bF0-5P-eXk">
             <objects>
-                <tabBarController storyboardIdentifier="MainViewController" id="MUJ-uy-LZD" customClass="MainViewController" customModule="macrochallenge" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="SmV-Mr-tPB">
+                <tabBarController storyboardIdentifier="MainViewController" modalPresentationStyle="fullScreen" id="MUJ-uy-LZD" customClass="MainViewController" customModule="macrochallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="SmV-Mr-tPB">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <color key="selectedImageTintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="selectedImageTintColor" red="1" green="0.80784313730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="b3L-ZP-2Os" kind="relationship" relationship="viewControllers" id="YYO-gU-u6K"/>
                         <segue destination="skJ-aq-Ldn" kind="relationship" relationship="viewControllers" id="cxa-Ya-4Qi"/>
                         <segue destination="TP7-Wk-djo" kind="relationship" relationship="viewControllers" id="oCg-i1-Wuk"/>
-                        <segue destination="LCO-EB-dwf" kind="relationship" relationship="viewControllers" id="9PB-Bl-gGs"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ua-Tz-Vza" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1004" y="1335"/>
         </scene>
-        <!--A-->
+        <!--Feed-->
         <scene sceneID="MeB-oH-FNH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b3L-ZP-2Os" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="A" image="person.circle" catalog="system" selectedImage="person.circle.fill" id="dQ7-fY-d3f"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="clock" catalog="system" selectedImage="clock" id="dQ7-fY-d3f"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nDr-Qh-ADC">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="0.80784313730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="0.80784313730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="1" green="0.80784313730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -48,15 +55,20 @@
             </objects>
             <point key="canvasLocation" x="957.97101449275374" y="-1492.6339285714284"/>
         </scene>
-        <!--B-->
+        <!--People-->
         <scene sceneID="irw-Rb-Tj6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="skJ-aq-Ldn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="B" image="person.circle" catalog="system" selectedImage="person.circle.fill" id="Rw6-4x-Hoi"/>
+                    <tabBarItem key="tabBarItem" title="People" image="person.2" catalog="system" id="Rw6-4x-Hoi"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yg3-Sw-V3t">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="0.80784313730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="0.80784313730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -67,15 +79,20 @@
             </objects>
             <point key="canvasLocation" x="957.97101449275374" y="-791.51785714285711"/>
         </scene>
-        <!--C-->
+        <!--Chat-->
         <scene sceneID="7Tu-Ah-gkI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TP7-Wk-djo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="C" image="person.circle" catalog="system" selectedImage="person.circle.fill" id="YkH-71-oKz"/>
+                    <tabBarItem key="tabBarItem" title="Chat" image="bubble.left.and.bubble.right" catalog="system" selectedImage="bubble.left" id="YkH-71-oKz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DRH-C8-EYW">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="0.80784313730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="0.80784313730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -86,59 +103,30 @@
             </objects>
             <point key="canvasLocation" x="957.97101449275374" y="-83.035714285714278"/>
         </scene>
-        <!--D-->
-        <scene sceneID="nqu-q6-xMj">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LCO-EB-dwf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="D" image="person.circle" catalog="system" selectedImage="person.circle.fill" id="VZT-WJ-eZw"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HCZ-3H-1Se">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="bQH-Ev-HQk" kind="relationship" relationship="rootViewController" id="pvq-CB-7rV"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EWc-fz-Qmt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="957.97101449275374" y="625.44642857142856"/>
-        </scene>
-        <!--ExampleViewController-->
+        <!--FeedVC-->
         <scene sceneID="c7U-0z-yNX">
             <objects>
-                <viewControllerPlaceholder storyboardName="Example" referencedIdentifier="ExampleViewController" id="GPX-jR-Hxk" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Feed" referencedIdentifier="FeedVC" id="GPX-jR-Hxk" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="hiK-Aq-oX6"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uBU-uq-Yrx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1703" y="-1493"/>
         </scene>
-        <!--ExampleViewController-->
+        <!--SearchPeople-->
         <scene sceneID="EDs-Vo-aza">
             <objects>
-                <viewControllerPlaceholder storyboardName="Example" referencedIdentifier="ExampleViewController" id="JwB-1F-JJ2" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="SearchPeople" storyboardName="SearchPeople" referencedIdentifier="SearchPeople" id="JwB-1F-JJ2" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="RDB-1Q-0fV"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Qs-fd-JZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1703" y="-778"/>
         </scene>
-        <!--ExampleViewController-->
-        <scene sceneID="XQd-ct-vqV">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Example" referencedIdentifier="ExampleViewController" id="bQH-Ev-HQk" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="2Kj-Tr-Wb6"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="geC-Ou-KXF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1683" y="625"/>
-        </scene>
-        <!--ExampleViewController-->
+        <!--Example-->
         <scene sceneID="b8X-U6-qfx">
             <objects>
-                <viewControllerPlaceholder storyboardName="Example" referencedIdentifier="ExampleViewController" id="T4X-NC-3Bx" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Example" id="T4X-NC-3Bx" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="7IK-5b-f5Y"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XfQ-K5-hBs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -147,7 +135,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="person.circle" catalog="system" width="128" height="121"/>
-        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="bubble.left" catalog="system" width="128" height="110"/>
+        <image name="bubble.left.and.bubble.right" catalog="system" width="128" height="96"/>
+        <image name="clock" catalog="system" width="128" height="121"/>
+        <image name="person.2" catalog="system" width="128" height="81"/>
     </resources>
 </document>
